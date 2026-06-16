@@ -7519,3 +7519,17 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
     filter: grayscale(0) contrast(1);
   }
 }
+
+/* 20260616 stronger Lucid letterbox crop */
+.home-page .selected-work-grid .work-tile:nth-child(3) .work-tile-media {
+  overflow: hidden;
+}
+
+.home-page .selected-work-grid .work-tile:nth-child(3) .project-cover-media {
+  width: 100%;
+  height: 116%;
+  object-fit: cover !important;
+  object-position: center center;
+  transform: translateY(-8%) scale(1.08);
+  clip-path: inset(7% 0 7% 0);
+}
