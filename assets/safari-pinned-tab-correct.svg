@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Zhen Li pinned tab icon</title>
+  <path d="M8 8H24V24H8Z" fill="none" stroke="#000" stroke-width="2.4" stroke-linejoin="miter" />
+  <path d="M8 13.4H18.6" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="butt" />
+  <path d="M8 24L24 8" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="butt" />
+</svg>

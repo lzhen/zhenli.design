@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" role="img" aria-labelledby="title">
+  <title id="title">Zhen Li logo</title>
+  <rect x="8" y="8" width="72" height="72" fill="#000" />
+  <rect x="18" y="18" width="52" height="52" fill="#fff" />
+  <rect x="18" y="30" width="42" height="10" fill="#000" />
+  <polygon points="17 70 70 17 77 24 24 77" fill="#000" />
+</svg>

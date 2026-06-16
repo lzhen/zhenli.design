@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design Philosophy - Zhen Li</title>
+    <meta name="description" content="How Zhen Li designs complex AI products." />
+    <link rel="icon" href="assets/favicon-joined-16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="assets/favicon-joined-32.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="favicon-joined.ico" />
+    <link rel="mask-icon" href="assets/safari-pinned-tab-joined.svg" color="#000000" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon-joined.png" />
+    <link rel="stylesheet" href="styles.css?v=20260616-work-nav-index-intro" />
+    <script src="assets/logo-loader.js?v=20260606-moon-landing" defer></script>
+<style>
+  :root {
+    --bg-color: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --badge-bg: #000000;
+    --badge-text: #ffffff;
+  }
+
+  .diagram-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+  }
+
+  /* Decorative Circles for "User" and "Designer" */
+  .actor-circle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    height: 160px;
+    background-color: #f9f9f9;
+    border: 1px solid #eaeaea;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    z-index: 2; 
+    cursor: default; 
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+  .actor-circle.user { left: 0; }
+  .actor-circle.designer { right: 0; }
+
+  /* ONLY show black background and white text on hover */
+  .actor-circle:hover {
+    transform: translateY(-50%) scale(1.05);
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+    font-size: 20px; 
+  }
+
+  /* Dotted Rings */
+  .actor-ring {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 320px;
+    border: 1px dashed #cccccc;
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+  .actor-ring.user-ring { left: -80px; }
+  .actor-ring.designer-ring { right: -80px; }
+
+  /* Main Container for the rows */
+  .relationship-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    padding: 0 180px; 
+  }
+
+  /* Interactive Row */
+  .concept-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  /* Hover Logic: Dim the container, highlight the hovered row */
+  .relationship-container:hover .concept-row {
+    opacity: 0.2;
+    filter: blur(1px);
+  }
+  .relationship-container .concept-row:hover {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1.02);
+    background-color: #fdfdfd;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  /* Text Blocks */
+  .text-block {
+    flex: 1;
+    max-width: 300px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .text-block.left { text-align: left; }
+  .text-block.right { text-align: right; }
+
+  .text-block h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+  }
+  .text-block p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-family: 'Courier New', Courier, monospace; 
+  }
+
+  /* --- FIXED: Center Badges & Connecting Lines --- */
+  .badge-container {
+    flex: 1; /* Takes up remaining space between text blocks */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px; /* Ensures lines never touch the text */
+  }
+
+  /* Dynamic Flex Lines */
+  .badge-container::before, 
+  .badge-container::after {
+    content: '';
+    flex: 1; /* Stretches dynamically to fill space */
+    height: 1px;
+    background-color: #e0e0e0;
+    min-width: 15px; /* Prevents line from completely disappearing */
+  }
+
+  .badge {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin: 0 15px; /* Creates gap between the line and the black badge */
+    white-space: nowrap; /* Keeps badge text on one line */
+  }
+  /* ----------------------------------------------- */
+
+  /* Node Circles */
+  .node {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 4px solid #000;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .text-block.left .node { left: -50px; }
+  .text-block.right .node { right: -50px; }
+
+</style>
+  </head>
+  <body class="editorial-site">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Zhen Li home">
+        <img class="mark" src="assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" />
+      </a>
+      <nav aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Design philosophy</p>
+        <h1>Translate what people need into products they trust.</h1>
+        <p class="lede">
+          I start with the system, make trust visible, prototype the behavior, and create artifacts
+          that help product, engineering, research, data, policy, and design make decisions together.
+        </p>
+      </section>
+      <section class="diagram-wrapper">
+      <div class="actor-ring user-ring"></div>
+      <div class="actor-circle user">User</div>
+      
+      <div class="actor-ring designer-ring"></div>
+      <div class="actor-circle designer">Designer</div>
+    
+      <div class="relationship-container">
+        
+        <div class="concept-row">
+          <div class="text-block left">
+            <div class="node"></div>
+            <h3>I need...</h3>
+            <p>I need to understand what is happening and what to do next.</p>
+          </div>
+          <div class="badge-container">
+            <div class="badge">Clarity</div>
+          </div>
+          <div class="text-block right">
+            <div class="node"></div>
+            <h3>Legible</h3>
+            <p>Help people understand the challenge, the system state, and the next best action.</p>
+          </div>
+        </div>
+    
+        <div class="concept-row">
+          <div class="text-block left">
+            <div class="node"></div>
+            <h3>I like...</h3>
+            <p>I want the experience to feel easy, useful, and safe to try.</p>
+          </div>
+          <div class="badge-container">
+            <div class="badge">Confidence</div>
+          </div>
+          <div class="text-block right">
+            <div class="node"></div>
+            <h3>Actionable</h3>
+            <p>Make AI recommendations understandable, reversible, and easy to act on.</p>
+          </div>
+        </div>
+    
+        <div class="concept-row">
+          <div class="text-block left">
+            <div class="node"></div>
+            <h3>I share...</h3>
+            <p>I want to feel confident recommending the product to others.</p>
+          </div>
+          <div class="badge-container">
+            <div class="badge">Credibility</div>
+          </div>
+          <div class="text-block right">
+            <div class="node"></div>
+            <h3>Coherent</h3>
+            <p>Build product details that make quality, reliability, and intent visible.</p>
+          </div>
+        </div>
+    
+        <div class="concept-row">
+          <div class="text-block left">
+            <div class="node"></div>
+            <h3>I own...</h3>
+            <p>I rely on the product as part of my work and life.</p>
+          </div>
+          <div class="badge-container">
+            <div class="badge">Trust</div>
+          </div>
+          <div class="text-block right">
+            <div class="node"></div>
+            <h3>Strategic</h3>
+            <p>Create durable relationships through transparency, control, feedback, and long-term value.</p>
+          </div>
+        </div>
+    
+      </div>
+</section>
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; 2026 Zhen Li</span>
+      <span>Portfolio co-created with AI and Josef Müller-Brockmann</span>
+      <span class="social-links social-icons">
+        <a class="icon-link" href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true" aria-label="LinkedIn" title="LinkedIn"><img src="assets/icon-linkedin.svg" alt="" /></a>
+        <a class="icon-link" href="https://scholar.google.com/citations?hl=en&user=--enlHIAAAAJ&view_op=list_works" aria-label="Google Scholar" title="Google Scholar"><img src="assets/icon-scholar.svg" alt="" /></a>
+        <a class="icon-link" href="https://www.researchgate.net/profile/Zhen-Li-204" aria-label="ResearchGate" title="ResearchGate"><img src="assets/icon-researchgate.svg" alt="" /></a>
+        <a class="icon-link" href="https://medium.com/@lizhen10" aria-label="Medium" title="Medium"><img src="assets/icon-medium.svg" alt="" /></a>
+        <a class="icon-link" href="https://dribbble.com/zhenli" aria-label="Dribbble" title="Dribbble"><img src="assets/icon-dribbble.svg" alt="" /></a>
+        <a class="icon-link" href="https://github.com/lzhen" aria-label="GitHub" title="GitHub"><img src="assets/icon-github.svg" alt="" /></a>
+      </span>
+    </footer>
+  </body>
+</html>

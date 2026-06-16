@@ -1,0 +1,67 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Export Lucid Animation</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 40px; }
+  canvas { width: 800px; max-width: 100%; background: #000; display: block; margin: 20px 0; }
+  button { font: inherit; padding: 10px 16px; }
+  pre { white-space: pre-wrap; }
+</style>
+<h1>Export Lucid Animation</h1>
+<p>This page records the Lucid animation from the browser canvas.</p>
+<button id="start">Export video</button>
+<pre id="log"></pre>
+<canvas id="canvas" width="1600" height="1010"></canvas>
+<img id="source" src="assets/lucid-design-system.webp" crossorigin="anonymous" style="display:none" />
+<script>
+const log = (msg) => document.querySelector('#log').textContent += msg + '\n';
+const canvas = document.querySelector('#canvas');
+const ctx = canvas.getContext('2d');
+const img = document.querySelector('#source');
+const types = [
+  'video/mp4;codecs=avc1.42E01E',
+  'video/mp4',
+  'video/webm;codecs=vp9',
+  'video/webm;codecs=vp8',
+  'video/webm'
+];
+const mimeType = types.find((type) => window.MediaRecorder && MediaRecorder.isTypeSupported(type));
+log('Supported export type: ' + (mimeType || 'none'));
+
+function draw() {
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+}
+img.addEventListener('load', () => {
+  draw();
+  log('Animation loaded.');
+});
+
+document.querySelector('#start').addEventListener('click', async () => {
+  if (!mimeType) return log('MediaRecorder is not available for video export in this browser.');
+  const stream = canvas.captureStream(30);
+  const chunks = [];
+  const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 6000000 });
+  recorder.ondataavailable = (event) => event.data.size && chunks.push(event.data);
+  recorder.onstop = () => {
+    const blob = new Blob(chunks, { type: mimeType });
+    const extension = mimeType.includes('mp4') ? 'mp4' : 'webm';
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'lucid-design-system.' + extension;
+    a.click();
+    log('Exported ' + a.download + ' (' + Math.round(blob.size / 1024 / 1024) + 'MB)');
+  };
+  recorder.start();
+  log('Recording 12 seconds...');
+  const start = performance.now();
+  function tick(now) {
+    draw();
+    if (now - start < 12000) requestAnimationFrame(tick);
+    else recorder.stop();
+  }
+  requestAnimationFrame(tick);
+});
+</script>

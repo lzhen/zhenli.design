@@ -1,0 +1,2671 @@
+en_US0
+America/Los_Angelesj
+!+02
+%9j4
+$18,200.00
+$800k
+(defects)
+annual
+applicatio!j
+average!p!
+buil
+capexmY
+capture
+creat
+criteria
+`-fre!
+deliver
+designers
+easy
+-to-us
+hou%
+inspecto
+interacA
+paybac
+!i,product.
+qualita
+saving
+succes
+supervis
+week!
+en_US:
+3502.10
+gregorian
+latn"
+January"
+Febru
+March"
+April"
+May"
+June
+hly"
+August"
+September"
+Octo
+Jan2
+Feb2
+Mar2
+Aug2
+Sep2
+Oct2
+Nov2
+Dec:
+SundayB
+Tues
+Wedn
+Thur
+SaturdayJ
+SunR
+MonR
+TueR
+WedR
+ThuR
+FriR
+SatZ
+SunZ
+1st quarter
+Before Christ
+Anno Domini
+M/d/yy
+MMM d, y
+EEEE, M
+h:mm
+Uzzz
+#,##0.###
+#,##0%
+DBRL
+ XAF
+FCFA
+(TXCG
+CFPF
+UXXX
+Application/21_BasicWhite/Wideb
+<-iov}
+1v}
+21_B"
+}?-w
++?-_
+>%S'Y?-H'Y2
+Hq?-
+-Z?-P
+~?%w<.?B
+4/N5?%
+0cTT?%o
+0Ap{?%
++I1FB`
+?-'SKQ:B`
+^=-TtU,^`
+5&>-
+]p*? 
+(>z8
+$666B202E-F9BB-4CA4-B8B2-C09B05ADD8EC*
+a$!.a$%2
+!6a$!:a$!>a$!.a$!2a$!6
+H!.a$!2a$!6a$
+e$!2a$
+m$!.a$!2a$!6a$
+m$!2a$
+!2a,!6a,!:a,!>
+!6a,!:
+a8*t
+a$!.a$!2a$!6a$!:a$!>a$!.a$!2a$!6
+V+6~:
+{!v~
+Default Camera
+f<`s
+(tC2
+Dj7@
+`J']
+[^U6P
+2?6sJ
+sro5
+q>Fh
+7' >
+AXh
+^H.x
+%z>E
+rLbc
+aY&.(
+U2:h
+SY4V!'
+jJ: 
+]CQa}
+i$*Q
+K[[$
+%@9Yy
+rM(U
+_Onw
+8c#6(
+d^JS
+M66P
+dT0F
+'-6P
+`6JgU
+pxJ6p
+`A-=B
+HYx\
+%*:jo
+)20d.
+K.I1
+[}pL
+Hw"2R
+vNhc
+hu<X
+b>z"
+[-"C'
+R<6X
+%y_
+4<+8
+JrZ%
+)(AX
+(Z=7~o
+>=!{
++aE,
+$`4w
+~7'x
+C4zQ8,8
+dQQ+i,
+<{pw
+s]\4
+`4d
+Cxgnp!
+7"WS
+x{)6h
+WjDp
+L556P
+&q:P
+H"~4
+yHu5
+Z.a=Zl&
+HGmX
+L.L6
+i$6R
+C;:*
+7uvV
+w>[%
+!-Y#
+2uV17
+`/zQ]
+%F?
+u}i.J
+%#::
+U2"H
+$0`@`
+g:*'H
+iP5Nv
+QgE4
+L&%L
+Y*+5
+Q<`2
+86Z)H
+-V?Ebi
+%=1'$.R
+zFp1y
+G;:`
+h,GV
+*!'*2
+75SB
+'hh1=t
+wI6h
+\#v
+qsP6
+$ .m
+$A$F
+n{q&~
+{hT)
+k*!Ljz
+dP+6
+)\W,
+A0f
+P;$O
+#:@
+~GNz
+>wX6
+XJ|*
+BxH=?
+0sX;
+Clnl
+OP&[
+H'{;
+}b0`
+0)6X
+x P\]
+-sJ.8
+_`KK
+LQyrf
+HU1\
+2*,HP
+H[ZcW
+Hm%xz
+Qgdx,]
+0Jx6
+H;PWB
+2R;`c
+f#)I
+60H
+Hsu^%
+@m@6(
+NF:(
+5,,@
+Xa@ K
+ZaC6x
+2B7H
+@A+PQJ
+l|:(
+<'Xu
+fd,P
+:*1LD
+dV}8
+J*S6(
+$,T#3i
+$captions-0-shapestyle-Object Ca
+Title
+character-
+V$hyperlink
+null
+Lt-0-categoryaxis_0
+hart
+$-0-legend
+$paragraphS
+qz,referenceLiniy
+seriei
+value
+{ j#
+,"n$
+I"n$
+t#jG
+7#n$
+T#n$
+q#n$
+D$j#
+`$j#
+|$j#
+L&n$
+i&n$
+='jG
+)(j#
+E(j#
+a(j#
+}(j#
+olumn-
+defaul
+drawingline-0-
+equa
+-0-imag
+movi!V
+listEp
+,7A?
+-106
+!stickyCommen2
+svgimpo
+tabl
+(Cell-0-body
+& Level1Row
+!<rP
+B<r(
+c<r(
+ footerRow
+headerC
+label.7
+2=f%
+P=f%
+n=f%
+d(.+
+pivotBA
+ummary)
+'>r(
+H>r(
+i>r(
+-?>%
+8?f%
+V?f%
+t?f%
+@r(
+-@r(
+N@r(
+o@r(
+3A>%
+ Af%
+>Af%
+\Af%
+zAf%
+3Br(
+TBr(
+9C>%
+&Cf%
+DCf%
+9Dr(
+ZDr(
+{Dr(
+?E>%
+,Ef%
+JEf%
+hEf%
+?Fr(
+`Fr(
+EG>r
+2Gf%
+PGf%
+nGf%
+1Kv)
+uKv)
+-LF)
+#Lv)
+;Lv)
+]Lv)
+SLv)
+uLv)
+bO6!
+~N6!
+N6!
+-Non
+-Bulle
+ Sma
+Quot
+Attribu
+$ Number
+/T9i
+sTEp!>*
+Subt
+4U5+
+$%5*
+-Lettere
+State
+box>* 
+LALI
+JAx)
+aIAU
+"IAx
+tQ!6I
+2I!
+Q!pI
+\O!+
+drop-capB@+
+&#X!
+&c&aL:S
+0Background-0->
+a.6F
+7NV4
+dNV4
+%/V4
+:PR3
+fPR3
+!fN8
+rqHP
+"/nX
+HelveticaNeue:!S$L
+-S<J
+en_USP
+efff?e
+CrAf
+-Bolde
+Link
+fbW1d
+.9?%
+Fill Center
+7, A
+al Key
+Right
+Medium
+Top Lr
+ Highb
+Lowb
+SoftM+
+Edgez*
+"?J
+Lx9t
+@@ 
+u&Y!
+ytM>%T
+>%S'Y?-H'Y
+`y?%
+l#%
+0cTT?%o
+T{8
+.9~&.
+9~V9~
+,ight
+Fill Lef
+Default
+Center
+Directional Key
+@?f"
+MediumQ'
+fffj7
+L@YWEdgezW
+chart-1-legend*
+@paragraphStyle_0*
+DHB*
+HelveticaNeue:b
+Z!,referenceLin&A$
+series"
+line
+@@ 
+u&Y!
+3"?aD
+ytM>%T
+>-433
+R>-r5
+.0{W04%
+:%Gc
+04;%s
+valueaxi2GF
+.9?%
+H=z
+$2-category>
+Top Lr
+ Highb
+Lowb
+SoftM+
+wu.}wE:e
+)|&E|
+9~R9~
+R3.u
+NkR2
+9~N9~
+!tR9~
+>%S'Y?-H'Y
+C^m
+C"9~Rm
+aO0 
+4%(,/?-
+'*GM
+\?-CEM
+W{.9~
+9~R9~
+9~r9~
+)yN9~
+Directional Key
+-fff?f
+Edge Rightb
+chart-3-legend*
+@paragraphStyle_0*
+aWDHB*
+HelveticaNeue:^
+Z!,referenceLin&A$
+series"
+line
+`y?%
+@@ 
+u&Y!
+>=m*
+"#Rm
+4/N5?%
+h?%{
+p=J"#R
+valueaxi2GF
+.9?%
+$4-category>
+Default
+Fill Centerb
+/sR/s
+@j/s
+=f>t
+Medium
+Top Lr-t
+ Highb
+zcu-%
+Lowb
+SoftM+
+9~N9~
+R3.u
+NkR2
+9~N9~
+!tR9~
+5&>-
+aO0T
+'2?%LU
+UO %
+>-P 3
+,anE?%KL?-
+9~05
+"9~Rm
+?-gXi:l
+,mR?%
+9~R9~
+9~r9~
+)yN9~
+chart-5-paragraphStyle_1*
+HelveticaNeue:
+?5!O
+A.Bs
+A*Je
+Z!4referenceLine_
+series.
+line
+X%4bE
+@@ 
+@@.3
+u&Y!
+?-a
+,&?%Z
+0?-?
+3'?%
+g/q*
+X?%8
++C?-~
+H>-J
+valueaxi2GF
+.9?%
+H=z
+None
+column-s
+-default
+XE0(
+drawing
+5G<"
+equation-0-imag6
+A?0
+-333
+DIAE
+Formal Shadow
+shape
+text-12&
+ 1$9Z
+R{_$L
+en_US
+YuzYu
+5.?-
+0c.n?%
+Chalk2
+5movi
+4J4
+Head
+nota
+list
+Presenter Notes
+-Q"-
+Free 
+-0J'
+Label
+-MediumEyRuW
+ Alt
+Y?-~
+~?%w<.
+slide 
+!stickyComment-0>
+$N.s
+Vv+R
+5N@
+&2$1
+ zm$
+svgimpor
+0tabl
+IJ.!
+V`^T
+)B?-
+?-Y|
+>%S'Y?-H'Y]
+>%S'Y?-H'Y>
+?-Y|
+table-3-
+PStyle*
+ %#Xq?-
+HelveticaNeue
+`y?%
+;?:S
+T?%g
+U?-:
+C?%C
+5&>-
+\(Cell-0-body2
+@categoryLevel1Row
+Ga?%
+ footerRow
+,headerColumn
+label
+pivotB
+ummaryI
+S?%o
+U?-V
+)B?-
+p?-6
+R?-p
+Y?-~
+0 -]?%t2^?-
+z?%C
+vo?%t
+320an
+:|e?%
+Q?%FI
+py?%
+?%sf
+n?%?s`?-
+&">-
+3?%f
+"9.n
+o+?%
+F#?%. 
+L?%:
+?%/$
+E?%t
+F?-i
+V?%?
+Text-0Z
+B*69z
+R\-(@
+-Medium
+^+.z+
+ 5(Name-0-shap
+ZSjJ
+2R?b
+Title
+9$paragraphs
+'Boldf
+__noneR
+Bullet
+1-list)
+ Small
+Quote
+B$P<IBj
+Attribution
+Cap!
+ANEDR|
+en_US
+,Slide Numberq
+ Alt
+Imag
+Subt
+j:.j:
+Ro1Z
+Lettered
+Dr
+Statement
+Fact
+Agenda
+i*1^
+drop-cap-
+-defaul
+01$0
+gbiUF
+S%j5
+Rainbow
+(motionBackground-0-motionBackgroundStyle*
+KNGradientLinearBase
+<%7!t?
+L>.&
+_x?-5
+Ocean FloorJ
+<TerrainBase
+%X=%
+ee=%
+-1/.5v!
+X@a!8
+o!>$y
+!k`f
+Lime Juice
+(phicSpheres%
+UJ0i{
+i@I8a
+Solar FlarR
+KNWavesSymmetrical
+R-?-$
+?-B1C
+Multiply
+Sunset DunesN
+Flyover:
+3>%C
+q=%t
+!?%'
+r ?%
+`4[
+Morning SurfN*
+*?%333?-j
+Soft Lighti
+`f?
+Lava LampN
+!%n
+FlamingoN
+0u1y?%rJ<?-
+$Cool BreezR
+SC?%
+O?-H
+$q=J?%
+0?5^?%
+>-ff
+~J?-
+~?-s
+,Purple VistaN
+2?%U
+;Q2>
+NeptuneJ
+Diffus
+">-$
+&q`B
+7%bC
+;-~^
+Snow DayJ
+r[?-}
+I,e
+y?%!
+|m?-
+o 
+o&Z
+(Neon SplashJ%
+!3(Jade CliffsJ3
+1?%h
+i[`
+L1>[
+Stormy SeaN(
+l>%Dg-?-G
+5(>%<;
+Hard.
+PoolsidN
+::%d
+NebulaJ^
+8~d
+<%<S
+!$%
+2;0
+^;-Fk
+@Kr
+$Black SmokN
+Y:>%@Z:>-
+Y:]%6K
+@EK
+qC>K
+IK v
+Bold*
+Italic
+Underline
+|PP"
+Red .
+fff@
+%a1,
+# ='
+Helvetica-
+!1AB
+%*E[
+HBV9
+%90@
+GillSansJ
+eb'v?
+m!"m
+5YV*
+!(02
+none:
+B*Roboto-
+Bullets
+ Neue
+-Medium@
+GTAme
+Trial-Rg
+?%^s
+2EB6
+Georgiab
+ y*
+Benton
+I%y6d
+Calibriz
+ZL*i
+-RegulareV
+IU1p
+@<%A
+nq 
+;1?&
+8ZT
+Sharp
+No1-Boo
+YK!n
+!p&s
+6L.
+">'(
+@F]&
+N)RT
+N)fN)
+E+#
+!pY$
+$A60F4E70-08CF-40E4-B7AA-836470C9D7A3
+DocumentMetadata"
+TemplateSlide
+ -3808814"
+69221j
+$-2641395-2j
+71rk
+259r$
+}^0
+127rc
+-483572n
+TemplateS
+53010j
+5074218jg
+82]0
+*x .
+82nq
+4*!Jl
+]26,#
+15vY5
+.i#^-#.
+498753r
+=3.Z
+-483572nh
+V:C.
+vE)LL
+801j
+5105073
+&R*.y
+&?.
+KNAlignToPath
+36695
+32v^D.
+a$q`B
+"!FL
+303r
+$.1c
+.|M
+?3341
+a02h0
+-)+X
+433-2j%
+#.e#
+0.qX>q#0:
+*d[^9,.l
+ !TT
+;!L$
+"t6.
+CalculationEngine"
+TSCEReduce
+MsgSize
+499"
+TSACap
+00423
+c.TK.
+3.,,.
+`^P,
+Slide
+Slide-5710593"
+4835785"f
+TemplateS
+$-2641347-2j
+6ai`
+183r
+Document"
+-c
+Y!lT
+~Ga
+e!JP
+!KA|P
+820j
+*!F.}&^
+V.$U.+
+=8./3
+*XL.g
+ViewState*_
+459r
+AnnotationAuthorStorag]
+208r
+Y8:X
+614035n.'^LW.
+79r1
+q<.$
+3A$L
+KNAlignToPath
+9\ Styleshee
+h!iD
+xaeP
+"Landscape_Mojave_NightSky_CMYK.tif"(v$
+-17652
+lucid.jpeg"
+-24309
+t(P~
+886640052_3195x2556.jpg"
+*!21_basicwhite/J)
+666699290_02_crop_3159x1892.jpg"
+*)21_
+IpEE
+WjDp
+sancramento_rent_2022_2.png"!sancrF
+-24357
+iP^JS
+6RC[~*
+660384004_rotate_1964x1473.j%M
+Alex's birthday )F
+-1896
+9L 1290x1720-E:
+grid+.png"
+-183622
+1858x148
+$"ia-18805
+Cxgnp!
+Columns
+b>z"
+Eric_school report_5
+empty
+Rowsi]
+910457886_1434x1669VD
+LakeTahoe Trip_1e?
+-268
+3!WFh
+alex_
+party
+-19666Y
+0IeBj
+01-195M
+sro5
+7"WS
+e2Jj
+%z>E
+Typography_HMI.
+-1876%
+7uvV
+Color Scheme.!,
+Zhen-PDA
+-17186R
+%@9Yy
+.background-welcome-to-l
+$-regular_0
+Y*+5
+Dev Testing
+1-2552
+0e9F
+newe
+XAir-next-to-private-jet
+"(r$
+Icon
+-184Mf
+Clnl
+OP&[
+Range
+-18108
+Alex-
+-23456|
+gravity_prev_ui.
+-2331
+(Screen Shot 2021-
+82 at 3.50.50 PM!
+tile_paper_medgrayE
+cl"Z
+lt.]
+_air
+Lstudio_quarter_gold_-
+ (1)%F
+7' >
+mobile)Q
+-23104
+bullet_circle-blk.pdf"
+!"X
+ 8-filtere
+L'{;
+}b0`
+rM(U
+5)EQ
+2uV17
+3.gif"
+(100793008_l
+%*:jo
+Motors
+Workshop-Service-Manual-Wiring-Diagram-removebg-previ
+PaR>
+!5Vv0
+18.23
+_Onwa
+3MRi
+P;$O
+9.14
+T[ZcW
+eg"
+-242996
+MbmL:
++mt-446DC067-F000-4759-B333-3108B108EB8E
+80.jpg
+lucid5.jpeg"
+lucid5-24297.jpegR
+gravity_prev_ui-small.png"
+gravi>
+H-23319.png
+(Screen Shot 2021-11-12 at 3.53.38 PM.
+-18772
+Alex's birthday 1-
+-18970
+y'x& %
++mt-4094BD06-C35E-446A-96C5-B62ED5FBF9E4.jpg"0m
+-8879II
+-2345
+4.jA
+ia]5
+-18806
+!sancramento_rent_2002_9
+pasted-image.pdf"
+-17653
+_air
+Pstudio_quarter_gold_pi
+ (1)
+68)Y
+!YTC@
+{hT)
+"6!"
++st-DE88E7EC-7188-4CD5-8C2A-18AEF660E80F.jpg"1st
+-34462I
+22_2=BN
+_0.9
+-1957e|
+-196
+Zhen-PDA2
+-1718
+Eric_school report_5=
+-2647
+EA29330F-D3EF-46B8-A378-254B2DC8C4E3.
+-1508m=
+!FL{
+JrZ%
+$ .m
+6A8839AE-CE7C-4BBB-A79E-010E88D073AA.E
+5=LF
+LakeTahoe Trip_7
+-2684
+[-"C'
+alex_b
+party2
+!)LU
+4FA90A46-59E2-4A03-A7E3-F850EE37DEB6.Q
+-3450
+0.50 PM
+!jLm'
+7DFA1B21-5F20-448C-BEE1-F6F67C965B5B.1j
+HYx\
+T1-L
+C-Motors-Air-Workshop-Service-Manual-Wiring-Diagram-removebg-preview-&
+C4zQ8,8F
+Iconography-9
+-1840
+~GNz
+6C7ECE05-4E87-4FB3-951B-5D1409600E9e_
+3C0CC5D9-40EB-425F-B715-2E64F9C2472
+%D%w
+cjFD
+ECDD5A57-C480-4F92-98B0-E0A3660F40C
+>=!{
+-2552M,
+K.M
+[}pL
+,xR,
+F88F362B-51F1-4162-80EC-4E5B98BC1CA&_
+-3516
+|8428CFD6-FBD8-4235-95DF-AE890813
+-18638
+@463D8A1F-AAC1-49F
+47D-2EF5D61B98E9
+E89E6B47-98C3-4522-AF2A-8A856A1E0CC
+k*!Ljz
+Typography_HMI
+92DD9902-6FC2-4DD6-A419-7DC6D147075
+!)t!|
+Dev Test
+752242B2-1407-494D-8F4F-F3B65589D19D."H
+grid+
+-1836
+filtered
+!)Lm%xz
+2C034FC8-082B-4EAF-9D72-A26132E448E
+AA7942E3-E18F-43C2-B1AE-65B1D3221B6
+036A28D47-7744
+6-AA
+2$CA1804BC72a
+910457886_1434x166
+-564
+660384004_1290x172
+-587
+D8rotate_1964x147Q&eH
+-804!9
+(D3E16E17-7F!
+L58E-9B7C-1FA246CBB95
+D0B46B1B6-C237-435E
+(6F8623B812B
+886640052_1858x1486.
+#8^ 
+-802
+Columns
+png"
++st-0155B4B3-C283-4809-81B7-37ACBD585355
+3195x255
+=0: 
+-627qj
+@3DD4167-426E-4F9B
+11F254EB
+eric's school profile 1%
+-298
+AD99A073-BAD4-46FB-86C8-EBA530D6E1CE
+1!qA
+LQyrf
+L6347C4AC-5D66-488B-9
+(9E7DDA94D01a=
+0375B276-26A2-4C16-AF54-CA043A78E82E%L
+`6JgU
+Color Scheme-&}
+24DC9E72-D3DE-431A-8D9C-120AE06CB95&)
+58FBBB77-D66C-49C3-B00B-CB4976675331.
+19.14
+!XLh1=t
+E213F014
+`8-4F31-B923-E9D983182C5C.1X
+70B160B9-1F53-4417-B911-48F7245711C9.
+-3539!^ g
+axTP
+<{pw
+184F0E18-5882-45A5-93AE-40AEB7C1871
+XJ|*
+l8-7840-4AED-8EFD-4D4F1B41BE0
+ahLA-=B
+8.23
+Rows
+Lq>Fh
+<9027D6AA-9F86-47
+8A33-CD43D4BA3EB
+-3541%
+empt.0
+T*-3
+pngz
+w>[%
+!-Y#
+,4D677060-901
+HB3-9307-EC7D5E24EB3
+)\W,
+693DD926-83B9-4C96-8D34-8127F373E241.
+4525FB8B-74FF-472E-B174-89B6F5205D4
+i$*Q
+9MH
+eg"9A
+,1C58260F-891
+HEA-A001-EDDE9E541AAYq
+/zQ]
+D69E77E-ACDC-4861-9DB0-00C7F1B59CB1
+^!Hnext-to-private-jet.
+14E
+T55DB2494-93ED-450F-BC7
+8F754D7A* 
+_`KK
+8air_100793008_l.4
+4background-welcome-to-l
+"# regular_0
+=ZZ)
+&666699290_02_crop_3159x189
+-742
+arrow_forward
+F5642764-67CE-4602-8B82-211896E20FBE.
+FRang
+-1810q(
+mobil2U
+3D4432EA-6628-4372-B0E4-6532B96100B
+C6F87400-688A-4BEB-A206-43A4DE78320
+-1100
+,4C629EA6-ED2
+D79-8613-995CB9BC83
+15F89DF
+ ,98-4DFD-9FBE
+017C8A24y
+(637D69B7-B7
+H563-AD22-08199B1C01
+' g
+0BB783BF-05B0-4039-9974-1728FCF9CADB.
+p!"J
+"9?
+lj|~'
+E1,0CDC5A71-CA9
+ E30585C00
+-8943
+$0`@`
+EHE((30E040F1-39e
+26-BFE2
+D87B955A
+g"/st
+%h<62125189-D70E-4Be
+ 8CEAC47CD
+~7'x
+30B_
+1843!
+x P\]
+% B,
+V!aBV
+Wd"3
+Transition
+none
+*b.S
+)LUCID Motors DESIGN SYSTEM
+Review Process*
+*..S
+1vP{
+CIUY
+Design R
+Core Team / -
+Group5
+pl[!
+Technical Evalua
+Q>!G
+;deC
+PVK5-
+!Toolkit
+|DFeature Developersu
+$DFCC4DD5-AAD4-4E4A-9F9D-389A36EFE90B
+`$Daily Standup & Scrums /a
+sibilityu
+#Progress
+$Critiques 
+$BF475E72-719C-475F-BA1D-B8C46C0F77DF
+Stakeholder
+Project Manager
+aRmv
+Direc
+trategy*
+zh-HansR
+_m :
+Present
+[*
+&j 
+decimal
+]E0D*
+Transition
+none
+*b.S
+*LUCID Motors DESIGN SYSTEM
+Version Control*
+*..S
+25R5
+>>Toolkit updates are shared with the community via Teams daily.5
+iaap
+$3D0381E6-CF5F-4065-A28F-B3D1D6D1AE59
+X6#A
+!#ZN
+I``E
+8E2
+4;==!
+zh-HansF
+[*
+decimal
+]ED*
+7d"3
+Transition
+none
+*b.S
+*LUCID Motors DESIGN SYSTEM
+Version Control*
+*..S
+25R5
+8E.@
+P==!
+nx9@
+'%lA.
+Byk!
+<<Toolkit updates are sent to the community via email monthly."1
+zh-Hans
+$3D0381E6-CF5F-4065-A28F-B3D1D6D1AE59
+'[*
+decimal
+]E0D*
+7d"3
+Transition
+none
+-EXI*
+b]]5
+5LUCID Motors DESIGN SYSTEM
+Instances & Specifications*
+\B%W
+*..S
+- D
+5{bV
+bD1=!UYByk
+p`Each component has its own i
+ and sp*
+h as reference for designers
+-(developers."
+zh-HansF
+[*
+decimal
+]E0D*
+Transition
+none
+All at Onc1y(
+apple:a
+-path-
+((y)*A
+&LUCID Motors DESIGN SYSTEM
+Iconography*
+$F9D66936-64C7-4A3C-9B70-901CC1F2E9A6
+*..S
+m!v
+S43
+*Created the usage guideline on Confluence.5
+8E2
+B==
+&/#A.
+64e].
+D),A.
+b].!
+f].!
+E].!
+PtvyD
+kd==!
+PJDVP
+!/*~
+_c.P
+DY.!
+J%zJ%
+26"!%
+/6!%4
+zh-HansF"%
+"7*[*
+decimal
+]E0D*
+Transition
+none
+@,EZ
+1M2W
+D%=
+QzD9=A
+*b.>
+3EO
+&LUCID Motors DESIGN SYSTEM
+Iconography*
+$F9D66936-64C7-4A3C-9B70-901CC1F2E9A6
+*..S
+25R5
+Agz^
+S43
+mCreated a new icon library with 397 fine-tuned
+! s, conver
+them to a developer-friendly format in Figma.U
+zh-HansF
+oz,*
+[*
+decimal
+]E0D*
+Transition
+none
+All at Once
+apple:dissolv
+1M2W
+D%=P
+D9=A
+*b.>
+F!=5
+7e.
+=m!<j
+}M2%x
+a/$"
+;=Cb
+!=%BV
+'LUCID Motors DESIGN SYSTEM
+Figma Styles*
+\MPublished the new Grid )
+ in F!
+, and created guidelines on Confluence.
+*.At
+23uK
+zh-HansF
+oz,*
+qvur
+[*
+decimal
+]E0D*
+Transition
+none
+All at Onc1,
+)1\N@
+apple:dissolv
+pE2p
+pAu6p
+%TZa
+V+JD
+1M2W
+*b.>
+-E$r*
+Pixel Grid: 8
+Gutter: 24*
+_!VF
+(* )m
+Column: 6 (120 / 64)*q
+D:E5
+5 (104
+9 (i
+28 / 32
+Y.TD
+Row: 3
+29>
+^:(
+w,HC
+2]:
+ BE!O
+6c:
+U r
+i/j#
+H&*.
+ ZQ*
+l0=v
+Jz<
+_M<:
+Created the grids for HMI.5
+b*F+
+l&LUCID Motors DESIGN SYSTEM
+`+  System*
+P6=v
+zh-HansF4
+oz,*
+"#25
+[*
+decimal
+Start
+We also c
+both
+4 and mobile. T
+$foundation
+ing elements onscreen. It has features to control align
+04, order, flow,
+5(s.
+Click
+, each 
+a 8 p
+824px across all
+XRows
+1$s vary per
+Margins are slightly different
+|$dimension
+ of r
+width
+ same.
+Dunscalable because
+8izes:E
+s$fixed. *U
+{6AD
+Fd"3
+Transition
+none
+All at Onc
+apple:dissolv
+)e-M
+3+"D
+1M2W
+D%=?
+o1=
+;D9=
+*b.>
+S8pb
+;=Cb
+'LUCID Motors DESIGN SYSTEM
+Figma Styles*
+enF9
+43
+LXPublished new Text )
+ & Color
+in F!
+, and created guidelines on Confluence.">
+21u3
+zh-HansF
+oz,*4
+qvur
+[*
+decimal
+]E0D*
+_d"3
+Transition
+none
+1=2G
+D%-
+*b.>
+'LUCID Motors DESIGN SYSTEM
+Lucid UX 2.0*
+*..S
+25R5
+9(HD
+A(.f
+UX Mission: L
+Dretains specific a
+,ts of a trad
+eal physical interface and pairs those with an innovative digital form factor that
+s highly advanced 
+PLergonomic, providing
+Ptaccess to all vehicle systems."I
+$F0BC7B88-563B-4A03-AD43-16BBF0D2869E
+$89B304BC-AD59-488D-8341-1B1C3FFD70C8
+CIUY
+!= T
+Compa
+ate"
+usEFFORTLESS + INTUITIVE
+Focus on people in the car as much as the car
+Curated balance of simplicity and rich feature*
+7A] c
+Understan
+(pain-points
+CIUY
+Cogn
+8 + NATURAL
+Fric
+(& delightfu
+Awaren
+ nd adapta
+situ
+llect
+YEBEAUTIFUL + SIMPLE
+Amplify desired em%
+(e.g. serenity
+ductiv
+,excitement)*
+zh-HansF
+[*
+decimal
+gned
+be warm
+&8inviting. Expec
+, effort
+pelegant experience. The graph>'
+<California. Work
+&8 close collabor
+( throughout
+develop
+'p, our UX team identified a se
+ would!-best
+dedica
+touch
+climat
+ntrol
+i8window switches%6
+y !#craf
+Utto look beautiful, feel solid,
+still
+,vide clear t
+dback&
+Transition
+none
+ahj)
+*b.S
+(LUCID Motors DESIGN SYSTEM
+Style Library*
+c!g 
+a==!
+`, A
+`, A
+18"L
+zh-HansF
+BymjT
+decimal
+]E0D*
+Od"3
+Transition
+none
+1=2G
+AkR-
+*b.>
+3Ew
+,LUCID Motors DESIGN SYSTEM
+About the company*
+\B%~
+*..S
+1v j
+=D%#
+| Vision: At Lucid, we believe in
+dream ahead. Our relentless focus on innova
+, luxury, and sustainability moves us toward a future where you no longer have to choose between doing great things and doing the right thing.*
+giD1@
+*E2!
+zh-HansF
+[*
+decimal
+ is a
+T EV automative manufac
+quarter
+located
+$Newark. It
+one of 
+etitor
+$r Tesla. T&
+T just IPOed last year.5o
+$105F86D3-A076-4750-81F1-C395077A1666
+`d"3
+Transition
+none
+All at Onc1
+Ac%2
+apple:a
+-path>F
+(D(
+1]6g
+,SE9s!BZ
+NE1=
+B9=!
+*b.>
+(XS==!
+S33
+hReshuffled the existing color palettes to straighten out 
+.rela
+,s and remove
+>Ds not in use.*
+U,$I*
+p'LUCID Motors DESIGN SYSTEM
+Scheme*
+19"Z
+zh-HansFj
+"A85
+qvur
+[*
+decimal
+Start
+The very first one is
+. Each
+Phas its own character
+some of
+m have been given certain meanings in common. The
+s work together to make our product experience unique, shin
+Pinspiring. We regroup
+4main-component
+in White
+G(Black excep
+gold
+2$because it!),reserved for
+Hve state only which
+visual
+Click
+And w
+(named a few
+, lik
+,, previously
+neutral
+reflec
+usag1
+perly. 
+are try!u!
+erge
+similar
+toAS
+chalk
+ ,, 70% opacit%'-~
+purpos
+(consistency%
+simpli
+K,. This effor%
+ongoA
+lso)]
+ gradients
+destruct!
+button; %&
+chang
+from
+in ordI
+fyEP
+keepE;
+ stylea
+telltale
+s is-5 - But add
+Navig
+uren
+ system as
+initialM
+iz.D
+$3641A5AE-C48D-408F-B205-50053FBCCFE5
+$B88A1050-FAC0-49AB-8307-7DDE3B4FE420
+$00DAE094-E4D2-4898-B747-F0D493E7F04C
+Transition
+none
+*b.S
+*LUCID Motors DESIGN SYSTEM
+Version Control*
+*..S
+1l8.
+@%r-
+IHKey updates are logged via the Figma system automatically and manually. *q*
+zh-HansF
+[*
+decimal
+]E0D*
+7d"3
+Transition
+none
+*b.S
+(LUCID Motors DESIGN SYSTEM
+Style Library*
+o)mI
+zh-HansF
+A\Ea
+!GZ:
+3y#
+]8!Ij
+ I8>
+iw@*
+a`%<
+[*
+decimal
+]E0D*
+Transition
+none
+*b.S
+3LUCID Motors DESIGN SYSTEM
+Information Architecture*
+Created a new icon library with 397 fine-tuned 
+! s, conver
+8tthem to a developer-friendly fE;< in Figma, and c
+ usage guideline on Confluence.*
+2U!UT
+'AN 
+,_T==
+N(I*
+zh-HansF
+[*
+decimal
+  vehicle,
+Lre are three screens
+front of
+ driver
+(passenger. 5
+$B9D095B0-2A5E-4743-90EA-B91C59F9EBCF
+$17D23B29-C555-4E76-A116-405F5461FF9C
+ld"3
+Transition
+none
+All at Onc13
+)8\N@
+apple:dissolv
+.5a@
+!Eja
+1M2W
+D%=P.
+*b.>
+PF-X7
+5DY.
+*].!
+oMerged the HMI and mobile text sheets into one to make 
+0Pstyles more inclusive
+Bduniversal across products.
+_Mc:
+%LUCID Motors DESIGN SYSTEM
+Typography*
+zh-HansF4
+qvur
+[*
+decimal
+Start
+For t"
+$, we remov
+Xcolor-based states from
+ existing 
+heet
+8not in use
+Also
+_(named a few
+<( to reflect
+ir usag
+keep
+ nam
+ystem
+Lconsistent
+We also l
+Tweight, size, leading,
+kern
+M in values
+8packed each of 
+Pin Figma for designer
+TThe majority change is
+our>
+P, but we
+ve separat)
+m again
+(a temporary!>$venience r!+0 now
+Click
+/4now, as you ha
+9 title-
+, 5 sub6
+ton.N
+, 8 body6
+P!u!8)
+A`.*<
+$8D889352-0FB6-4ADD-AC66-0344ECB03082
+_d"3
+Transition
+none
+,LUCID Motors DESIGN SYSTEM
+Toolkit Framework*
+CEp=
+*..S
+Product T
+!vNr
+Ux\D
+System UI5g
+Status Bar5s
+ Notifica
+Drawe
+Menu
+Media
+.6%c
+3=cN
+Phone
+,=dN(
+Navig
+,=hN
+Mobile
+!JjQ
+Android
+,=fNZ
+iOS (m
+Z "{
+b*L#
+b)=v
+"' =
+*z#b
+&;.i
+GmAU
+Gravity
+] Q@
+&C2t
+Nb<a
+Earth
+d=uC
+Company 
+Guidelines*
+zh-HansF
+D[*
+decimal
+]E0D*
+Transition
+none
+All at Once
+Action
+apple:a
+-path
+1M2W
+D%= 
+D9=aqZ=
+*b.>
+S59
+'5!*
+-EXI*
+4LUCID Motors DESIGN SYSTEM
+Specifications (in depth)*
+\B%k
+*..S
+zh-HansF4
+[*
+decimal
+]E0D*
+7d"3
+Transition
+none
+-EXI*
+akU]!
+b]]5
+*LUCID Motors DESIGN SYSTEM
+Base Components*
+\B%L
+*..S
+0jEZ
+s==!
+t}D1=
+ JEach com
+< has its own variants per usage, priority, state and region.*
+zh-HansFP
+[*
+decimal
+]E0D*
+Kd"3
+Transition
+none
+)}(["
+*b.S
+"LUCID Motors DESIGN SYSTEM
+Process*
+\B%x
+*..S
+CIUY
+TBbT
+Define
+8Culture / Responsibility
+Visual Language / Best Practice*
+$CAD99E14-6BC9-4BFC-9E84-847176303AE7
+Carving the founda
+HStyles / Componentsu
+Creat
+exci
+mom2
+t.Grid & Layout
+Iconography
+(Color
+$D64924B1-1FAD-4928-AB4D-53520B54A173
+$5846E3EE-9155-450D-A9D2-AC403AAF961A
+Base
+0site
+TemplateEB
+Communic
+0 / Team Struc
+ Get
+agree
+0 and approval&W
+/Edui
+labore
+Engag%
+Feedback
+$96990C28-D146-4208-9123-B4697379D882N
+A4^f
+$Core 
+Champions
+StakeholdersE):o
+_-b:
+zh-HansF
+Maintai
+$"Asset Rep
+Pory / Version Control
+Keeping good record
+Figma
+Confluenc
+,+Monthly upd
+@Tool-based
+Manualm
+$8A48DA8A-40ED-486D-947D-23C409A9703DFy
+"(3[*
+&+3
+decimal
+]E0D*
+Transition
+none
+*b.>
+%LUCID Motors DESIGN SYSTEM
+Challenges*
+Designers create feature-based styles and components on their own and host the elem
+locally.
+The development process is ticket-driven 
+eLbug-oriented.
+Frequ
+daily meetings for discussing about a simple behavior since
+xre was no definition before.
+a/!F
+"!\
+!Y!p}*
+eQa`
+$EEA8270E-BC7D-4EA2-B32A-02DBE734BAA4
+$63C2C480-06F8-4E5C-9141-6A8FB84AF92B
+*..S
+zh-HansF
+[*
+decimal
+Lucid 
+ System
+Dan inner core func
+ality supports all of the infotainm
+H I started to craft
+0, I found tha
+&4re are three c"
+  in front
+me:5
+$DECD31A1-901C-45FD-BF04-7D9EF3733827
+Transition
+none
+All at Once
+apple:dissolve character
+I$Zc
+@)!9
+1=2G
+D%-0
+!-9
+*b.>
+Lucid Motors Design System
+LucidR
+F is a set of shared styles and components that helps refine the quality
+>xthe luxury EV automotive produc
+$ by making
+experience more consistent, predictable
+\accessible.
+Role & Resp
+34bilities
+Build
+@ from scratch. (P
+, Owner)
+Lead
+d(mentor Sr. )@
+c0UI / UX.*?
+zh-Hans
+[*
+decimal
+]E0D*
++d"3
+Transition
+none
+@|^TD
+*..S
+CE:=v
+Nathan Curtis5
+Value today, impact tomorrow.5
+X!<
+[*
+decimal
+Design systems are for every organiza
+\ and product. A robust d.@
+H can help us create
+s faster
+GXat lower cost, with bet
+,experiences 
+r,outcomes. It
+L,vides immedi
+\, while setting a founda
+ strategic
+0in the future
+$18EBBDAD-D79C-46AA-9079-9B6EE876F720
+Transition
+none
+-EhX*
+'LUCID Motors DESIGN SYSTEM
+Measurement
+*..S
+:$I*
+%f-v
+Consistency
+m across products, features, platforms at the atom & module level. All releases and updates must be synced up a
+lHfunctional teams.*
+$C4820A79-8584-4863-9521-F06472D56B46
+$A0F61EBF-D160-4546-A7EC-37F00F53F161
+43(=
+Effici
+{hAccelerated design, develop
+,, and manage
+organiza
+<@. Technical evalu
+$ is faster
+OXdecisions are easier to
+madeBx
+FCE2E595-DB5B-4897-A071-D4987EF31AB
+Collabore
+ among
+[(stakeholder
+0more unified;
+people
+satis
+ with
+result
+Heach other better. >
+$D4AEF4EE-614F-425C-BE7B-AAE3D8E05162
+$1B065E7C-06E6-4BF5-A76D-7F7239499B03
+Coverage
+s from
+part
+, who work on
+vehicle
+$learn abou
+$DE88A106-22F6-4296-848F-F819D08A049F
+$519E5E21-E3AF-4E0F-B9EC-05598F35F837
+Accura&
+pixel-
+ perfe
+ asse
+infotain
+$system
+ quality2
+$BEE68117-0456-4CA8-84EF-221F7E9497E6
+$93AA448C-7CCF-4AF5-99EB-58975A5440BD
+Refl
+, mis
+, goal
+dustry,
+compan
+brand
+(individuals
+piec
+$0E1E9478-262B-45D6-BF6
+4354323D8CA
+T zT 
+Impl
+  (Toolkit
+L, HMI, Mobile, Web*
+zh-Hans
+UX / UIQE
+(New D
+Workflow, Prototyping)   
+Frontend *
+d(Centralized, Streamlined)>
+6Aa
+fHandoff*
+ aligned
+(processes
+4is increased &R
+$662860AA-99
+L18B-9B5F-CC904E9F1EC
+ado.
+High usage 
+ time
+Inter
+& Ex
+<aReducing error 
+usabi
+issues
+$ improved
+code in
+T">6
+$3EE20C07-E49F-47F1-A965-6487078A41C9
+ & UX
+$ssurance
+Human ce
+.2"Y
+,F".
+b*^$
+@L1A1
+7"S,
+?!<
+bmtN
+TZ*1
+[*
+Y)mal
+]E0D*
+7d"3
+Transition
+none
+-EXI*
+zh-HansF
+a\0
+'LUCID Motors DESIGN SYSTEM
+Measurement
+m!v
+Increased coverage for Lucid Air (car) Infotainment System design from 25% to 70%.
+Sxinternal feedback response rate
+80%.
+Estimated annual saving is $2 million.**
+}M3!`
+H~r
+^A3FH
+H!#Z
+^A3FH
+SUm 
+[*
+decimal
+]E0D*
+Transition
+none
+*b.>
+#LUCID Motors DESIGN SYSTEM
+Outlook
+8Ce^
+\B%}
+*..S
+25R5
+zh-HansN
+437f&
+More scientific methods to measure the success.
+Better satisfaction rate from the team.
+Cohesive user experience across products.
+W[*
+decimal
+]E0n*
+H<(Put yourself in
+Lother person's shoes
+Fd"3
+Transition
+none
+All at Onc
+apple:a
+-path-1
+/@-1h
+*b.S
+-E$I*
+.LUCID Motors DESIGN SYSTEM
+Component Guideline*
+\B%P
+*..S
+m!v
+S43
+Each cuV4has its own gumb
+, including styles, usage, visual specifica
+s, behaviors, variants, accessibility, and best practices.*
+zh-HansNz
+8EU
+Q==!
+0R!=
+c4*w
+Z].!
++].!
+[*
+decimal
+]E0D*
+Transition
+none
+1M2W
+D%= 
+*b.>
+3EO
+&LUCID Motors DESIGN SYSTEM
+Iconography*
+$F9D66936-64C7-4A3C-9B70-901CC1F2E9A6
+25R5
+Agz^
+S43
+mCreated a new icon library with 397 fine-tuned
+! s, conver
+them to a developer-friendly format in Figma.U
+zh-HansF
+oz,*
+[*
+decimal
+Start
+We reshuffl
+ll of
+ from a text-heavy and feature-driven version
+9-onl
++$size-based
+'P; 
+Click
+meanwhile, w
+ draw most6
+,to make sure
+visual
+sistency
+8the perspective
+, stroke
+$rner radiu
+(are flatten
+a vector
+shape
+order
+$y can be u!
+ly by&/
+buil
+@80px master sheet
+$ designers
+%o(export one-
+in%'
+Tof SVG. The UI toolkit
+0@ team will mainta
+SVG"
+!+(consumption)
+p,should start
+there ra
+ tha
+Figm
+ file)
+$provide 7 
+0s as instance
+fo.(
+also
+V4usage guidelin.I
+( people how
+ contribut
+$6426664B-97F1-40D6-BF49-489636491790
+Transition
+none
+All at Onc
+apple:fade and mov
+%o>_
+%LUCID DESIGN SYSTEM
+Dynamic Component*
+\B%wylz
+*..S
+zh-HansF
+Cy%j
+TA0. 
+ Switch_Parent &i
+a-*@
+9%}=S
+*g%t
+"Eq=
+9%}=S^
+Child&b
+[*
+decimal
+Start
+The next major topic is component. 
+ls are a great way to design 
+Fdevelop the UI using smaller, reusable pieces with better consistency. "
+$s provide 
+llabora
+weenJ
+(ment, allow
+your
+language
+`evolve over time.
+Click
+Lucid
+$Experience!
+built on!.
+: based
+site
+s,%:!CHature templates.*.
+$9915834B-0D0F-402C-9C4E-DCC78BEF0EA3
+$67F2933F-F285-4FD8-8AB9-344B5B925519
+Sd"3
+Transition
+none
+,LUCID Motors DESIGN SYSTEM
+Component Library*
+*..S
+!vum 
+zh-HansN
+Atoms5
+6Shapes
+Touch Targets
+Design Tokens
+Icon Wrappers
+$70583BB2-1040-4545-A3DA-3756D99E16F3
+_M+:
+Molecule
+Buttons
+Switches
+Lists
+$D3C07146-9167-4771-9781-C62622624226N
+L*Product Toolkit
+System UIN
+$9AC1D49D-6e
+PBB1-A2FC-B4257E4195E8F
+a}v-\
+'8CY
+^-\:?
+!P}v
+aqjv
+Sjo!
++.m!F
+oz,D&[
+![*
+decimal
+Start
+The next major topic is c
+Ts are a great way to d
+Oand develop the UI using smaller, reusable pieces with better consistency. Compo
+$s provide 
+llabora
+weenJ
+(ment, allow
+your
+language
+\evolve over time.
+Click
+Lucid
+$Experience!
+built on!.
+: based
+site
+q#Pature templates.*.
+$9915834B-0D0F-402C-9C4E-DCC78BEF0EA3
+$67F2933F-F285-4FD8-8AB9-344B5B925519
+Ld"3
+Transition
+none
+All at Onc
+apple:dissolv
+)*2o
+1=2G
+D%-X
+*b.>
+)MXI*
+u([*
+decimal
+]E0D*
+/d"2
+Transition
+none
+Title & Photo
+Media
+Text
+Author and Date
+Presenta!F
+Subt!
+192C
+D9+A
+*b.>
+E'T
+)M]*
+ek*1
+a1qp<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(q
+8-{
++d"3
+Transition
+none
+Title & Photo Alt
+Media
+Slide Subt
+\D9+A
+*b.>
+EEZ
+E'T
+DA|!9
+ y5I
+<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(Q
++d"3
+Transition
+none
+Title & Bullets
+Text
+Slide 
+ text
+Subt
+*b.S
+)MHV*
+:C1D
+bqi<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(q
+'d"3
+Transition
+none
+Bullets
+Slide b
+ text
+TitleE
+*b.S
+NBody Level One
+Two2
+hre2 
+Four.!
+ Five*
+Q2$$
+U2$V*
+Dag
+W-{
+/d"3
+Transition
+none
+Title, Bullets & Photo
+Media
+Text
+Slide 
+ text
+Subt!
+-EXI*
+NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(Q
+I=E%T
+=\=+
+'d"3
+Transition
+none
+$ Title
+Slide Subt
+*b.S
+)MX*
+D![)
+<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(Q
+WCu}
+bM2R
+fM1u
++d"3
+Transition
+none
+Title Only
+Text
+Slide bullet text
+Subt
+*b.S
+)MHV*
+:C1D
+Zqi<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(q
+@^C
++d"3
+Transition
+none
+Agenda
+Text
+$ Topics
+itle
+Subt
+*b.S
+)MW*
+:C1E
+a1qj<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(q
+'d"3
+Transition
+none
+Statement
+Slide TitleE
+*b.S
+NBody Level One
+Two2
+hre2 
+Four.!
+ Five*
+U2V*
+W-{
++d"3
+Transition
+none
+Big Fact
+Text
+100%
+ informa!
+Slide TitleE
+*b.S
+NBody Level One
+Two2
+hre2 
+Four.!
+ Five*
+CE{
+A06-
+MMA-
+U+I*
+W-{
++d"3
+Transition
+none
+Quote
+Text
+Attribu
+Notable 
+Slide TitleC
+0W?C
+NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(Q
+UZXD
+3d"3
+Transition
+none
+PRPhoto - 3 Up
+Media-2
+Slide bullet text
+Title>%
+D)+L
+C9+A
+*b.>
+A-oD
+9U]=+!
+)MHV*
+<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(Q
+#$-
++d"3
+Transition
+none
+Photo
+Media
+Slide bullet text
+Title>
+D9+A_Z+
+*b.>
+E'T
+)MHV*
+<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(Q
+'d"3
+Transition
+none
+Blank
+Slide Title
+0bullet textE
+*b.S
+)MHV*
+C1I
+<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(Q
+Transition
+none
+Dark
+BR%A
+9F4HB
+*..S
+*b.S
+Title Textu3
+@5D2
+NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+Transition
+none
+Blank Dark
+*b.S
+Title Text*
+oz,D
+*exaT1
+<NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(Q
++d"3
+Transition
+none
+Title
+Text
+Presenta!
+Author and Date
+Subt
+=viD
+-EI*
+aLmw@
+NBody Level One
+Two2
+hre2 
+Four.!
+Five*
+?2(q
+@)Q2
+`(@B
+|?%`
+j<>5
