@@ -7506,3 +7506,16 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
   object-fit: contain !important;
   object-position: center center;
 }
+
+/* 20260616 homepage Lucid hover color restore */
+.home-page .selected-work-grid .work-tile:nth-child(3) .project-cover-media {
+  filter: grayscale(1) contrast(1.04);
+  transition: filter 260ms ease, transform 260ms ease;
+}
+
+@media (hover: hover) {
+  .home-page .selected-work-grid .work-tile:nth-child(3):hover .project-cover-media,
+  .home-page .selected-work-grid .work-tile:nth-child(3):focus-visible .project-cover-media {
+    filter: grayscale(0) contrast(1);
+  }
+}
