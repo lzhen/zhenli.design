@@ -7563,13 +7563,3 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
   transform: scale(1.46) translateY(-4%) !important;
   clip-path: none !important;
 }
-
-/* 20260616 work page project titles use case label style */
-.work-page .case-copy h1 {
-  font-family: var(--font-label) !important;
-  font-size: 24px !important;
-  font-weight: 700 !important;
-  letter-spacing: 2px !important;
-  line-height: 1.4 !important;
-  text-transform: uppercase !important;
-}
