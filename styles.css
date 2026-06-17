@@ -7679,3 +7679,25 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
+
+/* 20260616 place work proof points under tags */
+.work-page .case-copy .case-proof-points {
+  grid-column: 2 !important;
+  width: 100% !important;
+  max-width: 680px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.work-page .case-copy .case-proof-points div {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
+.work-page .case-copy .case-proof-points dt {
+  margin: 0 0 10px 0 !important;
+}
+
+.work-page .case-copy .case-proof-points dd {
+  margin: 0 !important;
+}
