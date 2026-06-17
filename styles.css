@@ -7716,3 +7716,16 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
   grid-column: auto !important;
   margin-left: 0 !important;
 }
+
+.work-page .public-context strong {
+  display: block !important;
+  margin: 0 0 10px 0 !important;
+  color: var(--ink) !important;
+  font-family: var(--font-label) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+}
