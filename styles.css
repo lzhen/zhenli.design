@@ -7701,3 +7701,18 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
 .work-page .case-copy .case-proof-points dd {
   margin: 0 !important;
 }
+
+/* 20260616 remove inner middle column on work page */
+.work-page .case-copy {
+  display: block !important;
+}
+
+.work-page .case-copy .eyebrow,
+.work-page .case-copy h1,
+.work-page .case-copy .case-tags,
+.work-page .case-copy .case-proof-points,
+.work-page .case-copy .public-context,
+.work-page .case-copy .actions {
+  grid-column: auto !important;
+  margin-left: 0 !important;
+}
