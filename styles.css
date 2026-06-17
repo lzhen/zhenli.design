@@ -7660,3 +7660,22 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
   margin: 0 !important;
   text-align: left !important;
 }
+
+/* 20260616 work copy left alignment */
+.work-page .case-copy,
+.work-page .case-copy .eyebrow,
+.work-page .case-copy h1,
+.work-page .case-proof-points,
+.work-page .case-proof-points div,
+.work-page .case-proof-points dt,
+.work-page .case-proof-points dd {
+  text-align: left !important;
+  justify-items: start !important;
+  align-items: start !important;
+}
+
+.work-page .case-copy h1,
+.work-page .case-proof-points {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
