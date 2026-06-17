@@ -7579,3 +7579,15 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
   font-size: 20px !important;
   line-height: 1.35 !important;
 }
+
+/* 20260616 work page project title compact override */
+.work-page .case-teaser > div > h1,
+.work-page .case-copy h1 {
+  font-family: var(--font-label) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+  max-width: 720px !important;
+}
