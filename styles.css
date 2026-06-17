@@ -7613,3 +7613,25 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
     row-gap: 8px !important;
   }
 }
+
+/* 20260616 restore work proof two-column rhythm */
+.work-page .case-proof-points div {
+  display: grid !important;
+  grid-template-columns: 150px minmax(0, 1fr) !important;
+  column-gap: 34px !important;
+  row-gap: 0 !important;
+  align-items: start !important;
+}
+
+.work-page .case-proof-points dt,
+.work-page .case-proof-points dd {
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .work-page .case-proof-points div {
+    grid-template-columns: 1fr !important;
+    row-gap: 8px !important;
+  }
+}
