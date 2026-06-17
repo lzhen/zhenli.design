@@ -7573,3 +7573,9 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
   line-height: 1.4 !important;
   text-transform: uppercase !important;
 }
+
+/* 20260616 work page header smaller */
+.work-page .case-copy h1 {
+  font-size: 20px !important;
+  line-height: 1.35 !important;
+}
