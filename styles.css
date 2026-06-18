@@ -7776,3 +7776,8 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
 .work-page .case-copy .public-context {
   margin-top: 32px !important;
 }
+
+/* 20260618 add space above work CTAs */
+.work-page .case-copy .actions {
+  margin-top: 32px !important;
+}
