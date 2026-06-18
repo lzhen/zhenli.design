@@ -7761,3 +7761,8 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
   margin-top: 0 !important;
   margin-bottom: 18px !important;
 }
+
+/* 20260618 add breathing room below work tags */
+.work-page .case-copy .case-tags {
+  margin-bottom: 32px !important;
+}
