@@ -7741,3 +7741,12 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
 .work-page .case-teaser > div > h1 {
   font-weight: 900 !important;
 }
+
+/* 20260618 tighten work eyebrow to title spacing */
+.work-page .case-copy .eyebrow {
+  margin-bottom: 18px !important;
+}
+
+.work-page .case-copy h1 {
+  margin-top: 0 !important;
+}
