@@ -7735,3 +7735,9 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
 .work-page .case-teaser > div > h1 {
   font-weight: 900 !important;
 }
+
+/* 20260618 work case titles stronger */
+.work-page .case-copy h1,
+.work-page .case-teaser > div > h1 {
+  font-weight: 900 !important;
+}
