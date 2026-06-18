@@ -7766,3 +7766,8 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
 .work-page .case-copy .case-tags {
   margin-bottom: 32px !important;
 }
+
+/* 20260618 work public source spacing */
+.work-page .case-copy .public-context {
+  margin-top: 48px !important;
+}
