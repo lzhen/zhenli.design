@@ -7868,3 +7868,16 @@ body.work-page .case-copy .public-context p {
 .work-page .case-copy .public-context a::after {
   content: none !important;
 }
+
+/* 20260619 source link underline, inline arrow */
+.work-page .case-copy .public-context a {
+  color: #000000 !important;
+  text-decoration: underline !important;
+  text-decoration-style: solid !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+}
+
+.work-page .case-copy .public-context a::after {
+  content: none !important;
+}
