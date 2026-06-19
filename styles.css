@@ -7810,3 +7810,13 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
 .work-page .case-copy .case-proof-points dd {
   font-size: 12.5px !important;
 }
+
+/* 20260619 force work body copy consistency */
+body.work-page .case-copy .case-proof-points dd,
+body.work-page .case-copy .public-context p {
+  font-family: var(--font-body) !important;
+  font-size: 12.5px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  color: #000000 !important;
+}
