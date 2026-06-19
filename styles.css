@@ -7820,3 +7820,25 @@ body.work-page .case-copy .public-context p {
   line-height: 1.55 !important;
   color: #000000 !important;
 }
+
+/* 20260619 public source external link affordance */
+.work-page .case-copy .public-context a {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  gap: 4px !important;
+  color: #000000 !important;
+  text-decoration: underline !important;
+  text-decoration-style: solid !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+}
+
+.work-page .case-copy .public-context a::after {
+  content: "↗";
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-1px);
+}
