@@ -7786,3 +7786,21 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
 .work-page .case-copy .public-context {
   margin-top: 24px !important;
 }
+
+/* 20260618 normalize public source rhythm and color */
+.work-page .case-copy .case-proof-points {
+  margin-bottom: 0 !important;
+}
+
+.work-page .case-copy .public-context {
+  margin-top: 24px !important;
+  padding-top: 0 !important;
+  opacity: 1 !important;
+}
+
+.work-page .case-copy .public-context,
+.work-page .case-copy .public-context p,
+.work-page .case-copy .public-context strong,
+.work-page .case-copy .public-context a {
+  color: #000000 !important;
+}
