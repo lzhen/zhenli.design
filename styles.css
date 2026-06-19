@@ -7804,3 +7804,9 @@ body.dls-case-theme.editorial-site .dls-video-chapters p {
 .work-page .case-copy .public-context a {
   color: #000000 !important;
 }
+
+/* 20260619 align work proof body size with public source */
+.work-page .case-proof-points dd,
+.work-page .case-copy .case-proof-points dd {
+  font-size: 12.5px !important;
+}
