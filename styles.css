@@ -8505,3 +8505,25 @@ body.work-page .case-copy .public-context p {
     display: none !important;
   }
 }
+
+/* 20260620 resume mobile: show sidebar before main content */
+@media (max-width: 899px) {
+  .resume-layout,
+  .resume-shell,
+  .resume-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .resume-sidebar,
+  .resume-aside,
+  aside {
+    display: block !important;
+    order: -1 !important;
+  }
+
+  .resume-main,
+  main {
+    order: 1 !important;
+  }
+}
