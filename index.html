@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="favicon-joined.ico" />
     <link rel="mask-icon" href="assets/safari-pinned-tab-joined.svg" color="#000000" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon-joined.png" />
-    <link rel="stylesheet" href="styles.css?v=20260619-mobile-external-right-arrow-1180" />
+    <link rel="stylesheet" href="styles.css?v=20260619-mobile-video-autoplay" />
     <script src="assets/logo-loader.js?v=20260606-sequenced-metrics" defer></script>
     <script src="assets/greeting-motion.js?v=20260610-title-hover-restored" defer></script>
     <script src="assets/hero-ripple.js?v=20260610-ripple-checkpoint" defer></script>
@@ -84,7 +84,7 @@
                   autoplay
                   loop
                   muted
-                  playsinline
+                  playsinline webkit-playsinline
                   preload="auto"
                   poster="assets/meta-business-assistant-video-poster.png"
                   aria-label="Public Meta Business Assistant video showing AI support for advertisers"
@@ -111,7 +111,7 @@
           <article class="work-tile">
             <a class="work-tile-main-link" href="https://www.facebook.com/business/ads/omnichannel-ads" target="_blank" rel="noreferrer" aria-label="Open Meta Omnichannel Ads project">
               <span class="work-tile-media omni-composite-cover">
-                <video class="omni-bg-video" autoplay loop muted playsinline preload="auto" aria-hidden="true">
+                <video class="omni-bg-video" autoplay loop muted playsinline webkit-playsinline preload="auto" aria-hidden="true">
                   <source src="assets/omnichannel-bg.mp4" type="video/mp4" />
                 </video>
                 <img
@@ -139,7 +139,7 @@
           <article class="work-tile">
             <a class="work-tile-main-link" href="/case-lucid-design-system/" aria-label="Open Lucid Motors HMI Design System project">
               <span class="work-tile-media lucid-video-cover">
-                <video class="project-cover-media" autoplay loop muted playsinline preload="auto"><source src="assets/lucidair.mp4" type="video/mp4"></video>
+                <video class="project-cover-media" autoplay loop muted playsinline webkit-playsinline preload="auto"><source src="assets/lucidair.mp4" type="video/mp4"></video>
               </span>
             </a>
             <span class="work-tile-heading-row">
@@ -160,7 +160,7 @@
           <article class="work-tile">
             <a class="work-tile-main-link" href="/case-dls-magician/" aria-label="Open SLB Design System + AI Innovation project">
               <span class="work-tile-media slb-video-cover">
-                <video class="work-tile-video" autoplay loop muted playsinline preload="auto" aria-label="SLB Software Technology and Innovation Center animation"><source src="assets/slb.mp4" type="video/mp4" /></video>
+                <video class="work-tile-video" autoplay loop muted playsinline webkit-playsinline preload="auto" aria-label="SLB Software Technology and Innovation Center animation"><source src="assets/slb.mp4" type="video/mp4" /></video>
               </span>
             </a>
             <span class="work-tile-heading-row">
@@ -241,5 +241,41 @@
       </span>
     </footer>
     <script src="assets/site-scroll-top.js"></script>
+
+<script>
+  (function () {
+    function startHomeCoverVideos() {
+      document.querySelectorAll(".home-page .work-tile-media video").forEach(function (video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+        video.setAttribute("muted", "");
+        video.setAttribute("playsinline", "");
+        video.setAttribute("webkit-playsinline", "");
+        video.removeAttribute("controls");
+
+        var play = function () {
+          var promise = video.play();
+          if (promise && promise.catch) promise.catch(function () {});
+        };
+
+        if (video.readyState >= 2) play();
+        else video.addEventListener("canplay", play, { once: true });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", startHomeCoverVideos);
+    } else {
+      startHomeCoverVideos();
+    }
+
+    window.addEventListener("pageshow", startHomeCoverVideos);
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) startHomeCoverVideos();
+    });
+  })();
+</script>
+
 </body>
 </html>

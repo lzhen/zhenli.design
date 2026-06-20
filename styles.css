@@ -7952,3 +7952,16 @@ body.work-page .case-copy .public-context p {
     transform: translateY(-1px) !important;
   }
 }
+
+/* 20260619 mobile: keep homepage covers as autoplay videos */
+@media (max-width: 1180px) {
+  .home-page .work-tile-media video {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .home-page .work-tile-media .mobile-cover-fallback {
+    display: none !important;
+  }
+}
