@@ -7903,25 +7903,3 @@ body.work-page .case-copy .public-context p {
     margin-top: 0 !important;
   }
 }
-
-/* 20260619 hide resume identity block once layout becomes single column */
-@media (max-width: 1180px) {
-  .resume-page .resume-right .resume-logo,
-  .resume-page .resume-right .resume-identity,
-  .resume-page .resume-right .identity-contact {
-    display: none !important;
-  }
-
-  .resume-page .resume-right > .rule {
-    display: none !important;
-  }
-
-  .resume-page .resume-right {
-    padding-top: 0 !important;
-    border-top: 0 !important;
-  }
-
-  .resume-page .resume-right .sidebar-block:first-of-type {
-    margin-top: 0 !important;
-  }
-}
