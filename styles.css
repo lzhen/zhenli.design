@@ -8241,3 +8241,43 @@ body.work-page .case-copy .public-context p {
     transform-origin: center center !important;
   }
 }
+
+/* 20260619 final: remove project cover frame and force mobile video display */
+.home-page .work-tile-media {
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.home-page .work-tile-media video,
+.home-page .work-tile-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  vertical-align: top !important;
+}
+
+@media (max-width: 1180px) {
+  .home-page .work-tile-media {
+    outline: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    line-height: 0 !important;
+  }
+
+  .home-page .work-tile-media video {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .home-page .mobile-animated-cover {
+    display: none !important;
+  }
+}
