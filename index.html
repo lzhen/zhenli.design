@@ -241,30 +241,5 @@
       </span>
     </footer>
     <script src="assets/site-scroll-top.js"></script>
-
-<script>
-  (function () {
-    function playProjectVideos() {
-      document
-        .querySelectorAll('.home-page .work-tile video')
-        .forEach(function (video) {
-          video.muted = true;
-          video.setAttribute('muted', '');
-          video.setAttribute('playsinline', '');
-          video.setAttribute('webkit-playsinline', '');
-          var playPromise = video.play();
-          if (playPromise && playPromise.catch) {
-            playPromise.catch(function () {});
-          }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', playProjectVideos);
-    window.addEventListener('pageshow', playProjectVideos);
-    window.addEventListener('scroll', playProjectVideos, { passive: true });
-    window.addEventListener('touchstart', playProjectVideos, { passive: true, once: true });
-  })();
-</script>
-
 </body>
 </html>
