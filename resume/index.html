@@ -291,5 +291,49 @@
   window.addEventListener("resize", moveSidebarFirst);
 })();
 </script>
+<script id="hide-resume-identity-single-column">
+(function () {
+  function hideIdentityCard() {
+    var singleColumn = window.matchMedia("(max-width: 1180px)").matches;
+    var nodes = Array.from(document.querySelectorAll("body *"));
+
+    nodes.forEach(function (el) {
+      el.style.removeProperty("display");
+      el.style.removeProperty("height");
+      el.style.removeProperty("overflow");
+    });
+
+    if (!singleColumn) return;
+
+    var matches = nodes.filter(function (el) {
+      var text = (el.textContent || "").replace(/\s+/g, " ").trim();
+      return text.includes("ZHEN LI") &&
+        text.includes("lizhen02.com") &&
+        text.includes("Product design leader") &&
+        !text.includes("SKILLS") &&
+        !text.includes("WORK EXPERIENCE");
+    });
+
+    matches.sort(function (a, b) {
+      return a.getBoundingClientRect().height - b.getBoundingClientRect().height;
+    });
+
+    var card = matches.find(function (el) {
+      var h = el.getBoundingClientRect().height;
+      return h > 120 && h < 700;
+    }) || matches[0];
+
+    if (card) {
+      card.style.setProperty("display", "none", "important");
+      card.style.setProperty("height", "0", "important");
+      card.style.setProperty("overflow", "hidden", "important");
+    }
+  }
+
+  hideIdentityCard();
+  window.addEventListener("load", hideIdentityCard);
+  window.addEventListener("resize", hideIdentityCard);
+})();
+</script>
 </body>
 </html>
