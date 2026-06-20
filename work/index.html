@@ -15,6 +15,38 @@
     <link rel="stylesheet" href="/work-mobile.css?v=20260619-work-mobile-hide-media" />
     <script src="assets/logo-loader.js?v=20260606-moon-landing" defer></script>
     <script src="assets/mono-motion.js?v=20260610-mono-motion" defer></script>
+  
+    <style id="work-mobile-hide-media">
+      @media (max-width: 1180px) {
+        body.work-page .work-editorial figure,
+        body.work-page .work-editorial .case-visual,
+        body.work-page .work-editorial .media-visual,
+        body.work-page .work-editorial video,
+        body.work-page .work-editorial img.mobile-animated-cover,
+        body.work-page .work-editorial img.omni-phone-gif {
+          display: none !important;
+          visibility: hidden !important;
+          height: 0 !important;
+          min-height: 0 !important;
+          max-height: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+        }
+
+        body.work-page .work-editorial .case-study,
+        body.work-page .work-editorial .case-study:first-child {
+          display: block !important;
+          grid-template-columns: 1fr !important;
+          gap: 0 !important;
+        }
+
+        body.work-page .case-copy {
+          max-width: 100% !important;
+        }
+      }
+    </style>
+
   </head>
   <body class="work-page editorial-site">
     <header class="site-header">
