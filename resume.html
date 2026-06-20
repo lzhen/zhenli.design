@@ -28,5 +28,25 @@
   window.addEventListener("resize", hideMobileResumeIntro);
 })();
 </script>
+<script>
+(function () {
+  function hideMobileResumeIntro() {
+    if (!window.matchMedia("(max-width: 899px)").matches) return;
+    document.querySelectorAll("section, aside, div").forEach(function (el) {
+      var text = (el.textContent || "").replace(/\s+/g, " ").trim();
+      if (
+        text.includes("ZHEN LI") &&
+        text.includes("lizhen02.com") &&
+        text.includes("Product design leader") &&
+        el.offsetHeight < 700
+      ) {
+        el.style.display = "none";
+      }
+    });
+  }
+  hideMobileResumeIntro();
+  window.addEventListener("resize", hideMobileResumeIntro);
+})();
+</script>
 </body>
 </html>
