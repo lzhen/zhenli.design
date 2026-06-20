@@ -7881,3 +7881,25 @@ body.work-page .case-copy .public-context p {
 .work-page .case-copy .public-context a::after {
   content: none !important;
 }
+
+/* 20260619 hide resume identity block on mobile */
+@media (max-width: 760px) {
+  .resume-page .resume-right .resume-logo,
+  .resume-page .resume-right .resume-identity,
+  .resume-page .resume-right .identity-contact {
+    display: none !important;
+  }
+
+  .resume-page .resume-right > .rule {
+    display: none !important;
+  }
+
+  .resume-page .resume-right {
+    padding-top: 0 !important;
+    border-top: 0 !important;
+  }
+
+  .resume-page .resume-right .sidebar-block:first-of-type {
+    margin-top: 0 !important;
+  }
+}
