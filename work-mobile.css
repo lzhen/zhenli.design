@@ -1,0 +1,20 @@
+/* Mobile / WeChat: hide media covers on Work page to avoid video playback overlays */
+@media (max-width: 1180px) {
+  .work-page .work-editorial .case-visual,
+  .work-page .work-editorial .case-visual.media-visual,
+  .work-page .work-editorial video,
+  .work-page .work-editorial .mobile-animated-cover,
+  .work-page .work-editorial .omni-phone-gif {
+    display: none !important;
+  }
+
+  .work-page .work-editorial .case-study,
+  .work-page .work-editorial .case-study:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .work-page .case-copy {
+    max-width: 100% !important;
+  }
+}
