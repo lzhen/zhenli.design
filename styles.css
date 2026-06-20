@@ -8026,3 +8026,27 @@ body.work-page .case-copy .public-context p {
   stroke-linecap: square;
   stroke-linejoin: miter;
 }
+
+/* 20260619 external-link icon as image for iOS/WeChat reliability */
+.home-page .work-tile-cta-external {
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+
+.home-page .work-tile-cta-external::before,
+.home-page .work-tile-cta-external::after {
+  content: none !important;
+  display: none !important;
+}
+
+.home-page .work-tile-cta-external .external-arrow-svg,
+.home-page .work-tile-cta-external .external-arrow-shape {
+  display: none !important;
+}
+
+.home-page .work-tile-cta-external .external-arrow-img {
+  display: block !important;
+  width: 15px !important;
+  height: 15px !important;
+  object-fit: contain !important;
+}
