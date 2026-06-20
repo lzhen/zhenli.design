@@ -8001,3 +8001,28 @@ body.work-page .case-copy .public-context p {
   transform: rotate(-45deg);
   transform-origin: center;
 }
+
+/* 20260619 SVG external-link arrow */
+.home-page .work-tile-cta-external {
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+
+.home-page .work-tile-cta-external .external-arrow-shape {
+  display: none !important;
+}
+
+.home-page .work-tile-cta-external .external-arrow-svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+  overflow: visible;
+}
+
+.home-page .work-tile-cta-external .external-arrow-svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
