@@ -8579,3 +8579,12 @@ body.work-page .case-copy .public-context p {
     order: 2 !important;
   }
 }
+
+/* 20260620 hide resume identity/profile card when resume becomes single column */
+@media (max-width: 1180px) {
+  .resume-sidebar > :first-child,
+  .resume-aside > :first-child,
+  aside > :first-child {
+    display: none !important;
+  }
+}
