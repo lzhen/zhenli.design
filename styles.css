@@ -7881,3 +7881,41 @@ body.work-page .case-copy .public-context p {
 .work-page .case-copy .public-context a::after {
   content: none !important;
 }
+
+/* 20260619 mobile: make external CTAs match internal project arrows */
+@media (max-width: 760px) {
+  .home-page .work-tile-cta-external {
+    position: relative !important;
+    display: inline-flex !important;
+    flex: 0 0 18px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin-top: -1px !important;
+    color: var(--ink) !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    transform: none !important;
+  }
+
+  .home-page .work-tile-cta-external::before {
+    content: "→" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 18px !important;
+    height: 18px !important;
+    color: var(--ink) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .home-page .work-tile:hover .work-tile-cta-external,
+  .home-page .work-tile:focus-visible .work-tile-cta-external {
+    transform: none !important;
+  }
+}
