@@ -8404,3 +8404,55 @@ body.work-page .case-copy .public-context p {
   object-fit: contain !important;
   z-index: 2 !important;
 }
+
+/* 20260619 hard reset omnichannel phone overlay */
+.home-page .work-tile-media img.omni-phone-gif,
+.home-page img.omni-phone-gif {
+  position: absolute !important;
+  inset: auto !important;
+  left: 5% !important;
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+
+  width: 27% !important;
+  min-width: 0 !important;
+  max-width: 170px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: 92% !important;
+
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
+
+/* 20260619 hard reset omnichannel phone overlay */
+.home-page .work-tile-media img.omni-phone-gif,
+.home-page img.omni-phone-gif {
+  position: absolute !important;
+  inset: auto !important;
+  left: 5% !important;
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+
+  width: 27% !important;
+  min-width: 0 !important;
+  max-width: 170px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: 92% !important;
+
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
