@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="favicon-joined.ico" />
     <link rel="mask-icon" href="assets/safari-pinned-tab-joined.svg" color="#000000" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon-joined.png" />
-    <link rel="stylesheet" href="styles.css?v=20260619-mobile-video-autoplay" />
+    <link rel="stylesheet" href="styles.css?v=20260619-mobile-animated-webp-fix" />
     <script src="assets/logo-loader.js?v=20260606-sequenced-metrics" defer></script>
     <script src="assets/greeting-motion.js?v=20260610-title-hover-restored" defer></script>
     <script src="assets/hero-ripple.js?v=20260610-ripple-checkpoint" defer></script>
@@ -91,7 +91,8 @@
                 >
                   <source src="assets/meta-business-assistant.mp4" type="video/mp4" />
                 </video>
-              </span>
+                <img class="mobile-animated-cover meta-mobile-webp" src="assets/meta-business-assistant-mobile.webp" alt="" aria-hidden="true" loading="eager" />
+                </span>
             </a>
             <span class="work-tile-heading-row">
               <a class="work-tile-title-link" href="https://www.facebook.com/business/ai/business-assistant" target="_blank" rel="noreferrer">
@@ -114,6 +115,7 @@
                 <video class="omni-bg-video" autoplay loop muted playsinline webkit-playsinline preload="auto" aria-hidden="true">
                   <source src="assets/omnichannel-bg.mp4" type="video/mp4" />
                 </video>
+                <img class="mobile-animated-cover omni-mobile-webp" src="assets/omnichannel-bg-mobile.webp" alt="" aria-hidden="true" loading="eager" />
                 <img
                   class="omni-phone-gif"
                   src="assets/omnichannel-phone-full.gif"
@@ -274,6 +276,31 @@
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) startHomeCoverVideos();
     });
+  })();
+</script>
+
+
+<script>
+  (function () {
+    function playProjectVideos() {
+      document
+        .querySelectorAll('.home-page .work-tile video')
+        .forEach(function (video) {
+          video.muted = true;
+          video.setAttribute('muted', '');
+          video.setAttribute('playsinline', '');
+          video.setAttribute('webkit-playsinline', '');
+          var playPromise = video.play();
+          if (playPromise && playPromise.catch) {
+            playPromise.catch(function () {});
+          }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', playProjectVideos);
+    window.addEventListener('pageshow', playProjectVideos);
+    window.addEventListener('scroll', playProjectVideos, { passive: true });
+    window.addEventListener('touchstart', playProjectVideos, { passive: true, once: true });
   })();
 </script>
 
