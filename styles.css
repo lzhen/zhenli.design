@@ -8021,3 +8021,223 @@ body.work-page .case-copy .public-context p {
     background: #f3f3f3 url("assets/omnichannel.png") center / cover no-repeat;
   }
 }
+
+/* 20260619 mobile: animated WebP covers avoid iOS/WeChat video play overlays */
+.home-page .mobile-animated-cover {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .home-page .work-tile-media video {
+    display: none !important;
+  }
+
+  .home-page .mobile-animated-cover {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: grayscale(1) contrast(1.04);
+  }
+
+  .home-page .omni-composite-cover .omni-mobile-webp {
+    z-index: 0;
+  }
+
+  .home-page .omni-composite-cover .omni-phone-gif {
+    display: block !important;
+    z-index: 1;
+  }
+}
+
+/* 20260619 mobile: animated covers, no native video play overlays */
+.home-page .mobile-animated-cover {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .home-page .work-tile-media video {
+    display: none !important;
+  }
+
+  .home-page .mobile-animated-cover {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: grayscale(1) contrast(1.04);
+    z-index: 0;
+  }
+
+  .home-page .omni-composite-cover .omni-phone-gif {
+    display: block !important;
+    z-index: 1 !important;
+  }
+}
+
+/* 20260619 mobile: animated covers, no native video play overlays */
+.home-page .mobile-animated-cover {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .home-page .work-tile-media video {
+    display: none !important;
+  }
+
+  .home-page .mobile-animated-cover {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: grayscale(1) contrast(1.04);
+    z-index: 0;
+  }
+
+  .home-page .omni-composite-cover .omni-phone-gif {
+    display: block !important;
+    z-index: 1 !important;
+  }
+}
+
+/* 20260619 final: mobile/WeChat animated covers without native video overlays */
+.mobile-animated-cover {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .home-page .work-tile-media,
+  .work-page .case-visual.media-visual {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .home-page .work-tile-media video,
+  .work-page .case-visual.media-visual video {
+    display: none !important;
+  }
+
+  .home-page .mobile-animated-cover,
+  .work-page .mobile-animated-cover {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: grayscale(1) contrast(1.04);
+    z-index: 0;
+  }
+
+  .home-page .omni-composite-cover .omni-phone-gif,
+  .work-page .omni-composite-cover .omni-phone-gif {
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+/* 20260619 final: mobile/WeChat animated GIF covers, no native video overlays */
+.mobile-animated-cover {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .home-page .work-tile-media,
+  .work-page .case-visual.media-visual {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .home-page .work-tile-media video,
+  .work-page .case-visual.media-visual video {
+    display: none !important;
+  }
+
+  .home-page .mobile-animated-cover,
+  .work-page .mobile-animated-cover {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: grayscale(1) contrast(1.04);
+    z-index: 0;
+  }
+
+  .home-page .omni-composite-cover .omni-phone-gif,
+  .work-page .omni-composite-cover .omni-phone-gif {
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+/* 20260619 final: mobile/WeChat animated GIF covers, no native video overlays */
+.mobile-animated-cover {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .home-page .work-tile-media,
+  .work-page .case-visual.media-visual {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .home-page .work-tile-media video,
+  .work-page .case-visual.media-visual video {
+    display: none !important;
+  }
+
+  .home-page .mobile-animated-cover,
+  .work-page .mobile-animated-cover {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: grayscale(1) contrast(1.04);
+    z-index: 0;
+  }
+
+  .home-page .omni-composite-cover .omni-phone-gif,
+  .work-page .omni-composite-cover .omni-phone-gif {
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+/* 20260619: remove mobile cover bottom white gap */
+@media (max-width: 1180px) {
+  .home-page .work-tile-media {
+    line-height: 0 !important;
+    overflow: hidden !important;
+    background: #f5f5f5 !important;
+  }
+
+  .home-page .work-tile-media video,
+  .home-page .work-tile-media img,
+  .home-page .work-tile-media .mobile-animated-cover {
+    display: block !important;
+    vertical-align: top !important;
+  }
+
+  .home-page .selected-work-grid .work-tile:nth-child(1) .work-tile-video,
+  .home-page .selected-work-grid .work-tile:nth-child(1) .mobile-animated-cover {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: scale(1.035) !important;
+    transform-origin: center center !important;
+  }
+}
