@@ -8558,3 +8558,24 @@ body.work-page .case-copy .public-context p {
     order: 2 !important;
   }
 }
+
+/* 20260620 resume mobile: main column first, sidebar second */
+@media (max-width: 899px) {
+  .resume-layout,
+  .resume-shell,
+  .resume-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .resume-main,
+  main {
+    order: 1 !important;
+  }
+
+  .resume-sidebar,
+  .resume-aside,
+  aside {
+    order: 2 !important;
+  }
+}
