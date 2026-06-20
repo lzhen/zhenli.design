@@ -8,70 +8,36 @@
   </head>
   <body>
     <p><a href="/resume/">Continue to /resume/</a></p>
-  <script>
+  <script id="resume-mobile-sidebar-first">
 (function () {
-  function hideMobileResumeIntro() {
-    if (!window.matchMedia("(max-width: 899px)").matches) return;
-    document.querySelectorAll("section, aside, div").forEach(function (el) {
-      var text = (el.textContent || "").replace(/\s+/g, " ").trim();
-      if (
-        text.includes("ZHEN LI") &&
-        text.includes("lizhen02.com") &&
-        text.includes("Product design leader") &&
-        el.offsetHeight < 700
-      ) {
-        el.style.display = "none";
-      }
-    });
-  }
-  hideMobileResumeIntro();
-  window.addEventListener("resize", hideMobileResumeIntro);
-})();
-</script>
-<script>
-(function () {
-  function hideMobileResumeIntro() {
-    if (!window.matchMedia("(max-width: 899px)").matches) return;
-    document.querySelectorAll("section, aside, div").forEach(function (el) {
-      var text = (el.textContent || "").replace(/\s+/g, " ").trim();
-      if (
-        text.includes("ZHEN LI") &&
-        text.includes("lizhen02.com") &&
-        text.includes("Product design leader") &&
-        el.offsetHeight < 700
-      ) {
-        el.style.display = "none";
-      }
-    });
-  }
-  hideMobileResumeIntro();
-  window.addEventListener("resize", hideMobileResumeIntro);
-})();
-</script>
-<script id="hide-mobile-resume-profile">
-(function () {
-  function hideProfileCard() {
+  function moveSidebarFirst() {
     if (!window.matchMedia("(max-width: 899px)").matches) return;
 
-    var candidates = Array.from(document.querySelectorAll("aside, section, div"));
-    candidates.forEach(function (el) {
-      var text = (el.textContent || "").replace(/\s+/g, " ").trim();
-      var isProfile = text.includes("ZHEN LI") && text.includes("lizhen02.com") && text.includes("Product design leader");
-      var isTooMuch = text.includes("SKILLS") || text.includes("WORK EXPERIENCE") || text.length > 900;
-
-      if (isProfile && !isTooMuch) {
-        el.style.setProperty("display", "none", "important");
-        el.style.setProperty("height", "0", "important");
-        el.style.setProperty("margin", "0", "important");
-        el.style.setProperty("padding", "0", "important");
-        el.style.setProperty("overflow", "hidden", "important");
-      }
+    var blocks = Array.from(document.querySelectorAll("aside, section, div"));
+    var sidebar = blocks.find(function (el) {
+      var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+      return t.includes("ZHEN LI") && t.includes("SKILLS") && t.includes("TOOLS");
     });
+
+    var main = blocks.find(function (el) {
+      var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+      return t.includes("WORK EXPERIENCE") && t.includes("META") && t.includes("LUCID MOTORS");
+    });
+
+    if (!sidebar || !main) return;
+    var parent = main.parentElement;
+    if (parent && sidebar.parentElement === parent && parent.firstElementChild !== sidebar) {
+      parent.insertBefore(sidebar, main);
+    }
+
+    sidebar.style.setProperty("display", "block", "important");
+    sidebar.style.setProperty("order", "-1", "important");
+    main.style.setProperty("order", "1", "important");
   }
 
-  hideProfileCard();
-  window.addEventListener("load", hideProfileCard);
-  window.addEventListener("resize", hideProfileCard);
+  moveSidebarFirst();
+  window.addEventListener("load", moveSidebarFirst);
+  window.addEventListener("resize", moveSidebarFirst);
 })();
 </script>
 </body>
