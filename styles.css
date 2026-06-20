@@ -8527,13 +8527,3 @@ body.work-page .case-copy .public-context p {
     order: 1 !important;
   }
 }
-
-/* 20260620 resume mobile sidebar first */
-@media (max-width: 899px) {
-  .resume-layout,
-  .resume-shell,
-  .resume-grid {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-}
