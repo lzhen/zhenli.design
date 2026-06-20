@@ -7993,3 +7993,31 @@ body.work-page .case-copy .public-context p {
     background: #f3f3f3 url("assets/omnichannel.png") center / cover no-repeat;
   }
 }
+
+/* 20260619 mobile: keep cover videos inline and suppress native iOS play UI */
+.home-page .work-tile-media video {
+  pointer-events: none;
+}
+
+.home-page .work-tile-media video::-webkit-media-controls,
+.home-page .work-tile-media video::-webkit-media-controls-panel,
+.home-page .work-tile-media video::-webkit-media-controls-start-playback-button,
+.home-page .work-tile-media video::-webkit-media-controls-play-button {
+  display: none !important;
+  opacity: 0 !important;
+  -webkit-appearance: none !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 1180px) {
+  .home-page .work-tile-media video {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .home-page .omni-composite-cover {
+    background: #f3f3f3 url("assets/omnichannel.png") center / cover no-repeat;
+  }
+}
