@@ -48,5 +48,31 @@
   window.addEventListener("resize", hideMobileResumeIntro);
 })();
 </script>
+<script id="hide-mobile-resume-profile">
+(function () {
+  function hideProfileCard() {
+    if (!window.matchMedia("(max-width: 899px)").matches) return;
+
+    var candidates = Array.from(document.querySelectorAll("aside, section, div"));
+    candidates.forEach(function (el) {
+      var text = (el.textContent || "").replace(/\s+/g, " ").trim();
+      var isProfile = text.includes("ZHEN LI") && text.includes("lizhen02.com") && text.includes("Product design leader");
+      var isTooMuch = text.includes("SKILLS") || text.includes("WORK EXPERIENCE") || text.length > 900;
+
+      if (isProfile && !isTooMuch) {
+        el.style.setProperty("display", "none", "important");
+        el.style.setProperty("height", "0", "important");
+        el.style.setProperty("margin", "0", "important");
+        el.style.setProperty("padding", "0", "important");
+        el.style.setProperty("overflow", "hidden", "important");
+      }
+    });
+  }
+
+  hideProfileCard();
+  window.addEventListener("load", hideProfileCard);
+  window.addEventListener("resize", hideProfileCard);
+})();
+</script>
 </body>
 </html>
