@@ -7979,3 +7979,20 @@ body.work-page .case-copy .public-context p {
     display: block !important;
   }
 }
+
+/* 20260619 mobile: remove native video layer and show clean covers */
+@media (max-width: 1180px) {
+  .home-page .work-tile-media.mobile-cover-ready video,
+  .home-page .work-tile-media.mobile-cover-ready .omni-phone-gif {
+    display: none !important;
+  }
+
+  .home-page .work-tile-media.mobile-cover-ready .mobile-cover-fallback {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}

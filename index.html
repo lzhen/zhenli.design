@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="favicon-joined.ico" />
     <link rel="mask-icon" href="assets/safari-pinned-tab-joined.svg" color="#000000" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon-joined.png" />
-    <link rel="stylesheet" href="styles.css?v=20260619-mobile-cover-sync" />
+    <link rel="stylesheet" href="styles.css?v=20260619-mobile-video-dom-remove" />
     <script src="assets/logo-loader.js?v=20260606-sequenced-metrics" defer></script>
     <script src="assets/greeting-motion.js?v=20260610-title-hover-restored" defer></script>
     <script src="assets/hero-ripple.js?v=20260610-ripple-checkpoint" defer></script>
@@ -245,5 +245,41 @@
       </span>
     </footer>
     <script src="assets/site-scroll-top.js"></script>
+
+<script>
+  (function () {
+    function syncMobileProjectCovers() {
+      if (!window.matchMedia || !window.matchMedia("(max-width: 1180px)").matches) return;
+
+      document.querySelectorAll(".home-page .work-tile-media").forEach(function (media) {
+        var fallback = media.querySelector(".mobile-cover-fallback");
+        if (!fallback) return;
+
+        media.querySelectorAll("video").forEach(function (video) {
+          try { video.pause(); } catch (e) {}
+          video.querySelectorAll("source").forEach(function (source) {
+            source.removeAttribute("src");
+          });
+          video.removeAttribute("src");
+          try { video.load(); } catch (e) {}
+          video.remove();
+        });
+
+        media.querySelectorAll(".omni-phone-gif").forEach(function (image) {
+          image.remove();
+        });
+
+        media.classList.add("mobile-cover-ready");
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", syncMobileProjectCovers);
+    } else {
+      syncMobileProjectCovers();
+    }
+  })();
+</script>
+
 </body>
 </html>
