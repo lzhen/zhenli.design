@@ -8486,3 +8486,13 @@ body.work-page .case-copy .public-context p {
   display: block !important;
   pointer-events: none !important;
 }
+
+/* 20260619 resume desktop column gap */
+@media (min-width: 900px) {
+  .resume-layout,
+  .resume-shell,
+  .resume-grid {
+    column-gap: 96px !important;
+    gap: 96px !important;
+  }
+}
