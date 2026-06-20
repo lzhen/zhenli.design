@@ -7919,3 +7919,36 @@ body.work-page .case-copy .public-context p {
     transform: none !important;
   }
 }
+
+/* 20260619 narrow/mobile: force Meta external CTAs to simple right arrows */
+@media (max-width: 1180px) {
+  .home-page .work-tile-cta-external {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 18px !important;
+    height: 18px !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    transform: none !important;
+  }
+
+  .home-page .work-tile-cta-external::before {
+    content: "→" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 18px !important;
+    height: 18px !important;
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    transform: translateY(-1px) !important;
+  }
+}
