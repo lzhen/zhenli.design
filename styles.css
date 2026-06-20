@@ -8496,3 +8496,12 @@ body.work-page .case-copy .public-context p {
     gap: 96px !important;
   }
 }
+
+/* 20260619 hide resume profile card on mobile */
+@media (max-width: 899px) {
+  .resume-profile,
+  .resume-sidebar,
+  .resume-aside {
+    display: none !important;
+  }
+}
