@@ -8588,3 +8588,10 @@ body.work-page .case-copy .public-context p {
     display: none !important;
   }
 }
+
+
+/* 20260622 MAIBA home arrow optical alignment */
+.home-page .work-tile-actions[aria-label="Meta AI Business Assistant links"] .work-tile-cta-arrow {
+  position: relative;
+  top: 1px;
+}
