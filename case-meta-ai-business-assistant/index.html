@@ -14,6 +14,160 @@
     <link rel="stylesheet" href="styles.css?v=20260616-work-media-quieter" />
     <script src="assets/logo-loader.js?v=20260606-moon-landing" defer></script>
     <script src="assets/mono-motion.js?v=20260610-mono-motion" defer></script>
+
+    <style id="maiba-public-demo-style">
+      .maiba-public-demo {
+        margin: clamp(56px, 8vw, 104px) 0;
+        border: 1px solid rgba(0, 0, 0, 0.14);
+        background: #f7f7f7;
+        padding: clamp(22px, 4vw, 48px);
+      }
+
+      .maiba-demo-shell {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+        gap: clamp(20px, 4vw, 48px);
+        align-items: center;
+      }
+
+      .maiba-demo-canvas {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px),
+          linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+          #ececec;
+        background-size: 42px 42px;
+      }
+
+      .maiba-demo-panel {
+        position: absolute;
+        inset: 13% 12% 12% 21%;
+        background: rgba(255,255,255,0.94);
+        border: 1px solid rgba(0,0,0,0.16);
+        box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+        padding: clamp(16px, 2.8vw, 28px);
+      }
+
+      .maiba-demo-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+        font-family: var(--font-sans);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .maiba-demo-orb {
+        width: 26px;
+        height: 26px;
+        border: 4px solid #111;
+        border-right-color: rgba(0,0,0,0.16);
+        border-radius: 50%;
+        animation: maiba-spin 1.4s linear infinite;
+      }
+
+      .maiba-demo-prompt {
+        max-width: 78%;
+        background: #eeeeee;
+        border-radius: 18px;
+        padding: 14px 16px;
+        font-family: var(--font-sans);
+        font-size: clamp(13px, 1.4vw, 17px);
+        line-height: 1.45;
+        margin-bottom: 26px;
+      }
+
+      .maiba-demo-status {
+        display: grid;
+        gap: 13px;
+        font-family: var(--font-mono);
+        font-size: clamp(12px, 1.15vw, 15px);
+        color: rgba(0,0,0,0.62);
+      }
+
+      .maiba-demo-status span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .maiba-demo-status span::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        background: #111;
+        border-radius: 50%;
+        animation: maiba-pulse 1.35s ease-in-out infinite;
+      }
+
+      .maiba-demo-status span:nth-child(2)::before { animation-delay: 0.2s; }
+      .maiba-demo-status span:nth-child(3)::before { animation-delay: 0.4s; }
+
+      .maiba-demo-flow {
+        display: grid;
+        gap: 12px;
+      }
+
+      .maiba-demo-flow h4 {
+        margin: 0 0 10px;
+        font-family: var(--font-sans);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .maiba-flow-row {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: 14px 0;
+        border-top: 1px solid rgba(0,0,0,0.16);
+      }
+
+      .maiba-flow-row b {
+        font-family: var(--font-sans);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      .maiba-flow-row p {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      @keyframes maiba-spin {
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes maiba-pulse {
+        0%, 100% { opacity: 0.25; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1); }
+      }
+
+      @media (max-width: 760px) {
+        .maiba-demo-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .maiba-demo-panel {
+          inset: 9% 6% 8% 10%;
+        }
+
+        .maiba-demo-prompt {
+          max-width: 100%;
+        }
+      }
+    </style>
+
   </head>
   <body class="case-page editorial-site dls-case-theme">
     <header class="site-header">
