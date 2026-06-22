@@ -1,196 +1,110 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Meta AI Business Assistant — Zhen Li</title>
-  <meta name="description" content="How I designed signals workflows for Meta AI Business Assistant, helping advertisers understand signal health, guided data connection paths, and AI-assisted recommendations." />
-  <link rel="canonical" href="https://zhenli.design/case-meta-ai-business-assistant/" />
-  <link rel="stylesheet" href="../assets/styles.css?v=20260621-maiba-case" />
-</head>
-<body class="case-page editorial-site">
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Zhen Li home">
-      <img class="mark" src="../assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" />
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="/">Home</a>
-      <a href="/work/">Work</a>
-      <a href="/resume/">Resume</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/">
+    <title>Meta AI Business Assistant - Zhen Li</title>
+    <meta name="description" content="How I designed signals workflows for Meta AI Business Assistant, helping advertisers understand signal health, guided data connection paths, and AI-assisted recommendations." />
+    <link rel="icon" href="assets/favicon-joined-16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="assets/favicon-joined-32.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="favicon-joined.ico" />
+    <link rel="mask-icon" href="assets/safari-pinned-tab-joined.svg" color="#000000" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon-joined.png" />
+    <link rel="stylesheet" href="styles.css?v=20260616-work-media-quieter" />
+    <script src="assets/logo-loader.js?v=20260606-moon-landing" defer></script>
+    <script src="assets/mono-motion.js?v=20260610-mono-motion" defer></script>
+  </head>
+  <body class="case-page editorial-site dls-case-theme">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Zhen Li home">
+        <img class="mark" src="assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" />
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a class="active" href="/work/">Work</a>
+        <a href="/resume/">Resume</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="section case-hero case-hero-media-left">
-      <article class="case-layout">
-        <div class="case-media">
-          <video
-            class="project-cover-media"
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="auto"
-            poster="../assets/meta-business-assistant-video-poster.png"
-            aria-label="Meta AI Business Assistant video showing an advertiser using AI recommendations"
-          >
-            <source src="../assets/meta-business-assistant.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        <div class="case-copy">
-          <p class="eyebrow">Meta Ads / AI Business Assistant</p>
-          <h1>Turning signal health into guided data connection workflows</h1>
-          <ul class="case-tags" aria-label="Meta AI Business Assistant keywords">
-            <li>AI Product</li>
-            <li>Signals Workflow</li>
-            <li>Recommendation UX</li>
-          </ul>
-
-          <dl class="case-proof-points" aria-label="Meta AI Business Assistant overview">
-            <div>
-              <dt>Role</dt>
-              <dd>Designed the signals flow and interaction model for AI-guided advertiser recommendations, translating signal diagnostics into explainable guidance and decision-support patterns.</dd>
-            </div>
-            <div>
-              <dt>Design decision</dt>
-              <dd>Turn invisible signal gaps into guided setup paths that advertisers could understand, trust, and complete.</dd>
-            </div>
-            <div>
-              <dt>Impact</dt>
-              <dd>Supported Conversions API adoption, Meta Pixel growth, event coverage improvements, and partner integration recommendations. Public beta cited 20% higher common-account-issue resolution and 12% lower cost per result.</dd>
-            </div>
-          </dl>
-        </div>
-      </article>
-    </section>
-
-    <section class="section case-detail-grid">
-      <div class="case-kicker">01 — Context</div>
-      <div>
-        <h2>Advertisers depend on signals they often cannot see.</h2>
-        <p>Advertisers rely on high-quality signals to help Meta understand what happens after an ad click or view: purchases, leads, subscriptions, and other business events.</p>
-        <p>But signal setup is fragmented. Some advertisers use Meta Pixel. Some need Conversions API. Some rely on partner platforms. Others have incomplete event coverage or disconnected data sources.</p>
-        <p>The product challenge was not simply telling advertisers to improve signals. It was helping them understand what was missing, why it mattered, and which setup path was most appropriate for their business.</p>
-      </div>
-    </section>
-
-    <section class="section case-detail-grid">
-      <div class="case-kicker">02 — Problem</div>
-      <div>
-        <h2>Signal quality is invisible until something breaks.</h2>
-        <p>Advertisers often saw recommendations related to Conversions API adoption, event coverage, or Pixel growth, but the underlying logic was hard to understand.</p>
-        <div class="case-callout-grid">
-          <div>
-            <span>Question 01</span>
-            <strong>Which signal is missing?</strong>
+    <main>
+      <section class="section">
+        <article class="case-study">
+          <div class="case-copy">
+            <p class="case-kicker">Case study</p>
+            <h3>Meta AI Business Assistant</h3>
+            <p class="case-subtitle">Turning signal health into guided data connection workflows that help advertisers understand, trust, and act on AI recommendations.</p>
           </div>
-          <div>
-            <span>Question 02</span>
-            <strong>Why does it matter?</strong>
+          <div class="case-aside">
+            <dl class="case-details">
+              <div>
+                <dt>Problem</dt>
+                <dd>Advertisers depend on high-quality signals such as Meta Pixel, Conversions API, event coverage, and partner integrations, but signal gaps are often invisible until campaign performance or optimization is affected.</dd>
+              </div>
+              <div>
+                <dt>Role</dt>
+                <dd>Designed the signals workflow and interaction model for Meta AI Business Assistant, translating signal diagnostics and backend recommendation logic into explainable guidance, setup paths, and decision-support patterns.</dd>
+              </div>
+              <div>
+                <dt>Design decision</dt>
+                <dd>Turn invisible signal gaps into guided setup paths, helping advertisers understand what was missing, why it mattered, and which connection method they could trust.</dd>
+              </div>
+              <div>
+                <dt>Highlight</dt>
+                <dd>Designed around Smart Partner Integration and one-click installation patterns, where the recommendation engine suggested the most relevant partner integration method for an advertiser to connect data to Meta.</dd>
+              </div>
+              <div class="case-impact-expanded">
+                <dt>Impact</dt>
+                <dd>
+                  <p>Supported signal-related advertiser workflows across Conversions API adoption, Meta Pixel growth, event coverage improvements, and partner integration recommendations.</p>
+                  <p>Public beta cited 20% higher common-account-issue resolution and 12% lower cost per result.</p>
+                </dd>
+              </div>
+            </dl>
           </div>
-          <div>
-            <span>Question 03</span>
-            <strong>Which setup path should I trust?</strong>
-          </div>
+        </article>
+
+        <div class="dls-system-loop" aria-label="Meta AI Business Assistant signals workflow animation">
+          <video class="dls-system-video" src="assets/meta-business-assistant.mp4" controls loop autoplay muted playsinline preload="metadata" poster="assets/meta-business-assistant-video-poster.png" aria-label="Meta AI Business Assistant video showing an advertiser using AI recommendations"></video>
         </div>
-      </div>
-    </section>
 
-    <section class="section case-detail-grid">
-      <div class="case-kicker">03 — Insight</div>
-      <div>
-        <h2>Advertisers were not trying to debug a data pipeline.</h2>
-        <p>They were trying to answer a business question: is Meta receiving the right data to optimize my campaigns?</p>
-        <blockquote>If the user has to understand the data pipeline before they can fix the signal, the workflow is doing the system's translation work too late.</blockquote>
-      </div>
-    </section>
-
-    <section class="section case-detail-grid">
-      <div class="case-kicker">04 — Model</div>
-      <div>
-        <h2>From diagnostics to guided setup.</h2>
-        <p>The workflow connected three layers: the signal condition, the recommendation logic, and the advertiser action.</p>
-        <div class="case-flow">
-          <span>Signal gap</span>
-          <span>Recommendation</span>
-          <span>Explanation</span>
-          <span>Setup path</span>
-          <span>Feedback</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section case-detail-grid">
-      <div class="case-kicker">05 — Smart Partner Integration</div>
-      <div>
-        <h2>Recommend the path, not just the tool.</h2>
-        <p>One highlight was Meta Smart Partner Integration: a recommendation engine that identified the most relevant partner integration method for an advertiser to connect their data to Meta.</p>
-        <p>Rather than asking advertisers to choose from a generic list of integration options, the system could recommend a path based on current signal setup, business context, and available partner connections.</p>
-      </div>
-    </section>
-
-    <section class="section case-detail-grid">
-      <div class="case-kicker">06 — One-click Installation</div>
-      <div>
-        <h2>Speed only works when users understand what is happening.</h2>
-        <p>For eligible advertisers, one-click installation reduced setup friction by turning a technical integration process into a guided confirmation flow.</p>
-        <p>The experience had to balance speed with trust. A one-click action is only helpful if users understand what is being connected and why the system recommends it.</p>
-      </div>
-    </section>
-
-    <section class="section case-detail-grid">
-      <div class="case-kicker">07 — Principles</div>
-      <div>
-        <h2>Make signal recommendations inspectable before they become actionable.</h2>
-        <div class="case-callout-grid four-up">
+        <div class="dls-video-chapters" aria-label="Meta AI Business Assistant workflow chapters">
           <div>
             <span>01</span>
-            <strong>Explain the signal first</strong>
-            <p>A setup recommendation should start with the business signal it improves.</p>
+            <h4>Signal condition</h4>
+            <p>Pixel status, Conversions API readiness, event coverage, and partner availability became the input layer.</p>
           </div>
           <div>
             <span>02</span>
-            <strong>Recommend the path</strong>
-            <p>Advertisers should not need to choose between Pixel, Conversions API, and partner setup from scratch.</p>
+            <h4>Recommendation logic</h4>
+            <p>The system translated signal gaps into setup paths such as Pixel growth, CAPI adoption, or partner integration.</p>
           </div>
           <div>
             <span>03</span>
-            <strong>Make setup inspectable</strong>
-            <p>Even when installation is simplified, users should understand what data connection is being created.</p>
+            <h4>Guided setup</h4>
+            <p>Advertisers received a clearer path for what to connect, why it mattered, and what action to take next.</p>
           </div>
           <div>
             <span>04</span>
-            <strong>Close the loop</strong>
-            <p>After setup, the product should help advertisers understand whether signal coverage improved.</p>
+            <h4>Trust loop</h4>
+            <p>The workflow helped users inspect recommendations before acting, instead of treating AI output as a black box.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section class="section case-detail-grid">
-      <div class="case-kicker">08 — Reflection</div>
-      <div>
-        <h2>A good AI assistant should not make users think like the system.</h2>
-        <p>This work taught me that AI recommendations are only as useful as the workflow around them.</p>
-        <p>For signal products, the hardest design problem is not showing advertisers more diagnostics. It is translating invisible backend conditions into a path they can understand, trust, and complete.</p>
-        <blockquote>A good AI assistant helps the system speak in the user's decision language.</blockquote>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <span>&copy; 2026 Zhen Li</span>
-    <span>Portfolio co-created with AI and Josef Müller-Brockmann</span>
-    <span class="social-links social-icons">
-      <a class="icon-link" href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true" aria-label="LinkedIn" title="LinkedIn"><img src="../assets/icon-linkedin.svg" alt="" /></a>
-      <a class="icon-link" href="https://scholar.google.com/citations?hl=en&user=--enlHIAAAAJ&view_op=list_works" aria-label="Google Scholar" title="Google Scholar"><img src="../assets/icon-scholar.svg" alt="" /></a>
-      <a class="icon-link" href="https://www.researchgate.net/profile/Zhen-Li-204" aria-label="ResearchGate" title="ResearchGate"><img src="../assets/icon-researchgate.svg" alt="" /></a>
-      <a class="icon-link" href="https://medium.com/@lizhen10" aria-label="Medium" title="Medium"><img src="../assets/icon-medium.svg" alt="" /></a>
-      <a class="icon-link" href="https://dribbble.com/zhenli" aria-label="Dribbble" title="Dribbble"><img src="../assets/icon-dribbble.svg" alt="" /></a>
-      <a class="icon-link" href="https://github.com/lzhen" aria-label="GitHub" title="GitHub"><img src="../assets/icon-github.svg" alt="" /></a>
-    </span>
-  </footer>
-  <script src="../assets/site-scroll-top.js"></script>
-</body>
+    <footer class="site-footer">
+      <span>&copy; 2026 Zhen Li</span>
+      <span>Portfolio co-created with AI and Josef Müller-Brockmann</span>
+      <span class="social-links social-icons">
+        <a class="icon-link" href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true" aria-label="LinkedIn" title="LinkedIn"><img src="assets/icon-linkedin.svg" alt="" /></a>
+        <a class="icon-link" href="https://scholar.google.com/citations?hl=en&user=--enlHIAAAAJ&view_op=list_works" aria-label="Google Scholar" title="Google Scholar"><img src="assets/icon-scholar.svg" alt="" /></a>
+        <a class="icon-link" href="https://www.researchgate.net/profile/Zhen-Li-204" aria-label="ResearchGate" title="ResearchGate"><img src="assets/icon-researchgate.svg" alt="" /></a>
+        <a class="icon-link" href="https://medium.com/@lizhen10" aria-label="Medium" title="Medium"><img src="assets/icon-medium.svg" alt="" /></a>
+        <a class="icon-link" href="https://dribbble.com/zhenli" aria-label="Dribbble" title="Dribbble"><img src="assets/icon-dribbble.svg" alt="" /></a>
+        <a class="icon-link" href="https://github.com/lzhen" aria-label="GitHub" title="GitHub"><img src="assets/icon-github.svg" alt="" /></a>
+      </span>
+    </footer>
+    <script src="assets/site-scroll-top.js"></script>
+  </body>
 </html>
