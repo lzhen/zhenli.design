@@ -8604,3 +8604,10 @@ body.work-page .case-copy .public-context p {
   font-size: 10px;
   line-height: 1.6;
 }
+
+/* 20260625 Meta tooltip one-line */
+.home-page .work-tile-actions[aria-label="Meta AI Business Assistant links"] .work-tile-cta-external[data-tooltip]::after,
+.home-page .work-tile-actions[aria-label="Meta Omnichannel Ads links"] .work-tile-cta-external[data-tooltip]::after {
+  max-width: none;
+  white-space: nowrap;
+}
