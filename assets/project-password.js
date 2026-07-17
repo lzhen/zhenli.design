@@ -1,5 +1,5 @@
 (function () {
-  var STORAGE_KEY = "zhenli-project-access";
+  var STORAGE_KEY_PREFIX = "zhenli-project-access";
   var PASSWORD_HASH = "b54cd02f18b74dfa0377c248668cfe986cef899af07f2d1cafeaae75c78ff4f6";
 
   document.documentElement.classList.add("project-password-pending");
@@ -67,7 +67,9 @@
   }
 
   function buildGate() {
-    if (localStorage.getItem(STORAGE_KEY) === PASSWORD_HASH) {
+    var storageKey = STORAGE_KEY_PREFIX + ":" + window.location.pathname.replace(/\/$/, "");
+
+    if (localStorage.getItem(storageKey) === PASSWORD_HASH) {
       unlock();
       return;
     }
@@ -89,7 +91,7 @@
       '<span class="project-password-number" aria-hidden="true">01</span>',
       "<div>",
       "<h2>Enter password</h2>",
-      '<p class="project-password-meta">Access stays unlocked in this browser.</p>',
+      '<p class="project-password-meta">Access stays unlocked for this project in this browser.</p>',
       "</div>",
       '<form class="project-password-form">',
       '<label class="sr-only" for="project-password-input">Password</label>',
@@ -114,7 +116,7 @@
       event.preventDefault();
       hashPassword(input.value).then(function (hash) {
         if (hash === PASSWORD_HASH) {
-          localStorage.setItem(STORAGE_KEY, PASSWORD_HASH);
+          localStorage.setItem(storageKey, PASSWORD_HASH);
           unlock();
           return;
         }
