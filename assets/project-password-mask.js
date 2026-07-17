@@ -8,7 +8,7 @@
   style.textContent = [
     "html.project-password-pending body > .project-password-gate { visibility: visible !important; }",
     "html.project-password-pending body { overflow: hidden !important; }",
-    ".project-password-gate { position: fixed; inset: 0; z-index: 999999; display: grid; place-items: center; min-height: 100vh; padding: 24px; background: rgba(0, 0, 0, 0.72); color: #f7f7f7; font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif; }",
+    ".project-password-gate { position: fixed; inset: 0; z-index: 999999; display: grid; place-items: center; min-height: 100vh; padding: 24px; background: #000; color: #f7f7f7; font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif; }",
     ".project-password-panel { width: min(100%, 470px); display: grid; justify-items: center; gap: 16px; text-align: center; }",
     ".project-password-icon { width: 34px; height: 34px; opacity: 0.58; }",
     ".project-password-panel h1 { margin: 0; color: #f7f7f7; font-size: clamp(28px, 4vw, 40px); line-height: 1.12; font-weight: 300; letter-spacing: 0; }",
@@ -23,7 +23,7 @@
     ".project-password-form button:hover, .project-password-form button:focus-visible { color: #1d1d1f; outline: 0; }",
     ".project-password-form button svg { width: 32px; height: 16px; }",
     ".project-password-error { min-height: 18px; margin: 0; color: rgba(255, 255, 255, 0.72); font-size: 12px; line-height: 1.5; }",
-    "html.project-password-pending .project-password-gate { position: fixed !important; inset: 0 !important; z-index: 999999 !important; display: grid !important; place-items: center !important; min-height: 100vh !important; padding: 24px !important; background: rgba(0, 0, 0, 0.72) !important; color: #f7f7f7 !important; visibility: visible !important; }",
+    "html.project-password-pending .project-password-gate { position: fixed !important; inset: 0 !important; z-index: 999999 !important; display: grid !important; place-items: center !important; min-height: 100vh !important; padding: 24px !important; background: #000 !important; color: #f7f7f7 !important; visibility: visible !important; }",
     "html.project-password-pending .project-password-gate * { box-sizing: border-box !important; visibility: visible !important; }",
     "html.project-password-pending .project-password-panel { width: min(100%, 470px) !important; display: grid !important; justify-items: center !important; gap: 16px !important; text-align: center !important; }",
     "html.project-password-pending .project-password-form { width: min(100%, 420px) !important; display: grid !important; gap: 12px !important; }",
