@@ -15,7 +15,7 @@
     ".project-password-note { margin: -4px 0 48px; color: rgba(17, 17, 17, 0.58); font-size: 15px; line-height: 1.5; font-weight: 300; }",
     ".project-password-form { width: min(100%, 420px); display: grid; gap: 12px; }",
     ".project-password-form .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }",
-    ".project-password-input-row { display: grid; grid-template-columns: 1fr 58px; min-height: 48px; background: #fff; border: 1px solid rgba(17, 17, 17, 0.18); box-shadow: 0 12px 36px rgba(17, 17, 17, 0.08); }",
+    ".project-password-input-row { display: grid; grid-template-columns: 1fr 58px; min-height: 48px; background: #fff; border: 1px solid #d9d9d9; box-shadow: 0 12px 36px rgba(17, 17, 17, 0.08); }",
     ".project-password-form input { width: 100%; min-width: 0; border: 0; border-radius: 0; padding: 0 16px; background: transparent; color: #1d1d1f; font: inherit; font-size: 13px; line-height: 1.2; }",
     ".project-password-form input::placeholder { color: rgba(29, 29, 31, 0.28); }",
     ".project-password-form input:focus-visible { outline: 0; }",
@@ -27,7 +27,7 @@
     "html.project-password-pending .project-password-gate * { box-sizing: border-box !important; visibility: visible !important; }",
     "html.project-password-pending .project-password-panel { width: min(100%, 470px) !important; display: grid !important; justify-items: center !important; gap: 16px !important; text-align: center !important; }",
     "html.project-password-pending .project-password-form { width: min(100%, 420px) !important; display: grid !important; gap: 12px !important; }",
-    "html.project-password-pending .project-password-input-row { display: grid !important; grid-template-columns: 1fr 58px !important; min-height: 48px !important; background: #fff !important; }",
+    "html.project-password-pending .project-password-input-row { display: grid !important; grid-template-columns: 1fr 58px !important; min-height: 48px !important; background: #fff !important; border: 1px solid #d9d9d9 !important; }",
     "html.project-password-pending .project-password-form input { width: 100% !important; min-width: 0 !important; border: 0 !important; padding: 0 16px !important; background: transparent !important; color: #1d1d1f !important; font-size: 13px !important; }",
     "html.project-password-pending .project-password-form button { display: grid !important; place-items: center !important; border: 0 !important; border-left: 1px solid rgba(0, 0, 0, 0.04) !important; background: transparent !important; color: rgba(29, 29, 31, 0.45) !important; cursor: pointer !important; }",
     "@media (max-width: 560px) { .project-password-gate { padding: 22px; } .project-password-panel h1 { font-size: 30px; } .project-password-note { margin-bottom: 38px; font-size: 14px; } .project-password-form { width: 100%; } }"
