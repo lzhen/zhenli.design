@@ -11,7 +11,7 @@
     ".project-password-gate { position: fixed; inset: 0; z-index: 999999; display: grid; place-items: center; min-height: 100vh; padding: 24px; background: #fff; color: #111; font-family: var(--font-body, 'Courier New', Courier, ui-monospace, SFMono-Regular, Menlo, monospace); }",
     ".project-password-panel { width: min(100%, 470px); display: grid; justify-items: center; gap: 16px; text-align: center; }",
     ".project-password-icon { width: 34px; height: 34px; opacity: 0.58; }",
-    ".project-password-panel h1 { margin: 0; color: #111; font-family: var(--font-display, 'Helvetica Neue', Helvetica, Arial, ui-sans-serif, system-ui, sans-serif); font-size: clamp(28px, 4vw, 40px); line-height: 1.12; font-weight: 300; letter-spacing: 0; }",
+    ".project-password-panel h1 { margin: 0; color: #111; font-family: var(--font-label, Arial, Helvetica, ui-sans-serif, system-ui, sans-serif); font-size: clamp(18px, 2.1vw, 24px); line-height: 1.4; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }",
     ".project-password-note { margin: -4px 0 48px; color: rgba(17, 17, 17, 0.58); font-size: 15px; line-height: 1.5; font-weight: 300; }",
     ".project-password-form { width: min(100%, 420px); display: grid; gap: 12px; }",
     ".project-password-form .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }",
@@ -32,7 +32,7 @@
     "html.project-password-pending .project-password-input-row { display: grid !important; grid-template-columns: 1fr 58px !important; min-height: 48px !important; background: #fff !important; border: 1px solid #b8b8b8 !important; }",
     "html.project-password-pending .project-password-form input { width: 100% !important; min-width: 0 !important; border: 0 !important; padding: 0 16px !important; background: transparent !important; color: #1d1d1f !important; font-size: 13px !important; }",
     "html.project-password-pending .project-password-form button { display: grid !important; place-items: center !important; border: 0 !important; border-left: 1px solid #d0d0d0 !important; background: transparent !important; color: rgba(29, 29, 31, 0.45) !important; cursor: pointer !important; }",
-    "@media (max-width: 560px) { .project-password-gate { padding: 22px; } .project-password-panel h1 { font-size: 30px; } .project-password-note { margin-bottom: 38px; font-size: 14px; } .project-password-form { width: 100%; } }"
+    "@media (max-width: 560px) { .project-password-gate { padding: 22px; } .project-password-panel h1 { font-size: 18px; } .project-password-note { margin-bottom: 38px; font-size: 14px; } .project-password-form { width: 100%; } }"
   ].join("\n");
   document.head.appendChild(style);
 
