@@ -10,7 +10,7 @@
     "html.project-password-pending body { overflow: hidden !important; }",
     ".project-password-gate { position: fixed; inset: 0; z-index: 999999; display: grid; place-items: center; min-height: 100vh; padding: 24px; background: #fff; color: #111; font-family: var(--font-body, 'Courier New', Courier, ui-monospace, SFMono-Regular, Menlo, monospace); }",
     ".project-password-panel { width: min(100%, 470px); display: grid; justify-items: center; gap: 16px; text-align: center; }",
-    ".project-password-icon { width: 34px; height: 34px; opacity: 0.58; }",
+    ".project-password-logo { display: block; width: 34px; height: auto; }",
     ".project-password-panel h1 { margin: 0; color: #111; font-family: var(--font-label, Arial, Helvetica, ui-sans-serif, system-ui, sans-serif); font-size: clamp(14px, 2.1vw, 18px); line-height: 1.4; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }",
     ".project-password-note { margin: -4px 0 48px; color: rgba(17, 17, 17, 0.58); font-size: 15px; line-height: 1.5; font-weight: 300; }",
     ".project-password-form { width: min(100%, 560px); display: grid; gap: 12px; }",
@@ -69,12 +69,7 @@
     gate.setAttribute("aria-label", "Project password");
     gate.innerHTML = [
       '<div class="project-password-panel">',
-      '<svg class="project-password-icon" viewBox="0 0 32 32" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">',
-      '<path d="M9 14V10.8C9 6.9 12.1 4 16 4s7 2.9 7 6.8V14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>',
-      '<rect x="7.5" y="14" width="17" height="14" stroke="currentColor" stroke-width="1.4"/>',
-      '<path d="M16 20v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>',
-      '<circle cx="16" cy="19" r="1.3" fill="currentColor"/>',
-      "</svg>",
+      '<img class="project-password-logo" src="/assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" />',
       "<h1>This content is protected.</h1>",
       '<p class="project-password-note">To view, please enter the password.</p>',
       '<form class="project-password-form">',
