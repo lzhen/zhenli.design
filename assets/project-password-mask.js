@@ -1,6 +1,10 @@
 (function () {
   var STORAGE_KEY_PREFIX = "zhenli-project-access";
   var PASSWORD_HASH = "b54cd02f18b74dfa0377c248668cfe986cef899af07f2d1cafeaae75c78ff4f6";
+  var scriptElement = document.currentScript;
+  var LOCK_VERSION = scriptElement && scriptElement.getAttribute("data-lock-version")
+    ? scriptElement.getAttribute("data-lock-version")
+    : "";
 
   document.documentElement.classList.add("project-password-pending");
 
@@ -58,7 +62,8 @@
   }
 
   function buildGate() {
-    var storageKey = STORAGE_KEY_PREFIX + ":" + window.location.pathname.replace(/\/$/, "");
+    var lockVersionSuffix = LOCK_VERSION ? ":" + LOCK_VERSION : "";
+    var storageKey = STORAGE_KEY_PREFIX + lockVersionSuffix + ":" + window.location.pathname.replace(/\/$/, "");
 
     if (localStorage.getItem(storageKey) === PASSWORD_HASH) {
       unlock();
