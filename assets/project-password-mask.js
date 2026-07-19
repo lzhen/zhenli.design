@@ -69,7 +69,7 @@
     gate.setAttribute("aria-label", "Project password");
     gate.innerHTML = [
       '<div class="project-password-panel">',
-      '<img class="project-password-logo" src="/assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" />',
+      '<img class="project-password-logo" src="/assets/zhen-li-logo.svg?v=20260719-password-gate-logo" alt="" aria-hidden="true" />',
       "<h1>This content is protected.</h1>",
       '<p class="project-password-note">To view, please enter the password.</p>',
       '<form class="project-password-form">',
