@@ -22,7 +22,7 @@
     <link rel="shortcut icon" href="favicon-joined.ico" />
     <link rel="mask-icon" href="assets/safari-pinned-tab-joined.svg" color="#000000" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon-joined.png" />
-    <link rel="stylesheet" href="styles.css?v=20260719-case-update-notice" />
+    <link rel="stylesheet" href="styles.css?v=20260719-case-update-notice-mobile-text" />
     <script src="assets/logo-loader.js?v=20260606-sequenced-metrics" defer></script>
     <script src="assets/greeting-motion.js?v=20260610-title-hover-restored" defer></script>
     <script src="assets/hero-ripple.js?v=20260610-ripple-checkpoint" defer></script>
@@ -33,6 +33,44 @@
       .work-tile-actions[aria-label="Meta AI Business Assistant links"] .work-tile-cta-arrow {
         position: relative;
         top: 1px;
+      }
+    </style>
+    <style id="case-update-notice-style">
+      .case-update-notice {
+        box-sizing: border-box;
+        width: min(calc(100% - 30px - (2 * var(--page-gutter))), calc(var(--site-max) - (2 * var(--page-gutter))));
+        margin: 14px auto 0;
+        padding: 8px 16px;
+        background: #eeeeee;
+        color: var(--ink);
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 1.72;
+      }
+
+      .case-update-notice p {
+        display: block !important;
+        margin: 0;
+      }
+
+      .case-update-notice a {
+        color: #111;
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 720px) {
+        .case-update-notice {
+          width: calc(100% - (2 * var(--page-gutter)));
+          margin-top: 10px;
+          padding: 8px 14px;
+        }
+
+        .case-update-notice > :first-child {
+          display: block !important;
+        }
       }
     </style>
 

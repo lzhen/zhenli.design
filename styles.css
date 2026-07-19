@@ -4699,6 +4699,7 @@ html.motion-enabled .motion-reveal.is-visible {
 }
 
 .case-update-notice p {
+  display: block !important;
   margin: 0;
 }
 
@@ -4715,6 +4716,10 @@ html.motion-enabled .motion-reveal.is-visible {
     width: calc(100% - (2 * var(--page-gutter)));
     margin-top: 10px;
     padding: 8px 14px;
+  }
+
+  .case-update-notice > :first-child {
+    display: block !important;
   }
 }
 
