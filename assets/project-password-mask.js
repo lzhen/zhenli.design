@@ -16,7 +16,7 @@
     ".project-password-form { width: min(100%, 360px); display: grid; gap: 12px; }",
     ".project-password-form .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }",
     ".project-password-field-label { justify-self: start; font-family: var(--font-label, Arial, Helvetica, ui-sans-serif, system-ui, sans-serif); font-size: 11px; line-height: 1.2; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #111; }",
-    ".project-password-input-row { display: grid; grid-template-columns: 1fr 50px; min-height: 42px; background: #fff; border: 1px solid #b8b8b8; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 28px rgba(17, 17, 17, 0.06); }",
+    ".project-password-input-row { display: grid; grid-template-columns: 1fr 50px; min-height: 42px; background: #fff; border: 1px solid #b8b8b8; border-radius: 8px; overflow: hidden; }",
     ".project-password-form input { width: 100%; min-width: 0; border: 0; border-radius: 0; padding: 0 14px; background: transparent; color: #1d1d1f; font: inherit; font-size: 13px; line-height: 1.2; }",
     ".project-password-form input::placeholder { color: rgba(29, 29, 31, 0.28); }",
     ".project-password-form input:focus-visible { outline: 0; }",
