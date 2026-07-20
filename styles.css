@@ -4699,22 +4699,8 @@ html.motion-enabled .motion-reveal.is-visible {
 }
 
 .case-update-notice p {
-  display: flex !important;
-  align-items: center;
-  gap: 10px;
+  display: block !important;
   margin: 0;
-}
-
-.case-update-notice-icon {
-  flex: 0 0 auto;
-  display: block;
-  width: 18px;
-  height: 18px;
-  color: #111;
-}
-
-.case-update-notice-text {
-  display: inline;
 }
 
 .case-update-notice a {
@@ -4733,7 +4719,7 @@ html.motion-enabled .motion-reveal.is-visible {
   }
 
   .case-update-notice > :first-child {
-    display: flex !important;
+    display: block !important;
   }
 }
 
