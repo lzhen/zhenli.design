@@ -200,9 +200,9 @@
       body.lucid-deck-theme.editorial-site.case-page.lucid-intro-pending .lucid-header-media img,
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-header-media img {
         opacity: 0 !important;
-        transform: scale(1.035) !important;
-        transition: opacity 2000ms ease 1000ms, transform 2600ms cubic-bezier(0.16, 1, 0.3, 1) 1000ms !important;
-        will-change: opacity, transform !important;
+        transform: none !important;
+        transition: opacity 2000ms ease 1000ms !important;
+        will-change: opacity !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-hero.is-content-ready .lucid-brand-logo,
@@ -234,7 +234,7 @@
 
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-hero.is-hero-ready .lucid-header-media img {
         opacity: 1 !important;
-        transform: scale(1) !important;
+        transform: none !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page.motion-ready [data-lucid-animate] {
@@ -1215,11 +1215,13 @@
         -webkit-background-clip: text !important;
         color: transparent !important;
         display: inline-block !important;
-        font-size: 72px !important;
+        max-width: calc(100vw - 48px) !important;
+        font-size: clamp(50px, 5.2vw, 72px) !important;
         letter-spacing: 0 !important;
         line-height: 1.08 !important;
         padding-bottom: 0.08em !important;
         text-transform: none !important;
+        white-space: nowrap !important;
         -webkit-text-fill-color: transparent !important;
       }
 
@@ -1233,7 +1235,7 @@
 
       @media (max-width: 980px) {
         body.lucid-deck-theme.editorial-site.case-page .lucid-product-hero h1 {
-          font-size: 52px !important;
+          font-size: clamp(40px, 7vw, 52px) !important;
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-product-tagline {
@@ -1326,6 +1328,10 @@
       }
 
       @media (max-width: 640px) {
+        body.lucid-deck-theme.editorial-site.case-page .lucid-product-hero h1 {
+          white-space: normal !important;
+        }
+
         body.lucid-deck-theme.editorial-site.case-page .lucid-style-library {
           width: 100% !important;
           margin-left: auto !important;
