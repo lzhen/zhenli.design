@@ -54,6 +54,7 @@
         pointer-events: none !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.lucid-intro-pending .lucid-product-hero::before,
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-hero::before {
         opacity: 1 !important;
         transition: opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -149,10 +150,29 @@
         transform: none !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.lucid-intro-pending .lucid-product-page > section:not(.lucid-product-hero),
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-page > section:not(.lucid-product-hero) {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(36px) !important;
+        transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 900ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0ms linear 900ms !important;
+        transition-delay: var(--lucid-section-delay, 0ms) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready.is-content-ready .lucid-product-page > section:not(.lucid-product-hero) {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        transition-delay: var(--lucid-section-delay, 0ms) !important;
+      }
+
       body.lucid-deck-theme.editorial-site.case-page .lucid-hero-copy {
         background-position: center calc(50% + var(--lucid-hero-parallax, 0px)) !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.lucid-intro-pending .lucid-brand-logo,
+      body.lucid-deck-theme.editorial-site.case-page.lucid-intro-pending .lucid-product-hero h1,
+      body.lucid-deck-theme.editorial-site.case-page.lucid-intro-pending .lucid-product-tagline,
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-brand-logo,
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-hero h1,
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-tagline {
@@ -161,6 +181,7 @@
         transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 900ms cubic-bezier(0.16, 1, 0.3, 1) !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.lucid-intro-pending .lucid-hero-copy,
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-hero-copy {
         opacity: 0 !important;
         transform: none !important;
@@ -176,6 +197,7 @@
         transform: none !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.lucid-intro-pending .lucid-header-media img,
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-header-media img {
         opacity: 0 !important;
         transform: scale(1.035) !important;
@@ -1521,7 +1543,7 @@
     <script src="../assets/mono-motion.js?v=20260610-mono-motion" defer></script>
     <script src="../assets/project-password-mask.js?v=20260719-lucid-lock-version" data-project-lock="case-study" data-lock-version="20260719-lucid"></script>
   </head>
-  <body class="case-page editorial-site lucid-deck-theme">
+  <body class="case-page editorial-site lucid-deck-theme lucid-intro-pending">
     <header class="site-header">
       <a class="brand" href="/" aria-label="Zhen Li home">
         <img class="mark" src="../assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" />
@@ -1911,6 +1933,7 @@
             hero.classList.add("is-background-ready");
             hero.classList.add("is-content-ready");
           }
+          body.classList.remove("lucid-intro-pending");
           body.classList.add("is-content-ready");
           return;
         }
@@ -1919,19 +1942,36 @@
           section.style.setProperty("--lucid-section-delay", 220 + index * 150 + "ms");
         });
 
-        body.classList.add("motion-ready");
-        window.requestAnimationFrame(function () {
-          window.setTimeout(function () {
-            if (hero) hero.classList.add("is-hero-ready");
-          }, 80);
-          window.setTimeout(function () {
-            if (hero) hero.classList.add("is-background-ready");
-          }, 2600);
+        var sequenceStarted = false;
+
+        function startLucidIntro() {
+          if (sequenceStarted) return;
+          sequenceStarted = true;
+          body.classList.add("motion-ready");
+
+          window.requestAnimationFrame(function () {
+            window.setTimeout(function () {
+              if (hero) hero.classList.add("is-hero-ready");
+            }, 800);
+            window.setTimeout(function () {
+              if (hero) hero.classList.add("is-background-ready");
+            }, 2900);
           window.setTimeout(function () {
             if (hero) hero.classList.add("is-content-ready");
+            body.classList.remove("lucid-intro-pending");
             body.classList.add("is-content-ready");
-          }, 3600);
+          }, 3750);
         });
+        }
+
+        if (document.documentElement.dataset.pageReady === "true") {
+          startLucidIntro();
+        } else {
+          window.addEventListener("portfolio:page-ready", startLucidIntro, { once: true });
+          window.addEventListener("load", function () {
+            window.setTimeout(startLucidIntro, 450);
+          }, { once: true });
+        }
 
         var animatedGroups = [
           ".lucid-section-heading",
