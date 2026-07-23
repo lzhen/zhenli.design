@@ -212,6 +212,26 @@
         transform: translateY(0) !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-hero.is-content-ready h1,
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-hero.is-content-ready .lucid-product-tagline {
+        animation: lucidHeroCopySettle 980ms cubic-bezier(0.16, 1, 0.3, 1) both !important;
+      }
+
+      @keyframes lucidHeroCopySettle {
+        0% {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        72% {
+          opacity: 1;
+          transform: translateY(-4px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-product-hero.is-hero-ready .lucid-header-media img {
         opacity: 1 !important;
         transform: scale(1) !important;
@@ -236,7 +256,6 @@
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-highlight-grid article,
       body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card,
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-step,
       body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-media,
       body.lucid-deck-theme.editorial-site.case-page .lucid-version-media {
         transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1), border-color 420ms ease, background-color 420ms ease !important;
@@ -1306,163 +1325,7 @@
         font-family: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, monospace !important;
       }
 
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-section {
-        overflow: hidden !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-heading {
-        width: min(calc(100% - 48px), 1180px) !important;
-        margin: 0 auto 120px !important;
-        text-align: left !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow {
-        --process-overlap: clamp(16px, 2.2vw, 26px);
-        position: relative !important;
-        display: grid !important;
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-        align-items: center !important;
-        justify-items: center !important;
-        width: min(calc(100% - 48px), 1180px) !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::before,
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::after {
-        content: "" !important;
-        position: absolute !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        background: #e3c59d !important;
-        z-index: 0 !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::before {
-        left: -21px !important;
-        width: 21px !important;
-        height: 22px !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::after {
-        right: -42px !important;
-        width: 74px !important;
-        height: 55px !important;
-        background: #e3c59d !important;
-        clip-path: polygon(0 30%, 54% 30%, 54% 0, 100% 50%, 54% 100%, 54% 70%, 0 70%) !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-step {
-        box-sizing: border-box !important;
-        display: grid !important;
-        place-items: center !important;
-        position: relative !important;
-        width: calc(100% + var(--process-overlap)) !important;
-        aspect-ratio: 1 !important;
-        margin-left: 0 !important;
-        border: 1px solid #c8ad7f !important;
-        border-radius: 50% !important;
-        background: #000 !important;
-        text-align: center !important;
-        z-index: 1 !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-step:first-child {
-        justify-self: start !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-step:last-child {
-        justify-self: end !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-copy {
-        display: grid !important;
-        justify-items: center !important;
-        gap: clamp(10px, 1.4vw, 18px) !important;
-        max-width: min(78%, 232px) !important;
-        padding: clamp(18px, 2.4vw, 28px) !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-copy h3 {
-        margin: 0 !important;
-        color: #e3c59d !important;
-        font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-        font-size: clamp(24px, 2.9vw, 34px) !important;
-        font-weight: 800 !important;
-        letter-spacing: 0 !important;
-        line-height: 1 !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-subtitle {
-        margin: 0 !important;
-        color: #f5f5f7 !important;
-        font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-        font-size: clamp(11px, 1.15vw, 14px) !important;
-        font-weight: 800 !important;
-        line-height: 1.2 !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-primary {
-        margin: 24px 0 0 !important;
-        color: #f5f5f7 !important;
-        font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-        font-size: clamp(12px, 1.25vw, 16px) !important;
-        font-weight: 800 !important;
-        line-height: 1.45 !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-secondary {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 4px 18px !important;
-        margin: -4px 0 0 !important;
-        color: rgba(245, 245, 247, 0.54) !important;
-        font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-        font-size: 12px !important;
-        font-weight: 500 !important;
-        line-height: 1.35 !important;
-      }
-
-      @media (max-width: 1100px) {
-        body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow {
-          display: grid !important;
-          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-          gap: 18px !important;
-          padding: 0 !important;
-        }
-
-        body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::before,
-        body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::after {
-          display: none !important;
-        }
-
-        body.lucid-deck-theme.editorial-site.case-page .lucid-process-step {
-          width: 100% !important;
-          margin-left: 0 !important;
-        }
-      }
-
       @media (max-width: 640px) {
-        body.lucid-deck-theme.editorial-site.case-page .lucid-process-heading {
-          width: 100% !important;
-          margin-bottom: 56px !important;
-        }
-
-        body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow {
-          width: 100% !important;
-          grid-template-columns: 1fr !important;
-        }
-
-        body.lucid-deck-theme.editorial-site.case-page .lucid-process-step {
-          border-radius: 28px !important;
-          aspect-ratio: auto !important;
-          min-height: 260px !important;
-        }
-
-        body.lucid-deck-theme.editorial-site.case-page .lucid-process-copy h3 {
-          font-size: 30px !important;
-        }
-
         body.lucid-deck-theme.editorial-site.case-page .lucid-style-library {
           width: 100% !important;
           margin-left: auto !important;
@@ -1530,8 +1393,7 @@
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-section-heading .lucid-product-eyebrow,
-      body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-copy .lucid-product-eyebrow,
-      body.lucid-deck-theme.editorial-site.case-page .lucid-process-heading .lucid-product-eyebrow {
+      body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-copy .lucid-product-eyebrow {
         color: #c8ad7f !important;
         font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
         font-size: 14px !important;
@@ -1650,42 +1512,6 @@
               <span>04</span>
               <h3>Create review rhythms</h3>
               <p>I created critique and implementation review rituals that helped the system become part of daily product work.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="decisions" class="lucid-product-section lucid-process-section" aria-labelledby="lucid-process-title">
-        <div class="lucid-process-heading">
-          <p id="lucid-process-title" class="lucid-product-eyebrow">Process</p>
-        </div>
-        <div class="lucid-process-flow" aria-label="Lucid design system process">
-          <article class="lucid-process-step">
-            <div class="lucid-process-copy">
-              <h3>Define</h3>
-              <p class="lucid-process-subtitle">Frame shared product gaps</p>
-              <p class="lucid-process-primary">Ownership / Principles<br />Product Language</p>
-            </div>
-          </article>
-          <article class="lucid-process-step">
-            <div class="lucid-process-copy">
-              <h3>Design</h3>
-              <p class="lucid-process-subtitle">Create reusable foundations</p>
-              <p class="lucid-process-primary">Styles / Components<br />Interaction Patterns</p>
-            </div>
-          </article>
-          <article class="lucid-process-step">
-            <div class="lucid-process-copy">
-              <h3>Align</h3>
-              <p class="lucid-process-subtitle">Build governance rituals</p>
-              <p class="lucid-process-primary">Critiques / Reviews<br />Stakeholder Alignment</p>
-            </div>
-          </article>
-          <article class="lucid-process-step">
-            <div class="lucid-process-copy">
-              <h3>Maintain</h3>
-              <p class="lucid-process-subtitle">Scale adoption over time</p>
-              <p class="lucid-process-primary">Documentation / Versioning<br />Feedback Loops</p>
             </div>
           </article>
         </div>
@@ -1979,7 +1805,6 @@
           ".lucid-case-summary dl",
           ".lucid-overview-visual",
           ".lucid-highlight-grid article",
-          ".lucid-process-step",
           ".lucid-showcase img",
           ".lucid-showcase-copy",
           ".lucid-style-slide",
