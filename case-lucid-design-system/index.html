@@ -254,6 +254,18 @@
         transform: translateY(0) scale(1) !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-challenge-card[data-lucid-animate] {
+        border-radius: 28px !important;
+        transform: translateY(44px) !important;
+        transform-origin: center center !important;
+        transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 900ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-challenge-card[data-lucid-animate].is-visible {
+        border-radius: 28px !important;
+        transform: translateY(0) !important;
+      }
+
       body.lucid-deck-theme.editorial-site.case-page .lucid-highlight-grid article,
       body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card,
       body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-media,
@@ -272,6 +284,21 @@
         position: relative !important;
         isolation: isolate !important;
         background: #000 !important;
+        overflow: hidden !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section::before {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        background: radial-gradient(circle at center, rgba(29, 29, 31, var(--lucid-challenge-bg, 0)) 0%, rgba(29, 29, 31, calc(var(--lucid-challenge-bg, 0) * 0.86)) 48%, rgba(0, 0, 0, 0) 84%) !important;
+        pointer-events: none !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section > * {
+        position: relative !important;
+        z-index: 1 !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-section-heading {
@@ -1209,6 +1236,35 @@
         line-height: 1.62 !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page .lucid-closing-quote {
+        display: grid !important;
+        gap: 18px !important;
+        width: min(calc(100% - 48px), 980px) !important;
+        margin: 0 auto !important;
+        padding: clamp(36px, 5vw, 64px) 0 !important;
+        text-align: center !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-closing-quote blockquote {
+        margin: 0 !important;
+        color: #f5f5f7 !important;
+        font-family: var(--font-display) !important;
+        font-size: clamp(34px, 5vw, 72px) !important;
+        font-weight: 800 !important;
+        letter-spacing: 0 !important;
+        line-height: 1.04 !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-closing-quote figcaption {
+        color: #c8ad7f !important;
+        font-family: var(--font-display) !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.14em !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+      }
+
       body.lucid-deck-theme.editorial-site.case-page .lucid-product-hero h1 {
         background-image: linear-gradient(180deg, #ffffff 0%, #d9c093 100%) !important;
         background-clip: text !important;
@@ -1731,6 +1787,13 @@
           <p>A design system only scales when it is treated as a product: with users, adoption paths, governance, release notes, and clear ownership. The Lucid work taught me to connect craft, governance, and delivery so the system could earn trust through everyday use.</p>
         </div>
       </section>
+
+      <section class="lucid-product-section lucid-quote-section" aria-label="Closing quote">
+        <figure class="lucid-closing-quote">
+          <blockquote>Value today, impact tomorrow.</blockquote>
+          <figcaption>Nathan Curtis</figcaption>
+        </figure>
+      </section>
     </main>
 
     <footer class="site-footer" style="margin-top: 72px;">
@@ -1853,9 +1916,30 @@
           hero.style.setProperty("--lucid-hero-parallax", (progress * -34).toFixed(1) + "px");
         }
 
+        var challengeSection = document.querySelector(".lucid-challenge-section");
+
+        function updateChallengeFrame() {
+          if (!challengeSection) return;
+          var rect = challengeSection.getBoundingClientRect();
+          var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          var sectionCenter = rect.top + rect.height / 2;
+          var viewportCenter = viewportHeight / 2;
+          var distance = Math.abs(sectionCenter - viewportCenter);
+          var maxDistance = viewportHeight * 0.68;
+          var spread = Math.max(0, Math.min(1, distance / maxDistance));
+          var eased = 1 - (spread * spread * (3 - 2 * spread));
+
+          challengeSection.style.setProperty("--lucid-challenge-bg", eased.toFixed(3));
+        }
+
         updateHeroParallax();
+        updateChallengeFrame();
         window.addEventListener("scroll", updateHeroParallax, { passive: true });
-        window.addEventListener("resize", updateHeroParallax);
+        window.addEventListener("scroll", updateChallengeFrame, { passive: true });
+        window.addEventListener("resize", function () {
+          updateHeroParallax();
+          updateChallengeFrame();
+        });
       })();
 
       (function () {
