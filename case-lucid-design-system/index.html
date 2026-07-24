@@ -284,21 +284,6 @@
         position: relative !important;
         isolation: isolate !important;
         background: #000 !important;
-        overflow: hidden !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section::before {
-        content: "" !important;
-        position: absolute !important;
-        inset: 0 !important;
-        z-index: 0 !important;
-        background: radial-gradient(circle at center, rgba(29, 29, 31, var(--lucid-challenge-bg, 0)) 0%, rgba(29, 29, 31, calc(var(--lucid-challenge-bg, 0) * 0.86)) 48%, rgba(0, 0, 0, 0) 84%) !important;
-        pointer-events: none !important;
-      }
-
-      body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section > * {
-        position: relative !important;
-        z-index: 1 !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-section-heading {
@@ -612,11 +597,11 @@
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-foundations-heading p {
         margin: 0 !important;
-        color: rgba(245, 245, 247, 0.56) !important;
-        font-family: var(--font-display) !important;
-        font-size: 18px !important;
+        color: rgba(245, 245, 247, 0.68) !important;
+        font-family: var(--font-body) !important;
+        font-size: 16px !important;
         font-weight: 400 !important;
-        line-height: 1.35 !important;
+        line-height: 1.72 !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-grid {
@@ -1093,6 +1078,11 @@
         text-transform: uppercase !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page .lucid-case-summary strong {
+        font-family: "Courier New", Courier, monospace !important;
+        font-weight: 800 !important;
+      }
+
       body.lucid-deck-theme.editorial-site.case-page .lucid-outcome-list {
         display: grid !important;
         gap: 6px !important;
@@ -1104,7 +1094,16 @@
         color: rgba(245, 245, 247, 0.68) !important;
         font-family: var(--font-body) !important;
         font-size: 16px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0 !important;
         line-height: 1.72 !important;
+        text-align: left !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-outcome-metric {
+        font-family: inherit !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-text-block {
@@ -1112,6 +1111,19 @@
         gap: 22px !important;
         width: min(calc(100% - 48px), 820px) !important;
         margin: 0 auto !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-reflection-section .lucid-section-heading {
+        width: min(calc(100% - 48px), 1180px) !important;
+        max-width: 1180px !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-reflection-section .lucid-text-block {
+        width: min(calc(100% - 48px), 1180px) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-reflection-section .lucid-text-block p {
+        max-width: 820px !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card {
@@ -1142,8 +1154,8 @@
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card p {
         margin: 0 !important;
-        color: rgb(134, 134, 139) !important;
-        font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+        color: rgba(245, 245, 247, 0.68) !important;
+        font-family: var(--font-body) !important;
         font-size: 16px !important;
         font-weight: 400 !important;
         letter-spacing: 0 !important;
@@ -1163,6 +1175,148 @@
         letter-spacing: 0 !important;
         line-height: 1.05 !important;
         margin: 0 0 10px !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-section {
+        overflow: hidden !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-heading {
+        width: min(calc(100% - 48px), 1180px) !important;
+        margin: 0 auto 120px !important;
+        text-align: left !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow {
+        --process-overlap: clamp(16px, 2.2vw, 26px);
+        position: relative !important;
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        align-items: center !important;
+        justify-items: center !important;
+        width: min(calc(100% - 48px), 1180px) !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::before,
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::after {
+        content: "" !important;
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        background: #e3c59d !important;
+        z-index: 0 !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::before {
+        left: -21px !important;
+        width: 21px !important;
+        height: 22px !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::after {
+        right: -42px !important;
+        width: 74px !important;
+        height: 55px !important;
+        clip-path: polygon(0 30%, 54% 30%, 54% 0, 100% 50%, 54% 100%, 54% 70%, 0 70%) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-step {
+        box-sizing: border-box !important;
+        display: grid !important;
+        place-items: center !important;
+        position: relative !important;
+        width: calc(100% + var(--process-overlap)) !important;
+        aspect-ratio: 1 !important;
+        margin-left: 0 !important;
+        border: 1px solid #c8ad7f !important;
+        border-radius: 50% !important;
+        background: #000 !important;
+        text-align: center !important;
+        z-index: 1 !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-step:first-child {
+        justify-self: start !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-step:last-child {
+        justify-self: end !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-copy {
+        display: grid !important;
+        justify-items: center !important;
+        gap: clamp(10px, 1.4vw, 18px) !important;
+        max-width: min(78%, 232px) !important;
+        padding: clamp(18px, 2.4vw, 28px) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-copy h3 {
+        margin: 0 !important;
+        color: #e3c59d !important;
+        font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+        font-size: clamp(24px, 2.9vw, 34px) !important;
+        font-weight: 800 !important;
+        letter-spacing: 0 !important;
+        line-height: 1 !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-subtitle {
+        margin: 0 !important;
+        color: #f5f5f7 !important;
+        font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+        font-size: clamp(11px, 1.15vw, 14px) !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-process-primary {
+        margin: 24px 0 0 !important;
+        color: #f5f5f7 !important;
+        font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+        font-size: clamp(12px, 1.25vw, 16px) !important;
+        font-weight: 800 !important;
+        line-height: 1.45 !important;
+      }
+
+      @media (max-width: 1100px) {
+        body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 18px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::before,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow::after {
+          display: none !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-process-step {
+          width: 100% !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        body.lucid-deck-theme.editorial-site.case-page .lucid-process-heading {
+          width: 100% !important;
+          margin-bottom: 56px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-process-flow {
+          width: 100% !important;
+          grid-template-columns: 1fr !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-process-step {
+          border-radius: 28px !important;
+          aspect-ratio: auto !important;
+          min-height: 260px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-process-copy h3 {
+          font-size: 30px !important;
+        }
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card strong {
@@ -1236,7 +1390,28 @@
         line-height: 1.62 !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page .lucid-quote-section {
+        position: relative !important;
+        min-height: clamp(520px, 62vw, 760px) !important;
+        display: grid !important;
+        align-items: center !important;
+        overflow: hidden !important;
+        background:
+          linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.92) 14%, rgba(0, 0, 0, 0.44) 42%, rgba(0, 0, 0, 0.74) 100%),
+          url("../assets/lucid-case/lucid-air-quote-bg.avif") center / cover no-repeat !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-quote-section::after {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 72%, rgba(0, 0, 0, 0.72) 100%) !important;
+        pointer-events: none !important;
+      }
+
       body.lucid-deck-theme.editorial-site.case-page .lucid-closing-quote {
+        position: relative !important;
+        z-index: 1 !important;
         display: grid !important;
         gap: 18px !important;
         width: min(calc(100% - 48px), 980px) !important;
@@ -1437,8 +1612,33 @@
         body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.extra-wide,
         body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.compact {
           grid-column: 1 / -1 !important;
-          min-height: 360px !important;
+          width: 100% !important;
+          margin: 0 !important;
+          min-height: 420px !important;
           border-radius: 22px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card img {
+          height: 100% !important;
+          object-fit: contain !important;
+          object-position: top center !important;
+          background: #181818 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.typography,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.extra-wide {
+          min-height: 460px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.extra-wide img {
+          object-fit: contain !important;
+          object-position: top center !important;
+          background: #181818 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card::after {
+          height: 62% !important;
+          background: linear-gradient(180deg, rgba(29, 29, 31, 0) 0%, rgba(29, 29, 31, 0.94) 72%, #1d1d1f 100%) !important;
         }
       }
 
@@ -1461,6 +1661,339 @@
         font-size: 14px !important;
         font-weight: 800 !important;
         text-transform: uppercase !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-kicker,
+      body.lucid-deck-theme.editorial-site.case-page .lucid-version-control-section .lucid-product-eyebrow {
+        color: #c8ad7f !important;
+        font-family: var(--font-label) !important;
+        font-size: 11px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.14em !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+      }
+
+      @media (max-width: 760px) {
+        html,
+        body,
+        body.lucid-deck-theme.editorial-site.case-page {
+          overflow-x: hidden !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .site-header {
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 40 !important;
+          background: #000 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page main.lucid-product-page {
+          width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding-top: 118px !important;
+          overflow-x: hidden !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-product-section {
+          position: relative !important;
+          z-index: 2 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-header-media {
+          position: fixed !important;
+          top: 118px !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 0 !important;
+          width: 100% !important;
+          margin: 0 auto !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-header-media img {
+          width: 100% !important;
+          min-height: 220px !important;
+          object-fit: cover !important;
+          object-position: center !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-hero-copy {
+          min-height: auto !important;
+          margin-top: 0 !important;
+          padding: 72px 20px 84px !important;
+          background-position: center !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-brand-logo {
+          width: 118px !important;
+          margin-bottom: 30px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-product-hero h1 {
+          max-width: calc(100vw - 32px) !important;
+          font-size: clamp(36px, 11.2vw, 54px) !important;
+          line-height: 1.04 !important;
+          white-space: normal !important;
+          overflow-wrap: normal !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-product-tagline {
+          max-width: calc(100vw - 40px) !important;
+          font-size: 17px !important;
+          line-height: 1.45 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-product-section {
+          padding: 64px 20px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-section-heading,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundations-heading,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-section .lucid-section-heading {
+          width: 100% !important;
+          max-width: none !important;
+          margin-bottom: 30px !important;
+          justify-items: start !important;
+          text-align: left !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-section-heading h2,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundations-heading h2,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-section .lucid-section-heading h2,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-impact-section .lucid-section-heading h2 {
+          font-size: clamp(30px, 8.8vw, 38px) !important;
+          line-height: 1.06 !important;
+          text-align: left !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-section-heading .lucid-overview-intro,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-section-heading .lucid-section-description,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundations-heading p,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-section .lucid-section-description {
+          max-width: none !important;
+          font-size: 15px !important;
+          line-height: 1.65 !important;
+          text-align: left !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-highlight-grid,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-showcase,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-impact-list,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-version-control-layout,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-layout,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-text-block {
+          width: 100% !important;
+          grid-template-columns: 1fr !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-highlight-grid {
+          gap: 14px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-highlight-grid article {
+          min-height: 240px !important;
+          padding: 20px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-card-copy {
+          padding: 0 20px 0 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card {
+          width: 100% !important;
+          grid-template-columns: 1fr !important;
+          gap: 26px !important;
+          padding: 30px 22px !important;
+          border-radius: 22px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-icon {
+          justify-items: start !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-icon img {
+          width: min(100%, 260px) !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-copy h2 {
+          font-size: clamp(28px, 8vw, 34px) !important;
+          line-height: 1.08 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-showcase-copy {
+          position: static !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-style-library {
+          width: 100% !important;
+          overflow: hidden !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-style-library-track {
+          grid-auto-columns: 92% !important;
+          gap: 16px !important;
+          padding-bottom: 62px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-style-slide {
+          gap: 16px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-style-slide p {
+          max-width: none !important;
+          margin-left: 0 !important;
+          font-size: 13px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-ipad-frame {
+          width: 100% !important;
+          padding: 8px 8px 5px !important;
+          border-radius: 18px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-ipad-frame::before {
+          bottom: -24px !important;
+          height: 24px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-ipad-frame img {
+          border-radius: 11px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-carousel-controls {
+          right: 0 !important;
+          bottom: 0 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundations-section {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-grid {
+          width: 100% !important;
+          grid-template-columns: 1fr !important;
+          gap: 12px !important;
+          padding: 0 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.large,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.wide,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.narrow,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.extra-wide,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.compact {
+          grid-column: 1 / -1 !important;
+          width: 100% !important;
+          margin: 0 !important;
+          min-height: 420px !important;
+          border-radius: 22px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.typography,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.extra-wide {
+          min-height: 460px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.extra-wide img {
+          object-fit: contain !important;
+          object-position: top center !important;
+          background: #181818 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card figcaption {
+          left: 22px !important;
+          right: 22px !important;
+          bottom: 22px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card h3 {
+          font-size: 30px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card p {
+          font-size: 13px !important;
+          line-height: 1.45 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-layout {
+          gap: 48px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-item,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-item:nth-child(2),
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-item:nth-child(3) {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+          max-width: none !important;
+          margin-left: 0 !important;
+          margin-top: 0 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-item:nth-child(2) .lucid-chip-spec-copy {
+          order: 0 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-version-control-layout {
+          gap: 28px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-version-media {
+          height: auto !important;
+          border-radius: 18px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-version-media img {
+          height: auto !important;
+          object-fit: contain !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-impact-card {
+          min-height: auto !important;
+          padding: 24px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-closing-quote {
+          width: 100% !important;
+          padding: 22px 0 !important;
+          text-align: left !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-closing-quote blockquote {
+          font-size: clamp(34px, 10vw, 48px) !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        body.lucid-deck-theme.editorial-site.case-page .lucid-product-section {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-product-hero h1 {
+          font-size: clamp(34px, 10.8vw, 46px) !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-style-library-track {
+          grid-auto-columns: 94% !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.large,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.wide,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.narrow,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.extra-wide,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.compact {
+          min-height: 420px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.typography,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card.extra-wide {
+          min-height: 460px !important;
+        }
       }
     </style>
     <script src="../assets/logo-loader.js?v=20260606-moon-landing" defer></script>
@@ -1501,19 +2034,19 @@
           <dl>
             <div>
               <dt>Role</dt>
-              <dd>Product owner for the design system, working across design, engineering, PM, and brand stakeholders.</dd>
+              <dd><strong>Product owner</strong> for the design system, working across design, engineering, PM, and brand stakeholders.</dd>
             </div>
             <div>
               <dt>Scope</dt>
-              <dd>Defined the system direction across vehicle HMI and mobile surfaces, turning fragmented product decisions into shared foundations, usage guidance, rollout rituals, team support, and leadership alignment mechanisms.</dd>
+              <dd>Defined the <strong>system direction</strong> across vehicle HMI and mobile surfaces, turning fragmented product decisions into <strong>shared foundations</strong>, usage guidance, rollout rituals, team support, and leadership alignment mechanisms.</dd>
             </div>
             <div>
               <dt>Outcome</dt>
               <dd>
                 <ul class="lucid-outcome-list">
-                  <li>Increased coverage for Air from 25% to 70%</li>
-                  <li>Increased feedback response rate to 80%</li>
-                  <li>Estimated annual saving is $2 million*</li>
+                  <li>Increased coverage for Air from <span class="lucid-outcome-metric">25%</span> to <span class="lucid-outcome-metric">70%</span></li>
+                  <li>Increased feedback response rate to <span class="lucid-outcome-metric">80%</span></li>
+                  <li>Estimated annual saving is <span class="lucid-outcome-metric">$2 million*</span></li>
                 </ul>
               </dd>
             </div>
@@ -1574,6 +2107,42 @@
               <span>04</span>
               <h3>Create review rhythms</h3>
               <p>I created critique and implementation review rituals that helped the system become part of daily product work.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="decisions" class="lucid-product-section lucid-process-section" aria-labelledby="lucid-process-title">
+        <div class="lucid-process-heading">
+          <p id="lucid-process-title" class="lucid-product-eyebrow">Process</p>
+        </div>
+        <div class="lucid-process-flow" aria-label="Lucid design system process">
+          <article class="lucid-process-step">
+            <div class="lucid-process-copy">
+              <h3>Define</h3>
+              <p class="lucid-process-subtitle">Frame shared product gaps</p>
+              <p class="lucid-process-primary">Ownership / Principles<br />Product Language</p>
+            </div>
+          </article>
+          <article class="lucid-process-step">
+            <div class="lucid-process-copy">
+              <h3>Design</h3>
+              <p class="lucid-process-subtitle">Create reusable foundations</p>
+              <p class="lucid-process-primary">Styles / Components<br />Interaction Patterns</p>
+            </div>
+          </article>
+          <article class="lucid-process-step">
+            <div class="lucid-process-copy">
+              <h3>Align</h3>
+              <p class="lucid-process-subtitle">Build governance rituals</p>
+              <p class="lucid-process-primary">Critiques / Reviews<br />Stakeholder Alignment</p>
+            </div>
+          </article>
+          <article class="lucid-process-step">
+            <div class="lucid-process-copy">
+              <h3>Maintain</h3>
+              <p class="lucid-process-subtitle">Scale adoption over time</p>
+              <p class="lucid-process-primary">Documentation / Versioning<br />Feedback Loops</p>
             </div>
           </article>
         </div>
@@ -1916,30 +2485,9 @@
           hero.style.setProperty("--lucid-hero-parallax", (progress * -34).toFixed(1) + "px");
         }
 
-        var challengeSection = document.querySelector(".lucid-challenge-section");
-
-        function updateChallengeFrame() {
-          if (!challengeSection) return;
-          var rect = challengeSection.getBoundingClientRect();
-          var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-          var sectionCenter = rect.top + rect.height / 2;
-          var viewportCenter = viewportHeight / 2;
-          var distance = Math.abs(sectionCenter - viewportCenter);
-          var maxDistance = viewportHeight * 0.68;
-          var spread = Math.max(0, Math.min(1, distance / maxDistance));
-          var eased = 1 - (spread * spread * (3 - 2 * spread));
-
-          challengeSection.style.setProperty("--lucid-challenge-bg", eased.toFixed(3));
-        }
-
         updateHeroParallax();
-        updateChallengeFrame();
         window.addEventListener("scroll", updateHeroParallax, { passive: true });
-        window.addEventListener("scroll", updateChallengeFrame, { passive: true });
-        window.addEventListener("resize", function () {
-          updateHeroParallax();
-          updateChallengeFrame();
-        });
+        window.addEventListener("resize", updateHeroParallax);
       })();
 
       (function () {
