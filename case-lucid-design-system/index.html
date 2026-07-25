@@ -266,6 +266,24 @@
         transform: translateY(0) !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-heading[data-lucid-animate] {
+        transform: translateY(44px) !important;
+        transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 900ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-heading[data-lucid-animate].is-visible {
+        transform: translateY(0) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-step[data-lucid-animate] {
+        transform: translateY(88px) scale(0.72) !important;
+        transition: opacity 1150ms cubic-bezier(0.16, 1, 0.3, 1), transform 1150ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-step[data-lucid-animate].is-visible {
+        transform: translateY(0) scale(1) !important;
+      }
+
       body.lucid-deck-theme.editorial-site.case-page .lucid-highlight-grid article,
       body.lucid-deck-theme.editorial-site.case-page .lucid-foundation-card,
       body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-media,
@@ -426,6 +444,23 @@
         width: min(calc(100% - 48px), 1180px) !important;
         margin: 0 auto !important;
         transform: none !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-showcase-media {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 8px !important;
+        background: transparent !important;
+        cursor: zoom-in !important;
+        overflow: hidden !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-showcase-media:focus-visible {
+        outline: 2px solid #c8ad7f !important;
+        outline-offset: 4px !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-showcase img {
@@ -1222,6 +1257,46 @@
         clip-path: polygon(0 30%, 54% 30%, 54% 0, 100% 50%, 54% 100%, 54% 70%, 0 70%) !important;
       }
 
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows] {
+        --lucid-flow-tail-delay: 760ms;
+        --lucid-flow-head-delay: 900ms;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-review-section .lucid-process-flow[data-lucid-flow-arrows] {
+        --lucid-flow-tail-delay: 640ms;
+        --lucid-flow-head-delay: 780ms;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows]::before,
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows]::after {
+        opacity: 0 !important;
+        transition:
+          opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
+          transform 680ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows]::before {
+        transform: translateY(-50%) scaleX(0) !important;
+        transform-origin: right center !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows]::after {
+        transform: translateY(-50%) translateX(-18px) scale(0.72) !important;
+        transform-origin: left center !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows].is-arrows-visible::before {
+        opacity: 1 !important;
+        transform: translateY(-50%) scaleX(1) !important;
+        transition-delay: var(--lucid-flow-tail-delay) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows].is-arrows-visible::after {
+        opacity: 1 !important;
+        transform: translateY(-50%) translateX(0) scale(1) !important;
+        transition-delay: var(--lucid-flow-head-delay) !important;
+      }
+
       body.lucid-deck-theme.editorial-site.case-page .lucid-process-step {
         box-sizing: border-box !important;
         display: grid !important;
@@ -1279,6 +1354,12 @@
         font-size: clamp(12px, 1.25vw, 16px) !important;
         font-weight: 800 !important;
         line-height: 1.45 !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-flow {
+        --process-overlap: clamp(24px, 3.2vw, 38px);
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        width: min(calc(100% - 48px), 900px) !important;
       }
 
       @media (max-width: 1100px) {
@@ -1455,6 +1536,14 @@
         padding-bottom: 0.08em !important;
         text-transform: none !important;
         white-space: nowrap !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-gradient-text {
+        background-image: linear-gradient(180deg, #ffffff 0%, #d9c093 100%) !important;
+        background-clip: text !important;
+        -webkit-background-clip: text !important;
+        color: transparent !important;
         -webkit-text-fill-color: transparent !important;
       }
 
@@ -2183,7 +2272,9 @@
           <p class="lucid-section-description">I organized the toolkit around how teams actually shipped work: product surfaces, system UI, app patterns, and developer handoff. The framework helped teams find the right source of truth instead of rebuilding decisions locally.</p>
         </div>
         <div class="lucid-showcase">
-          <img src="../assets/lucid-case/lucid-toolkit-documentation.png" alt="Lucid toolkit documentation diagram" />
+          <button class="lucid-showcase-media" type="button" data-spec-zoom aria-label="Open toolkit framework detail view">
+            <img src="../assets/lucid-case/lucid-toolkit-documentation.png" alt="Lucid toolkit documentation diagram" />
+          </button>
           <div class="lucid-showcase-copy">
             <p>The system connected in-car HMI, mobile, and product tooling through shared foundations. Documentation covered reusable styles, components, interaction states, and review criteria so teams could make aligned decisions faster.</p>
             <span class="lucid-highlight-links" aria-label="Lucid reference links">
@@ -2225,7 +2316,7 @@
       <section id="system-foundations" class="lucid-product-section lucid-foundations-section" aria-labelledby="lucid-foundations-title">
         <div class="lucid-foundations-upgrade">
           <div class="lucid-foundations-heading">
-            <h2 id="lucid-foundations-title">Reusable design tokens made the system easier to adopt and harder to misuse.</h2>
+            <h2 id="lucid-foundations-title">Reusable <span class="lucid-gradient-text">design tokens</span> made the system easier to adopt and harder to misuse.</h2>
             <p>Select a foundation to understand how Lucid's product language became reusable across surfaces through shared styles, tokens, and usage guidance.</p>
           </div>
           <div class="lucid-foundation-grid">
@@ -2292,7 +2383,7 @@
       <section id="component-architecture" class="lucid-product-section lucid-chip-spec-section" aria-labelledby="lucid-chip-spec-title">
         <div class="lucid-section-heading">
           <p class="lucid-product-eyebrow">Component architecture</p>
-          <h2 id="lucid-chip-spec-title">Three specifications. Built for reuse and inclusion.</h2>
+          <h2 id="lucid-chip-spec-title"><span class="lucid-gradient-text">Design specifications</span>. Built for reuse and inclusion.</h2>
           <p class="lucid-section-description">The system defined how parent and child components, callouts, and bilingual LTR/RTL behavior should work together so teams could reuse patterns without losing context or accessibility.</p>
         </div>
         <div class="lucid-chip-spec-layout">
@@ -2332,7 +2423,7 @@
       <section id="version-control" class="lucid-product-section lucid-version-control-section" aria-labelledby="lucid-version-control-title">
         <div class="lucid-section-heading">
           <p class="lucid-product-eyebrow">Version control</p>
-          <h2 id="lucid-version-control-title">Release notes made the system easier to trust.</h2>
+          <h2 id="lucid-version-control-title"><span class="lucid-gradient-text">Release notes</span> made the system easier to trust.</h2>
           <p class="lucid-section-description">Changelogs and toolkit updates turned system maintenance into a visible workflow, helping teams understand what changed, why it changed, and how to adopt it.</p>
         </div>
         <div class="lucid-version-control-layout">
@@ -2347,6 +2438,35 @@
               <img src="../assets/lucid-case/version-control-toolkit-update.png" alt="Lucid design UI toolkit update email documenting new components, component updates, bug fixes, and deprecated components" />
             </button>
             <p class="lucid-version-caption"><strong>Toolkit update.</strong> Release notes summarized new components, bug fixes, deprecated patterns, and adoption guidance for the wider design system group.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="review-rhythm" class="lucid-product-section lucid-process-section lucid-review-section" aria-labelledby="lucid-review-title">
+        <div class="lucid-process-heading">
+          <p id="lucid-review-title" class="lucid-product-eyebrow">Review</p>
+        </div>
+        <div class="lucid-process-flow" aria-label="Lucid design system review rhythm">
+          <article class="lucid-process-step">
+            <div class="lucid-process-copy">
+              <h3>Design Review</h3>
+              <p class="lucid-process-subtitle">Technical Evaluation</p>
+              <p class="lucid-process-primary">Core Team</p>
+            </div>
+          </article>
+          <article class="lucid-process-step">
+            <div class="lucid-process-copy">
+              <h3>Dev Review</h3>
+              <p class="lucid-process-subtitle">Technical Evaluation</p>
+              <p class="lucid-process-primary">Feature Developers</p>
+            </div>
+          </article>
+          <article class="lucid-process-step">
+            <div class="lucid-process-copy">
+              <h3>Stakeholder Review</h3>
+              <p class="lucid-process-subtitle">Direction &amp; Strategy</p>
+              <p class="lucid-process-primary">Cross-functional Team</p>
+            </div>
           </article>
         </div>
       </section>
@@ -2471,6 +2591,8 @@
           ".lucid-case-summary dl",
           ".lucid-overview-visual",
           ".lucid-highlight-grid article",
+          ".lucid-process-heading",
+          ".lucid-process-step",
           ".lucid-showcase img",
           ".lucid-showcase-copy",
           ".lucid-style-slide",
@@ -2482,17 +2604,34 @@
         ];
 
         var animatedItems = Array.prototype.slice.call(document.querySelectorAll(animatedGroups.join(",")));
+        var processFlows = Array.prototype.slice.call(document.querySelectorAll(".lucid-process-flow"));
+        processFlows.forEach(function (flow) {
+          if (flow.closest("[hidden]")) return;
+          flow.setAttribute("data-lucid-flow-arrows", "");
+        });
+
         animatedItems.forEach(function (item, index) {
           if (item.closest("[hidden]")) return;
           item.setAttribute("data-lucid-animate", item.matches("img, .lucid-style-slide, .lucid-foundation-card, .lucid-chip-spec-item, .lucid-version-card") ? "media" : "content");
-          item.style.setProperty("--lucid-motion-delay", Math.min((index % 4) * 90, 270) + "ms");
+          if (item.classList.contains("lucid-process-heading")) {
+            item.style.setProperty("--lucid-motion-delay", "0ms");
+          } else if (item.classList.contains("lucid-process-step")) {
+            var processIndex = Array.prototype.indexOf.call(item.parentNode.children, item);
+            item.style.setProperty("--lucid-motion-delay", (520 + processIndex * 560) + "ms");
+          } else {
+            item.style.setProperty("--lucid-motion-delay", Math.min((index % 4) * 90, 270) + "ms");
+          }
         });
 
         if ("IntersectionObserver" in window) {
           var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
               if (!entry.isIntersecting) return;
-              entry.target.classList.add("is-visible");
+              if (entry.target.hasAttribute("data-lucid-flow-arrows")) {
+                entry.target.classList.add("is-arrows-visible");
+              } else {
+                entry.target.classList.add("is-visible");
+              }
               observer.unobserve(entry.target);
             });
           }, { rootMargin: "0px 0px -12% 0px", threshold: 0.14 });
@@ -2500,9 +2639,16 @@
           animatedItems.forEach(function (item) {
             if (item.hasAttribute("data-lucid-animate")) observer.observe(item);
           });
+
+          processFlows.forEach(function (flow) {
+            if (flow.hasAttribute("data-lucid-flow-arrows")) observer.observe(flow);
+          });
         } else {
           animatedItems.forEach(function (item) {
             item.classList.add("is-visible");
+          });
+          processFlows.forEach(function (flow) {
+            flow.classList.add("is-arrows-visible");
           });
         }
 
