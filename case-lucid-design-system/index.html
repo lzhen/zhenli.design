@@ -301,6 +301,9 @@
       body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section {
         position: relative !important;
         isolation: isolate !important;
+        min-height: 118vh !important;
+        align-content: center !important;
+        overflow: hidden !important;
         background: #000 !important;
       }
 
@@ -1167,11 +1170,36 @@
         grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr) !important;
         gap: clamp(32px, 6vw, 96px) !important;
         align-items: center !important;
+        position: relative !important;
+        isolation: isolate !important;
         width: min(calc(100% - 48px), 1180px) !important;
         margin: 0 auto !important;
         padding: clamp(44px, 6vw, 78px) !important;
-        border-radius: 28px !important;
+        border-radius: var(--lucid-challenge-card-radius, 28px) !important;
+        background: transparent !important;
+        overflow: visible !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-challenge-card[data-lucid-animate],
+      body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-challenge-card[data-lucid-animate].is-visible {
+        border-radius: var(--lucid-challenge-card-radius, 28px) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card::before {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        border-radius: var(--lucid-challenge-card-radius, 28px) !important;
         background: #1d1d1f !important;
+        transform: scale(var(--lucid-challenge-bg-scale-x, 1), var(--lucid-challenge-bg-scale-y, 1)) !important;
+        transform-origin: center center !important;
+        pointer-events: none !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card > * {
+        position: relative !important;
+        z-index: 1 !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-icon {
@@ -1360,6 +1388,10 @@
         --process-overlap: clamp(24px, 3.2vw, 38px);
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         width: min(calc(100% - 48px), 900px) !important;
+      }
+
+      body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-step:last-child .lucid-process-copy {
+        transform: translateX(clamp(-8px, -0.55vw, -4px)) !important;
       }
 
       @media (max-width: 1100px) {
@@ -1899,7 +1931,7 @@
           grid-template-columns: 1fr !important;
           gap: 26px !important;
           padding: 30px 22px !important;
-          border-radius: 22px !important;
+          border-radius: var(--lucid-challenge-card-radius, 22px) !important;
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-icon {
@@ -2659,9 +2691,56 @@
           hero.style.setProperty("--lucid-hero-parallax", (progress * -34).toFixed(1) + "px");
         }
 
+        var challengeSection = document.querySelector(".lucid-challenge-section");
+        var challengeCard = challengeSection ? challengeSection.querySelector(".lucid-challenge-card") : null;
+        var challengeFrame = null;
+
+        function clamp(value, min, max) {
+          return Math.max(min, Math.min(max, value));
+        }
+
+        function lerp(start, end, progress) {
+          return start + (end - start) * progress;
+        }
+
+        function updateChallengeExpansion() {
+          challengeFrame = null;
+          if (!challengeSection || !challengeCard) return;
+
+          var rect = challengeSection.getBoundingClientRect();
+          var viewportWidth = window.innerWidth;
+          var viewportHeight = window.innerHeight;
+          var start = viewportHeight * 0.86;
+          var middle = viewportHeight * 0.32;
+          var end = -rect.height + viewportHeight * 0.48;
+          var peakProgress = clamp((start - rect.top) / (start - middle), 0, 1);
+          var exitProgress = clamp((middle - rect.top) / (middle - end), 0, 1);
+          var progress = rect.top > middle ? peakProgress : 1 - exitProgress;
+
+          var cardRect = challengeCard.getBoundingClientRect();
+          var targetWidth = viewportWidth;
+          var targetHeight = Math.max(cardRect.height, viewportHeight - 72);
+          var scaleX = cardRect.width ? targetWidth / cardRect.width : 1;
+          var scaleY = cardRect.height ? targetHeight / cardRect.height : 1;
+
+          challengeCard.style.setProperty("--lucid-challenge-bg-scale-x", lerp(1, scaleX, progress).toFixed(4));
+          challengeCard.style.setProperty("--lucid-challenge-bg-scale-y", lerp(1, scaleY, progress).toFixed(4));
+          challengeCard.style.setProperty("--lucid-challenge-card-radius", lerp(28, 0, progress).toFixed(1) + "px");
+        }
+
+        function requestChallengeExpansion() {
+          if (challengeFrame) return;
+          challengeFrame = window.requestAnimationFrame(updateChallengeExpansion);
+        }
+
         updateHeroParallax();
+        updateChallengeExpansion();
         window.addEventListener("scroll", updateHeroParallax, { passive: true });
-        window.addEventListener("resize", updateHeroParallax);
+        window.addEventListener("scroll", requestChallengeExpansion, { passive: true });
+        window.addEventListener("resize", function () {
+          updateHeroParallax();
+          updateChallengeExpansion();
+        });
       })();
 
       (function () {
