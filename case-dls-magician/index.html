@@ -705,6 +705,7 @@
       overflow: hidden;
       background: #ffffff;
       border-radius: 0;
+      cursor: default;
       line-height: 0;
     }
 
@@ -749,6 +750,10 @@
       background: transparent;
       border: 0;
       cursor: zoom-in;
+    }
+
+    .image-button--static {
+      cursor: default;
     }
 
     .case-layout {
@@ -1783,9 +1788,9 @@
           <p class="overview-type">Mobile principles helped teams adapt components across platforms and devices by grounding decisions in users’ real working environments, creating finger-friendly targets and thumb-zone navigation, and using focused, finely tuned motion to guide successful task completion.</p>
         </div>
         <div class="mobile-principles-media reveal">
-          <button class="image-button" type="button" data-lightbox-src="assets/mobile-principles.jpeg" aria-label="Open mobile principles product image">
+          <div class="image-button image-button--static">
             <img src="assets/mobile-principles.jpeg" alt="Beehive interfaces adapted across tablet and mobile devices">
-          </button>
+          </div>
         </div>
       </div>
     </section>
@@ -1805,9 +1810,9 @@
         </div>
         <div class="case-media reveal">
           <div class="accessibility-modes">
-            <button class="image-button" type="button" data-lightbox-src="assets/accessibility-dark-mode-2.gif" aria-label="Open dark mode interface animation">
+            <div class="image-button image-button--static">
               <img src="assets/accessibility-dark-mode-2.gif" alt="Beehive interface in dark mode">
-            </button>
+            </div>
           </div>
         </div>
       </div>
@@ -1822,9 +1827,9 @@
           <p class="overview-type">Purposeful motion made system feedback clearer while preserving hierarchy, usability, and interaction quality.</p>
         </div>
         <div class="case-media reveal">
-          <button class="image-button" type="button" data-lightbox-src="assets/micro-interaction.gif" aria-label="Open micro interaction animation">
+          <div class="image-button image-button--static">
             <img class="section-video" src="assets/micro-interaction.gif" alt="Beehive slider micro interaction states">
-          </button>
+          </div>
         </div>
       </div>
     </section>
