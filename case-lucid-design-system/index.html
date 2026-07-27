@@ -301,9 +301,10 @@
       body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section {
         position: relative !important;
         isolation: isolate !important;
-        min-height: 118vh !important;
-        align-content: center !important;
-        overflow: hidden !important;
+        min-height: 200svh !important;
+        align-content: start !important;
+        padding: 0 !important;
+        overflow: clip !important;
         background: #000 !important;
       }
 
@@ -1171,9 +1172,11 @@
         grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr) !important;
         gap: clamp(32px, 6vw, 96px) !important;
         align-items: center !important;
-        position: relative !important;
+        position: sticky !important;
+        top: 72px !important;
         isolation: isolate !important;
         width: min(calc(100% - 48px), 1180px) !important;
+        min-height: calc(100svh - 72px) !important;
         margin: 0 auto !important;
         padding: clamp(44px, 6vw, 78px) !important;
         border-radius: var(--lucid-challenge-card-radius, 28px) !important;
@@ -1929,11 +1932,18 @@
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card {
+          top: 118px !important;
           width: 100% !important;
+          min-height: calc(100svh - 118px) !important;
           grid-template-columns: 1fr !important;
           gap: 26px !important;
           padding: 30px 22px !important;
           border-radius: var(--lucid-challenge-card-radius, 22px) !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section {
+          min-height: 200svh !important;
+          padding: 0 !important;
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-icon {
@@ -2792,11 +2802,17 @@
           var viewportHeight = window.innerHeight;
           var cardRect = challengeCard.getBoundingClientRect();
           var start = viewportHeight * 0.86;
-          var peak = siteHeader ? siteHeader.offsetHeight : 72;
+          var stickyTop = parseFloat(window.getComputedStyle(challengeCard).top);
+          var peak = Number.isFinite(stickyTop) ? stickyTop : (siteHeader ? siteHeader.offsetHeight : 72);
+          var stickyThreshold = peak + Math.max(48, viewportHeight * 0.08);
           var end = -cardRect.height * 0.5;
-          var peakProgress = clamp((start - cardRect.top) / (start - peak), 0, 1);
+          var peakProgress = clamp((start - cardRect.top) / (start - stickyThreshold), 0, 1);
           var exitProgress = clamp((peak - cardRect.top) / (peak - end), 0, 1);
-          var progress = cardRect.top > peak ? peakProgress : 1 - exitProgress;
+          var progress = cardRect.top > stickyThreshold
+            ? peakProgress
+            : cardRect.top >= peak - 1
+              ? 1
+              : 1 - exitProgress;
 
           var targetWidth = viewportWidth;
           var targetHeight = Math.max(cardRect.height, viewportHeight - peak);
