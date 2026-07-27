@@ -259,41 +259,40 @@
       right: 18px;
       bottom: 18px;
       z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 5px;
-      border-radius: 999px;
-      background: rgba(23, 23, 23, 0.82);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-      backdrop-filter: blur(10px);
     }
 
     .data-table-carousel__arrow {
-      display: grid;
-      width: 34px;
-      height: 34px;
-      padding: 0;
-      place-items: center;
-      color: #fff;
-      background: transparent;
+      display: inline-flex;
+      min-width: 124px;
+      height: 46px;
+      padding: 0 20px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #ffffff;
+      background: #09091f;
       border: 0;
-      border-radius: 50%;
-      font: 700 17px/1 var(--heading);
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       cursor: pointer;
+      transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
     }
 
     .data-table-carousel__arrow:hover,
     .data-table-carousel__arrow:focus-visible {
-      background: rgba(255, 255, 255, 0.16);
+      background: #17172f;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
       outline: none;
+      transform: translateY(-2px);
     }
 
     .data-table-carousel__status {
-      min-width: 40px;
-      color: #fff;
-      font: 700 11px/1 var(--heading);
-      text-align: center;
+      color: #ffffff;
+      font: 700 16px/1 var(--heading);
+    }
+
+    .data-table-carousel__arrow-icon {
+      font: 500 14px/1 var(--heading);
     }
 
     .band.band--accessibility {
@@ -1175,11 +1174,21 @@
       display: flex;
     }
 
+    .lightbox.lightbox--long {
+      align-items: flex-start;
+      overflow-y: auto;
+    }
+
     .lightbox img {
       width: auto;
       max-width: min(1500px, 94vw);
       max-height: 90vh;
       object-fit: contain;
+    }
+
+    .lightbox.lightbox--long img {
+      width: min(1120px, 94vw);
+      max-height: none;
     }
 
     .lightbox__close {
@@ -1664,22 +1673,23 @@
           <p class="section-label section-label--blue">Component case</p>
           <h2 class="section-title--transformation-font">Data Table</h2>
           <hr class="section-format__rule">
-          <p class="case-description--light overview-type">I unified complex data needs—including flexible columns, dense content, selection, validation, loading, and comments—into one reusable, implementation-ready table pattern.</p>
+          <p class="case-description--light overview-type">The MVP data table was not ready to scale across teams. After launch, teams reported that it could not support the complexity of their workflows or fit critical product scenarios, so I redesigned it as a flexible, scalable pattern that could adapt to diverse enterprise needs.</p>
         </div>
         <div class="case-media reveal">
           <div class="data-table-carousel" data-carousel>
             <div class="data-table-carousel__slides">
-              <button class="image-button data-table-carousel__slide is-active" type="button" data-lightbox-src="assets/data-table.png" aria-label="Open data table component overview image">
+              <button class="image-button data-table-carousel__slide is-active" type="button" data-lightbox-src="assets/data-table-1-full.png" aria-label="Open full data table component overview image">
                 <img src="assets/data-table.png" alt="Beehive data table component overview">
               </button>
-              <button class="image-button data-table-carousel__slide" type="button" data-lightbox-src="assets/data-table-2.png" aria-label="Open data table component detail image" hidden>
+              <button class="image-button data-table-carousel__slide" type="button" data-lightbox-src="assets/data-table-2-full.png" aria-label="Open full data table component detail image" hidden>
                 <img src="assets/data-table-2.png" alt="Beehive data table component detail and documentation">
               </button>
             </div>
             <div class="data-table-carousel__controls" aria-label="Data table image carousel">
-              <button class="data-table-carousel__arrow" type="button" data-carousel-prev aria-label="Previous image">&larr;</button>
-              <span class="data-table-carousel__status" aria-live="polite">1 / 2</span>
-              <button class="data-table-carousel__arrow" type="button" data-carousel-next aria-label="Next image">&rarr;</button>
+              <button class="data-table-carousel__arrow" type="button" data-carousel-next aria-label="Show next data table image">
+                <span class="data-table-carousel__arrow-icon" aria-hidden="true">&rarr;</span>
+                <span class="data-table-carousel__status" aria-live="polite">Before</span>
+              </button>
             </div>
           </div>
         </div>
@@ -1903,9 +1913,9 @@
 
       document.querySelectorAll("[data-carousel]").forEach((carousel) => {
         const slides = Array.from(carousel.querySelectorAll(".data-table-carousel__slide"));
-        const previous = carousel.querySelector("[data-carousel-prev]");
         const next = carousel.querySelector("[data-carousel-next]");
         const status = carousel.querySelector(".data-table-carousel__status");
+        const arrowIcon = carousel.querySelector(".data-table-carousel__arrow-icon");
         let currentIndex = 0;
         let autoSwitch;
 
@@ -1916,15 +1926,13 @@
             slide.classList.toggle("is-active", isActive);
             slide.hidden = !isActive;
           });
-          status.textContent = `${currentIndex + 1} / ${slides.length}`;
+          status.textContent = currentIndex === 0 ? "Before" : "After";
+          arrowIcon.textContent = currentIndex === 0 ? "→" : "←";
+          next.setAttribute("aria-label", currentIndex === 0 ? "Show After image" : "Show Before image");
         };
 
         const stopAutoSwitch = () => window.clearTimeout(autoSwitch);
 
-        previous.addEventListener("click", () => {
-          stopAutoSwitch();
-          showSlide(currentIndex - 1);
-        });
         next.addEventListener("click", () => {
           stopAutoSwitch();
           showSlide(currentIndex + 1);
@@ -1935,6 +1943,7 @@
 
       const closeLightbox = () => {
         lightbox.classList.remove("is-open");
+        lightbox.classList.remove("lightbox--long");
         lightboxImage.removeAttribute("src");
       };
 
@@ -1942,6 +1951,7 @@
         button.addEventListener("click", () => {
           lightboxImage.src = button.dataset.lightboxSrc;
           lightboxImage.alt = button.querySelector("img")?.alt || "Expanded image";
+          lightbox.classList.toggle("lightbox--long", button.dataset.lightboxSrc.includes("-full."));
           lightbox.classList.add("is-open");
           lightboxClose.focus();
         });
