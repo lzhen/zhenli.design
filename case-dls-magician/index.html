@@ -1060,18 +1060,26 @@
       margin-top: 28px;
     }
 
-    .dls-reference-links a {
+    .dls-reference-links a,
+    .dls-reference-links button {
       padding: 10px 14px;
+      color: inherit;
+      background: transparent;
       border: 1px solid rgba(23, 23, 23, 0.28);
       border-radius: 999px;
+      font-family: inherit;
       font-size: 12px;
       font-weight: 700;
+      line-height: inherit;
       text-decoration: none;
       text-transform: uppercase;
+      cursor: pointer;
     }
 
     .dls-reference-links a:hover,
-    .dls-reference-links a:focus-visible {
+    .dls-reference-links a:focus-visible,
+    .dls-reference-links button:hover,
+    .dls-reference-links button:focus-visible {
       color: #ffffff;
       background: var(--ink);
       outline: none;
@@ -1204,6 +1212,12 @@
       max-width: min(1500px, 94vw);
       max-height: 90vh;
       object-fit: contain;
+    }
+
+    .lightbox video {
+      width: min(1200px, 94vw);
+      max-height: 90vh;
+      background: #000000;
     }
 
     .lightbox.lightbox--long img {
@@ -1892,6 +1906,7 @@
           <nav class="dls-reference-links" aria-label="DLS Magician reference links">
             <a href="https://dl.acm.org/doi/epdf/10.1145/3379336.3381462" target="_blank" rel="noreferrer">ACM Paper</a>
             <a href="https://patents.google.com/patent/US11295082B2/en" target="_blank" rel="noreferrer">US Patent</a>
+            <button type="button" data-video-src="../assets/dls-magician.mp4">Demo Video</button>
           </nav>
         </div>
         <dl class="dls-case-details">
@@ -1935,9 +1950,10 @@
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
-    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close image preview">&times;</button>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media preview">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close media preview">&times;</button>
     <img id="lightboxImage" alt="">
+    <video id="lightboxVideo" controls playsinline preload="metadata" hidden></video>
   </div>
 
   <script>
@@ -1992,6 +2008,7 @@
 
       const lightbox = document.getElementById("lightbox");
       const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxVideo = document.getElementById("lightboxVideo");
       const lightboxClose = document.getElementById("lightboxClose");
 
       document.querySelectorAll("[data-carousel]").forEach((carousel) => {
@@ -2028,14 +2045,35 @@
         lightbox.classList.remove("is-open");
         lightbox.classList.remove("lightbox--long");
         lightboxImage.removeAttribute("src");
+        lightboxImage.hidden = false;
+        lightboxVideo.pause();
+        lightboxVideo.removeAttribute("src");
+        lightboxVideo.hidden = true;
       };
 
       document.querySelectorAll("[data-lightbox-src]").forEach((button) => {
         button.addEventListener("click", () => {
+          lightboxVideo.pause();
+          lightboxVideo.removeAttribute("src");
+          lightboxVideo.hidden = true;
+          lightboxImage.hidden = false;
           lightboxImage.src = button.dataset.lightboxSrc;
           lightboxImage.alt = button.querySelector("img")?.alt || "Expanded image";
           lightbox.classList.toggle("lightbox--long", button.dataset.lightboxSrc.includes("-full."));
           lightbox.classList.add("is-open");
+          lightboxClose.focus();
+        });
+      });
+
+      document.querySelectorAll("[data-video-src]").forEach((button) => {
+        button.addEventListener("click", () => {
+          lightbox.classList.remove("lightbox--long");
+          lightboxImage.removeAttribute("src");
+          lightboxImage.hidden = true;
+          lightboxVideo.src = button.dataset.videoSrc;
+          lightboxVideo.hidden = false;
+          lightbox.classList.add("is-open");
+          lightboxVideo.play().catch(() => {});
           lightboxClose.focus();
         });
       });
