@@ -1,122 +1,1912 @@
 <!doctype html>
+<!-- Fresh Beehive case study rebuild -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="/">
-    <title>DLS Magician - Zhen Li</title>
-    <meta name="description" content="How I designed an explainable AI system that converted natural language requirements into live prototypes — before generative AI existed." />
-    <link rel="icon" href="assets/favicon-joined-16.png" type="image/png" sizes="16x16" />
-    <link rel="icon" href="assets/favicon-joined-32.png" type="image/png" sizes="32x32" />
-    <link rel="shortcut icon" href="favicon-joined.ico" />
-    <link rel="mask-icon" href="assets/safari-pinned-tab-joined.svg" color="#000000" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon-joined.png" />
-    <link rel="stylesheet" href="styles.css?v=20260616-work-media-quieter" />
-    <script src="assets/logo-loader.js?v=20260606-moon-landing" defer></script>
-    <script src="assets/mono-motion.js?v=20260610-mono-motion" defer></script>
-  <style id="case-title-match-lucid">
-      body.dls-case-theme.editorial-site .case-copy > h3 {
-        font-family: var(--font-label) !important;
-        font-size: 24px !important;
-        font-weight: 700 !important;
-        letter-spacing: 2px !important;
-        line-height: 1.4 !important;
-        text-transform: uppercase !important;
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beehive Design System &amp; AI Innovation case study by Zhen Li">
+  <title>Beehive Design System &amp; AI Innovation - Zhen Li</title>
+  <style>
+    :root {
+      --honey: #f4ca32;
+      --honey-soft: #ffe77e;
+      --gold: #8f6811;
+      --ink: #171717;
+      --paper: #f7f7f2;
+      --white: #ffffff;
+      --graphite: #25282d;
+      --graphite-soft: #343942;
+      --blue: #0879e8;
+      --line: rgba(23, 23, 23, 0.16);
+      --light-line: rgba(255, 255, 255, 0.18);
+      --page: min(1180px, calc(100vw - 80px));
+      --heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --body: "Courier New", Courier, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--heading);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 20;
+      background: var(--honey);
+    }
+
+    .site-header__inner {
+      width: var(--page);
+      min-height: 76px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(23, 23, 23, 0.2);
+    }
+
+    .brand {
+      display: inline-flex;
+      color: var(--ink);
+    }
+
+    .brand .mark {
+      width: clamp(28px, 2.4vw, 38px);
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 13px;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+    }
+
+    .site-nav a[aria-current="page"] {
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: calc(100svh - 76px);
+      background: var(--honey);
+      overflow: hidden;
+    }
+
+    .hero__inner {
+      width: var(--page);
+      min-height: calc(100svh - 76px);
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      padding: 72px 0 76px;
+    }
+
+    .hero__copy {
+      width: min(920px, 100%);
+      text-align: center;
+    }
+
+    .hero__logo {
+      width: clamp(108px, 10vw, 150px);
+      margin: 0 auto 30px;
+    }
+
+    .eyebrow,
+    .section-label,
+    .meta-label {
+      margin: 0;
+      color: var(--gold);
+      font-family: var(--heading);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      width: 100%;
+      max-width: 920px;
+      margin: 48px auto 38px;
+      display: grid;
+      gap: 14px;
+      font-size: 60px;
+      line-height: 0.94;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .hero h1 > span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero h1 .hero__ampersand {
+      display: inline-block;
+      color: var(--ink);
+      font-size: 0.65em;
+    }
+
+    .hero__summary {
+      max-width: 610px;
+      margin: 0 auto;
+      font-family: var(--body);
+      font-size: clamp(14px, 1vw, 16px);
+      line-height: 1.55;
+    }
+
+    .band {
+      padding: 124px 0;
+    }
+
+    .band__inner {
+      width: var(--page);
+      margin: 0 auto;
+    }
+
+    .band--paper {
+      background: var(--paper);
+    }
+
+    .band--white {
+      background: var(--white);
+    }
+
+    .band--dark {
+      color: var(--white);
+      background: var(--graphite);
+    }
+
+    .band--honey {
+      background: var(--honey);
+    }
+
+    .band.band--foundations {
+      padding-bottom: 0;
+      overflow: hidden;
+    }
+
+    .band.band--approach {
+      padding-bottom: 0;
+      overflow: hidden;
+    }
+
+    .band.band--composition {
+      padding-bottom: 0;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .band.band--transformation {
+      padding-top: 96px;
+    }
+
+    .band.band--data-table {
+      padding-bottom: 0;
+    }
+
+    .band--data-table .case-media img {
+      border-radius: 6px 6px 0 0;
+    }
+
+    .band--data-table .image-button {
+      line-height: 0;
+    }
+
+    .data-table-carousel {
+      position: relative;
+    }
+
+    .data-table-carousel__slides {
+      aspect-ratio: 1692 / 1578;
+      overflow: hidden;
+      background: #1774d1;
+    }
+
+    .band--data-table .data-table-carousel__slide {
+      display: none;
+    }
+
+    .band--data-table .data-table-carousel__slide.is-active {
+      display: block;
+      height: 100%;
+    }
+
+    .band--data-table .data-table-carousel__slide img {
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .band--data-table .data-table-carousel__slide:nth-child(2) img {
+      transform: translateY(14px);
+    }
+
+    .data-table-carousel__controls {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border-radius: 999px;
+      background: rgba(23, 23, 23, 0.82);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .data-table-carousel__arrow {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      place-items: center;
+      color: #fff;
+      background: transparent;
+      border: 0;
+      border-radius: 50%;
+      font: 700 17px/1 var(--heading);
+      cursor: pointer;
+    }
+
+    .data-table-carousel__arrow:hover,
+    .data-table-carousel__arrow:focus-visible {
+      background: rgba(255, 255, 255, 0.16);
+      outline: none;
+    }
+
+    .data-table-carousel__status {
+      min-width: 40px;
+      color: #fff;
+      font: 700 11px/1 var(--heading);
+      text-align: center;
+    }
+
+    .band.band--accessibility {
+      position: relative;
+      z-index: 1;
+      min-height: 820px;
+      padding: clamp(82px, 8vw, 112px) 0 0;
+      background: #1b1c1d;
+      overflow: visible;
+    }
+
+    .band--accessibility .case-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .accessibility-modes {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+      aspect-ratio: 26 / 9;
+      overflow: hidden;
+    }
+
+    .accessibility-modes img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom;
+    }
+
+    .accessibility-modes .image-button {
+      height: 100%;
+      line-height: 0;
+    }
+
+    .section-intro {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
+      gap: 72px;
+      align-items: start;
+      margin-bottom: 72px;
+    }
+
+    .section-intro h2 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .section-intro p {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: rgba(23, 23, 23, 0.72);
+      font-family: var(--body);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .band--dark .section-intro p {
+      color: rgba(255, 255, 255, 0.67);
+    }
+
+    .overview-lead {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(48px, 7vw, 108px);
+      align-items: center;
+      margin-bottom: 96px;
+    }
+
+    .overview-copy {
+      max-width: 850px;
+      margin: 0;
+      font-family: var(--body);
+      font-size: clamp(15px, 1.15vw, 18px);
+      line-height: 1.58;
+    }
+
+    .band p.overview-type,
+    .band ul.overview-type {
+      font-family: var(--body);
+      font-size: clamp(15px, 1.15vw, 18px);
+      line-height: 1.58;
+      letter-spacing: -0.02em;
+    }
+
+    .band:not(.band--dark) p.overview-type,
+    .band:not(.band--dark) ul.overview-type {
+      color: rgba(23, 23, 23, 0.78);
+    }
+
+    .overview-visual {
+      width: 100%;
+      margin: 0;
+    }
+
+    .overview-visual img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .approach-collage,
+    .composition-collage {
+      position: static;
+      width: 100%;
+      margin: 0;
+    }
+
+    .approach-collage img,
+    .composition-collage img {
+      width: 100%;
+      height: auto;
+    }
+
+    .composition-copy {
+      max-width: 900px;
+      margin-bottom: 48px;
+    }
+
+    .composition-collage {
+      overflow: visible;
+    }
+
+    .composition-collage img {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .overview-item {
+      min-height: 255px;
+      padding: 32px 34px 34px 0;
+    }
+
+    .overview-item + .overview-item {
+      padding-left: 34px;
+      border-left: 1px solid var(--line);
+    }
+
+    .overview-item p,
+    .overview-item li {
+      font-family: var(--body);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .overview-item .meta-label {
+      font-family: var(--heading);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .overview-item ul {
+      margin: 20px 0 0;
+      padding-left: 20px;
+    }
+
+    .transformation {
+      min-height: 720px;
+    }
+
+    .transformation__kicker {
+      margin: 0 0 10px;
+      color: #1675ff;
+      font-family: var(--heading);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .band--dark .section-intro .transformation__kicker {
+      margin: 0 0 10px;
+      color: #1675ff;
+      font-family: var(--heading);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .band .section-label.section-label--blue {
+      margin-top: 0;
+      color: #1675ff;
+      font-family: var(--heading);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .transformation__label {
+      margin: 0;
+      font-size: clamp(22px, 2vw, 30px);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .transformation__rule {
+      width: 48px;
+      margin: 24px 0 60px;
+      border: 0;
+      border-top: 2px solid var(--ink);
+    }
+
+    .transformation__heading {
+      max-width: 560px;
+      margin: 24px 0 38px;
+      display: grid;
+      gap: 14px;
+      font-family: var(--heading);
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .transformation__heading span {
+      display: block;
+    }
+
+    .transformation__description {
+      max-width: 610px;
+      margin: 0;
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .band p.transformation__description {
+      font-size: clamp(14px, 1vw, 16px);
+    }
+
+    .transformation__diagram {
+      position: relative;
+      height: 390px;
+      margin-top: -72px;
+    }
+
+    .transformation__curve {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .transformation__axis {
+      position: absolute;
+      margin: 0;
+      color: #aaa;
+      font-family: var(--heading);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: none;
+    }
+
+    .transformation__axis--start {
+      left: 0;
+      bottom: 92px;
+    }
+
+    .transformation__axis--end {
+      top: 0;
+      right: 3%;
+      text-align: right;
+    }
+
+    .transformation__stage {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .transformation__stage::before {
+      width: 12px;
+      height: 12px;
+      flex: 0 0 auto;
+      background: var(--honey);
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      border-radius: 50%;
+      box-shadow: 0 0 0 18px var(--white);
+      outline: 1px dashed #777;
+      outline-offset: 18px;
+      content: "";
+    }
+
+    .transformation__stage span {
+      max-width: 190px;
+      padding: 5px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .transformation__stage--one {
+      left: 28%;
+      top: 83%;
+      align-items: flex-start;
+    }
+
+    .transformation__stage--one span {
+      margin: 48px 0 0 8px;
+    }
+
+    .transformation__stage--two {
+      left: 59%;
+      top: 68.5%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .transformation__stage--two span {
+      margin: 46px 0 0 28px;
+      white-space: nowrap;
+    }
+
+    .transformation__stage--three {
+      top: 23.5%;
+      right: 8%;
+      width: 12px;
+      height: 12px;
+    }
+
+    .transformation__stage--three span {
+      position: absolute;
+      right: 32px;
+      bottom: 28px;
+      width: 190px;
+      text-align: right;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+    }
+
+    .media-grid figure {
+      min-width: 0;
+      margin: 0;
+      background: var(--white);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .media-grid img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+    }
+
+    .media-grid--equal {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      background: var(--graphite);
+    }
+
+    .band--micro-interaction {
+      position: relative;
+      z-index: 2;
+      min-height: 820px;
+      background: #ffffff;
+    }
+
+    .band--micro-interaction .case-layout {
+      min-height: 572px;
+      align-items: center;
+    }
+
+    .band--micro-interaction .case-media {
+      width: min(100%, 520px);
+      align-self: center;
+      justify-self: center;
+    }
+
+    .band--micro-interaction .image-button {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 6px;
+      line-height: 0;
+    }
+
+    .band--micro-interaction .image-button::after {
+      position: absolute;
+      inset: 0;
+      border: 1px solid #ffffff;
+      border-radius: inherit;
+      content: "";
+      pointer-events: none;
+    }
+
+    .band--mobile-principles {
+      background: #ffffff;
+    }
+
+    .mobile-principles-media {
+      margin-top: 72px;
+    }
+
+    .mobile-principles-media img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .image-button {
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      cursor: zoom-in;
+    }
+
+    .case-layout {
+      display: grid;
+      grid-template-columns: minmax(230px, 0.42fr) minmax(0, 1fr);
+      gap: 72px;
+      align-items: start;
+    }
+
+    .case-copy h2 {
+      margin: 18px 0 24px;
+      font-size: clamp(38px, 4.4vw, 64px);
+      line-height: 1;
+    }
+
+    .case-copy p {
+      margin: 0;
+      color: rgba(23, 23, 23, 0.69);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.62;
+    }
+
+    .case-copy p.case-description--light {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .case-copy ul {
+      margin: 28px 0 0;
+      padding-left: 22px;
+      font-family: var(--body);
+      line-height: 1.7;
+    }
+
+    .case-media {
+      min-width: 0;
+    }
+
+    .case-media img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .foundation-grid {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .principles-header {
+      margin-bottom: 72px;
+    }
+
+    .principles-header h2 {
+      margin: 18px 0 0;
+      font-size: clamp(38px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .principles-header__rule {
+      width: 58px;
+      margin: 42px 0 0;
+      border: 0;
+      border-top: 3px solid var(--ink);
+    }
+
+    .principles-header__description {
+      max-width: 760px;
+      margin: 32px 0 0;
+      color: rgba(23, 23, 23, 0.72);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .section-intro.section-intro--transformation {
+      display: block;
+      margin-bottom: 72px;
+    }
+
+    .band--approach .section-intro--transformation {
+      margin-bottom: 48px;
+    }
+
+    .section-intro--transformation > div h2,
+    .case-copy--transformation h2 {
+      max-width: 900px;
+      margin: 18px 0 0;
+      font-size: clamp(38px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .band .section-title--transformation-font.section-title--transformation-font {
+      font-family: var(--heading);
+      font-size: clamp(22px, 2vw, 30px);
+      font-weight: 500;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .section-format__rule {
+      width: 48px;
+      margin: 32px 0;
+      border: 0;
+      border-top: 2px solid var(--ink);
+    }
+
+    .band--dark .section-format__rule {
+      border-top-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .section-intro--transformation > div > p {
+      max-width: 760px;
+      margin-top: 0;
+    }
+
+    .case-copy--transformation .section-format__rule {
+      margin: 28px 0;
+    }
+
+    .reflection.reflection--transformation {
+      display: block;
+    }
+
+    .reflection--transformation blockquote {
+      max-width: 980px;
+      margin-top: 18px;
+    }
+
+    .foundation {
+      min-height: 0;
+      padding: 20px 26px;
+      color: var(--white);
+      background: #8751c3;
+      border-radius: 0;
+    }
+
+    .foundation:nth-child(2) {
+      background: #fa8552;
+    }
+
+    .foundation:nth-child(3) {
+      background: #3492a8;
+    }
+
+    .foundation:nth-child(4) {
+      background: #3db89f;
+    }
+
+    .foundation:nth-child(5) {
+      background: #95ad60;
+    }
+
+    .foundation:nth-child(6) {
+      background: #4b4fb4;
+    }
+
+    .foundation h3 {
+      margin: 16px 0 12px;
+      font-size: 20px;
+    }
+
+    .foundation p,
+    .foundation li {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: var(--body);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .foundation .meta-label {
+      font-size: 11px;
+    }
+
+    .foundation ul {
+      display: grid;
+      gap: 5px;
+      margin: 16px 0 0;
+      padding-left: 18px;
+    }
+
+    .foundation li {
+      font-weight: 700;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 72px;
+    }
+
+    .impact-card {
+      min-height: 260px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.38);
+      border: 1px solid rgba(23, 23, 23, 0.18);
+      border-radius: 6px;
+    }
+
+    .impact-card strong {
+      display: block;
+      margin: 48px 0 20px;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 0.9;
+    }
+
+    .impact-card p {
+      margin: 0;
+      font-family: var(--body);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .impact-card .meta-label {
+      font-family: var(--heading);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .reflection {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+      gap: 72px;
+      align-items: start;
+    }
+
+    .reflection blockquote {
+      margin: 0;
+      font-size: clamp(38px, 4.8vw, 68px);
+      font-weight: 700;
+      line-height: 1.04;
+    }
+
+    .reflection p {
+      max-width: 760px;
+      margin: 38px 0 0;
+      color: rgba(255, 255, 255, 0.64);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .band--reflection {
+      display: grid;
+      min-height: 760px;
+      align-items: center;
+      background-color: #000000;
+      background-image: url("assets/reflection-background.png");
+      background-position: right top;
+      background-repeat: no-repeat;
+      background-size: min(50vw, 680px) auto;
+    }
+
+    .band--reflection .section-intro--transformation {
+      margin-bottom: 0;
+    }
+
+    .band--dls-magician {
+      color: var(--ink);
+      background: #e3e4e3;
+    }
+
+    .band--dls-magician .dls-case-details div {
+      border-color: rgba(23, 23, 23, 0.18);
+    }
+
+    .dls-magician-title {
+      margin-bottom: 72px;
+    }
+
+    .dls-magician-title h2 {
+      margin: 18px 0 24px;
+    }
+
+    .dls-magician-hero {
+      margin: 0;
+    }
+
+    .dls-magician-hero img {
+      width: 100%;
+      height: auto;
+    }
+
+    .dls-magician-links {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 28px;
+    }
+
+    .dls-reference-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .dls-reference-links a {
+      padding: 10px 14px;
+      border: 1px solid rgba(23, 23, 23, 0.28);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .dls-reference-links a:hover,
+    .dls-reference-links a:focus-visible {
+      color: #ffffff;
+      background: var(--ink);
+      outline: none;
+    }
+
+    .dls-case-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 72px;
+      margin: 76px 0 0;
+    }
+
+    .dls-case-details div {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .dls-case-details .dls-case-impact {
+      grid-column: 1 / -1;
+    }
+
+    .dls-case-details dt {
+      margin: 0 0 12px;
+      font-family: var(--heading);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .dls-case-details dd {
+      margin: 0;
+      color: rgba(23, 23, 23, 0.69);
+      font-family: var(--body);
+      font-size: clamp(15px, 1.15vw, 18px);
+      line-height: 1.58;
+      letter-spacing: -0.02em;
+    }
+
+    .site-footer {
+      background: var(--honey);
+    }
+
+    .site-footer__inner {
+      width: var(--page);
+      min-height: 128px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-family: var(--body);
+      font-size: 13px;
+      border-top: 1px solid rgba(23, 23, 23, 0.2);
+    }
+
+    .site-footer a {
+      font-family: var(--heading);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(0, 0, 0, 0.94);
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: min(1500px, 94vw);
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .lightbox__close {
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      color: var(--white);
+      background: #262626;
+      border: 0;
+      border-radius: 50%;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --page: min(100% - 48px, 1180px);
       }
-    </style>
-    <script src="assets/project-password-mask.js?v=20260719-lift-password-logo" data-project-lock="case-study"></script>
-  </head>
-<body class="case-page editorial-site dls-case-theme">
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Zhen Li home">
-        <img class="mark" src="assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" />
+
+      .hero__inner {
+        padding-top: 68px;
+      }
+
+      .overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .overview-visual {
+        width: 100%;
+      }
+
+      .overview-item:nth-child(3) {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .case-layout {
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --page: calc(100% - 32px);
+      }
+
+      .site-header__inner {
+        min-height: 106px;
+        align-items: flex-start;
+        padding: 22px 0 20px;
+      }
+
+      .site-nav {
+        align-self: flex-end;
+        gap: 22px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero__inner {
+        min-height: auto;
+        padding: 70px 0 36px;
+      }
+
+      .hero__logo {
+        width: 88px;
+      }
+
+      .hero h1 {
+        gap: 10px;
+        font-size: clamp(28px, 8vw, 32px);
+      }
+
+      .hero__summary {
+        font-size: 15px;
+      }
+
+      .band {
+        padding: 82px 0;
+      }
+
+      .section-intro,
+      .case-layout,
+      .reflection {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .band--accessibility .case-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .band.band--accessibility,
+      .band--micro-interaction,
+      .band--reflection {
+        min-height: auto;
+      }
+
+      .band--micro-interaction .case-layout {
+        min-height: auto;
+      }
+
+      .dls-case-details {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .dls-case-details {
+        margin-top: 52px;
+      }
+
+      .dls-case-details .dls-case-impact {
+        grid-column: auto;
+      }
+
+      .section-intro {
+        margin-bottom: 46px;
+      }
+
+      .accessibility-modes {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-principles-media {
+        margin-top: 48px;
+      }
+
+      .section-intro h2,
+      .case-copy h2,
+      .reflection blockquote {
+        font-size: clamp(36px, 11vw, 50px);
+      }
+
+      .section-intro p,
+      .case-copy p,
+      .reflection p {
+        font-size: 15px;
+      }
+
+      .transformation {
+        min-height: auto;
+      }
+
+      .transformation__rule {
+        margin-bottom: 46px;
+      }
+
+      .transformation__heading {
+        gap: 10px;
+        font-size: 34px;
+      }
+
+      .transformation__diagram {
+        display: grid;
+        gap: 34px;
+        height: auto;
+        margin-top: 64px;
+        padding-left: 24px;
+        border-left: 1px solid #999;
+      }
+
+      .transformation__curve,
+      .transformation__axis {
+        display: none;
+      }
+
+      .transformation__stage,
+      .transformation__stage--one,
+      .transformation__stage--two,
+      .transformation__stage--three {
+        position: relative;
+        inset: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .transformation__stage::before {
+        margin-left: -31px;
+        box-shadow: 0 0 0 8px var(--white);
+        outline-offset: 8px;
+      }
+
+      .transformation__stage span,
+      .transformation__stage--one span,
+      .transformation__stage--two span,
+      .transformation__stage--three span {
+        position: static;
+        right: auto;
+        bottom: auto;
+        width: auto;
+        max-width: none;
+        margin: 0;
+        text-align: left;
+        white-space: normal;
+      }
+
+      .overview-copy {
+        margin: 0 0 48px;
+        font-size: 16px;
+      }
+
+      .band p.overview-type,
+      .band ul.overview-type {
+        font-size: 16px;
+      }
+
+      .band p.transformation__description {
+        font-size: 15px;
+      }
+
+      .overview-grid,
+      .foundation-grid,
+      .impact-grid,
+      .media-grid,
+      .media-grid--equal {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-item {
+        min-height: auto;
+        padding: 28px 0;
+      }
+
+      .overview-item + .overview-item,
+      .overview-item:nth-child(3) {
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .overview-lead {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 72px;
+      }
+
+      .media-grid img {
+        min-height: 0;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .impact-grid {
+        margin-top: 46px;
+      }
+
+      .impact-card {
+        min-height: 220px;
+      }
+
+      .site-footer__inner {
+        min-height: 150px;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../" aria-label="Zhen Li home">
+        <img class="mark" src="../assets/zhen-li-logo-transparent.svg" alt="" aria-hidden="true">
       </a>
-      <nav aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a class="active" href="/work/">Work</a>
-        <a href="/resume/">Resume</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../">Home</a>
+        <a href="../work/" aria-current="page">Work</a>
+        <a href="../resume/">Resume</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="section">
-        <article class="case-study">
-          <div class="case-copy">
-            <p class="case-kicker">Case study</p>
-            <h3>DLS Magician</h3>
-            <p class="case-subtitle">Designing an AI-assisted workflow that turns ambiguous text requirements into explainable, editable, DLS-based prototypes.</p>
-            <span class="dls-reference-links" aria-label="DLS Magician reference links">
-              <a href="https://dl.acm.org/doi/epdf/10.1145/3379336.3381462" target="_blank" rel="noreferrer">ACM Paper</a>
-              <a href="https://patents.google.com/patent/US11295082B2/en" target="_blank" rel="noreferrer">US Patent</a>
-            </span>
-          </div>
-          <div class="case-aside">
-            <dl class="case-details">
-              <div>
-                <dt>Problem</dt>
-                <dd>E&amp;P product teams relied on text-heavy requirements, while product owners needed visual prototypes earlier to align stakeholders and validate direction.</dd>
-              </div>
-              <div>
-                <dt>Role</dt>
-                <dd>Designed the AI-assisted workflow connecting product-owner user stories, natural-language interpretation, Schlumberger Design Language System (DLS) component logic, and generated prototype output. A core design principle was making the AI's reasoning visible at every step — so teams could inspect, question, and refine the output rather than accept it blindly.</dd>
-              </div>
-              <div>
-                <dt>Design decision</dt>
-                <dd>Designed a structured translation layer between natural-language requirements and Schlumberger Design Language System (DLS) components, making generated prototypes explainable, editable, and aligned with platform conventions.</dd>
-              </div>
-              <div>
-                <dt>Research</dt>
-                <dd>Reviewed 30 internal project records, surveyed product owners, and interviewed cross-functional participants across the US, Germany, UK, and Malaysia.</dd>
-              </div>
-              <div class="case-impact-expanded">
-                <dt>Impact</dt>
-                <dd>
-                  <p>Reduced manual prototyping effort by 45%, enabling teams to move from text requirements to reviewable prototypes in minutes instead of weeks.</p><p>Made AI-generated UI output easier to inspect, discuss, and refine before engineering investment.</p>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </article>
-        <div class="dls-system-loop" aria-label="DLS Magician prototype animation">
-          <video class="dls-system-video" src="assets/dls-magician.mp4" controls loop autoplay muted playsinline preload="metadata" aria-label="DLS Magician prototype workflow"></video>
+  <main>
+    <section class="hero" id="overview">
+      <div class="hero__inner">
+        <div class="hero__copy reveal">
+          <img class="hero__logo" src="assets/beehive/logo.png" alt="Beehive logo">
+          <p class="eyebrow">Enterprise design system</p>
+          <h1>
+            <span>Beehive Design System</span>
+            <span><span class="hero__ampersand">&amp;</span> AI Innovation</span>
+          </h1>
+          <p class="hero__summary">A shared product language that unified product experience and collaboration across a complex global organization and its AI innovation.</p>
         </div>
-        <div class="dls-video-chapters" aria-label="DLS Magician video chapters">
-          <div>
-            <span>01</span>
-            <h4>Requirement signal</h4>
-            <p>User stories became structured input that product owners could inspect and refine.</p>
-          </div>
-          <div>
-            <span>02</span>
-            <h4>AI translation layer</h4>
-            <p>NLP parsing connected ambiguous text to product intent, interaction needs, and UI structure.</p>
-          </div>
-          <div>
-            <span>03</span>
-            <h4>DLS component mapping</h4>
-            <p>The system matched requirements to reusable design language components and patterns.</p>
-          </div>
-          <div>
-            <span>04</span>
-            <h4>Prototype review</h4>
-            <p>Generated prototypes made AI output visible, editable, and easier to discuss before build.</p>
-          </div>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-      <span>&copy; 2026 Zhen Li</span>
-      <span>Portfolio co-created with AI and Josef Müller-Brockmann</span>
-      <span class="social-links social-icons">
-        <a class="icon-link" href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true" aria-label="LinkedIn" title="LinkedIn"><img src="assets/icon-linkedin.svg" alt="" /></a>
-        <a class="icon-link" href="https://scholar.google.com/citations?hl=en&user=--enlHIAAAAJ&view_op=list_works" aria-label="Google Scholar" title="Google Scholar"><img src="assets/icon-scholar.svg" alt="" /></a>
-        <a class="icon-link" href="https://www.researchgate.net/profile/Zhen-Li-204" aria-label="ResearchGate" title="ResearchGate"><img src="assets/icon-researchgate.svg" alt="" /></a>
-        <a class="icon-link" href="https://medium.com/@lizhen10" aria-label="Medium" title="Medium"><img src="assets/icon-medium.svg" alt="" /></a>
-        <a class="icon-link" href="https://dribbble.com/zhenli" aria-label="Dribbble" title="Dribbble"><img src="assets/icon-dribbble.svg" alt="" /></a>
-        <a class="icon-link" href="https://github.com/lzhen" aria-label="GitHub" title="GitHub"><img src="assets/icon-github.svg" alt="" /></a>
-      </span>
-    </footer>
-    <script src="assets/site-scroll-top.js"></script>
+    <section class="band band--paper">
+      <div class="band__inner">
+        <div class="overview-lead">
+          <figure class="overview-visual reveal">
+            <img src="assets/three-components.png" alt="Three Beehive design system component panels">
+          </figure>
+          <p class="overview-copy reveal">Beehive brought fragmented enterprise interfaces into one system of shared foundations, reusable components, contribution practices, and adoption support. I led design production and communication within the core team, helping the system become part of daily product work for three years.</p>
+        </div>
+        <div class="overview-grid reveal">
+          <article class="overview-item">
+            <p class="meta-label">Role</p>
+            <p><strong>Design system lead and product owner</strong>, working across design, engineering, product, and brand stakeholders.</p>
+          </article>
+          <article class="overview-item">
+            <p class="meta-label">Responsibilities</p>
+            <ul>
+              <li>Led system design production and communication.</li>
+              <li>Built the contribution and consumption model.</li>
+              <li>Supported teams adopting the system across products.</li>
+            </ul>
+          </article>
+          <article class="overview-item">
+            <p class="meta-label">Outcome</p>
+            <p><strong>200+</strong> people working with the system across <strong>20+ projects</strong>, supported through a three-year adoption program.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--white band--transformation" id="transformation">
+      <div class="band__inner transformation reveal">
+        <p class="transformation__kicker">Challenge</p>
+        <p class="transformation__label">Transformation</p>
+        <hr class="transformation__rule">
+        <h2 class="transformation__heading">
+          <span>Design</span>
+          <span>Transformation</span>
+        </h2>
+        <p class="transformation__description overview-type">User experience is quickly becoming an integral part of product and software development. We are leveraging best practices from UX design to drive transformation and innovation within software teams.</p>
+        <div class="transformation__diagram" aria-label="Progression from code-first development to transformational innovation">
+          <svg class="transformation__curve" viewBox="0 0 1100 390" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 315 C250 350 520 330 735 245 C885 186 970 116 1080 54" fill="none" stroke="#777" stroke-width="1.2"/>
+            <path d="M1072 55 L1080 54 L1076 62" fill="none" stroke="#777" stroke-width="1.2"/>
+          </svg>
+          <p class="transformation__axis transformation__axis--start">Incremental<br>innovation</p>
+          <p class="transformation__axis transformation__axis--end">Transformational<br>innovation</p>
+          <div class="transformation__stage transformation__stage--one">
+            <span>Development-driven<br>“code-first”</span>
+          </div>
+          <div class="transformation__stage transformation__stage--two">
+            <span>Development + Design</span>
+          </div>
+          <div class="transformation__stage transformation__stage--three">
+            <span>Development + Design + DLS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--paper band--approach" id="ideation">
+      <div class="band__inner">
+        <div class="section-intro section-intro--transformation reveal">
+          <p class="section-label section-label--blue">Approach</p>
+          <div>
+            <h2 class="section-title--transformation-font">Ideation</h2>
+            <hr class="section-format__rule">
+            <p class="overview-type">Workshops, stakeholder interviews, product audits, and collaborative synthesis exposed where teams were duplicating effort and where consistency would create the most value.</p>
+          </div>
+        </div>
+        <figure class="approach-collage reveal">
+          <img src="assets/approach-collage.png" alt="Workshops, research synthesis, product audits, and interface ideation">
+        </figure>
+      </div>
+    </section>
+
+    <section class="band band--white band--composition" id="composition">
+      <div class="band__inner">
+        <div class="case-copy case-copy--transformation composition-copy reveal">
+          <p class="section-label section-label--blue">System architecture</p>
+          <h2 class="section-title--transformation-font">Composition</h2>
+          <hr class="section-format__rule">
+          <p class="overview-type">A design system mainly includes the visual guidelines and a component library.</p>
+        </div>
+        <figure class="composition-collage reveal">
+          <img src="assets/composition.png" alt="Beehive visual guidelines and component library composition model">
+        </figure>
+      </div>
+    </section>
+
+    <section class="band band--paper band--foundations" id="experience-principles">
+      <div class="band__inner">
+        <div class="principles-header reveal">
+          <p class="transformation__kicker">Product Foundation</p>
+          <h2 class="section-title--transformation-font">Experience Principles</h2>
+          <hr class="principles-header__rule">
+          <p class="principles-header__description overview-type">Experience principles, functional attributes, and reusable building blocks connected brand intent with practical interaction design.</p>
+        </div>
+        <div class="foundation-grid">
+          <article class="foundation reveal">
+            <p class="meta-label">01</p>
+            <h3>Drive by Insights</h3>
+            <p>Surface prioritized information by role, whether system-generated or customized by users.</p>
+            <ul>
+              <li>Prioritization</li>
+              <li>Focused Attention &amp; Noise Reduction</li>
+              <li>Actionable Data</li>
+            </ul>
+          </article>
+          <article class="foundation reveal">
+            <p class="meta-label">02</p>
+            <h3>Built for Collaboration</h3>
+            <p>Embed collaboration into workflows so teams can communicate, align, and decide faster.</p>
+            <ul>
+              <li>Bring for Context to the Data</li>
+              <li>Single View</li>
+              <li>Consolidated Workflows &amp; Process Artifacts</li>
+            </ul>
+          </article>
+          <article class="foundation reveal">
+            <p class="meta-label">03</p>
+            <h3>Planned for Scalability</h3>
+            <p>Scale across evolving products, platforms, frameworks, and technologies.</p>
+            <ul>
+              <li>Convergence of Design Expression</li>
+              <li>Feature Consolidation &amp; Process Integration</li>
+              <li>Principle-centric UX</li>
+            </ul>
+          </article>
+          <article class="foundation reveal">
+            <p class="meta-label">04</p>
+            <h3>Designed for Guidance</h3>
+            <p>Create intuitive, coherent experiences through consistent architecture, flows, and interactions.</p>
+            <ul>
+              <li>Intuitive Education</li>
+              <li>Color as Wayfinding</li>
+              <li>Architecture as Mental Model</li>
+            </ul>
+          </article>
+          <article class="foundation reveal">
+            <p class="meta-label">05</p>
+            <h3>Engineered for Anticipation</h3>
+            <p>Learn from behavior and data to anticipate user needs and adapt to context.</p>
+            <ul>
+              <li>Anticipating User Needs</li>
+              <li>Anticipating Contextual Needs</li>
+              <li>Anticipating Environmental Needs</li>
+            </ul>
+          </article>
+          <article class="foundation reveal">
+            <p class="meta-label">06</p>
+            <h3>Unified, Not Uniform</h3>
+            <p>Maintain a coherent experience while adapting to each product, device, and touchpoint.</p>
+            <ul>
+              <li>Adapted to Interaction</li>
+              <li>Device-agnostic</li>
+              <li>Seamless &amp; Human centered</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--dark band--data-table" id="data-table">
+      <div class="band__inner case-layout">
+        <div class="case-copy case-copy--transformation reveal">
+          <p class="section-label section-label--blue">Component case</p>
+          <h2 class="section-title--transformation-font">Data Table</h2>
+          <hr class="section-format__rule">
+          <p class="case-description--light overview-type">I unified complex data needs—including flexible columns, dense content, selection, validation, loading, and comments—into one reusable, implementation-ready table pattern.</p>
+        </div>
+        <div class="case-media reveal">
+          <div class="data-table-carousel" data-carousel>
+            <div class="data-table-carousel__slides">
+              <button class="image-button data-table-carousel__slide is-active" type="button" data-lightbox-src="assets/data-table.png" aria-label="Open data table component overview image">
+                <img src="assets/data-table.png" alt="Beehive data table component overview">
+              </button>
+              <button class="image-button data-table-carousel__slide" type="button" data-lightbox-src="assets/data-table-2.png" aria-label="Open data table component detail image" hidden>
+                <img src="assets/data-table-2.png" alt="Beehive data table component detail and documentation">
+              </button>
+            </div>
+            <div class="data-table-carousel__controls" aria-label="Data table image carousel">
+              <button class="data-table-carousel__arrow" type="button" data-carousel-prev aria-label="Previous image">&larr;</button>
+              <span class="data-table-carousel__status" aria-live="polite">1 / 2</span>
+              <button class="data-table-carousel__arrow" type="button" data-carousel-next aria-label="Next image">&rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--white band--mobile-principles" id="cross-platform">
+      <div class="band__inner">
+        <div class="section-format reveal">
+          <p class="section-label section-label--blue">Responsive design</p>
+          <h2 class="section-title--transformation-font">CROSS-PLATFORM EXPERIENCE</h2>
+          <hr class="section-format__rule">
+          <p class="overview-type">Mobile principles helped teams adapt components across platforms and devices by grounding decisions in users’ real working environments, creating finger-friendly targets and thumb-zone navigation, and using focused, finely tuned motion to guide successful task completion.</p>
+        </div>
+        <div class="mobile-principles-media reveal">
+          <button class="image-button" type="button" data-lightbox-src="assets/mobile-principles.jpeg" aria-label="Open mobile principles product image">
+            <img src="assets/mobile-principles.jpeg" alt="Beehive interfaces adapted across tablet and mobile devices">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--dark band--accessibility" id="accessibility">
+      <div class="band__inner case-layout">
+        <div class="case-copy case-copy--transformation reveal">
+          <p class="section-label section-label--blue">Accessibility</p>
+          <h2 class="section-title--transformation-font">Accessibility</h2>
+          <hr class="section-format__rule">
+          <p class="case-description--light overview-type">I evaluated color contrast, corrected palette relationships, and documented state behavior against WCAG guidance so teams could make accessible choices by default.</p>
+          <ul class="overview-type">
+            <li>Contrast guidance for light and dark surfaces</li>
+            <li>Consistent hover, focus, active, and disabled states</li>
+            <li>Reusable color rules shared with implementation teams</li>
+          </ul>
+        </div>
+        <div class="case-media reveal">
+          <div class="accessibility-modes">
+            <button class="image-button" type="button" data-lightbox-src="assets/accessibility-dark-mode-2.gif" aria-label="Open dark mode interface animation">
+              <img src="assets/accessibility-dark-mode-2.gif" alt="Beehive interface in dark mode">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--white band--micro-interaction" id="micro-interaction">
+      <div class="band__inner case-layout">
+        <div class="case-copy case-copy--transformation reveal">
+          <p class="section-label section-label--blue">Interaction design</p>
+          <h2 class="section-title--transformation-font">Micro Interaction</h2>
+          <hr class="section-format__rule">
+          <p class="overview-type">Purposeful motion made system feedback clearer while preserving hierarchy, usability, and interaction quality.</p>
+        </div>
+        <div class="case-media reveal">
+          <button class="image-button" type="button" data-lightbox-src="assets/micro-interaction.gif" aria-label="Open micro interaction animation">
+            <img class="section-video" src="assets/micro-interaction.gif" alt="Beehive slider micro interaction states">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--honey" id="impact">
+      <div class="band__inner">
+        <div class="section-intro section-intro--transformation reveal">
+          <p class="section-label section-label--blue">Impact</p>
+          <div>
+            <h2 class="section-title--transformation-font">COHESION &amp; EFFICIENCY</h2>
+            <hr class="section-format__rule">
+            <p class="overview-type">Beehive created a durable operating model around shared product decisions, not just a library of finished components.</p>
+          </div>
+        </div>
+        <div class="impact-grid">
+          <article class="impact-card reveal">
+            <p class="meta-label">Community</p>
+            <strong data-count-to="200" data-count-suffix="+">200+</strong>
+            <p>people connected through a contribution, education, and support mechanism.</p>
+          </article>
+          <article class="impact-card reveal">
+            <p class="meta-label">Coverage</p>
+            <strong data-count-to="20" data-count-suffix="+">20+</strong>
+            <p>projects using a more cohesive product language across the organization.</p>
+          </article>
+          <article class="impact-card reveal">
+            <p class="meta-label">Adoption</p>
+            <strong data-count-to="3" data-count-suffix=" years">3 years</strong>
+            <p>of sustained consumption support, system evolution, and cross-team collaboration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--dark band--reflection" id="reflection">
+      <div class="band__inner">
+        <div class="section-intro section-intro--transformation reveal">
+          <p class="section-label section-label--blue">Reflection</p>
+          <div>
+            <h2 class="section-title--transformation-font">Trust and Collaboration</h2>
+            <hr class="section-format__rule">
+            <p class="overview-type">Beehive shaped how I approach systems work today: connect craft with governance, build adoption into the product strategy, and make the system useful in the real conditions where teams ship.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--white band--dls-magician" id="dls-magician">
+      <div class="band__inner">
+        <div class="dls-magician-title reveal">
+          <p class="section-label section-label--blue">AI Innovation</p>
+          <h2 class="section-title--transformation-font">DLS Magician</h2>
+          <hr class="section-format__rule">
+          <p class="overview-type">DLS Magician transformed text-based product requirements into explainable, editable prototypes through an AI-assisted workflow grounded in the design system.</p>
+        </div>
+        <figure class="dls-magician-hero reveal">
+          <img src="assets/dls-magician-hero.png" alt="DLS Magician logo and AI-generated prototype shown on a laptop">
+        </figure>
+        <div class="dls-magician-links reveal">
+          <nav class="dls-reference-links" aria-label="DLS Magician reference links">
+            <a href="https://dl.acm.org/doi/epdf/10.1145/3379336.3381462" target="_blank" rel="noreferrer">ACM Paper</a>
+            <a href="https://patents.google.com/patent/US11295082B2/en" target="_blank" rel="noreferrer">US Patent</a>
+          </nav>
+        </div>
+        <dl class="dls-case-details">
+          <div class="reveal">
+            <dt>Problem</dt>
+            <dd>E&amp;P product teams relied on text-heavy requirements, while product owners needed visual prototypes earlier to align stakeholders and validate direction.</dd>
+          </div>
+          <div class="reveal">
+            <dt>Role</dt>
+            <dd>Designed the AI-assisted workflow connecting product-owner user stories, natural-language interpretation, DLS component logic, and generated prototype output, with the AI’s reasoning visible at every step.</dd>
+          </div>
+          <div class="reveal">
+            <dt>Design decision</dt>
+            <dd>Created a structured translation layer between natural-language requirements and DLS components, making generated prototypes explainable, editable, and aligned with platform conventions.</dd>
+          </div>
+          <div class="reveal">
+            <dt>Research</dt>
+            <dd>Reviewed 30 internal project records, surveyed product owners, and interviewed cross-functional participants across the US, Germany, UK, and Malaysia.</dd>
+          </div>
+          <div class="dls-case-impact reveal">
+            <dt>Impact</dt>
+            <dd>Reduced manual prototyping effort by 45%, enabling teams to move from text requirements to reviewable prototypes in minutes instead of weeks while making AI-generated output easier to inspect, discuss, and refine before engineering investment.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>&copy; 2026 Zhen Li Portfolio co-created with AI and Josef Muller-Brockmann</span>
+      <a href="../work/">View more work</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close image preview">&times;</button>
+    <img id="lightboxImage" alt="">
+  </div>
+
+  <script>
+    (() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+      const countElements = document.querySelectorAll("[data-count-to]");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const element = entry.target;
+          const target = Number(element.dataset.countTo);
+          const suffix = element.dataset.countSuffix || "";
+          const duration = 1400;
+          const startTime = performance.now();
+
+          const updateCount = (currentTime) => {
+            const elapsed = Math.min((currentTime - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - elapsed, 3);
+            element.textContent = `${Math.round(target * eased)}${suffix}`;
+            if (elapsed < 1) window.requestAnimationFrame(updateCount);
+          };
+
+          if (prefersReducedMotion) {
+            element.textContent = `${target}${suffix}`;
+          } else {
+            window.requestAnimationFrame(updateCount);
+          }
+
+          countObserver.unobserve(element);
+        });
+      }, { threshold: 0.55 });
+
+      countElements.forEach((element) => {
+        if (!prefersReducedMotion) {
+          element.textContent = `0${element.dataset.countSuffix || ""}`;
+        }
+        countObserver.observe(element);
+      });
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxClose = document.getElementById("lightboxClose");
+
+      document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+        const slides = Array.from(carousel.querySelectorAll(".data-table-carousel__slide"));
+        const previous = carousel.querySelector("[data-carousel-prev]");
+        const next = carousel.querySelector("[data-carousel-next]");
+        const status = carousel.querySelector(".data-table-carousel__status");
+        let currentIndex = 0;
+        let autoSwitch;
+
+        const showSlide = (nextIndex) => {
+          currentIndex = (nextIndex + slides.length) % slides.length;
+          slides.forEach((slide, index) => {
+            const isActive = index === currentIndex;
+            slide.classList.toggle("is-active", isActive);
+            slide.hidden = !isActive;
+          });
+          status.textContent = `${currentIndex + 1} / ${slides.length}`;
+        };
+
+        const stopAutoSwitch = () => window.clearTimeout(autoSwitch);
+
+        previous.addEventListener("click", () => {
+          stopAutoSwitch();
+          showSlide(currentIndex - 1);
+        });
+        next.addEventListener("click", () => {
+          stopAutoSwitch();
+          showSlide(currentIndex + 1);
+        });
+        showSlide(0);
+        autoSwitch = window.setTimeout(() => showSlide(1), 3500);
+      });
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightboxImage.removeAttribute("src");
+      };
+
+      document.querySelectorAll("[data-lightbox-src]").forEach((button) => {
+        button.addEventListener("click", () => {
+          lightboxImage.src = button.dataset.lightboxSrc;
+          lightboxImage.alt = button.querySelector("img")?.alt || "Expanded image";
+          lightbox.classList.add("is-open");
+          lightboxClose.focus();
+        });
+      });
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeLightbox();
+      });
+    })();
+  </script>
 </body>
 </html>
