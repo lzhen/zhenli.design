@@ -299,6 +299,8 @@
     .band.band--accessibility {
       position: relative;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
       min-height: 820px;
       padding: clamp(82px, 8vw, 112px) 0 0;
       background: #1b1c1d;
@@ -306,8 +308,10 @@
     }
 
     .band--accessibility .case-layout {
+      flex: 1;
       grid-template-columns: 1fr;
       gap: 32px;
+      align-content: space-between;
     }
 
     .accessibility-modes {
@@ -1089,27 +1093,60 @@
     }
 
     .site-footer {
-      background: var(--honey);
+      color: #505050;
+      background: #ffffff;
     }
 
     .site-footer__inner {
       width: var(--page);
-      min-height: 128px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
+      padding: 24px 0;
       font-family: var(--body);
       font-size: 13px;
-      border-top: 1px solid rgba(23, 23, 23, 0.2);
+      border-top: 1px solid rgba(23, 23, 23, 0.14);
     }
 
     .site-footer a {
-      font-family: var(--heading);
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 4px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-footer .social-icons {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .site-footer .icon-link {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .site-footer .icon-link img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      transform-origin: center;
+      transition: transform 160ms ease;
+    }
+
+    .site-footer .icon-link img[src$="icon-linkedin.svg"] {
+      width: 18px;
+      height: 18px;
+      transform: translateY(-1px);
+    }
+
+    .site-footer .icon-link:hover img,
+    .site-footer .icon-link:focus-visible img {
+      transform: scale(1.16);
     }
 
     .reveal {
@@ -1407,10 +1444,13 @@
       }
 
       .site-footer__inner {
-        min-height: 150px;
         align-items: flex-start;
         flex-direction: column;
         justify-content: center;
+      }
+
+      .site-footer .social-icons {
+        justify-content: flex-start;
       }
     }
 
@@ -1789,8 +1829,16 @@
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <span>&copy; 2026 Zhen Li Portfolio co-created with AI and Josef Muller-Brockmann</span>
-      <a href="../work/">View more work</a>
+      <span>&copy; 2026 Zhen Li</span>
+      <span>Portfolio co-created with AI and Josef Müller-Brockmann</span>
+      <span class="social-icons">
+        <a class="icon-link" href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true" aria-label="LinkedIn" title="LinkedIn"><img src="../assets/icon-linkedin.svg" alt=""></a>
+        <a class="icon-link" href="https://scholar.google.com/citations?hl=en&amp;user=--enlHIAAAAJ&amp;view_op=list_works" aria-label="Google Scholar" title="Google Scholar"><img src="../assets/icon-scholar.svg" alt=""></a>
+        <a class="icon-link" href="https://www.researchgate.net/profile/Zhen-Li-204" aria-label="ResearchGate" title="ResearchGate"><img src="../assets/icon-researchgate.svg" alt=""></a>
+        <a class="icon-link" href="https://medium.com/@lizhen10" aria-label="Medium" title="Medium"><img src="../assets/icon-medium.svg" alt=""></a>
+        <a class="icon-link" href="https://dribbble.com/zhenli" aria-label="Dribbble" title="Dribbble"><img src="../assets/icon-dribbble.svg" alt=""></a>
+        <a class="icon-link" href="https://github.com/lzhen" aria-label="GitHub" title="GitHub"><img src="../assets/icon-github.svg" alt=""></a>
+      </span>
     </div>
   </footer>
 
