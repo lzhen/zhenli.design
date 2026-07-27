@@ -702,18 +702,30 @@
       position: relative;
       display: block;
       padding-top: 18px;
-      overflow: visible;
+      overflow: hidden;
       background: #ffffff;
-      border-radius: 6px;
+      border-radius: 0;
       line-height: 0;
     }
 
     .band--micro-interaction .image-button::after {
       position: absolute;
       inset: 0;
-      border: 3px solid #ffffff;
-      border-radius: inherit;
-      box-shadow: inset 0 0 0 1px #ffffff;
+      z-index: 2;
+      border: 6px solid #ffffff;
+      box-shadow: inset 0 0 0 2px #ffffff;
+      content: "";
+      pointer-events: none;
+    }
+
+    .band--micro-interaction .image-button::before {
+      position: absolute;
+      top: 18px;
+      right: 0;
+      left: 0;
+      z-index: 3;
+      height: 1px;
+      background: #ffffff;
       content: "";
       pointer-events: none;
     }
