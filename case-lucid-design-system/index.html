@@ -1193,13 +1193,14 @@
         border-radius: var(--lucid-challenge-card-radius, 28px) !important;
         background: #1d1d1f !important;
         transform: scale(var(--lucid-challenge-bg-scale-x, 1), var(--lucid-challenge-bg-scale-y, 1)) !important;
-        transform-origin: center center !important;
+        transform-origin: center top !important;
         pointer-events: none !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card > * {
         position: relative !important;
         z-index: 1 !important;
+        transform: translateY(var(--lucid-challenge-content-shift, 0px)) !important;
       }
 
       body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-icon {
@@ -2144,6 +2145,84 @@
           min-height: 460px !important;
         }
       }
+
+      @media (max-width: 760px) {
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section {
+          overflow: hidden !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-heading {
+          width: 100% !important;
+          margin: 0 0 32px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-flow {
+          display: grid !important;
+          grid-template-columns: minmax(0, 1fr) !important;
+          gap: 16px !important;
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0 !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-step {
+          grid-column: 1 !important;
+          justify-self: stretch !important;
+          width: 100% !important;
+          min-width: 0 !important;
+          min-height: 220px !important;
+          aspect-ratio: auto !important;
+          border-radius: 28px !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-copy,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-step:last-child .lucid-process-copy {
+          width: 100% !important;
+          max-width: none !important;
+          padding: 28px 24px !important;
+          transform: none !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-copy h3 {
+          max-width: 100% !important;
+          font-size: clamp(28px, 9vw, 36px) !important;
+          overflow-wrap: anywhere !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-subtitle,
+        body.lucid-deck-theme.editorial-site.case-page .lucid-review-section .lucid-process-primary {
+          max-width: 100% !important;
+          overflow-wrap: anywhere !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-quote-section {
+          box-sizing: border-box !important;
+          width: 100vw !important;
+          min-height: 70svh !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+          padding: 64px 24px 32px !important;
+          background-position: center 72% !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-closing-quote {
+          box-sizing: border-box !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding: 24px 0 !important;
+          text-align: left !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-closing-quote blockquote {
+          width: 100% !important;
+          max-width: 100% !important;
+          font-size: clamp(36px, 11vw, 52px) !important;
+          line-height: 1.02 !important;
+          white-space: normal !important;
+          overflow-wrap: normal !important;
+        }
+      }
     </style>
     <script src="../assets/logo-loader.js?v=20260606-moon-landing" defer></script>
     <script src="../assets/mono-motion.js?v=20260610-mono-motion" defer></script>
@@ -2693,6 +2772,7 @@
 
         var challengeSection = document.querySelector(".lucid-challenge-section");
         var challengeCard = challengeSection ? challengeSection.querySelector(".lucid-challenge-card") : null;
+        var siteHeader = document.querySelector(".site-header");
         var challengeFrame = null;
 
         function clamp(value, min, max) {
@@ -2707,25 +2787,26 @@
           challengeFrame = null;
           if (!challengeSection || !challengeCard) return;
 
-          var rect = challengeSection.getBoundingClientRect();
           var viewportWidth = window.innerWidth;
           var viewportHeight = window.innerHeight;
-          var start = viewportHeight * 0.86;
-          var middle = viewportHeight * 0.32;
-          var end = -rect.height + viewportHeight * 0.48;
-          var peakProgress = clamp((start - rect.top) / (start - middle), 0, 1);
-          var exitProgress = clamp((middle - rect.top) / (middle - end), 0, 1);
-          var progress = rect.top > middle ? peakProgress : 1 - exitProgress;
-
           var cardRect = challengeCard.getBoundingClientRect();
+          var start = viewportHeight * 0.86;
+          var peak = siteHeader ? siteHeader.offsetHeight : 72;
+          var end = -cardRect.height * 0.5;
+          var peakProgress = clamp((start - cardRect.top) / (start - peak), 0, 1);
+          var exitProgress = clamp((peak - cardRect.top) / (peak - end), 0, 1);
+          var progress = cardRect.top > peak ? peakProgress : 1 - exitProgress;
+
           var targetWidth = viewportWidth;
-          var targetHeight = Math.max(cardRect.height, viewportHeight - 72);
+          var targetHeight = Math.max(cardRect.height, viewportHeight - peak);
           var scaleX = cardRect.width ? targetWidth / cardRect.width : 1;
           var scaleY = cardRect.height ? targetHeight / cardRect.height : 1;
+          var contentShift = Math.max(0, (targetHeight - cardRect.height) * 0.36);
 
           challengeCard.style.setProperty("--lucid-challenge-bg-scale-x", lerp(1, scaleX, progress).toFixed(4));
           challengeCard.style.setProperty("--lucid-challenge-bg-scale-y", lerp(1, scaleY, progress).toFixed(4));
           challengeCard.style.setProperty("--lucid-challenge-card-radius", lerp(28, 0, progress).toFixed(1) + "px");
+          challengeCard.style.setProperty("--lucid-challenge-content-shift", lerp(0, contentShift, progress).toFixed(1) + "px");
         }
 
         function requestChallengeExpansion() {
