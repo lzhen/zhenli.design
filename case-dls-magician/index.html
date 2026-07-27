@@ -2017,7 +2017,6 @@
         const status = carousel.querySelector(".data-table-carousel__status");
         const arrowIcon = carousel.querySelector(".data-table-carousel__arrow-icon");
         let currentIndex = 0;
-        let autoSwitch;
 
         const showSlide = (nextIndex) => {
           currentIndex = (nextIndex + slides.length) % slides.length;
@@ -2031,14 +2030,10 @@
           next.setAttribute("aria-label", currentIndex === 0 ? "Show After image" : "Show Before image");
         };
 
-        const stopAutoSwitch = () => window.clearTimeout(autoSwitch);
-
         next.addEventListener("click", () => {
-          stopAutoSwitch();
           showSlide(currentIndex + 1);
         });
         showSlide(0);
-        autoSwitch = window.setTimeout(() => showSlide(1), 3500);
       });
 
       const closeLightbox = () => {
