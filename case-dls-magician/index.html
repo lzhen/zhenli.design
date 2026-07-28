@@ -4,8 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Beehive Design System &amp; AI Innovation case study by Zhen Li">
+  <meta name="description" content="How Zhen Li scaled Beehive into an enterprise design system and designed DLS Magician, an explainable AI text-to-prototype workflow.">
   <title>Beehive Design System &amp; AI Innovation - Zhen Li</title>
+  <link rel="canonical" href="https://zhenli.design/case-dls-magician/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Beehive Design System &amp; AI Innovation — Zhen Li">
+  <meta property="og:description" content="Enterprise design-system transformation, adoption, and an explainable AI workflow that reduced prototyping effort by 45%.">
+  <meta property="og:url" content="https://zhenli.design/case-dls-magician/">
+  <meta property="og:image" content="https://zhenli.design/assets/dls-beehive-case/model-x-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     :root {
       --honey: #f4ca32;
@@ -1039,12 +1046,39 @@
     }
 
     .dls-magician-hero {
+      position: relative;
       margin: 0;
+      overflow: hidden;
     }
 
     .dls-magician-hero img {
+      position: relative;
+      z-index: 1;
+      display: block;
       width: 100%;
       height: auto;
+    }
+
+    .dls-magician-hero::after {
+      position: absolute;
+      z-index: 2;
+      right: 3.5%;
+      bottom: 6.2%;
+      width: 56%;
+      height: 7.5%;
+      content: "";
+      pointer-events: none;
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(45, 51, 58, 0.26) 0%,
+          rgba(45, 51, 58, 0.13) 38%,
+          rgba(45, 51, 58, 0.04) 66%,
+          transparent 78%
+        );
+      filter: blur(8px);
+      transform: scaleY(0.7);
+      transform-origin: center;
     }
 
     .dls-magician-links {
@@ -1650,7 +1684,7 @@
             <span>Beehive Design System</span>
             <span><span class="hero__ampersand">&amp;</span> AI Innovation</span>
           </h1>
-          <p class="hero__summary">A shared product language that unified product experience and collaboration across a complex global organization and its AI innovation.</p>
+          <p class="hero__summary">A shared product language that unified product experience, delivery, and AI innovation across a complex global organization.</p>
         </div>
       </div>
     </section>
@@ -1693,7 +1727,7 @@
           <span>Design</span>
           <span>Transformation</span>
         </h2>
-        <p class="transformation__description overview-type">User experience is quickly becoming an integral part of product and software development. We are leveraging best practices from UX design to drive transformation and innovation within software teams.</p>
+        <p class="transformation__description overview-type">Product teams were shipping fragmented experiences because design and development lacked a shared language, reusable foundations, and a scalable decision model.</p>
         <div class="transformation__diagram" aria-label="Progression from code-first development to transformational innovation">
           <svg class="transformation__curve" viewBox="0 0 1100 390" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0 315 C250 350 520 330 735 245 C885 186 970 116 1080 54" fill="none" stroke="#777" stroke-width="1.2"/>
@@ -1736,7 +1770,7 @@
           <p class="section-label section-label--blue">System architecture</p>
           <h2 class="section-title--transformation-font">Composition</h2>
           <hr class="section-format__rule">
-          <p class="overview-type">A design system mainly includes the visual guidelines and a component library.</p>
+          <p class="overview-type">Beehive connected visual foundations, reusable components, documentation, and contribution practices into a shared product-development system.</p>
         </div>
         <figure class="composition-collage reveal">
           <img src="assets/composition.png" alt="Beehive visual guidelines and component library composition model">
@@ -1747,7 +1781,7 @@
     <section class="band band--paper band--foundations" id="experience-principles">
       <div class="band__inner">
         <div class="principles-header reveal">
-          <p class="transformation__kicker">Product Foundation</p>
+          <p class="transformation__kicker">Product Foundations</p>
           <h2 class="section-title--transformation-font">Experience Principles</h2>
           <hr class="principles-header__rule">
           <p class="principles-header__description overview-type">Experience principles, functional attributes, and reusable building blocks connected brand intent with practical interaction design.</p>
@@ -1755,7 +1789,7 @@
         <div class="foundation-grid">
           <article class="foundation reveal">
             <p class="meta-label">01</p>
-            <h3>Drive by Insights</h3>
+            <h3>Driven by Insights</h3>
             <p>Surface prioritized information by role, whether system-generated or customized.</p>
             <ul>
               <li>Prioritization</li>
@@ -1768,7 +1802,7 @@
             <h3>Built for Collaboration</h3>
             <p>Embed collaboration into workflows so teams can communicate, align, and decide faster.</p>
             <ul>
-              <li>Bring for Context to the Data</li>
+              <li>Bring Context to the Data</li>
               <li>Single View</li>
               <li>Consolidated Workflows &amp; Process Artifacts</li>
             </ul>
@@ -1810,7 +1844,7 @@
             <ul>
               <li>Adapted to Interaction</li>
               <li>Device-agnostic</li>
-              <li>Seamless &amp; Human centered</li>
+              <li>Seamless &amp; Human-centered</li>
             </ul>
           </article>
         </div>
@@ -1936,7 +1970,7 @@
         <div class="section-intro section-intro--transformation reveal">
           <p class="section-label section-label--blue">Reflection</p>
           <div>
-            <h2 class="section-title--transformation-font">Trust and Collaboration</h2>
+            <h2 class="section-title--transformation-font">Trust &amp; Collaboration</h2>
             <hr class="section-format__rule">
             <p class="overview-type">Beehive shaped how I approach systems work today: connect craft with governance, build adoption into the product strategy, and make the system useful in the real conditions where teams ship.</p>
           </div>
