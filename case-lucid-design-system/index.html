@@ -1625,7 +1625,9 @@
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card {
           grid-template-columns: 1fr !important;
-          align-items: start !important;
+          grid-template-rows: auto auto !important;
+          align-content: center !important;
+          align-items: center !important;
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-layout {
@@ -1936,9 +1938,17 @@
           width: 100% !important;
           min-height: calc(100svh - 118px) !important;
           grid-template-columns: 1fr !important;
+          grid-template-rows: auto auto !important;
+          align-content: center !important;
+          align-items: center !important;
           gap: 26px !important;
           padding: 30px 22px !important;
           border-radius: var(--lucid-challenge-card-radius, 22px) !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-challenge-card[data-lucid-animate] {
+          opacity: 1 !important;
+          transform: none !important;
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section {
