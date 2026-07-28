@@ -8621,6 +8621,15 @@ body.work-page .case-copy .public-context p {
   text-align: center;
 }
 
+/* 20260727 home footer mobile spacing */
+@media (max-width: 720px) {
+  .home-page.editorial-site .site-footer {
+    margin-bottom: 0 !important;
+    padding-top: 20px !important;
+    padding-bottom: 12px !important;
+  }
+}
+
 /* 20260625 Meta tooltip fixed width */
 .home-page .work-tile-actions[aria-label="Meta AI Business Assistant links"] .work-tile-cta-external[data-tooltip]::after,
 .home-page .work-tile-actions[aria-label="Meta Omnichannel Ads links"] .work-tile-cta-external[data-tooltip]::after {
