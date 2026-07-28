@@ -1277,6 +1277,35 @@
         --page: calc(100% - 32px);
       }
 
+      .lightbox {
+        width: 100vw;
+        height: 100dvh;
+        padding: 16px;
+        overflow: hidden;
+      }
+
+      .lightbox video {
+        display: block;
+        width: calc(100vw - 32px);
+        max-width: none;
+        height: auto;
+        max-height: calc(100dvh - 96px);
+        margin: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        flex: 0 0 auto;
+      }
+
+      .lightbox video[hidden] {
+        display: none;
+      }
+
+      .lightbox__close {
+        top: max(16px, env(safe-area-inset-top));
+        right: 16px;
+        z-index: 2;
+      }
+
       .site-header__inner {
         min-height: auto;
         flex-direction: column;
