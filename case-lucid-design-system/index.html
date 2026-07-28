@@ -1624,10 +1624,51 @@
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card {
+          --lucid-challenge-bg-scale-x: 1 !important;
+          --lucid-challenge-bg-scale-y: 1 !important;
+          --lucid-challenge-card-radius: 24px !important;
+          --lucid-challenge-content-shift: 0px !important;
+          position: relative !important;
+          top: auto !important;
+          min-height: auto !important;
           grid-template-columns: 1fr !important;
           grid-template-rows: auto auto !important;
           align-content: center !important;
           align-items: center !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section {
+          min-height: auto !important;
+          padding: 48px 0 !important;
+          overflow: visible !important;
+        }
+
+        html,
+        body,
+        body.lucid-deck-theme.editorial-site.case-page {
+          scroll-behavior: auto !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page *,
+        body.lucid-deck-theme.editorial-site.case-page *::before,
+        body.lucid-deck-theme.editorial-site.case-page *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page.motion-ready [data-lucid-animate] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows]::before {
+          opacity: 1 !important;
+          transform: translateY(-50%) scaleX(1) !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page.motion-ready .lucid-process-flow[data-lucid-flow-arrows]::after {
+          opacity: 1 !important;
+          transform: translateY(-50%) translateX(0) scale(1) !important;
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-chip-spec-layout {
@@ -1810,6 +1851,14 @@
         body,
         body.lucid-deck-theme.editorial-site.case-page {
           overflow-x: hidden !important;
+          scroll-behavior: auto !important;
+        }
+
+        body.lucid-deck-theme.editorial-site.case-page *,
+        body.lucid-deck-theme.editorial-site.case-page *::before,
+        body.lucid-deck-theme.editorial-site.case-page *::after {
+          animation: none !important;
+          transition: none !important;
         }
 
         body.lucid-deck-theme.editorial-site.case-page .site-header {
@@ -1934,9 +1983,15 @@
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-card {
-          top: 118px !important;
-          width: 100% !important;
-          min-height: calc(100svh - 118px) !important;
+          --lucid-challenge-bg-scale-x: 1 !important;
+          --lucid-challenge-bg-scale-y: 1 !important;
+          --lucid-challenge-card-radius: 22px !important;
+          --lucid-challenge-content-shift: 0px !important;
+          position: relative !important;
+          top: auto !important;
+          width: calc(100% - 40px) !important;
+          min-height: auto !important;
+          margin: 0 auto !important;
           grid-template-columns: 1fr !important;
           grid-template-rows: auto auto !important;
           align-content: center !important;
@@ -1952,8 +2007,9 @@
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-section {
-          min-height: 200svh !important;
-          padding: 0 !important;
+          min-height: auto !important;
+          padding: 48px 0 !important;
+          overflow: visible !important;
         }
 
         body.lucid-deck-theme.editorial-site.case-page .lucid-challenge-icon {
@@ -2666,12 +2722,13 @@
     <script>
       (function () {
         var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var narrowScreen = window.matchMedia && window.matchMedia("(max-width: 980px)").matches;
         var body = document.body;
         var hero = document.querySelector(".lucid-product-hero");
         var stagedSections = Array.prototype.slice.call(document.querySelectorAll(".lucid-product-page > section:not(.lucid-product-hero)"));
         if (!body) return;
 
-        if (reduceMotion) {
+        if (reduceMotion || narrowScreen) {
           if (hero) {
             hero.classList.add("is-hero-ready");
             hero.classList.add("is-background-ready");
@@ -2708,13 +2765,14 @@
         });
         }
 
-        if (document.documentElement.dataset.pageReady === "true") {
+        if (document.documentElement.dataset.pageReady === "true" || document.readyState === "complete") {
           startLucidIntro();
         } else {
           window.addEventListener("portfolio:page-ready", startLucidIntro, { once: true });
           window.addEventListener("load", function () {
             window.setTimeout(startLucidIntro, 450);
           }, { once: true });
+          window.setTimeout(startLucidIntro, 1200);
         }
 
         var animatedGroups = [
@@ -2810,6 +2868,13 @@
 
           var viewportWidth = window.innerWidth;
           var viewportHeight = window.innerHeight;
+          if (viewportWidth <= 980) {
+            challengeCard.style.removeProperty("--lucid-challenge-bg-scale-x");
+            challengeCard.style.removeProperty("--lucid-challenge-bg-scale-y");
+            challengeCard.style.removeProperty("--lucid-challenge-card-radius");
+            challengeCard.style.removeProperty("--lucid-challenge-content-shift");
+            return;
+          }
           var cardRect = challengeCard.getBoundingClientRect();
           var start = viewportHeight * 0.86;
           var stickyTop = parseFloat(window.getComputedStyle(challengeCard).top);
@@ -2873,7 +2938,7 @@
         function scrollBySlide(direction) {
           var slide = track.querySelector(".lucid-style-slide");
           var amount = slide ? slide.getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
-          track.scrollBy({ left: direction * amount, behavior: "smooth" });
+          track.scrollBy({ left: direction * amount, behavior: window.innerWidth <= 980 ? "auto" : "smooth" });
         }
 
         prev.addEventListener("click", function () {
@@ -2951,7 +3016,7 @@
         function scrollBySlide(direction) {
           var slide = track.querySelector(".lucid-spec-slide");
           var amount = slide ? slide.getBoundingClientRect().width + 24 : track.clientWidth * 0.78;
-          track.scrollBy({ left: direction * amount, behavior: "smooth" });
+          track.scrollBy({ left: direction * amount, behavior: window.innerWidth <= 980 ? "auto" : "smooth" });
         }
 
         prev.addEventListener("click", function () {
