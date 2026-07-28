@@ -1238,8 +1238,11 @@
       background: #262626;
       border: 0;
       border-radius: 50%;
+      appearance: none;
+      -webkit-appearance: none;
       font-size: 0;
       line-height: 0;
+      overflow: hidden;
       cursor: pointer;
     }
 
@@ -2001,7 +2004,7 @@
   </footer>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media preview">
-    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close media preview">&times;</button>
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close media preview"></button>
     <img id="lightboxImage" alt="">
     <video id="lightboxVideo" controls playsinline preload="metadata" hidden></video>
   </div>
