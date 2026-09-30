@@ -1,145 +1,27 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="/">
-    <title>Meta AI Business Assistant - Zhen Li</title>
-    <meta name="description" content="How I designed signals workflows for Meta AI Business Assistant, helping advertisers understand signal health, guided data connection paths, and AI-assisted recommendations." />
-    <link rel="icon" href="assets/favicon-joined-16.png" type="image/png" sizes="16x16" />
-    <link rel="icon" href="assets/favicon-joined-32.png" type="image/png" sizes="32x32" />
-    <link rel="shortcut icon" href="favicon-joined.ico" />
-    <link rel="mask-icon" href="assets/safari-pinned-tab-joined.svg" color="#000000" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon-joined.png" />
-    <link rel="stylesheet" href="styles.css?v=20260624-note-font-10" />
-    <script src="assets/logo-loader.js?v=20260606-moon-landing" defer></script>
-    <script src="assets/mono-motion.js?v=20260610-mono-motion" defer></script>
-
-    <style id="maiba-mp4-clean-style">
-      .maiba-mp4-clean,
-      .maiba-mp4-clean * {
-        border: 0 !important;
-        box-shadow: none !important;
-        outline: 0 !important;
-        background-color: transparent !important;
-      }
-
-      .maiba-mp4-clean {
-        padding: 0 !important;
-        overflow: hidden !important;
-      }
-
-      .maiba-mp4-clean video {
-        display: block !important;
-        width: 100% !important;
-        transform: scale(1.012);
-        transform-origin: center;
-      }
-    </style>
-
-  <style id="case-title-match-lucid">
-      body.dls-case-theme.editorial-site .case-copy > h3 {
-        font-family: var(--font-label) !important;
-        font-size: 24px !important;
-        font-weight: 700 !important;
-        letter-spacing: 2px !important;
-        line-height: 1.4 !important;
-        text-transform: uppercase !important;
-      }
-    </style>
-    <script src="assets/project-password-mask.js?v=20260719-lift-password-logo" data-project-lock="case-study"></script>
-  </head>
-<body class="case-page editorial-site dls-case-theme">
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Zhen Li home">
-        <img class="mark" src="assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" />
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/#selected-works">Work</a>
-        <a href="/resume/">Resume</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="section">
-        <article class="case-study">
-          <div class="case-copy">
-            <p class="case-kicker">Case study</p>
-            <h3>Meta AI Business Assistant</h3>
-            <p class="case-subtitle">Designing signals workflows that help advertisers understand signal health, choose the right data connection path, and trust AI-assisted recommendations.</p>
-          </div>
-          <div class="case-aside">
-            <dl class="case-details">
-              <div>
-                <dt>Problem</dt>
-                <dd>Advertisers depend on high-quality signals to optimize campaign performance by connecting their data to Meta through Meta Pixel and Conversions API. They monitor data quality through event coverage and match quality, but signal gaps are often invisible until campaign performance or optimization is affected.</dd>
-              </div>
-              <div>
-                <dt>Role</dt>
-                <dd>Designed the signals workflow and interaction model for Meta AI Business Assistant, translating signal diagnostics and backend recommendation logic into explainable guidance, setup paths, and decision-support patterns.</dd>
-              </div>
-              <div>
-                <dt>Design decision</dt>
-                <dd>Turn invisible signal gaps into guided setup paths, helping advertisers understand what was missing, why it mattered, and which connection method they could trust.</dd>
-              </div>
-              <div>
-                <dt>Highlight</dt>
-                <dd>Designed around Smart Partner Integration and one-click installation patterns, where the recommendation engine suggested the most relevant partner integration method for an advertiser to connect data to Meta.</dd>
-              </div>
-              <div class="case-impact-expanded">
-                <dt>Impact</dt>
-                <dd>
-                  <p>Supported signal-related advertiser workflows across Conversions API adoption, Meta Pixel growth, event coverage improvements, and partner integration recommendations.</p>
-                  <p>Public beta cited 20% higher common-account-issue resolution and 12% lower cost per result.</p>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </article>
-        <div class="dls-system-loop maiba-mp4-clean" aria-label="Meta AI Business Assistant published product animation">
-          <video class="dls-system-video" src="assets/maiba.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Meta AI Business Assistant published product animation"></video>
-        </div>
-        <p class="case-confidentiality-note">Some implementation details and internal workflows are omitted or generalized due to confidentiality. I can share more about my role, process, and responsibilities in interviews.</p>
-
-        <div class="dls-video-chapters" aria-label="Meta AI Business Assistant workflow chapters">
-          <div>
-            <span>01</span>
-            <h4>The signal problem</h4>
-            <p>Advertisers depended on Pixel, Conversions API, event coverage, and partner connections they could not easily inspect.</p>
-          </div>
-          <div>
-            <span>02</span>
-            <h4>The workflow gap</h4>
-            <p>Signal health, setup method, and business impact lived as separate technical surfaces.</p>
-          </div>
-          <div>
-            <span>03</span>
-            <h4>The reframe</h4>
-            <p>Move from configuring data pipelines to choosing the most trustworthy setup path.</p>
-          </div>
-          <div>
-            <span>04</span>
-            <h4>The trust loop</h4>
-            <p>Explain what is missing, recommend a path, let the advertiser act, then verify coverage improved.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>&copy; 2026 Zhen Li</span>
-      <span>Portfolio co-created with AI and Josef Müller-Brockmann</span>
-      <span class="social-links social-icons">
-        <a class="icon-link" href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true" aria-label="LinkedIn" title="LinkedIn"><img src="assets/icon-linkedin.svg" alt="" /></a>
-        <a class="icon-link" href="https://scholar.google.com/citations?hl=en&user=--enlHIAAAAJ&view_op=list_works" aria-label="Google Scholar" title="Google Scholar"><img src="assets/icon-scholar.svg" alt="" /></a>
-        <a class="icon-link" href="https://www.researchgate.net/profile/Zhen-Li-204" aria-label="ResearchGate" title="ResearchGate"><img src="assets/icon-researchgate.svg" alt="" /></a>
-        <a class="icon-link" href="https://medium.com/@lizhen10" aria-label="Medium" title="Medium"><img src="assets/icon-medium.svg" alt="" /></a>
-        <a class="icon-link" href="https://dribbble.com/zhenli" aria-label="Dribbble" title="Dribbble"><img src="assets/icon-dribbble.svg" alt="" /></a>
-        <a class="icon-link" href="https://github.com/lzhen" aria-label="GitHub" title="GitHub"><img src="assets/icon-github.svg" alt="" /></a>
-      </span>
-    </footer>
-    <script src="assets/site-scroll-top.js"></script>
-  <!-- deploy-bump-20260624-maiba-confidentiality -->
-</body>
-</html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta AI Business Assistant — Zhen Li</title><meta name="description" content="Signals-side MVP design: account-aware AI guidance, supported setup actions, and advertiser trust.">
+<meta name="robots" content="noindex, nofollow, nosnippet"><link rel="canonical" href="https://zhenli.design/case-meta-ai-business-assistant/">
+<link rel="icon" href="/assets/favicon-joined-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/assets/apple-touch-icon-joined.png">
+<link rel="stylesheet" href="/styles.css?v=20260727-home-notice-removed"><link rel="stylesheet" href="/assets/meta-case-studies.css?v=20260930">
+<script src="/assets/project-password-mask.js?v=20260719-lift-password-logo" data-project-lock="case-study"></script>
+</head><body class="meta-case-page editorial-site">
+<a class="mc-skip" href="#case-content">Skip to case study</a>
+<header class="site-header"><a class="brand" href="/" aria-label="Zhen Li home"><img class="mark" src="/assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true"></a><nav aria-label="Main navigation"><a href="/">Home</a><a href="/#selected-works">Work</a><a href="/resume/">Resume</a><a href="https://empathie.ai/" target="_blank" rel="noopener noreferrer" aria-label="Empathie.AI (opens in a new tab)">Empathie.AI <span aria-hidden="true" style="display:inline-block;margin-left:3px;font-size:0.78em;transform:translateY(-1px)">↗</span></a></nav></header>
+<main class="meta-case" id="case-content" data-release="meta-case-studies-20260930">
+<p class="mc-eyebrow">Meta Ads / AI-assisted workflows / Signals MVP</p>
+<div class="mc-hero"><div><h1>Meta AI<br>Business Assistant</h1><p class="mc-deck">Make complex Signals setup understandable — and actionable — inside the advertiser’s workflow.</p></div>
+<dl class="mc-facts"><div><dt>My role</dt><dd>Led Signals-side MVP design, not the entire assistant product.</dd></div><div><dt>Focus</dt><dd>Data integration, account-aware guidance, contextual entry points, and validation.</dd></div><div><dt>Partners</dt><dd>Product, engineering, and cross-functional teams shaping the assistant experience.</dd></div><div><dt>Audience</dt><dd>Small and mid-market advertisers navigating technical setup.</dd></div></dl></div>
+<nav class="mc-toc" aria-label="On this page"><a href="#problem">01 Problem</a><a href="#approach">02 Approach</a><a href="#decisions">03 Decisions</a><a href="#measurement">04 Measurement</a><a href="#outcomes">05 Outcomes</a></nav>
+<figure class="mc-media"><video controls muted loop playsinline preload="metadata" poster="/assets/meta-business-assistant-video-poster.png" aria-label="Public Meta Business Assistant product demonstration"><source src="/assets/meta-business-assistant.mp4" type="video/mp4">Your browser does not support this video.</video><figcaption>Public product demonstration. This shows the broader assistant, not only my Signals workstream. <a href="https://youtu.be/zO3UOcVHEp0?si=fjJrg65vb9E2imB5" target="_blank" rel="noopener noreferrer">Watch video ↗</a></figcaption></figure>
+<section class="mc-section" id="problem"><p class="mc-label">01 / The problem</p><div class="mc-body"><h2>Good advice is not the same as a completed task.</h2><p>Advertisers had to navigate multiple tools and technical decisions to connect data and prepare campaigns. An assistant could explain a setup method, yet still send the advertiser into a fragmented manual journey.</p><p>For the Signals MVP, I focused on three gaps: guidance without enough account context, setup spread across product surfaces, and low confidence about why a recommendation mattered or whether the action had succeeded.</p></div></section>
+<section class="mc-section" id="approach"><p class="mc-label">02 / The approach</p><div class="mc-body"><h2>Ground the experience in what the system can reliably do.</h2><p>I worked with the team to clarify the advertiser journey, system boundaries, and MVP behavior. We connected Signals domain knowledge with the assistant’s capabilities, reviewed design directions, and refined the workflow for engineering.</p><ol class="mc-flow" aria-label="Signals guidance mental model"><li><strong>01 / Guide</strong>Recommend a relevant setup path.</li><li><strong>02 / Validate</strong>Help the advertiser understand the current state.</li><li><strong>03 / Resolve</strong>Make the next action clear and achievable.</li><li><strong>04 / Improve</strong>Connect setup with ongoing signal quality.</li></ol><p class="mc-note">Conceptual workflow summary; not a reproduction of an internal system diagram.</p></div></section>
+<section class="mc-section" id="decisions"><p class="mc-label">03 / Key decisions</p><div class="mc-body"><h2>Reduce the work, not the advertiser’s control.</h2><div class="mc-grid"><article><span class="mc-number">01</span><h3>Bring supported actions into the assistant.</h3><p>Replace a separate manual setup path with an in-assistant action where the integration supports it. Keep the recommended method and the action together.</p></article><article><span class="mc-number">02</span><h3>Meet advertisers in their current task.</h3><p>Surface recommendations alongside the workflow advertisers already use, rather than expecting them to discover a separate AI destination.</p></article><article><span class="mc-number">03</span><h3>Make the answer specific to the account.</h3><p>Structure guidance around the current setup, relevant signal gaps, recommended data sources or events, and the value of taking action.</p></article><article><span class="mc-number">04</span><h3>Place help at the decision point.</h3><p>Add contextual AI entry points where advertisers need an explanation to understand a choice and decide what to do next.</p></article></div><div class="mc-comparison"><div><span class="mc-label">Before / example path</span><strong>4+ steps</strong><p>A separate manual integration flow.</p></div><div><span class="mc-label">After / supported path</span><strong>1 setup action</strong><p>A supported action inside the assistant.</p></div></div><p class="mc-note">Design-path comparison from this case, not a measured result across every integration. External authorization and unsupported methods can still require additional steps.</p></div></section>
+<section class="mc-section" id="measurement"><p class="mc-label">04 / Measurement</p><div class="mc-body"><h2>Measure the conversion, not the conversation.</h2><p>The Signals workstream’s measurement plan focused on whether advertisers connected useful data and improved its quality. Conversation activity alone was not the outcome.</p><div class="mc-grid"><article><h3>Integration adoption</h3><p>Active Conversions API and Meta Pixel integrations.</p></article><article><h3>Signal quality</h3><p>Event Match Quality and Event Coverage improvements.</p></article></div><p>Revenue was tracked downstream as a business outcome, not treated as proof that a single interaction change caused the result.</p></div></section>
+<section class="mc-section" id="outcomes"><p class="mc-label">05 / Outcomes &amp; reflection</p><div class="mc-body"><h2>A Signals contribution to a broader AI product.</h2><p>My contribution was the Signals MVP’s interaction model: connecting account context, understandable guidance, and supported setup actions. The figures below are published product-level context, not results attributable to my workstream alone.</p><div class="mc-stats mc-two"><div class="mc-stat"><strong>20%</strong><p>Higher resolution rate for common account issues in the assistant’s early beta.</p></div><div class="mc-stat"><strong>12%</strong><p>Lower cost per result after advertisers applied opportunity-score recommendations, which are available in the assistant.</p></div></div><p class="mc-note">Source: <a href="https://about.fb.com/br/news/2026/04/meta-ai-business-assistant-expande-globalmente-com-suporte-a-novos-idiomas/" target="_blank" rel="noopener noreferrer">Meta’s April 22, 2026 announcement ↗</a>. These describe different product-level outcomes and are not a controlled evaluation of the Signals MVP.</p><h3>What I learned</h3><p>Trust comes from aligning the explanation with the action the system can actually support. The useful unit of design is the advertiser’s completed workflow, not an isolated chat response.</p><p class="mc-note">Implementation details are omitted or generalized for confidentiality. The original presentation and internal screenshots are not hosted on this page.</p></div></section>
+<nav class="mc-end" aria-label="Case study navigation"><a href="/#selected-works">← All work</a><a href="/case-meta-omnichannel-ads/">Next: Meta Omnichannel Ads →</a></nav>
+</main>
+<footer class="site-footer"><span>&copy; 2026 Zhen Li</span><span>Portfolio co-created with AI and Josef Müller-Brockmann</span><span class="social-links social-icons"><a class="icon-link" href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true" aria-label="LinkedIn" title="LinkedIn"><img src="/assets/icon-linkedin.svg" alt=""></a><a class="icon-link" href="https://scholar.google.com/citations?hl=en&amp;user=--enlHIAAAAJ&amp;view_op=list_works" aria-label="Google Scholar" title="Google Scholar"><img src="/assets/icon-scholar.svg" alt=""></a><a class="icon-link" href="https://www.researchgate.net/profile/Zhen-Li-204" aria-label="ResearchGate" title="ResearchGate"><img src="/assets/icon-researchgate.svg" alt=""></a><a class="icon-link" href="https://medium.com/@lizhen10" aria-label="Medium" title="Medium"><img src="/assets/icon-medium.svg" alt=""></a><a class="icon-link" href="https://dribbble.com/zhenli" aria-label="Dribbble" title="Dribbble"><img src="/assets/icon-dribbble.svg" alt=""></a><a class="icon-link" href="https://github.com/lzhen" aria-label="GitHub" title="GitHub"><img src="/assets/icon-github.svg" alt=""></a></span></footer>
+<script src="/assets/site-scroll-top.js"></script>
+</body></html>
