@@ -46,7 +46,7 @@
     .hero-baseline p { max-width: 440px; font-size: 18px; line-height: 1.5; letter-spacing: -.025em; }
     .hero-baseline .disciplines { max-width: 280px; color: var(--muted); font-size: 14px; text-align: right; line-height: 1.6; }
     .hero-media { margin-top: 72px; overflow: hidden; background: #000; }
-    .hero-media img { width: 100%; aspect-ratio: 2.85; object-fit: cover; object-position: 50% 54%; opacity: 1; transition: opacity 1600ms ease 600ms; }
+    .hero-media img { width: 100%; aspect-ratio: 2.85; object-fit: cover; object-position: 50% 54%; filter: url(#lucid-hero-sharpen); opacity: 1; transition: opacity 1600ms ease 600ms; }
     html.lucid-reveal-pending .hero-media img { opacity: 0; }
     .project-index { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 0; border-block: 1px solid var(--line); }
     .project-index .eyebrow { color: var(--muted); }
@@ -230,6 +230,10 @@
   <!-- Remove only the original near-neutral #141414 canvas; preserve diagram content and colors. -->
   <svg class="image-background-filter" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
     <defs>
+      <filter id="lucid-hero-sharpen" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation=".65" result="soft-detail" />
+        <feComposite in="SourceGraphic" in2="soft-detail" operator="arithmetic" k1="0" k2="1.8" k3="-.8" k4="0" />
+      </filter>
       <filter id="lucid-display-sharpen" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
         <feConvolveMatrix in="SourceGraphic" order="3" kernelMatrix="0 -.12 0 -.12 1.48 -.12 0 -.12 0" divisor="1" edgeMode="duplicate" preserveAlpha="true" />
       </filter>
