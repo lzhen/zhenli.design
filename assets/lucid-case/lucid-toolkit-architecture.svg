@@ -4,7 +4,7 @@
 <rect x="530" y="60" width="380" height="120" rx="16" fill="#12100d" stroke="#a58b6b" stroke-width="1.5"/>
 <text x="720" y="112" text-anchor="middle" class="heading" style="font-size:29px">Company Toolkit</text>
 <text x="720" y="146" text-anchor="middle" class="item" style="font-size:23px;fill:#d5b58d">&amp; Guidelines</text>
-<path class="connector" d="M720 180V234M218 280V234H1222V296M552 234V296M888 234V296"/>
+<path class="connector" d="M720 180V234M218 296V234H1222V296M552 234V296M888 234V296"/>
 <circle class="dot" cx="720" cy="234" r="3.5"/>
 <circle class="dot" cx="218" cy="296" r="3"/>
 <rect class="panel" x="80" y="296" width="276" height="352" rx="16"/>
