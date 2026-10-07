@@ -86,8 +86,9 @@
     .external-links { display: flex; gap: 40px; font-size: 14px; margin-top: 40px; }
     .external-links a { border-bottom: 1px solid #737373; padding-bottom: 7px; }
     .external-links a:hover { border-color: #fff; }
-    .foundation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--content-space) var(--grid-gap); width: 100%; padding-inline: var(--gutter); }
+    .foundation-grid { --foundation-offset: clamp(72px, 8vw, 128px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--content-space) var(--grid-gap); align-items: start; width: 100%; padding-inline: var(--gutter); padding-bottom: var(--foundation-offset); }
     .foundation-card { min-width: 0; }
+    .foundation-card:nth-child(even) { transform: translateY(var(--foundation-offset)); }
     .foundation-card .media-button { aspect-ratio: 1.36; display: grid; place-items: center; padding: clamp(16px, 1.6vw, 28px); background: var(--black); }
     .foundation-card .media-button img { width: 100%; height: 100%; object-fit: contain; }
     .foundation-card figcaption { display: block; }
@@ -178,6 +179,7 @@
       .toolkit .media-button { padding: 15px 5px; }
       .external-links { gap: 22px; }
       .foundation-grid, .pair { grid-template-columns: 1fr; gap: var(--content-space); }
+      .foundation-grid { --foundation-offset: 0px; }
       .foundation-card .media-button { padding: 15px; }
       .foundation-card figcaption p { font-size: 15px; }
       .spec-pair .media-button { padding: 15px; }
@@ -215,6 +217,7 @@
       .chapter { padding-top: 45px; }
       .chapter-intro { break-after: avoid; }
       figure, .metric { break-inside: avoid; }
+      .foundation-grid { --foundation-offset: 0px; }
       .lucid-logo { filter: invert(1); }
       html.lucid-reveal-pending .hero-media img { opacity: 1; }
     }
