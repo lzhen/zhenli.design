@@ -77,6 +77,12 @@ html[data-theme="dark"] .project-password-logo { filter: invert(1); }
 html[data-theme="light"] .site-header .brand img,
 html[data-theme="light"] .icon-link img { filter: none; }
 
+
+/* Override the legacy footer rule for monochrome social icons. */
+html[data-theme="dark"] body:is(.home-page, .resume-page) .social-icons .icon-link img {
+  filter: invert(1) !important;
+}
+
 /* Homepage, resume, and the portfolio's shared editorial pages. */
 html[data-theme="dark"] .editorial-site main,
 html[data-theme="dark"] .home-page :is(.selected-work-band, .editorial-ticker, .work-tile, .home-hero-visual, .home-identity-panel),
@@ -137,6 +143,7 @@ html[data-theme] body .project-password-form button { background: var(--ink) !im
   .theme-toggle-label { display: none; }
 }
 @media print {
+  html[data-theme="dark"] body:is(.home-page, .resume-page) .social-icons .icon-link img { filter: none !important; }
   .theme-toggle { display: none !important; }
   html[data-theme="dark"] { --ink: #080808; --ink-muted: #505050; --muted: #505050; --quiet: #666; --paper: #fff; --surface: #fff; --line: #ddd; --soft-line: #eee; --theme-panel: #f5f5f5; color-scheme: light; }
   html[data-theme="dark"] .site-header .brand img,
