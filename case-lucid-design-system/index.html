@@ -55,6 +55,7 @@
     .chapter { padding-top: var(--section-space); }
     .chapter-intro { display: grid; grid-template-columns: 16% 1fr; gap: var(--grid-gap); align-items: start; margin-bottom: var(--content-space); }
     .chapter-label { padding-top: 10px; display: grid; gap: 12px; }
+    .chapter-label .eyebrow, .statement > .eyebrow, .hero-meta .eyebrow { color: var(--muted); font-size: 14px; font-weight: 400; line-height: 1.55; text-transform: none; letter-spacing: 0; }
     .chapter-label .number { color: #707070; font-size: 13px; }
     .chapter-copy { max-width: 1150px; }
     h2 { font-size: clamp(38px, 5.1vw, 88px); line-height: 1.06; letter-spacing: -.05em; font-weight: 500; }
@@ -129,6 +130,9 @@
     .detail-viewport { max-height: calc(100dvh - 145px); overflow: auto; padding: 24px; }
     .detail-viewport img { width: 100%; height: auto; max-height: calc(100dvh - 193px); object-fit: contain; margin: auto; }
     .detail-viewport.is-actual img { width: auto; max-width: none; max-height: none; }
+    .lucid-fade-item { opacity: 1; transition: opacity 900ms ease; transition-delay: var(--lucid-fade-delay, 0ms); }
+    html.lucid-content-pending .lucid-fade-item:not(.lucid-is-visible) { opacity: 0; }
+    html.lucid-content-pending .lucid-fade-item:focus-within { opacity: 1; transition: none; }
     @media (min-width: 1800px) { .hero-media { margin-inline: var(--gutter); } }
     @media (max-width: 1000px) {
       .chapter-intro, .statement { grid-template-columns: 13% 1fr; gap: 32px; }
@@ -200,10 +204,11 @@
       .footer-shell { padding-bottom: 0; }
       .site-footer { width: 100%; align-items: flex-start; flex-direction: column; padding: 20px 22px 12px; }
     }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } html.lucid-reveal-pending .hero-media img { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { html.lucid-content-pending .lucid-fade-item { opacity: 1 !important; } html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } html.lucid-reveal-pending .hero-media img { opacity: 1; } }
     @media print {
       :root { color-scheme: light; --white: #111; --muted: #555; --line: #ccc; }
       html, body { background: #fff; color: #111; }
+      html.lucid-content-pending .lucid-fade-item { opacity: 1 !important; transition: none !important; }
       .footer-shell, .site-footer { background: #fff; color: #555; color-scheme: light; }
       .site-header, .project-index, .media-button::after, .detail-header, dialog, .skip, .site-footer .social-icons { display: none; }
       .hero { padding-top: 0; }
@@ -217,6 +222,12 @@
   <script>
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.documentElement.classList.add('lucid-reveal-pending');
+      if ('IntersectionObserver' in window) {
+        document.documentElement.classList.add('lucid-content-pending');
+        window.lucidFadeFallback = setTimeout(function () {
+          document.documentElement.classList.remove('lucid-content-pending');
+        }, 4000);
+      }
     }
   </script>
   <script src="../assets/project-password-mask.js?v=20260719-lucid-lock-version" data-project-lock="case-study" data-lock-version="20260719-lucid"></script>
@@ -249,69 +260,69 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="site-header-inner">
-    <a class="brand" href="/" aria-label="Zhen Li home"><img src="../assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" /><span>Zhen Li</span></a>
-    <nav aria-label="Main navigation"><a href="/">Home</a><a href="/#selected-works">Work</a><a href="/resume/">Resume</a></nav>
+    <a class="brand lucid-fade-item" href="/" aria-label="Zhen Li home"><img src="../assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" /><span>Zhen Li</span></a>
+    <nav class="lucid-fade-item" aria-label="Main navigation"><a href="/">Home</a><a href="/#selected-works">Work</a><a href="/resume/">Resume</a></nav>
     </div>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="title">
       <div class="wrap">
-        <div class="hero-meta"><p class="eyebrow">Lucid Air / HMI Design System</p><img class="lucid-logo" src="../assets/lucid-case/lucid-logo-white.png" alt="Lucid" /></div>
-        <h1 id="title">One design language.<br /><span>Every surface.</span></h1>
-        <div class="hero-baseline"><p>A shared system for the vehicle, the app, and the teams behind them.</p><p class="disciplines">System strategy · Visual foundations<br />Components · Governance</p></div>
+        <div class="hero-meta lucid-fade-item"><p class="eyebrow">One design language. Every surface.</p><img class="lucid-logo" src="../assets/lucid-case/lucid-logo-white.png" alt="Lucid" /></div>
+        <h1 id="title" class="lucid-fade-item">Lucid Air /<br /><span>HMI Design System</span></h1>
+        <div class="hero-baseline lucid-fade-item"><p>A shared system for the vehicle, the app, and the teams behind them.</p><p class="disciplines">System strategy · Visual foundations<br />Components · Governance</p></div>
       </div>
       <figure class="hero-media"><img src="../assets/lucid-case/lucidheader-hd-v2.png" alt="Lucid Air front lighting in a dark studio" width="1672" height="941" fetchpriority="high" /></figure>
-      <div class="project-index wrap"><span class="eyebrow">Case study / Zhen Li</span><nav aria-label="Case study sections"><a href="#overview">Overview</a><a href="#system">System</a><a href="#components">Components</a><a href="#impact">Impact</a></nav></div>
+      <div class="project-index wrap lucid-fade-item"><span class="eyebrow">Case study / Zhen Li</span><nav aria-label="Case study sections"><a href="#overview">Overview</a><a href="#system">System</a><a href="#components">Components</a><a href="#impact">Impact</a></nav></div>
     </section>
 
     <section id="overview" class="chapter" aria-labelledby="overview-title">
-      <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">01</span><p class="eyebrow">Overview</p></div><div class="chapter-copy"><h2 id="overview-title">The experience is connected.<br /><span class="secondary">The design system should be, too.</span></h2><p>Lucid teams were designing across vehicle controls, mobile surfaces, and product workflows. I turned repeated, local decisions into shared foundations, components, and guidance—giving teams a consistent language to build with.</p></div></div>
-      <dl class="overview-details wrap"><div><dt>My role</dt><dd>Design system product owner. I defined the system direction and worked across design, engineering, product, and brand.</dd></div><div><dt>Scope</dt><dd>Vehicle HMI and mobile surfaces.<br />Foundations, component specifications, documentation, and adoption.</dd></div><div><dt>Team enablement</dt><dd>Usage guidance, critique and implementation reviews, release notes, and feedback loops.</dd></div></dl>
-      <figure class="surface-image"><button class="media-button" type="button" data-detail="Connected product surfaces" aria-label="Enlarge Lucid Air HMI and mobile surfaces"><img class="sharp-display" src="../assets/lucid-case/lucid-air-hmi-surfaces.png" alt="Lucid Air design system across the instrument cluster, center display, pilot panel, mobile app, and rear console" width="1734" height="774" loading="lazy" /></button><figcaption class="wrap"><span class="caption-title">A connected product experience.</span><span>In-car HMI / Mobile / Rear console</span></figcaption></figure>
-      <div class="statement wrap"><p class="eyebrow">The challenge</p><div class="statement-content"><h3>Shared experiences.<br />Fragmented decisions.</h3><p>Feature teams created styles and components independently. Development was ticket-driven, and even simple behaviors required frequent alignment. The opportunity was to make those decisions reusable, explicit, and easier to trust.</p></div></div>
+      <div class="chapter-intro wrap"><div class="chapter-label lucid-fade-item"><span class="number">01</span><p class="eyebrow">The experience is connected. The design system should be, too.</p></div><div class="chapter-copy lucid-fade-item"><h2 id="overview-title">Overview</h2><p>Lucid teams were designing across vehicle controls, mobile surfaces, and product workflows. I turned repeated, local decisions into shared foundations, components, and guidance—giving teams a consistent language to build with.</p></div></div>
+      <dl class="overview-details wrap lucid-fade-item"><div><dt>My role</dt><dd>Design system product owner. I defined the system direction and worked across design, engineering, product, and brand.</dd></div><div><dt>Scope</dt><dd>Vehicle HMI and mobile surfaces.<br />Foundations, component specifications, documentation, and adoption.</dd></div><div><dt>Team enablement</dt><dd>Usage guidance, critique and implementation reviews, release notes, and feedback loops.</dd></div></dl>
+      <figure class="surface-image"><button class="media-button lucid-fade-item" type="button" data-detail="Connected product surfaces" aria-label="Enlarge Lucid Air HMI and mobile surfaces"><img class="sharp-display" src="../assets/lucid-case/lucid-air-hmi-surfaces.png" alt="Lucid Air design system across the instrument cluster, center display, pilot panel, mobile app, and rear console" width="1734" height="774" loading="lazy" /></button><figcaption class="wrap lucid-fade-item"><span class="caption-title">A connected product experience.</span><span>In-car HMI / Mobile / Rear console</span></figcaption></figure>
+      <div class="statement wrap lucid-fade-item"><p class="eyebrow">Shared experiences. Fragmented decisions.</p><div class="statement-content"><h3>The challenge</h3><p>Feature teams created styles and components independently. Development was ticket-driven, and even simple behaviors required frequent alignment. The opportunity was to make those decisions reusable, explicit, and easier to trust.</p></div></div>
     </section>
 
     <section id="system" class="chapter wrap" aria-labelledby="system-title">
-      <div class="chapter-intro"><div class="chapter-label"><span class="number">02</span><p class="eyebrow">System strategy</p></div><div class="chapter-copy"><h2 id="system-title">Build the language.<br /><span class="secondary">Build the way it works.</span></h2><p>I treated the system as a product. That meant defining its foundations and the day-to-day practices that would help teams adopt, review, and maintain them.</p></div></div>
-      <div class="method"><article><p class="eyebrow">01 / Define</p><h3>Find the shared decisions.</h3><p>Audit recurring choices across teams and turn product gaps into system priorities.</p></article><article><p class="eyebrow">02 / Design</p><h3>Make them reusable.</h3><p>Define foundations, components, and interaction patterns around real product needs.</p></article><article><p class="eyebrow">03 / Align</p><h3>Create a review rhythm.</h3><p>Bring design, implementation, and stakeholder reviews into the delivery process.</p></article><article><p class="eyebrow">04 / Maintain</p><h3>Keep the system moving.</h3><p>Use documentation, versioning, and feedback to support adoption over time.</p></article></div>
+      <div class="chapter-intro"><div class="chapter-label lucid-fade-item"><span class="number">02</span><p class="eyebrow">Build the language. Build the way it works.</p></div><div class="chapter-copy lucid-fade-item"><h2 id="system-title">System strategy</h2><p>I treated the system as a product. That meant defining its foundations and the day-to-day practices that would help teams adopt, review, and maintain them.</p></div></div>
+      <div class="method"><article class="lucid-fade-item"><p class="eyebrow">01 / Define</p><h3>Find the shared decisions.</h3><p>Audit recurring choices across teams and turn product gaps into system priorities.</p></article><article class="lucid-fade-item"><p class="eyebrow">02 / Design</p><h3>Make them reusable.</h3><p>Define foundations, components, and interaction patterns around real product needs.</p></article><article class="lucid-fade-item"><p class="eyebrow">03 / Align</p><h3>Create a review rhythm.</h3><p>Bring design, implementation, and stakeholder reviews into the delivery process.</p></article><article class="lucid-fade-item"><p class="eyebrow">04 / Maintain</p><h3>Keep the system moving.</h3><p>Use documentation, versioning, and feedback to support adoption over time.</p></article></div>
     </section>
 
 
     <section id="foundations" class="chapter" aria-labelledby="foundations-title">
-      <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">03</span><p class="eyebrow">Foundations</p></div><div class="chapter-copy"><h2 id="foundations-title">A premium brand.<br /><span class="secondary">A precise product language.</span></h2><p>I translated Lucid’s visual language into reusable styles, tokens, and usage guidance. Each foundation connected the look of the interface to how teams applied it across displays and contexts.</p></div></div>
+      <div class="chapter-intro wrap"><div class="chapter-label lucid-fade-item"><span class="number">03</span><p class="eyebrow">A premium brand. A precise product language.</p></div><div class="chapter-copy lucid-fade-item"><h2 id="foundations-title">Foundations</h2><p>I translated Lucid’s visual language into reusable styles, tokens, and usage guidance. Each foundation connected the look of the interface to how teams applied it across displays and contexts.</p></div></div>
       <div class="foundation-grid">
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img class="black-background" src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img class="black-background" src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption><h3>02 / Iconography</h3><p>397 fine-tuned icons, converted them to a developer-friendly format in Figma.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img class="black-background" src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption><h3>03 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button lucid-fade-item" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img class="black-background" src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption class="lucid-fade-item"><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button lucid-fade-item" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img class="black-background" src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption class="lucid-fade-item"><h3>02 / Iconography</h3><p>397 fine-tuned icons, converted them to a developer-friendly format in Figma.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button lucid-fade-item" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img class="black-background" src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption class="lucid-fade-item"><h3>03 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
       </div>
     </section>
 
     <section id="components" class="chapter" aria-labelledby="components-title">
-      <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">04</span><p class="eyebrow">Components</p></div><div class="chapter-copy"><h2 id="components-title">The details are<br /><span class="secondary">part of the system.</span></h2><p>A reusable component needs more than a visual. I documented states, measurements, directionality, validation, and overflow so design and engineering could work from the same decisions.</p></div></div>
+      <div class="chapter-intro wrap"><div class="chapter-label lucid-fade-item"><span class="number">04</span><p class="eyebrow">The details are part of the system.</p></div><div class="chapter-copy lucid-fade-item"><h2 id="components-title">Components</h2><p>A reusable component needs more than a visual. I documented states, measurements, directionality, validation, and overflow so design and engineering could work from the same decisions.</p></div></div>
       <div class="media-rows">
-        <figure class="media-row detail-row"><button class="media-button" type="button" data-detail="Callout specification" aria-label="Enlarge component callout specification"><img src="../assets/lucid-case/spec-callout-specification.png" alt="Callout specification documenting measurements, states, validation, and implementation tokens" loading="lazy" width="1878" height="1292" /></button><figcaption><h3>04 / Component</h3><p>Component specifications for measurements, tokens, validation, spacing, direction, and overflow.</p></figcaption></figure>
-        <figure class="media-row detail-row"><button class="media-button" type="button" data-detail="English and Arabic directionality" aria-label="Enlarge English and Arabic component examples"><img src="../assets/lucid-case/spec-bilingual-ltr-rtl-clear-v2.png" alt="English and Arabic tab controls showing parallel LTR and RTL states" width="1364" height="1153" loading="lazy" /></button><figcaption><h3>05 / Accessibility</h3><p>English and Arabic variants with shared logic and defined LTR and RTL behavior.</p></figcaption></figure>
+        <figure class="media-row detail-row"><button class="media-button lucid-fade-item" type="button" data-detail="Callout specification" aria-label="Enlarge component callout specification"><img src="../assets/lucid-case/spec-callout-specification.png" alt="Callout specification documenting measurements, states, validation, and implementation tokens" loading="lazy" width="1878" height="1292" /></button><figcaption class="lucid-fade-item"><h3>04 / Component</h3><p>Component specifications for measurements, tokens, validation, spacing, direction, and overflow.</p></figcaption></figure>
+        <figure class="media-row detail-row"><button class="media-button lucid-fade-item" type="button" data-detail="English and Arabic directionality" aria-label="Enlarge English and Arabic component examples"><img src="../assets/lucid-case/spec-bilingual-ltr-rtl-clear-v2.png" alt="English and Arabic tab controls showing parallel LTR and RTL states" width="1364" height="1153" loading="lazy" /></button><figcaption class="lucid-fade-item"><h3>05 / Accessibility</h3><p>English and Arabic variants with shared logic and defined LTR and RTL behavior.</p></figcaption></figure>
       </div>
     </section>
 
     <section id="governance" class="chapter" aria-labelledby="governance-title">
-      <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">05</span><p class="eyebrow">Governance</p></div><div class="chapter-copy"><h2 id="governance-title">A system teams<br /><span class="secondary">could keep building on.</span></h2><p>I made maintenance visible through changelogs, toolkit updates, and review rituals. Teams could understand what changed, why it changed, and how to adopt it.</p></div></div>
+      <div class="chapter-intro wrap"><div class="chapter-label lucid-fade-item"><span class="number">05</span><p class="eyebrow">A system teams could keep building on.</p></div><div class="chapter-copy lucid-fade-item"><h2 id="governance-title">Governance</h2><p>I made maintenance visible through changelogs, toolkit updates, and review rituals. Teams could understand what changed, why it changed, and how to adopt it.</p></div></div>
       <div class="media-rows">
-        <figure class="media-row release-row"><button class="media-button" type="button" data-detail="System changelog" aria-label="Enlarge design system changelog"><img src="../assets/lucid-case/version-control-changelog.png" alt="Version history documenting Lucid design token and component changes" width="1376" height="1448" loading="lazy" /></button><figcaption><h3>06 / Changelog</h3><p>Version history tracking changes to design tokens, components, and usage guidance.</p></figcaption></figure>
-        <figure class="media-row release-row"><button class="media-button" type="button" data-detail="Toolkit release update" aria-label="Enlarge toolkit release notes"><img src="../assets/lucid-case/version-control-toolkit-update.png" alt="Toolkit update with new components, bug fixes, deprecated patterns, and adoption guidance" width="6376" height="5824" loading="lazy" /></button><figcaption><h3>07 / Release communication</h3><p>Toolkit updates covering new components, bug fixes, deprecated patterns, and adoption guidance.</p></figcaption></figure>
+        <figure class="media-row release-row"><button class="media-button lucid-fade-item" type="button" data-detail="System changelog" aria-label="Enlarge design system changelog"><img src="../assets/lucid-case/version-control-changelog.png" alt="Version history documenting Lucid design token and component changes" width="1376" height="1448" loading="lazy" /></button><figcaption class="lucid-fade-item"><h3>06 / Changelog</h3><p>Version history tracking changes to design tokens, components, and usage guidance.</p></figcaption></figure>
+        <figure class="media-row release-row"><button class="media-button lucid-fade-item" type="button" data-detail="Toolkit release update" aria-label="Enlarge toolkit release notes"><img src="../assets/lucid-case/version-control-toolkit-update.png" alt="Toolkit update with new components, bug fixes, deprecated patterns, and adoption guidance" width="6376" height="5824" loading="lazy" /></button><figcaption class="lucid-fade-item"><h3>07 / Release communication</h3><p>Toolkit updates covering new components, bug fixes, deprecated patterns, and adoption guidance.</p></figcaption></figure>
       </div>
-      <div class="review-line wrap"><article><h3>Design review</h3><p>Core team alignment on quality, patterns, and technical decisions.</p></article><article><h3>Development review</h3><p>Implementation evaluation with feature developers.</p></article><article><h3>Stakeholder review</h3><p>Cross-functional alignment on direction and strategy.</p></article></div>
+      <div class="review-line wrap"><article class="lucid-fade-item"><h3>Design review</h3><p>Core team alignment on quality, patterns, and technical decisions.</p></article><article class="lucid-fade-item"><h3>Development review</h3><p>Implementation evaluation with feature developers.</p></article><article class="lucid-fade-item"><h3>Stakeholder review</h3><p>Cross-functional alignment on direction and strategy.</p></article></div>
     </section>
 
     <section id="impact" class="chapter wrap" aria-labelledby="impact-title">
-      <div class="chapter-intro"><div class="chapter-label"><span class="number">06</span><p class="eyebrow">Impact</p></div><div class="chapter-copy"><h2 id="impact-title">More coverage.<br /><span class="secondary">More shared confidence.</span></h2><p>Shared foundations, clearer ownership, and regular feedback helped the system become part of everyday product work.</p></div></div>
-      <div class="metrics"><article class="metric"><p class="metric-value"><span class="old">25%</span>–70%</p><h3>Air system coverage</h3><p>Increased coverage by turning repeated product decisions into reusable foundations and components.</p></article><article class="metric"><p class="metric-value">80%</p><h3>Feedback response rate</h3><p>Clearer ownership and review rhythms made system decisions easier to evaluate.</p></article><article class="metric"><p class="metric-value">$2M<span aria-hidden="true">*</span></p><h3>Estimated annual savings</h3><p>Reduced repeated design and implementation effort across product surfaces.</p></article></div>
-      <p class="estimate-note">*Estimated efficiency savings, rather than a verified financial result.</p>
-      <div class="statement reflection"><p class="eyebrow">What I took forward</p><div class="statement-content"><h3>A design system scales<br />when people can trust it.</h3><p>The Lucid work shaped how I connect craft, governance, and delivery. Clear ownership, adoption paths, and visible maintenance are what turn a library into a product teams rely on.</p></div></div>
+      <div class="chapter-intro"><div class="chapter-label lucid-fade-item"><span class="number">06</span><p class="eyebrow">More coverage. More shared confidence.</p></div><div class="chapter-copy lucid-fade-item"><h2 id="impact-title">Impact</h2><p>Shared foundations, clearer ownership, and regular feedback helped the system become part of everyday product work.</p></div></div>
+      <div class="metrics"><article class="metric lucid-fade-item"><p class="metric-value"><span class="old">25%</span>–70%</p><h3>Air system coverage</h3><p>Increased coverage by turning repeated product decisions into reusable foundations and components.</p></article><article class="metric lucid-fade-item"><p class="metric-value">80%</p><h3>Feedback response rate</h3><p>Clearer ownership and review rhythms made system decisions easier to evaluate.</p></article><article class="metric lucid-fade-item"><p class="metric-value">$2M<span aria-hidden="true">*</span></p><h3>Estimated annual savings</h3><p>Reduced repeated design and implementation effort across product surfaces.</p></article></div>
+      <p class="estimate-note lucid-fade-item">*Estimated efficiency savings, rather than a verified financial result.</p>
+      <div class="statement reflection lucid-fade-item"><p class="eyebrow">A design system scales when people can trust it.</p><div class="statement-content"><h3>What I took forward</h3><p>The Lucid work shaped how I connect craft, governance, and delivery. Clear ownership, adoption paths, and visible maintenance are what turn a library into a product teams rely on.</p></div></div>
     </section>
   </main>
   <div class="footer-shell">
-    <footer class="site-footer">
+    <footer class="site-footer lucid-fade-item">
       <span>&copy; 2026 Zhen Li</span>
       <span>Portfolio co-created with AI and Josef Müller-Brockmann</span>
       <span class="social-links social-icons">
@@ -330,6 +341,74 @@
     <div class="detail-viewport" id="detail-viewport"><img id="detail-image" alt="" /></div>
   </dialog>
   <script>
+    // Lucid content fade: reveal once, after entry and image readiness.
+    (function () {
+      var root = document.documentElement;
+      if (!root.classList.contains('lucid-content-pending')) return;
+      var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var items = Array.from(document.querySelectorAll('.lucid-fade-item'));
+      var states = items.map(function (element) {
+        var siblings = Array.from(element.parentElement.children).filter(function (child) {
+          return child.classList.contains('lucid-fade-item');
+        });
+        element.style.setProperty('--lucid-fade-delay', Math.min(siblings.indexOf(element), 3) * 60 + 'ms');
+        return { element: element, images: Array.from(element.querySelectorAll('img')), inView: false, visible: false, scheduled: false, timer: null };
+      });
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var state = states.find(function (item) { return item.element === entry.target; });
+          state.inView = entry.isIntersecting;
+          reveal(state);
+        });
+      }, { threshold: .08, rootMargin: '0px 0px -4% 0px' });
+      var lockObserver = new MutationObserver(flush);
+
+      function reveal(state, force) {
+        if (state.visible || state.scheduled || !state.inView || root.classList.contains('project-password-pending')) return;
+        if (!force && !state.images.every(function (image) { return image.complete; })) {
+          if (state.timer === null) {
+            state.timer = setTimeout(function () { state.timer = null; reveal(state, true); }, 4000);
+          }
+          return;
+        }
+        state.scheduled = true;
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            state.scheduled = false;
+            if (state.visible || !state.inView || root.classList.contains('project-password-pending')) return;
+            state.visible = true;
+            clearTimeout(state.timer);
+            state.element.classList.add('lucid-is-visible');
+            observer.unobserve(state.element);
+            if (states.every(function (item) { return item.visible; })) lockObserver.disconnect();
+          });
+        });
+      }
+      function flush() { states.forEach(function (state) { reveal(state); }); }
+      function showAll() {
+        observer.disconnect();
+        lockObserver.disconnect();
+        states.forEach(function (state) {
+          state.visible = true;
+          clearTimeout(state.timer);
+          state.element.classList.add('lucid-is-visible');
+        });
+        root.classList.remove('lucid-content-pending');
+      }
+      states.forEach(function (state) {
+        state.images.forEach(function (image) {
+          image.addEventListener('load', function () { reveal(state); }, { once: true });
+          image.addEventListener('error', function () { reveal(state); }, { once: true });
+        });
+        observer.observe(state.element);
+      });
+      lockObserver.observe(root, { attributes: true, attributeFilter: ['class'] });
+      if (motion.addEventListener) motion.addEventListener('change', function (event) { if (event.matches) showAll(); });
+      window.addEventListener('pageshow', function (event) { if (event.persisted) showAll(); });
+      clearTimeout(window.lucidFadeFallback);
+      if (motion.matches) showAll();
+    })();
+    // End Lucid content fade.
     (function () {
       var root = document.documentElement;
       var hero = document.querySelector('.hero-media');
