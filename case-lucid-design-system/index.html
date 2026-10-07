@@ -32,7 +32,7 @@
     .brand img { width: 27px; height: 33px; object-fit: contain; filter: invert(1); }
     .site-header nav { display: flex; gap: 30px; font-size: 14px; }
     .site-header nav a { padding: 12px 0; }
-    .site-header nav a:hover, .footer a:hover { color: #aaa; }
+    .site-header nav a:hover { color: #aaa; }
     main { width: 100%; margin: 0 auto; background: var(--black); }
     .wrap { width: calc(100% - 2 * var(--gutter)); max-width: calc(1600px - 2 * var(--gutter)); margin-inline: auto; }
     .eyebrow { font-size: 13px; line-height: 1.45; font-weight: 500; text-transform: uppercase; letter-spacing: .055em; }
@@ -112,8 +112,16 @@
     .reflection .statement-content { display: block; max-width: 900px; }
     .reflection h3 { max-width: 850px; font-size: clamp(32px, 4.3vw, 66px); }
     .reflection p { max-width: 640px; margin-top: 40px; font-size: 18px; }
-    .footer { display: flex; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); padding: 48px var(--gutter); font-size: 14px; color: var(--muted); }
-    .footer nav { display: flex; gap: 28px; }
+    .footer-shell { background: #fff; padding-bottom: 32px; color-scheme: light; }
+    .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: min(calc(100% - 30px), 1240px); margin-inline: auto; padding: 24px clamp(30px, 4.8vw, 64px); border-top: 1px solid #eee; color: #505050; background: #fff; font-family: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.62; }
+    .site-footer .social-icons { display: inline-flex; align-items: center; justify-content: flex-end; flex-shrink: 0; gap: 12px; }
+    .site-footer .icon-link { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; }
+    .site-footer .icon-link img { width: 20px; height: 20px; object-fit: contain; transition: transform 160ms ease; transform-origin: center; }
+    .site-footer .icon-link img[src$="icon-linkedin.svg"] { width: 18px; height: 18px; transform: translateY(-1px); }
+    .site-footer .icon-link img[src$="icon-scholar.svg"] { width: 24px; height: 24px; }
+    .site-footer .icon-link:hover img, .site-footer .icon-link:focus-visible img { transform: scale(1.16); }
+    .site-footer .icon-link:hover img[src$="icon-linkedin.svg"], .site-footer .icon-link:focus-visible img[src$="icon-linkedin.svg"] { transform: translateY(-1px) scale(1.16); }
+    .site-footer a:focus-visible { outline-color: #080808; }
     dialog { width: min(1500px, calc(100vw - 40px)); max-width: none; max-height: calc(100dvh - 40px); padding: 0; border: 1px solid #444; background: var(--black); color: #fff; }
     dialog::backdrop { background: rgba(0,0,0,.92); }
     .detail-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
@@ -183,8 +191,6 @@
       .reflection { padding-block: var(--content-space) var(--section-space); }
       .reflection h3 { font-size: 36px; }
       .reflection p { font-size: 17px; }
-      .footer { flex-wrap: wrap; padding-block: 32px; gap: 24px; }
-      .footer nav { gap: 23px; }
       figcaption { font-size: 13px; gap: 14px; }
       .media-button::after { opacity: 1; transform: none; width: 26px; height: 26px; right: 12px; bottom: 12px; }
       dialog { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
@@ -193,11 +199,15 @@
       .detail-actions { gap: 24px; }
       .detail-viewport { padding: 10px; }
     }
+    @media (max-width: 720px) {
+      .footer-shell { padding-bottom: 0; }
+      .site-footer { width: 100%; align-items: flex-start; flex-direction: column; padding: 20px 22px 12px; }
+    }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } html.lucid-reveal-pending .hero-media img { opacity: 1; } }
     @media print {
       :root { color-scheme: light; --white: #111; --muted: #555; --line: #ccc; }
       html, body { background: #fff; color: #111; }
-      .site-header, .project-index, .media-button::after, .detail-header, dialog, .skip, .footer nav { display: none; }
+      .site-header, .project-index, .media-button::after, .detail-header, dialog, .skip, .site-footer .social-icons { display: none; }
       .hero { padding-top: 0; }
       .chapter { padding-top: 45px; }
       .chapter-intro { break-after: avoid; }
@@ -302,7 +312,20 @@
       <div class="statement reflection"><p class="eyebrow">What I took forward</p><div class="statement-content"><h3>A design system scales<br />when people can trust it.</h3><p>The Lucid work shaped how I connect craft, governance, and delivery. Clear ownership, adoption paths, and visible maintenance are what turn a library into a product teams rely on.</p></div></div>
     </section>
   </main>
-  <footer class="footer"><span>© 2026 Zhen Li</span><nav aria-label="Footer navigation"><a href="/#selected-works">All work</a><a href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true">LinkedIn</a><a href="#main">Back to top</a></nav></footer>
+  <div class="footer-shell">
+    <footer class="site-footer">
+      <span>&copy; 2026 Zhen Li</span>
+      <span>Portfolio co-created with AI and Josef Müller-Brockmann</span>
+      <span class="social-links social-icons">
+        <a class="icon-link" href="https://www.linkedin.com/in/zhen-li-design/?skipRedirect=true" aria-label="LinkedIn" title="LinkedIn"><img src="/assets/icon-linkedin.svg" alt="" /></a>
+        <a class="icon-link" href="https://scholar.google.com/citations?hl=en&user=--enlHIAAAAJ&view_op=list_works" aria-label="Google Scholar" title="Google Scholar"><img src="/assets/icon-scholar.svg" alt="" /></a>
+        <a class="icon-link" href="https://www.researchgate.net/profile/Zhen-Li-204" aria-label="ResearchGate" title="ResearchGate"><img src="/assets/icon-researchgate.svg" alt="" /></a>
+        <a class="icon-link" href="https://medium.com/@lizhen10" aria-label="Medium" title="Medium"><img src="/assets/icon-medium.svg" alt="" /></a>
+        <a class="icon-link" href="https://dribbble.com/zhenli" aria-label="Dribbble" title="Dribbble"><img src="/assets/icon-dribbble.svg" alt="" /></a>
+        <a class="icon-link" href="https://github.com/lzhen" aria-label="GitHub" title="GitHub"><img src="/assets/icon-github.svg" alt="" /></a>
+      </span>
+    </footer>
+  </div>
 
   <dialog id="image-detail" aria-labelledby="detail-title">
     <div class="detail-header"><h2 id="detail-title">Design system detail</h2><div class="detail-actions"><button type="button" id="detail-size" aria-pressed="false">Actual size</button><button type="button" id="detail-close" autofocus>Close</button></div></div>
