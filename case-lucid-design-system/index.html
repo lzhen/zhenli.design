@@ -26,7 +26,8 @@
     h1, h2, h3, p, figure, dl, dd { margin: 0; }
     .skip { position: fixed; top: 12px; left: 18px; z-index: 100; padding: 12px 20px; background: #fff; color: #000; transform: translateY(-160%); }
     .skip:focus { transform: translateY(0); }
-    .site-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; min-height: 78px; padding: 0 var(--gutter); border-bottom: 1px solid #202020; background: #000; }
+    .site-header { position: sticky; top: 0; z-index: 20; min-height: 78px; border-bottom: 1px solid #202020; background: #000; }
+    .site-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; width: 100%; max-width: 1600px; min-height: inherit; margin-inline: auto; padding-inline: var(--gutter); }
     .brand { display: flex; align-items: center; gap: 14px; font-size: 19px; font-weight: 600; letter-spacing: -.04em; }
     .brand img { width: 27px; height: 33px; object-fit: contain; filter: invert(1); }
     .site-header nav { display: flex; gap: 30px; font-size: 14px; }
@@ -94,12 +95,7 @@
     .foundation-card figcaption { display: block; }
     .foundation-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -.03em; color: var(--white); }
     .foundation-card figcaption p { margin-top: 16px; max-width: 440px; line-height: 1.6; }
-    .gallery-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: var(--grid-gap); margin-block: var(--group-space) 56px; padding-top: 40px; border-top: 1px solid var(--line); }
-    .gallery-intro h3 { max-width: 490px; font-size: clamp(28px, 3vw, 45px); line-height: 1.1; letter-spacing: -.04em; font-weight: 500; }
-    .gallery-intro p { color: var(--muted); font-size: 17px; line-height: 1.6; max-width: 500px; }
     .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap); align-items: start; }
-    .library-pair .media-button { aspect-ratio: 1.64; }
-    .library-pair img { width: 100%; height: 100%; object-fit: contain; }
     .spec-pair .media-button { display: grid; place-items: center; aspect-ratio: 1.03; padding: 26px; background: #111; }
     .spec-pair img { width: 100%; height: 100%; object-fit: contain; }
     .component-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); padding-top: 40px; margin-top: 80px; border-top: 1px solid var(--line); }
@@ -190,8 +186,6 @@
       .foundation-grid, .pair { grid-template-columns: 1fr; gap: var(--content-space); }
       .foundation-card .media-button { padding: 15px; }
       .foundation-card figcaption p { font-size: 15px; }
-      .gallery-intro { grid-template-columns: 1fr; gap: 32px; margin-block: var(--group-space) 40px; padding-top: 32px; }
-      .gallery-intro p { font-size: 16px; }
       .spec-pair .media-button { padding: 15px; }
       .component-notes { grid-template-columns: 1fr; gap: 40px; margin-top: var(--content-space); padding-top: 32px; }
       .architecture { margin-top: var(--group-space); }
@@ -241,8 +235,10 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
+    <div class="site-header-inner">
     <a class="brand" href="/" aria-label="Zhen Li home"><img src="../assets/zhen-li-logo.svg?v=20260603-logo-gap-less" alt="" aria-hidden="true" /><span>Zhen Li</span></a>
     <nav aria-label="Main navigation"><a href="/">Home</a><a href="/#selected-works">Work</a><a href="/resume/">Resume</a></nav>
+    </div>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="title">
@@ -279,8 +275,6 @@
         <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption><h3>03 / Iconography</h3><p>Standardized symbols for vehicle controls, navigation, media, and system states.</p></figcaption></figure>
         <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption><h3>04 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
       </div>
-      <div class="gallery-intro"><h3>Organized for the work.<br />Ready for the team.</h3><p>The shared library brought foundations, components, and developer handoff into one place. The style library also covered imagery, motion, hardware controls, and localization.</p></div>
-      <div class="pair library-pair"><figure><button class="media-button" type="button" data-detail="Design system library" aria-label="Enlarge design system library structure"><img src="../assets/lucid-case/style-library-2.png" alt="Figma library organized into components, styles, guidelines, and developer resources" width="1758" height="1070" loading="lazy" /></button><figcaption><span class="caption-title">The library structure.</span><span>Shared toolkit</span></figcaption></figure><figure><button class="media-button" type="button" data-detail="Styles library" aria-label="Enlarge style library organization"><img src="../assets/lucid-case/style-library-1.png" alt="Figma style library files for icons, imagery, art direction, motion, type, colors, hardware controls, and localization" width="1758" height="1066" loading="lazy" /></button><figcaption><span class="caption-title">The foundations, in practice.</span><span>Style library</span></figcaption></figure></div>
     </section>
 
     <section id="components" class="chapter wrap" aria-labelledby="components-title">
