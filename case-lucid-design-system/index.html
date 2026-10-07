@@ -101,10 +101,11 @@
     .review-line h3 { font-size: 20px; font-weight: 500; letter-spacing: -.025em; margin-bottom: 20px; }
     .review-line p { color: var(--muted); font-size: 16px; line-height: 1.55; }
     .metrics { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: var(--grid-gap); padding-top: 40px; border-top: 1px solid var(--line); }
-    .metric-value { font-size: clamp(46px, 6.2vw, 105px); font-weight: 500; line-height: 1.05; letter-spacing: -.065em; white-space: nowrap; }
+    .metric-value { margin: 0; color: var(--white); font-size: clamp(46px, 6.2vw, 105px); font-weight: 500; line-height: 1.05; letter-spacing: -.065em; white-space: nowrap; }
+    .metric-value [aria-hidden="true"] { font-size: .4em; vertical-align: super; letter-spacing: 0; }
     .metric-value .old { color: #737373; }
     .metric h3 { font-size: 18px; font-weight: 500; margin-top: 32px; }
-    .metric p { max-width: 290px; color: var(--muted); font-size: 16px; line-height: 1.55; margin-top: 20px; }
+    .metric p:not(.metric-value) { max-width: 290px; color: var(--muted); font-size: 16px; line-height: 1.55; margin-top: 20px; }
     .estimate-note { color: #858585; max-width: 750px; font-size: 13px; line-height: 1.6; margin-top: 34px; }
     .reflection { padding-block: var(--content-space) var(--section-space); }
     .reflection .statement-content { display: block; max-width: 900px; }
@@ -184,7 +185,7 @@
       .metric + .metric { padding-top: 32px; border-top: 1px solid var(--line); }
       .metric-value { font-size: clamp(64px, 17vw, 92px); }
       .metric h3 { margin-top: 24px; }
-      .metric p { max-width: 340px; margin-top: 16px; }
+      .metric p:not(.metric-value) { max-width: 340px; margin-top: 16px; }
       .reflection { padding-block: var(--content-space) var(--section-space); }
       .reflection h3 { font-size: 36px; }
       .reflection p { font-size: 17px; }
