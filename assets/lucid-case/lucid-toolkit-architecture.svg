@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 724" role="img" aria-labelledby="title desc"><title id="title">Lucid toolkit architecture</title><desc id="desc">Company Toolkit and Guidelines connect four toolkits: Product Toolkit with Air, Gravity, Earth, and future products; System UI with Status Bar, Notification, Drawer, and Menu; App Toolkit with Media, Phone, Navigation, and Mobile; and Dev Toolkit with Android, QNX, and iOS mobile.</desc><style>text { font-family: Helvetica Neue, Helvetica, Arial, sans-serif; } .label {fill:#d5b58d;font-size:13px;letter-spacing:2px;} .heading {fill:#f5f3ef;font-weight:500;font-size:25px;letter-spacing:-.5px;} .item {fill:#c9c8c5;font-size:23px;} .connector {fill:none;stroke:#8f785c;stroke-width:1.4;} .panel {fill:#0d0d0c;stroke:#34332f;stroke-width:1;} .dot {fill:#d5b58d;}</style>
+<rect width="1440" height="724" fill="#000"/>
+<text class="label" x="720" y="28" text-anchor="middle">LUCID / SHARED FOUNDATION</text>
+<rect x="530" y="60" width="380" height="120" rx="16" fill="#12100d" stroke="#a58b6b" stroke-width="1.5"/>
+<text x="720" y="112" text-anchor="middle" class="heading" style="font-size:29px">Company Toolkit</text>
+<text x="720" y="146" text-anchor="middle" class="item" style="font-size:23px;fill:#d5b58d">&amp; Guidelines</text>
+<path class="connector" d="M720 180V234M218 280V234H1222V296M552 234V296M888 234V296"/>
+<circle class="dot" cx="720" cy="234" r="3.5"/>
+<circle class="dot" cx="218" cy="296" r="3"/>
+<rect class="panel" x="80" y="296" width="276" height="352" rx="16"/>
+<text class="label" x="108" y="331">01</text>
+<text class="heading" x="108" y="373">Product Toolkit</text>
+<path d="M108 398H328" stroke="#34332f"/>
+<circle cx="112" cy="440" r="2" fill="#8f785c"/>
+<text class="item" x="128" y="448">Air</text>
+<circle cx="112" cy="492" r="2" fill="#8f785c"/>
+<text class="item" x="128" y="500">Gravity</text>
+<circle cx="112" cy="544" r="2" fill="#8f785c"/>
+<text class="item" x="128" y="552">Earth</text>
+<circle cx="112" cy="596" r="2" fill="#8f785c"/>
+<text class="item" x="128" y="604">…</text>
+<circle class="dot" cx="552" cy="296" r="3"/>
+<rect class="panel" x="414" y="296" width="276" height="352" rx="16"/>
+<text class="label" x="442" y="331">02</text>
+<text class="heading" x="442" y="373">System UI</text>
+<path d="M442 398H662" stroke="#34332f"/>
+<circle cx="446" cy="440" r="2" fill="#8f785c"/>
+<text class="item" x="462" y="448">Status Bar</text>
+<circle cx="446" cy="492" r="2" fill="#8f785c"/>
+<text class="item" x="462" y="500">Notification</text>
+<circle cx="446" cy="544" r="2" fill="#8f785c"/>
+<text class="item" x="462" y="552">Drawer</text>
+<circle cx="446" cy="596" r="2" fill="#8f785c"/>
+<text class="item" x="462" y="604">Menu</text>
+<circle class="dot" cx="888" cy="296" r="3"/>
+<rect class="panel" x="750" y="296" width="276" height="352" rx="16"/>
+<text class="label" x="778" y="331">03</text>
+<text class="heading" x="778" y="373">App Toolkit</text>
+<path d="M778 398H998" stroke="#34332f"/>
+<circle cx="782" cy="440" r="2" fill="#8f785c"/>
+<text class="item" x="798" y="448">Media</text>
+<circle cx="782" cy="492" r="2" fill="#8f785c"/>
+<text class="item" x="798" y="500">Phone</text>
+<circle cx="782" cy="544" r="2" fill="#8f785c"/>
+<text class="item" x="798" y="552">Navigation</text>
+<circle cx="782" cy="596" r="2" fill="#8f785c"/>
+<text class="item" x="798" y="604">Mobile</text>
+<circle class="dot" cx="1222" cy="296" r="3"/>
+<rect class="panel" x="1084" y="296" width="276" height="352" rx="16"/>
+<text class="label" x="1112" y="331">04</text>
+<text class="heading" x="1112" y="373">Dev Toolkit</text>
+<path d="M1112 398H1332" stroke="#34332f"/>
+<circle cx="1116" cy="440" r="2" fill="#8f785c"/>
+<text class="item" x="1132" y="448">Android</text>
+<circle cx="1116" cy="492" r="2" fill="#8f785c"/>
+<text class="item" x="1132" y="500">QNX</text>
+<circle cx="1116" cy="544" r="2" fill="#8f785c"/>
+<text class="item" x="1132" y="552">iOS (mobile)</text>
+</svg>

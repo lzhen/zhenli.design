@@ -77,6 +77,12 @@ html[data-theme="dark"] .project-password-logo { filter: invert(1); }
 html[data-theme="light"] .site-header .brand img,
 html[data-theme="light"] .icon-link img { filter: none; }
 
+/* White marks use lighter strokes to balance their weight on a dark canvas. */
+html[data-theme="dark"] body:is(.home-page, .resume-page) :is(.site-header .brand img, .resume-logo) {
+  content: url("/assets/zhen-li-logo-dark.svg?v=20261007");
+  filter: none !important;
+}
+
 
 /* Override the legacy footer rule for monochrome social icons. */
 html[data-theme="dark"] body:is(.home-page, .resume-page) .social-icons .icon-link img {
@@ -143,6 +149,7 @@ html[data-theme] body .project-password-form button { background: var(--ink) !im
   .theme-toggle-label { display: none; }
 }
 @media print {
+  html[data-theme="dark"] body:is(.home-page, .resume-page) :is(.site-header .brand img, .resume-logo) { content: url("/assets/zhen-li-logo.svg"); filter: none !important; }
   html[data-theme="dark"] body:is(.home-page, .resume-page) .social-icons .icon-link img { filter: none !important; }
   .theme-toggle { display: none !important; }
   html[data-theme="dark"] { --ink: #080808; --ink-muted: #505050; --muted: #505050; --quiet: #666; --paper: #fff; --surface: #fff; --line: #ddd; --soft-line: #eee; --theme-panel: #f5f5f5; color-scheme: light; }
