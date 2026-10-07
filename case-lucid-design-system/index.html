@@ -76,17 +76,13 @@
     .statement-content { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; }
     .statement h3 { font-size: clamp(26px, 2.8vw, 42px); font-weight: 500; line-height: 1.13; letter-spacing: -.035em; }
     .statement p { color: var(--muted); font-size: 17px; line-height: 1.6; }
-    .method { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); margin-bottom: var(--content-space); }
+    .method { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); }
     .method article { padding-top: 32px; border-top: 1px solid var(--line); }
     .method .eyebrow { color: #777; margin-bottom: 40px; }
     .method h3 { font-size: 25px; font-weight: 500; line-height: 1.2; letter-spacing: -.03em; margin-bottom: 24px; }
     .method p { font-size: 16px; line-height: 1.55; color: var(--muted); max-width: 265px; }
-    .toolkit .media-button { padding: clamp(24px, 5vw, 76px); background: var(--black); }
     .black-background { filter: url(#lucid-black-background); }
     .image-background-filter { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
-    .external-links { display: flex; gap: 40px; font-size: 14px; margin-top: 40px; }
-    .external-links a { border-bottom: 1px solid #737373; padding-bottom: 7px; }
-    .external-links a:hover { border-color: #fff; }
     .foundation-grid, .media-rows { display: grid; grid-template-columns: 1fr; gap: var(--group-space); width: 100%; padding-inline: var(--gutter); }
     .foundation-card, .media-row { min-width: 0; }
     .foundation-card, .media-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); align-items: center; }
@@ -100,8 +96,6 @@
     .foundation-card figcaption p, .media-row figcaption p { margin-top: 24px; max-width: 440px; font-size: 18px; line-height: 1.75; }
     .media-row .media-meta { font-size: 14px; line-height: 1.6; }
     .media-meta span { display: block; }
-    .spec-row .media-button { aspect-ratio: 1.03; }
-    .architecture-row .media-button { aspect-ratio: 2.91; }
     .detail-row .media-button { aspect-ratio: 1.22; }
     .release-row .media-button { aspect-ratio: 1.15; }
     .review-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); margin-top: var(--content-space); }
@@ -170,11 +164,9 @@
       .overview-details dt { margin-bottom: 8px; }
       .statement { padding-block: var(--content-space); margin-top: var(--group-space); }
       .statement-content { grid-template-columns: 1fr; gap: 32px; }
-      .method { gap: 48px 24px; margin-bottom: var(--content-space); }
+      .method { gap: 48px 24px; }
       .method h3 { font-size: 23px; }
       .method p { font-size: 15px; }
-      .toolkit .media-button { padding: 15px 5px; }
-      .external-links { gap: 22px; }
       .foundation-grid, .media-rows { grid-template-columns: 1fr; gap: var(--content-space); }
       .foundation-card .media-button, .media-row .media-button { padding: 15px; }
       .foundation-card, .media-row { grid-template-columns: 1fr; gap: 32px; }
@@ -274,8 +266,6 @@
     <section id="system" class="chapter wrap" aria-labelledby="system-title">
       <div class="chapter-intro"><div class="chapter-label"><span class="number">02</span><p class="eyebrow">System strategy</p></div><div class="chapter-copy"><h2 id="system-title">Build the language.<br /><span class="secondary">Build the way it works.</span></h2><p>I treated the system as a product. That meant defining its foundations and the day-to-day practices that would help teams adopt, review, and maintain them.</p></div></div>
       <div class="method"><article><p class="eyebrow">01 / Define</p><h3>Find the shared decisions.</h3><p>Audit recurring choices across teams and turn product gaps into system priorities.</p></article><article><p class="eyebrow">02 / Design</p><h3>Make them reusable.</h3><p>Define foundations, components, and interaction patterns around real product needs.</p></article><article><p class="eyebrow">03 / Align</p><h3>Create a review rhythm.</h3><p>Bring design, implementation, and stakeholder reviews into the delivery process.</p></article><article><p class="eyebrow">04 / Maintain</p><h3>Keep the system moving.</h3><p>Use documentation, versioning, and feedback to support adoption over time.</p></article></div>
-      <figure class="toolkit"><button class="media-button" type="button" data-detail="Toolkit architecture" aria-label="Enlarge Lucid toolkit architecture"><picture><source media="(max-width: 760px)" srcset="../assets/lucid-case/lucid-toolkit-architecture-mobile.svg?v=20261007-vector" width="560" height="1356" /><img src="../assets/lucid-case/lucid-toolkit-architecture.svg?v=20261007-vector" alt="Company Toolkit and Guidelines connect Product Toolkit (Air, Gravity, Earth, and future products), System UI (Status Bar, Notification, Drawer, Menu), App Toolkit (Media, Phone, Navigation, Mobile), and Dev Toolkit (Android, QNX, iOS mobile)." width="1440" height="724" loading="lazy" /></picture></button><figcaption><span class="caption-title">One source of truth. Multiple ways to build.</span><span>Toolkit architecture</span></figcaption></figure>
-      <div class="external-links"><a href="https://www.youtube.com/watch?v=oUhyFHmWMO4" target="_blank" rel="noopener noreferrer">Lucid design approach</a><a href="https://youtu.be/51HfU2c7ZMc?si=aX6Y6pDASp0cDyYw" target="_blank" rel="noopener noreferrer">Lucid UX 2.0</a></div>
     </section>
 
 
@@ -291,9 +281,6 @@
     <section id="components" class="chapter" aria-labelledby="components-title">
       <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">04</span><p class="eyebrow">Components</p></div><div class="chapter-copy"><h2 id="components-title">The details are<br /><span class="secondary">part of the system.</span></h2><p>A reusable component needs more than a visual. I documented states, measurements, directionality, validation, and overflow so design and engineering could work from the same decisions.</p></div></div>
       <div class="media-rows">
-        <figure class="media-row spec-row"><button class="media-button" type="button" data-detail="Tab control specification" aria-label="Enlarge tab control specifications"><img src="../assets/lucid-case/component-spec-tab-control.png" alt="Tab control specification with LTR and RTL behavior, active, inactive and disabled states, and text overflow guidance" width="1662" height="1430" loading="lazy" /></button><figcaption><h3>Tab control.</h3><p>Behavior / States / Direction</p></figcaption></figure>
-        <figure class="media-row spec-row"><button class="media-button" type="button" data-detail="Button specification" aria-label="Enlarge button specifications"><img src="../assets/lucid-case/component-spec-button.png" alt="Button specification for primary, secondary, destructive, icon, loading, tertiary, and navigation buttons in LTR and RTL contexts" width="1367" height="1429" loading="lazy" /></button><figcaption><h3>Button.</h3><p>Variants / States / Usage</p></figcaption></figure>
-        <figure class="media-row architecture-row"><button class="media-button" type="button" data-detail="Parent and child component model" aria-label="Enlarge parent and child component architecture"><img src="../assets/lucid-case/spec-parent-child-component.png" alt="Switch parent component and child variants showing shared component structure" width="2466" height="846" loading="lazy" /></button><figcaption><h3>Structure that carries context.</h3><p>Parent components defined shared behavior. Child components handled shape, icon, label, and selection variants.</p><p class="media-meta"><span>A reusable component model.</span><span>Parent / Child / Variants</span></p></figcaption></figure>
         <figure class="media-row detail-row"><button class="media-button" type="button" data-detail="Callout specification" aria-label="Enlarge component callout specification"><img src="../assets/lucid-case/spec-callout-specification.png" alt="Callout specification documenting measurements, states, validation, and implementation tokens" loading="lazy" width="1878" height="1292" /></button><figcaption><h3>Behavior made explicit.</h3><p>Callouts connected measurements and token references to validation, spacing, direction, and overflow.</p><p class="media-meta"><span>Design decisions, made implementable.</span><span>Callout specification</span></p></figcaption></figure>
         <figure class="media-row detail-row"><button class="media-button" type="button" data-detail="English and Arabic directionality" aria-label="Enlarge English and Arabic component examples"><img src="../assets/lucid-case/spec-bilingual-ltr-rtl.png" alt="English and Arabic tab controls showing parallel LTR and RTL states" width="1210" height="1022" loading="lazy" /></button><figcaption><h3>Direction built in.</h3><p>English and Arabic variants shared system logic, with LTR and RTL behavior specified side by side.</p><p class="media-meta"><span>One logic. Two reading directions.</span><span>English / Arabic</span></p></figcaption></figure>
       </div>
