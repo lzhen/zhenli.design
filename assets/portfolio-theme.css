@@ -71,11 +71,11 @@ html[data-theme] .theme-toggle:focus-visible { outline: 2px solid var(--ink); ou
 html[data-theme="dark"] .theme-toggle .theme-moon { display: none; }
 html[data-theme="dark"] .theme-toggle .theme-sun { display: block; }
 html[data-theme="dark"] .site-header .brand img,
-html[data-theme="dark"] .site-footer .icon-link img,
+html[data-theme="dark"] .icon-link img,
 html[data-theme="dark"] .resume-logo,
 html[data-theme="dark"] .project-password-logo { filter: invert(1); }
 html[data-theme="light"] .site-header .brand img,
-html[data-theme="light"] .site-footer .icon-link img { filter: none; }
+html[data-theme="light"] .icon-link img { filter: none; }
 
 /* Homepage, resume, and the portfolio's shared editorial pages. */
 html[data-theme="dark"] .editorial-site main,
@@ -140,6 +140,6 @@ html[data-theme] body .project-password-form button { background: var(--ink) !im
   .theme-toggle { display: none !important; }
   html[data-theme="dark"] { --ink: #080808; --ink-muted: #505050; --muted: #505050; --quiet: #666; --paper: #fff; --surface: #fff; --line: #ddd; --soft-line: #eee; --theme-panel: #f5f5f5; color-scheme: light; }
   html[data-theme="dark"] .site-header .brand img,
-  html[data-theme="dark"] .site-footer .icon-link img,
+  html[data-theme="dark"] .icon-link img,
   html[data-theme="dark"] .resume-logo { filter: none; }
 }
