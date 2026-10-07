@@ -66,7 +66,9 @@
     .media-button { position: relative; display: block; width: 100%; padding: 0; background: var(--black); color: inherit; border: 0; cursor: zoom-in; overflow: hidden; }
     .media-button::after { content: "+"; position: absolute; bottom: 18px; right: 18px; width: 32px; height: 32px; display: grid; place-items: center; background: #fff; color: #000; font-size: 23px; line-height: 1; opacity: 0; transform: translateY(5px); transition: opacity .2s ease, transform .2s ease; }
     .media-button:hover::after, .media-button:focus-visible::after { opacity: 1; transform: translateY(0); }
-    .surface-image img { width: 100%; }
+    .surface-image .media-button { padding: 10%; }
+    .surface-image img { width: 100%; max-width: 1734px; margin-inline: auto; }
+    .sharp-display { filter: url(#lucid-display-sharpen); }
     figcaption { display: flex; justify-content: space-between; align-items: start; gap: 24px; margin-top: 24px; font-size: 14px; line-height: 1.45; color: var(--muted); }
     figcaption .caption-title { color: var(--white); }
     .statement { display: grid; grid-template-columns: 16% 1fr; gap: var(--grid-gap); padding-block: var(--content-space); margin-top: var(--group-space); border-block: 1px solid var(--line); }
@@ -85,10 +87,10 @@
     .external-links { display: flex; gap: 40px; font-size: 14px; margin-top: 40px; }
     .external-links a { border-bottom: 1px solid #737373; padding-bottom: 7px; }
     .external-links a:hover { border-color: #fff; }
-    .foundation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--content-space) var(--grid-gap); }
+    .foundation-grid { display: grid; grid-template-columns: 1fr; gap: var(--group-space); }
     .foundation-card { min-width: 0; }
-    .foundation-card .media-button { aspect-ratio: 1.36; display: grid; place-items: center; padding: 22px; background: var(--black); }
-    .foundation-card .media-button img { width: 100%; height: 100%; max-height: 450px; object-fit: contain; }
+    .foundation-card .media-button { display: block; padding: 0; background: var(--black); }
+    .foundation-card .media-button img { width: 100%; height: auto; object-fit: contain; }
     .foundation-card figcaption { display: block; }
     .foundation-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -.03em; color: var(--white); }
     .foundation-card figcaption p { margin-top: 16px; max-width: 440px; line-height: 1.6; }
@@ -176,8 +178,7 @@
       .method p { font-size: 15px; }
       .toolkit .media-button { padding: 15px 5px; }
       .external-links { gap: 22px; }
-      .foundation-grid, .pair { grid-template-columns: 1fr; gap: var(--content-space); }
-      .foundation-card .media-button { padding: 15px; }
+      .pair { grid-template-columns: 1fr; gap: var(--content-space); }
       .foundation-card figcaption p { font-size: 15px; }
       .spec-pair .media-button { padding: 15px; }
       .component-notes { grid-template-columns: 1fr; gap: 40px; margin-top: var(--content-space); padding-top: 32px; }
@@ -229,6 +230,9 @@
   <!-- Remove only the original near-neutral #141414 canvas; preserve diagram content and colors. -->
   <svg class="image-background-filter" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
     <defs>
+      <filter id="lucid-display-sharpen" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feConvolveMatrix in="SourceGraphic" order="3" kernelMatrix="0 -.12 0 -.12 1.48 -.12 0 -.12 0" divisor="1" edgeMode="duplicate" preserveAlpha="true" />
+      </filter>
       <filter id="lucid-black-background" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
         <feComponentTransfer in="SourceGraphic" result="canvas-key">
           <feFuncR type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
@@ -264,7 +268,7 @@
     <section id="overview" class="chapter" aria-labelledby="overview-title">
       <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">01</span><p class="eyebrow">Overview</p></div><div class="chapter-copy"><h2 id="overview-title">The experience is connected.<br /><span class="secondary">The design system should be, too.</span></h2><p>Lucid teams were designing across vehicle controls, mobile surfaces, and product workflows. I turned repeated, local decisions into shared foundations, components, and guidance—giving teams a consistent language to build with.</p></div></div>
       <dl class="overview-details wrap"><div><dt>My role</dt><dd>Design system product owner. I defined the system direction and worked across design, engineering, product, and brand.</dd></div><div><dt>Scope</dt><dd>Vehicle HMI and mobile surfaces.<br />Foundations, component specifications, documentation, and adoption.</dd></div><div><dt>Team enablement</dt><dd>Usage guidance, critique and implementation reviews, release notes, and feedback loops.</dd></div></dl>
-      <figure class="surface-image"><button class="media-button" type="button" data-detail="Connected product surfaces" aria-label="Enlarge Lucid Air HMI and mobile surfaces"><img src="../assets/lucid-case/lucid-air-hmi-surfaces.png" alt="Lucid Air design system across the instrument cluster, center display, pilot panel, mobile app, and rear console" width="1734" height="774" loading="lazy" /></button><figcaption class="wrap"><span class="caption-title">A connected product experience.</span><span>In-car HMI / Mobile / Rear console</span></figcaption></figure>
+      <figure class="surface-image"><button class="media-button" type="button" data-detail="Connected product surfaces" aria-label="Enlarge Lucid Air HMI and mobile surfaces"><img class="sharp-display" src="../assets/lucid-case/lucid-air-hmi-surfaces.png" alt="Lucid Air design system across the instrument cluster, center display, pilot panel, mobile app, and rear console" width="1734" height="774" loading="lazy" /></button><figcaption class="wrap"><span class="caption-title">A connected product experience.</span><span>In-car HMI / Mobile / Rear console</span></figcaption></figure>
       <div class="statement wrap"><p class="eyebrow">The challenge</p><div class="statement-content"><h3>Shared experiences.<br />Fragmented decisions.</h3><p>Feature teams created styles and components independently. Development was ticket-driven, and even simple behaviors required frequent alignment. The opportunity was to make those decisions reusable, explicit, and easier to trust.</p></div></div>
     </section>
 
@@ -276,13 +280,13 @@
     </section>
 
 
-    <section id="foundations" class="chapter wrap" aria-labelledby="foundations-title">
-      <div class="chapter-intro"><div class="chapter-label"><span class="number">03</span><p class="eyebrow">Foundations</p></div><div class="chapter-copy"><h2 id="foundations-title">A premium brand.<br /><span class="secondary">A precise product language.</span></h2><p>I translated Lucid’s visual language into reusable styles, tokens, and usage guidance. Each foundation connected the look of the interface to how teams applied it across displays and contexts.</p></div></div>
+    <section id="foundations" class="chapter" aria-labelledby="foundations-title">
+      <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">03</span><p class="eyebrow">Foundations</p></div><div class="chapter-copy"><h2 id="foundations-title">A premium brand.<br /><span class="secondary">A precise product language.</span></h2><p>I translated Lucid’s visual language into reusable styles, tokens, and usage guidance. Each foundation connected the look of the interface to how teams applied it across displays and contexts.</p></div></div>
       <div class="foundation-grid">
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img class="black-background" src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Typography" aria-label="Enlarge typography foundation"><img class="black-background" src="../assets/lucid-case/foundation-font.png" alt="Typography system documenting style, weight, size, leading, kerning, and usage" width="1222" height="1160" loading="lazy" /></button><figcaption><h3>02 / Typography</h3><p>A shared hierarchy, with type styles, spacing, and guidance for consistent information structure.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img class="black-background" src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption><h3>03 / Iconography</h3><p>Standardized symbols for vehicle controls, navigation, media, and system states.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img class="black-background" src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption><h3>04 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img class="black-background" src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption class="wrap"><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Typography" aria-label="Enlarge typography foundation"><img class="black-background" src="../assets/lucid-case/foundation-font.png" alt="Typography system documenting style, weight, size, leading, kerning, and usage" width="1222" height="1160" loading="lazy" /></button><figcaption class="wrap"><h3>02 / Typography</h3><p>A shared hierarchy, with type styles, spacing, and guidance for consistent information structure.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img class="black-background" src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption class="wrap"><h3>03 / Iconography</h3><p>Standardized symbols for vehicle controls, navigation, media, and system states.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img class="black-background" src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption class="wrap"><h3>04 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
       </div>
     </section>
 
@@ -358,6 +362,7 @@
           image.src = source.currentSrc || source.src;
           image.alt = source.alt;
           image.classList.toggle('black-background', source.classList.contains('black-background'));
+          image.classList.toggle('sharp-display', source.classList.contains('sharp-display'));
           title.textContent = trigger.getAttribute('data-detail');
           viewport.classList.remove('is-actual');
           size.setAttribute('aria-pressed', 'false');
