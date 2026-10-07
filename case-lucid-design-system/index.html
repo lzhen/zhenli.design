@@ -63,10 +63,9 @@
     .overview-details { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: var(--grid-gap); margin: 80px 0 var(--content-space); padding-top: 40px; border-top: 1px solid var(--line); }
     .overview-details dt { margin-bottom: 13px; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
     .overview-details dd { font-size: 16px; line-height: 1.6; max-width: 400px; }
-    .media-button { position: relative; display: block; width: 100%; padding: 0; background: #111; color: inherit; border: 0; cursor: zoom-in; overflow: hidden; }
+    .media-button { position: relative; display: block; width: 100%; padding: 0; background: var(--black); color: inherit; border: 0; cursor: zoom-in; overflow: hidden; }
     .media-button::after { content: "+"; position: absolute; bottom: 18px; right: 18px; width: 32px; height: 32px; display: grid; place-items: center; background: #fff; color: #000; font-size: 23px; line-height: 1; opacity: 0; transform: translateY(5px); transition: opacity .2s ease, transform .2s ease; }
     .media-button:hover::after, .media-button:focus-visible::after { opacity: 1; transform: translateY(0); }
-    .surface-image .media-button { background: #171717; }
     .surface-image img { width: 100%; }
     figcaption { display: flex; justify-content: space-between; align-items: start; gap: 24px; margin-top: 24px; font-size: 14px; line-height: 1.45; color: var(--muted); }
     figcaption .caption-title { color: var(--white); }
@@ -80,8 +79,9 @@
     .method .eyebrow { color: #777; margin-bottom: 40px; }
     .method h3 { font-size: 25px; font-weight: 500; line-height: 1.2; letter-spacing: -.03em; margin-bottom: 24px; }
     .method p { font-size: 16px; line-height: 1.55; color: var(--muted); max-width: 265px; }
-    .toolkit .media-button { padding: clamp(24px, 5vw, 76px); background: #141414; }
-    .toolkit .media-button img { mix-blend-mode: lighten; }
+    .toolkit .media-button { padding: clamp(24px, 5vw, 76px); background: var(--black); }
+    .black-background { filter: url(#lucid-black-background); }
+    .image-background-filter { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
     .external-links { display: flex; gap: 40px; font-size: 14px; margin-top: 40px; }
     .external-links a { border-bottom: 1px solid #737373; padding-bottom: 7px; }
     .external-links a:hover { border-color: #fff; }
@@ -90,23 +90,23 @@
     .visual-break figcaption { margin-inline: var(--gutter); }
     .foundation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--content-space) var(--grid-gap); }
     .foundation-card { min-width: 0; }
-    .foundation-card .media-button { aspect-ratio: 1.36; display: grid; place-items: center; padding: 22px; background: #161616; }
+    .foundation-card .media-button { aspect-ratio: 1.36; display: grid; place-items: center; padding: 22px; background: var(--black); }
     .foundation-card .media-button img { width: 100%; height: 100%; max-height: 450px; object-fit: contain; }
     .foundation-card figcaption { display: block; }
     .foundation-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -.03em; color: var(--white); }
     .foundation-card figcaption p { margin-top: 16px; max-width: 440px; line-height: 1.6; }
     .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap); align-items: start; }
-    .spec-pair .media-button { display: grid; place-items: center; aspect-ratio: 1.03; padding: 26px; background: #111; }
+    .spec-pair .media-button { display: grid; place-items: center; aspect-ratio: 1.03; padding: 26px; background: var(--black); }
     .spec-pair img { width: 100%; height: 100%; object-fit: contain; }
     .component-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); padding-top: 40px; margin-top: 80px; border-top: 1px solid var(--line); }
     .component-notes h3 { font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-bottom: 20px; }
     .component-notes p { max-width: 335px; font-size: 16px; line-height: 1.55; color: var(--muted); }
     .architecture { margin-top: var(--group-space); }
-    .architecture .media-button { padding: 36px; background: #111; }
+    .architecture .media-button { padding: 36px; background: var(--black); }
     .architecture-pair { margin-top: 56px; }
     .architecture-pair .media-button { aspect-ratio: 1.22; padding: 28px; display: grid; place-items: center; }
     .architecture-pair img { width: 100%; height: 100%; object-fit: contain; }
-    .release-pair .media-button { display: grid; place-items: center; aspect-ratio: 1.15; background: #111; padding: 30px; }
+    .release-pair .media-button { display: grid; place-items: center; aspect-ratio: 1.15; background: var(--black); padding: 30px; }
     .release-pair img { width: 100%; height: 100%; object-fit: contain; }
     .review-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); margin-top: var(--content-space); }
     .review-line article { padding-top: 32px; border-top: 1px solid var(--line); }
@@ -124,7 +124,7 @@
     .reflection p { max-width: 640px; margin-top: 40px; font-size: 18px; }
     .footer { display: flex; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); padding: 48px var(--gutter); font-size: 14px; color: var(--muted); }
     .footer nav { display: flex; gap: 28px; }
-    dialog { width: min(1500px, calc(100vw - 40px)); max-width: none; max-height: calc(100dvh - 40px); padding: 0; border: 1px solid #444; background: #080808; color: #fff; }
+    dialog { width: min(1500px, calc(100vw - 40px)); max-width: none; max-height: calc(100dvh - 40px); padding: 0; border: 1px solid #444; background: var(--black); color: #fff; }
     dialog::backdrop { background: rgba(0,0,0,.92); }
     .detail-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
     .detail-header h2 { font-size: 17px; line-height: 1.4; letter-spacing: 0; }
@@ -233,6 +233,23 @@
   <script src="../assets/project-password-mask.js?v=20260719-lucid-lock-version" data-project-lock="case-study" data-lock-version="20260719-lucid"></script>
 </head>
 <body>
+  <!-- Remove only the original near-neutral #141414 canvas; preserve diagram content and colors. -->
+  <svg class="image-background-filter" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="lucid-black-background" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feComponentTransfer in="SourceGraphic" result="canvas-key">
+          <feFuncR type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+          <feFuncG type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+          <feFuncB type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+        </feComponentTransfer>
+        <feColorMatrix in="canvas-key" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  .333333 .333333 .333333 0 0" result="canvas-match" />
+        <feComponentTransfer in="canvas-match" result="canvas-mask">
+          <feFuncA type="discrete" tableValues="0 0 0 1" />
+        </feComponentTransfer>
+        <feComposite in="SourceGraphic" in2="canvas-mask" operator="out" />
+      </filter>
+    </defs>
+  </svg>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="site-header-inner">
@@ -261,19 +278,19 @@
     <section id="system" class="chapter wrap" aria-labelledby="system-title">
       <div class="chapter-intro"><div class="chapter-label"><span class="number">02</span><p class="eyebrow">System strategy</p></div><div class="chapter-copy"><h2 id="system-title">Build the language.<br /><span class="secondary">Build the way it works.</span></h2><p>I treated the system as a product. That meant defining its foundations and the day-to-day practices that would help teams adopt, review, and maintain them.</p></div></div>
       <div class="method"><article><p class="eyebrow">01 / Define</p><h3>Find the shared decisions.</h3><p>Audit recurring choices across teams and turn product gaps into system priorities.</p></article><article><p class="eyebrow">02 / Design</p><h3>Make them reusable.</h3><p>Define foundations, components, and interaction patterns around real product needs.</p></article><article><p class="eyebrow">03 / Align</p><h3>Create a review rhythm.</h3><p>Bring design, implementation, and stakeholder reviews into the delivery process.</p></article><article><p class="eyebrow">04 / Maintain</p><h3>Keep the system moving.</h3><p>Use documentation, versioning, and feedback to support adoption over time.</p></article></div>
-      <figure class="toolkit"><button class="media-button" type="button" data-detail="Toolkit architecture" aria-label="Enlarge Lucid toolkit architecture"><img src="../assets/lucid-case/lucid-toolkit-documentation.png" alt="Company toolkit connecting product toolkit, system UI, app toolkit, and developer toolkit through shared guidelines" width="2010" height="912" loading="lazy" /></button><figcaption><span class="caption-title">One source of truth. Multiple ways to build.</span><span>Toolkit architecture</span></figcaption></figure>
+      <figure class="toolkit"><button class="media-button" type="button" data-detail="Toolkit architecture" aria-label="Enlarge Lucid toolkit architecture"><img class="black-background" src="../assets/lucid-case/lucid-toolkit-documentation.png" alt="Company toolkit connecting product toolkit, system UI, app toolkit, and developer toolkit through shared guidelines" width="2010" height="912" loading="lazy" /></button><figcaption><span class="caption-title">One source of truth. Multiple ways to build.</span><span>Toolkit architecture</span></figcaption></figure>
       <div class="external-links"><a href="https://www.youtube.com/watch?v=oUhyFHmWMO4" target="_blank" rel="noopener noreferrer">Lucid design approach</a><a href="https://youtu.be/51HfU2c7ZMc?si=aX6Y6pDASp0cDyYw" target="_blank" rel="noopener noreferrer">Lucid UX 2.0</a></div>
     </section>
 
-    <figure class="visual-break"><img src="../assets/lucid-case/lucid-hmi-background.jpeg" alt="An overview of Lucid design system foundations and component specifications" width="1920" height="1080" loading="lazy" /><figcaption><span class="caption-title">From brand expression to product behavior.</span><span>Foundations / Components / Specifications</span></figcaption></figure>
+    <figure class="visual-break"><img class="black-background" src="../assets/lucid-case/lucid-hmi-background.jpeg" alt="An overview of Lucid design system foundations and component specifications" width="1920" height="1080" loading="lazy" /><figcaption><span class="caption-title">From brand expression to product behavior.</span><span>Foundations / Components / Specifications</span></figcaption></figure>
 
     <section id="foundations" class="chapter wrap" aria-labelledby="foundations-title">
       <div class="chapter-intro"><div class="chapter-label"><span class="number">03</span><p class="eyebrow">Foundations</p></div><div class="chapter-copy"><h2 id="foundations-title">A premium brand.<br /><span class="secondary">A precise product language.</span></h2><p>I translated Lucid’s visual language into reusable styles, tokens, and usage guidance. Each foundation connected the look of the interface to how teams applied it across displays and contexts.</p></div></div>
       <div class="foundation-grid">
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Typography" aria-label="Enlarge typography foundation"><img src="../assets/lucid-case/foundation-font.png" alt="Typography system documenting style, weight, size, leading, kerning, and usage" width="1222" height="1160" loading="lazy" /></button><figcaption><h3>02 / Typography</h3><p>A shared hierarchy, with type styles, spacing, and guidance for consistent information structure.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption><h3>03 / Iconography</h3><p>Standardized symbols for vehicle controls, navigation, media, and system states.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption><h3>04 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img class="black-background" src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Typography" aria-label="Enlarge typography foundation"><img class="black-background" src="../assets/lucid-case/foundation-font.png" alt="Typography system documenting style, weight, size, leading, kerning, and usage" width="1222" height="1160" loading="lazy" /></button><figcaption><h3>02 / Typography</h3><p>A shared hierarchy, with type styles, spacing, and guidance for consistent information structure.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img class="black-background" src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption><h3>03 / Iconography</h3><p>Standardized symbols for vehicle controls, navigation, media, and system states.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img class="black-background" src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption><h3>04 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
       </div>
     </section>
 
@@ -348,6 +365,7 @@
           var source = trigger.querySelector('img');
           image.src = source.currentSrc || source.src;
           image.alt = source.alt;
+          image.classList.toggle('black-background', source.classList.contains('black-background'));
           title.textContent = trigger.getAttribute('data-detail');
           viewport.classList.remove('is-actual');
           size.setAttribute('aria-pressed', 'false');
