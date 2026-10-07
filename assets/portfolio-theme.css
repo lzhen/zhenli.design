@@ -1,0 +1,145 @@
+/* Shared portfolio theme. Project images and videos keep their original colors. */
+html[data-theme="light"] {
+  color-scheme: light;
+  --ink: #080808;
+  --ink-muted: #505050;
+  --muted: #505050;
+  --quiet: #666666;
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --theme-panel: #f5f5f5;
+  --line: #dddddd;
+  --soft-line: #eeeeee;
+  --rule: #111111;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f5f5f5;
+  --ink-muted: #b8b8b8;
+  --muted: #b8b8b8;
+  --quiet: #a3a3a3;
+  --paper: #080808;
+  --surface: #080808;
+  --theme-panel: #171717;
+  --line: #383838;
+  --soft-line: #282828;
+  --rule: #e5e5e5;
+}
+
+html[data-theme], html[data-theme] body,
+html[data-theme] body main,
+html[data-theme] body .site-header,
+html[data-theme] body .site-footer {
+  background-color: var(--paper) !important;
+  color: var(--ink);
+}
+html[data-theme] .site-header { background: var(--surface) !important; border-color: var(--soft-line) !important; }
+html[data-theme] .site-header nav { align-items: center; }
+html[data-theme] .site-header nav a { color: var(--muted); }
+html[data-theme] .site-header nav a:hover,
+html[data-theme] .site-header nav a.active { color: var(--ink); }
+html[data-theme] .site-footer { color: var(--muted) !important; border-color: var(--line); }
+html[data-theme] .site-footer a { color: inherit; }
+html[data-theme] .site-footer a:hover { color: var(--ink); }
+html[data-theme] ::selection { background: var(--ink); color: var(--paper); }
+html[data-theme] :focus-visible { outline-color: var(--ink); }
+
+html[data-theme] .theme-toggle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 78px;
+  min-height: 44px;
+  padding: 0 13px;
+  border: 1px solid var(--line) !important;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: 400 13px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+html[data-theme] .theme-toggle:hover { background: var(--theme-panel); }
+html[data-theme] .theme-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.theme-toggle svg { width: 17px; height: 17px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .theme-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-sun { display: block; }
+html[data-theme="dark"] .site-header .brand img,
+html[data-theme="dark"] .site-footer .icon-link img,
+html[data-theme="dark"] .resume-logo,
+html[data-theme="dark"] .project-password-logo { filter: invert(1); }
+html[data-theme="light"] .site-header .brand img,
+html[data-theme="light"] .site-footer .icon-link img { filter: none; }
+
+/* Homepage, resume, and the portfolio's shared editorial pages. */
+html[data-theme="dark"] .editorial-site main,
+html[data-theme="dark"] .home-page :is(.selected-work-band, .editorial-ticker, .work-tile, .home-hero-visual, .home-identity-panel),
+html[data-theme="dark"] .work-page :is(.work-editorial, .case-study) {
+  background: var(--paper) !important;
+}
+html[data-theme="dark"] .home-page .work-tile small { color: var(--muted); }
+html[data-theme="dark"] .work-page .case-copy :is(p, dd, a, strong, .case-kicker),
+html[data-theme="dark"] .work-page .case-proof-points dd { color: var(--ink) !important; }
+html[data-theme="dark"] .home-page .home-title em.is-sphere-gradient {
+  background-image: linear-gradient(90deg, #95bce9 0%, #e5a9b1 22%, #e7c88b 38%, #afd3ab 54%, #83dadd 72%, #95bce9 100%);
+}
+html[data-theme="dark"] .logo-loader { background: var(--paper); }
+html[data-theme="dark"] .logo-loader svg { filter: invert(1); }
+html[data-theme="dark"] .logo-loader .loader-logo { stroke: #080808; }
+
+/* The Meta cases have their own palettes and card styles. */
+html[data-theme="dark"] .deck-case { --tint: #211d33; --accent: #b7aaff; }
+html[data-theme="dark"] .deck-case.omni { --tint: #152238; --accent: #93beff; }
+html[data-theme="dark"] .deck-case .hero { background: linear-gradient(120deg, #121212 25%, var(--tint)); }
+html[data-theme="dark"] .deck-case :is(.card, .flow li, .compare > div) { background: var(--theme-panel); border-color: var(--line); }
+html[data-theme="dark"] .deck-case :is(.card.focus, .compare > div:last-child) { background: var(--tint); }
+html[data-theme="dark"] .deck-case :is(.eyebrow, .subtitle, .micro, dt, .source, .intro, .note, figcaption, .card p, .flow p, .solution-head p, .compare span, blockquote cite, .stat p) { color: var(--muted); }
+html[data-theme="dark"] .deck-case :is(.facts, .toc, .chapter, .solution, .pillrow span, .stat, details, .flow) { border-color: var(--line); }
+html[data-theme="dark"] .deck-case .flow { background: var(--line); }
+
+/* Lucid keeps its black image canvases in both modes. */
+html[data-portfolio-page="lucid"] { --white: var(--ink); }
+html[data-portfolio-page="lucid"] .site-header nav a { color: var(--ink); }
+html[data-portfolio-page="lucid"] :is(h1 span, h2 .secondary, .chapter-label .number, .method .eyebrow, .metric-value .old, .estimate-note) { color: var(--muted); }
+html[data-portfolio-page="lucid"] .detail-header,
+html[data-portfolio-page="lucid"] .detail-actions button { color: #f5f5f5; }
+html[data-portfolio-page="lucid"][data-theme="light"] .lucid-logo { filter: invert(1); }
+
+/* Beehive's yellow identity stays in the artwork; reading surfaces adapt. */
+html[data-portfolio-page="dls"][data-theme="dark"] :is(.hero, .band--honey) { background: #18150d; }
+html[data-portfolio-page="dls"][data-theme="dark"] .band--white { background: var(--theme-panel); }
+html[data-portfolio-page="dls"][data-theme="dark"] .band--dls-magician { background: #191b1d; }
+html[data-portfolio-page="dls"][data-theme="dark"] :is(.section-intro p, .case-copy p, .principles-header__description, .band:not(.band--dark) p.overview-type, .band:not(.band--dark) ul.overview-type, .dls-case-details dd) { color: var(--muted); }
+html[data-portfolio-page="dls"][data-theme="dark"] { --gold: #d5b452; }
+html[data-portfolio-page="dls"][data-theme="dark"] .dls-reference-links :is(a, button) { border-color: var(--line); }
+html[data-portfolio-page="dls"][data-theme="dark"] .dls-reference-links :is(a, button):hover { color: var(--paper); }
+html[data-portfolio-page="dls"][data-theme="dark"] .dls-case-details div { border-color: var(--line); }
+
+/* Password entry uses the same mode without changing project access. */
+html[data-theme] body > .project-password-gate { background: var(--paper) !important; color: var(--ink) !important; }
+html[data-theme] body .project-password-panel h1 { color: var(--ink) !important; }
+html[data-theme] .project-password-note,
+html[data-theme] .project-password-error { color: var(--muted) !important; }
+html[data-theme] body .project-password-input-row { background: var(--theme-panel) !important; border-color: var(--line) !important; }
+html[data-theme] body .project-password-form input { color: var(--ink) !important; }
+html[data-theme] body .project-password-form input::placeholder { color: var(--quiet) !important; }
+html[data-theme] body .project-password-form button { background: var(--ink) !important; color: var(--paper) !important; }
+
+@media (max-width: 600px) {
+  html[data-theme] .site-header nav { gap: 12px; }
+  html[data-theme] .theme-toggle { min-width: 44px; width: 44px; padding: 0; }
+  .theme-toggle-label { display: none; }
+}
+@media print {
+  .theme-toggle { display: none !important; }
+  html[data-theme="dark"] { --ink: #080808; --ink-muted: #505050; --muted: #505050; --quiet: #666; --paper: #fff; --surface: #fff; --line: #ddd; --soft-line: #eee; --theme-panel: #f5f5f5; color-scheme: light; }
+  html[data-theme="dark"] .site-header .brand img,
+  html[data-theme="dark"] .site-footer .icon-link img,
+  html[data-theme="dark"] .resume-logo { filter: none; }
+}
