@@ -86,10 +86,10 @@
     .external-links { display: flex; gap: 40px; font-size: 14px; margin-top: 40px; }
     .external-links a { border-bottom: 1px solid #737373; padding-bottom: 7px; }
     .external-links a:hover { border-color: #fff; }
-    .foundation-grid { display: grid; grid-template-columns: 1fr; gap: var(--group-space); }
+    .foundation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--content-space) var(--grid-gap); width: 100%; padding-inline: var(--gutter); }
     .foundation-card { min-width: 0; }
-    .foundation-card .media-button { display: block; padding: 0; background: var(--black); }
-    .foundation-card .media-button img { width: 100%; height: auto; object-fit: contain; }
+    .foundation-card .media-button { aspect-ratio: 1.36; display: grid; place-items: center; padding: clamp(16px, 1.6vw, 28px); background: var(--black); }
+    .foundation-card .media-button img { width: 100%; height: 100%; object-fit: contain; }
     .foundation-card figcaption { display: block; }
     .foundation-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -.03em; color: var(--white); }
     .foundation-card figcaption p { margin-top: 16px; max-width: 440px; line-height: 1.6; }
@@ -177,7 +177,8 @@
       .method p { font-size: 15px; }
       .toolkit .media-button { padding: 15px 5px; }
       .external-links { gap: 22px; }
-      .pair { grid-template-columns: 1fr; gap: var(--content-space); }
+      .foundation-grid, .pair { grid-template-columns: 1fr; gap: var(--content-space); }
+      .foundation-card .media-button { padding: 15px; }
       .foundation-card figcaption p { font-size: 15px; }
       .spec-pair .media-button { padding: 15px; }
       .component-notes { grid-template-columns: 1fr; gap: 40px; margin-top: var(--content-space); padding-top: 32px; }
@@ -282,10 +283,10 @@
     <section id="foundations" class="chapter" aria-labelledby="foundations-title">
       <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">03</span><p class="eyebrow">Foundations</p></div><div class="chapter-copy"><h2 id="foundations-title">A premium brand.<br /><span class="secondary">A precise product language.</span></h2><p>I translated Lucid’s visual language into reusable styles, tokens, and usage guidance. Each foundation connected the look of the interface to how teams applied it across displays and contexts.</p></div></div>
       <div class="foundation-grid">
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img class="black-background" src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption class="wrap"><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Typography" aria-label="Enlarge typography foundation"><img class="black-background" src="../assets/lucid-case/foundation-font.png" alt="Typography system documenting style, weight, size, leading, kerning, and usage" width="1222" height="1160" loading="lazy" /></button><figcaption class="wrap"><h3>02 / Typography</h3><p>A shared hierarchy, with type styles, spacing, and guidance for consistent information structure.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img class="black-background" src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption class="wrap"><h3>03 / Iconography</h3><p>Standardized symbols for vehicle controls, navigation, media, and system states.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img class="black-background" src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption class="wrap"><h3>04 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img class="black-background" src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Typography" aria-label="Enlarge typography foundation"><img class="black-background" src="../assets/lucid-case/foundation-font.png" alt="Typography system documenting style, weight, size, leading, kerning, and usage" width="1222" height="1160" loading="lazy" /></button><figcaption><h3>02 / Typography</h3><p>A shared hierarchy, with type styles, spacing, and guidance for consistent information structure.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img class="black-background" src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption><h3>03 / Iconography</h3><p>Standardized symbols for vehicle controls, navigation, media, and system states.</p></figcaption></figure>
+        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img class="black-background" src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption><h3>04 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
       </div>
     </section>
 
