@@ -87,27 +87,27 @@
     .external-links { display: flex; gap: 40px; font-size: 14px; margin-top: 40px; }
     .external-links a { border-bottom: 1px solid #737373; padding-bottom: 7px; }
     .external-links a:hover { border-color: #fff; }
-    .foundation-grid { --foundation-offset: clamp(72px, 8vw, 128px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--content-space) var(--grid-gap); align-items: start; width: 100%; padding-inline: var(--gutter); padding-bottom: var(--foundation-offset); }
-    .foundation-card { min-width: 0; }
-    .foundation-card:nth-child(even) { transform: translateY(var(--foundation-offset)); }
-    .foundation-card .media-button { aspect-ratio: 1.36; display: grid; place-items: center; padding: clamp(16px, 1.6vw, 28px); background: var(--black); }
-    .foundation-card .media-button img { width: 100%; height: 100%; object-fit: contain; }
+    .foundation-grid, .pair { --gallery-offset: clamp(72px, 8vw, 128px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--content-space) var(--grid-gap); align-items: start; width: 100%; padding-inline: var(--gutter); padding-bottom: var(--gallery-offset); }
+    .foundation-card, .pair > figure { min-width: 0; }
+    .foundation-card:nth-child(even), .pair > figure:nth-child(even) { transform: translateY(var(--gallery-offset)); }
+    .foundation-card .media-button, .pair .media-button { display: grid; place-items: center; padding: clamp(16px, 1.6vw, 28px); background: var(--black); }
+    .foundation-card .media-button { aspect-ratio: 1.36; }
+    .foundation-card .media-button img, .pair img { width: 100%; height: 100%; object-fit: contain; }
     .foundation-card figcaption { display: block; }
     .foundation-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -.03em; color: var(--white); }
     .foundation-card figcaption p { margin-top: 16px; max-width: 440px; line-height: 1.6; }
-    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap); align-items: start; }
-    .spec-pair .media-button { display: grid; place-items: center; aspect-ratio: 1.03; padding: 26px; background: var(--black); }
-    .spec-pair img { width: 100%; height: 100%; object-fit: contain; }
+    .pair figcaption, .architecture figcaption { display: block; }
+    .pair .caption-title, .architecture .caption-title { display: block; font-size: 24px; font-weight: 500; letter-spacing: -.03em; line-height: 1.2; }
+    .pair figcaption span + span, .architecture figcaption span + span { display: block; margin-top: 16px; line-height: 1.6; }
+    .spec-pair .media-button { aspect-ratio: 1.03; }
     .component-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); padding-top: 40px; margin-top: 80px; border-top: 1px solid var(--line); }
     .component-notes h3 { font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-bottom: 20px; }
     .component-notes p { max-width: 335px; font-size: 16px; line-height: 1.55; color: var(--muted); }
-    .architecture { margin-top: var(--group-space); }
-    .architecture .media-button { padding: 36px; background: var(--black); }
+    .architecture { margin-top: var(--group-space); padding-inline: var(--gutter); }
+    .architecture .media-button { padding: clamp(16px, 1.6vw, 28px); background: var(--black); }
     .architecture-pair { margin-top: 56px; }
-    .architecture-pair .media-button { aspect-ratio: 1.22; padding: 28px; display: grid; place-items: center; }
-    .architecture-pair img { width: 100%; height: 100%; object-fit: contain; }
-    .release-pair .media-button { display: grid; place-items: center; aspect-ratio: 1.15; background: var(--black); padding: 30px; }
-    .release-pair img { width: 100%; height: 100%; object-fit: contain; }
+    .architecture-pair .media-button { aspect-ratio: 1.22; }
+    .release-pair .media-button { aspect-ratio: 1.15; }
     .review-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); margin-top: var(--content-space); }
     .review-line article { padding-top: 32px; border-top: 1px solid var(--line); }
     .review-line h3 { font-size: 20px; font-weight: 500; letter-spacing: -.025em; margin-bottom: 20px; }
@@ -180,16 +180,12 @@
       .toolkit .media-button { padding: 15px 5px; }
       .external-links { gap: 22px; }
       .foundation-grid, .pair { grid-template-columns: 1fr; gap: var(--content-space); }
-      .foundation-grid { --foundation-offset: 0px; }
-      .foundation-card .media-button { padding: 15px; }
+      .foundation-grid, .pair { --gallery-offset: 0px; }
+      .foundation-card .media-button, .pair .media-button, .architecture .media-button { padding: 15px; }
       .foundation-card figcaption p { font-size: 15px; }
-      .spec-pair .media-button { padding: 15px; }
       .component-notes { grid-template-columns: 1fr; gap: 40px; margin-top: var(--content-space); padding-top: 32px; }
       .architecture { margin-top: var(--group-space); }
-      .architecture .media-button { padding: 20px 12px; }
       .architecture-pair { margin-top: var(--content-space); }
-      .architecture-pair .media-button { padding: 15px; }
-      .release-pair .media-button { padding: 20px; }
       .review-line { grid-template-columns: 1fr; gap: 40px; margin-top: var(--content-space); }
       .metrics { grid-template-columns: 1fr; gap: 48px; padding-top: 32px; }
       .metric + .metric { padding-top: 32px; border-top: 1px solid var(--line); }
@@ -218,7 +214,7 @@
       .chapter { padding-top: 45px; }
       .chapter-intro { break-after: avoid; }
       figure, .metric { break-inside: avoid; }
-      .foundation-grid { --foundation-offset: 0px; }
+      .foundation-grid, .pair { --gallery-offset: 0px; }
       .lucid-logo { filter: invert(1); }
       html.lucid-reveal-pending .hero-media img { opacity: 1; }
     }
@@ -298,18 +294,18 @@
       </div>
     </section>
 
-    <section id="components" class="chapter wrap" aria-labelledby="components-title">
-      <div class="chapter-intro"><div class="chapter-label"><span class="number">04</span><p class="eyebrow">Components</p></div><div class="chapter-copy"><h2 id="components-title">The details are<br /><span class="secondary">part of the system.</span></h2><p>A reusable component needs more than a visual. I documented states, measurements, directionality, validation, and overflow so design and engineering could work from the same decisions.</p></div></div>
+    <section id="components" class="chapter" aria-labelledby="components-title">
+      <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">04</span><p class="eyebrow">Components</p></div><div class="chapter-copy"><h2 id="components-title">The details are<br /><span class="secondary">part of the system.</span></h2><p>A reusable component needs more than a visual. I documented states, measurements, directionality, validation, and overflow so design and engineering could work from the same decisions.</p></div></div>
       <div class="pair spec-pair"><figure><button class="media-button" type="button" data-detail="Tab control specification" aria-label="Enlarge tab control specifications"><img src="../assets/lucid-case/component-spec-tab-control.png" alt="Tab control specification with LTR and RTL behavior, active, inactive and disabled states, and text overflow guidance" width="1662" height="1430" loading="lazy" /></button><figcaption><span class="caption-title">Tab control.</span><span>Behavior / States / Direction</span></figcaption></figure><figure><button class="media-button" type="button" data-detail="Button specification" aria-label="Enlarge button specifications"><img src="../assets/lucid-case/component-spec-button.png" alt="Button specification for primary, secondary, destructive, icon, loading, tertiary, and navigation buttons in LTR and RTL contexts" width="1367" height="1429" loading="lazy" /></button><figcaption><span class="caption-title">Button.</span><span>Variants / States / Usage</span></figcaption></figure></div>
-      <div class="component-notes"><article><h3>Structure that carries context.</h3><p>Parent components defined shared behavior. Child components handled shape, icon, label, and selection variants.</p></article><article><h3>Behavior made explicit.</h3><p>Callouts connected measurements and token references to validation, spacing, direction, and overflow.</p></article><article><h3>Direction built in.</h3><p>English and Arabic variants shared system logic, with LTR and RTL behavior specified side by side.</p></article></div>
+      <div class="component-notes wrap"><article><h3>Structure that carries context.</h3><p>Parent components defined shared behavior. Child components handled shape, icon, label, and selection variants.</p></article><article><h3>Behavior made explicit.</h3><p>Callouts connected measurements and token references to validation, spacing, direction, and overflow.</p></article><article><h3>Direction built in.</h3><p>English and Arabic variants shared system logic, with LTR and RTL behavior specified side by side.</p></article></div>
       <figure class="architecture"><button class="media-button" type="button" data-detail="Parent and child component model" aria-label="Enlarge parent and child component architecture"><img src="../assets/lucid-case/spec-parent-child-component.png" alt="Switch parent component and child variants showing shared component structure" width="2466" height="846" loading="lazy" /></button><figcaption><span class="caption-title">A reusable component model.</span><span>Parent / Child / Variants</span></figcaption></figure>
       <div class="pair architecture-pair"><figure><button class="media-button" type="button" data-detail="Callout specification" aria-label="Enlarge component callout specification"><img src="../assets/lucid-case/spec-callout-specification.png" alt="Callout specification documenting measurements, states, validation, and implementation tokens" loading="lazy" width="1878" height="1292" /></button><figcaption><span class="caption-title">Design decisions, made implementable.</span><span>Callout specification</span></figcaption></figure><figure><button class="media-button" type="button" data-detail="English and Arabic directionality" aria-label="Enlarge English and Arabic component examples"><img src="../assets/lucid-case/spec-bilingual-ltr-rtl.png" alt="English and Arabic tab controls showing parallel LTR and RTL states" width="1210" height="1022" loading="lazy" /></button><figcaption><span class="caption-title">One logic. Two reading directions.</span><span>English / Arabic</span></figcaption></figure></div>
     </section>
 
-    <section id="governance" class="chapter wrap" aria-labelledby="governance-title">
-      <div class="chapter-intro"><div class="chapter-label"><span class="number">05</span><p class="eyebrow">Governance</p></div><div class="chapter-copy"><h2 id="governance-title">A system teams<br /><span class="secondary">could keep building on.</span></h2><p>I made maintenance visible through changelogs, toolkit updates, and review rituals. Teams could understand what changed, why it changed, and how to adopt it.</p></div></div>
+    <section id="governance" class="chapter" aria-labelledby="governance-title">
+      <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">05</span><p class="eyebrow">Governance</p></div><div class="chapter-copy"><h2 id="governance-title">A system teams<br /><span class="secondary">could keep building on.</span></h2><p>I made maintenance visible through changelogs, toolkit updates, and review rituals. Teams could understand what changed, why it changed, and how to adopt it.</p></div></div>
       <div class="pair release-pair"><figure><button class="media-button" type="button" data-detail="System changelog" aria-label="Enlarge design system changelog"><img src="../assets/lucid-case/version-control-changelog.png" alt="Version history documenting Lucid design token and component changes" width="1376" height="1448" loading="lazy" /></button><figcaption><span class="caption-title">A traceable history of decisions.</span><span>Changelog</span></figcaption></figure><figure><button class="media-button" type="button" data-detail="Toolkit release update" aria-label="Enlarge toolkit release notes"><img src="../assets/lucid-case/version-control-toolkit-update.png" alt="Toolkit update with new components, bug fixes, deprecated patterns, and adoption guidance" width="6376" height="5824" loading="lazy" /></button><figcaption><span class="caption-title">A clear path to the next version.</span><span>Release communication</span></figcaption></figure></div>
-      <div class="review-line"><article><h3>Design review</h3><p>Core team alignment on quality, patterns, and technical decisions.</p></article><article><h3>Development review</h3><p>Implementation evaluation with feature developers.</p></article><article><h3>Stakeholder review</h3><p>Cross-functional alignment on direction and strategy.</p></article></div>
+      <div class="review-line wrap"><article><h3>Design review</h3><p>Core team alignment on quality, patterns, and technical decisions.</p></article><article><h3>Development review</h3><p>Implementation evaluation with feature developers.</p></article><article><h3>Stakeholder review</h3><p>Cross-functional alignment on direction and strategy.</p></article></div>
     </section>
 
     <section id="impact" class="chapter wrap" aria-labelledby="impact-title">
