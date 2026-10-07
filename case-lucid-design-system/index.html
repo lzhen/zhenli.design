@@ -110,16 +110,16 @@
     .reflection .statement-content { display: block; max-width: 900px; }
     .reflection h3 { max-width: 850px; font-size: clamp(32px, 4.3vw, 66px); }
     .reflection p { max-width: 640px; margin-top: 40px; font-size: 18px; }
-    .footer-shell { background: #fff; padding-bottom: 32px; color-scheme: light; }
-    .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: min(calc(100% - 30px), 1240px); margin-inline: auto; padding: 24px clamp(30px, 4.8vw, 64px); border-top: 1px solid #eee; color: #505050; background: #fff; font-family: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.62; }
+    .footer-shell { background: var(--black); padding-bottom: 32px; color-scheme: dark; }
+    .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: min(calc(100% - 30px), 1240px); margin-inline: auto; padding: 24px clamp(30px, 4.8vw, 64px); border-top: 1px solid var(--line); color: var(--muted); background: var(--black); font-family: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.62; }
     .site-footer .social-icons { display: inline-flex; align-items: center; justify-content: flex-end; flex-shrink: 0; gap: 12px; }
     .site-footer .icon-link { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; }
-    .site-footer .icon-link img { width: 20px; height: 20px; object-fit: contain; transition: transform 160ms ease; transform-origin: center; }
+    .site-footer .icon-link img { width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1); transition: transform 160ms ease; transform-origin: center; }
     .site-footer .icon-link img[src$="icon-linkedin.svg"] { width: 18px; height: 18px; transform: translateY(-1px); }
     .site-footer .icon-link img[src$="icon-scholar.svg"] { width: 24px; height: 24px; }
     .site-footer .icon-link:hover img, .site-footer .icon-link:focus-visible img { transform: scale(1.16); }
     .site-footer .icon-link:hover img[src$="icon-linkedin.svg"], .site-footer .icon-link:focus-visible img[src$="icon-linkedin.svg"] { transform: translateY(-1px) scale(1.16); }
-    .site-footer a:focus-visible { outline-color: #080808; }
+    .site-footer a:focus-visible { outline-color: var(--white); }
     dialog { width: min(1500px, calc(100vw - 40px)); max-width: none; max-height: calc(100dvh - 40px); padding: 0; border: 1px solid #444; background: var(--black); color: #fff; }
     dialog::backdrop { background: rgba(0,0,0,.92); }
     .detail-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
@@ -204,6 +204,7 @@
     @media print {
       :root { color-scheme: light; --white: #111; --muted: #555; --line: #ccc; }
       html, body { background: #fff; color: #111; }
+      .footer-shell, .site-footer { background: #fff; color: #555; color-scheme: light; }
       .site-header, .project-index, .media-button::after, .detail-header, dialog, .skip, .site-footer .social-icons { display: none; }
       .hero { padding-top: 0; }
       .chapter { padding-top: 45px; }
