@@ -87,15 +87,19 @@
     .external-links { display: flex; gap: 40px; font-size: 14px; margin-top: 40px; }
     .external-links a { border-bottom: 1px solid #737373; padding-bottom: 7px; }
     .external-links a:hover { border-color: #fff; }
-    .foundation-grid, .pair { --gallery-offset: clamp(72px, 8vw, 128px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--content-space) var(--grid-gap); align-items: start; width: 100%; padding-inline: var(--gutter); padding-bottom: var(--gallery-offset); }
+    .foundation-grid { display: grid; grid-template-columns: 1fr; gap: var(--group-space); width: 100%; padding-inline: var(--gutter); }
+    .pair { --gallery-offset: clamp(72px, 8vw, 128px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--content-space) var(--grid-gap); align-items: start; width: 100%; padding-inline: var(--gutter); padding-bottom: var(--gallery-offset); }
     .foundation-card, .pair > figure { min-width: 0; }
-    .foundation-card:nth-child(even), .pair > figure:nth-child(even) { transform: translateY(var(--gallery-offset)); }
+    .foundation-card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); align-items: center; }
+    .foundation-card:nth-child(even) .media-button { grid-column: 2; grid-row: 1; }
+    .foundation-card:nth-child(even) figcaption { grid-column: 1; grid-row: 1; }
+    .pair > figure:nth-child(even) { transform: translateY(var(--gallery-offset)); }
     .foundation-card .media-button, .pair .media-button { display: grid; place-items: center; padding: clamp(16px, 1.6vw, 28px); background: var(--black); }
     .foundation-card .media-button { aspect-ratio: 1.36; }
     .foundation-card .media-button img, .pair img { width: 100%; height: 100%; object-fit: contain; }
-    .foundation-card figcaption { display: block; }
-    .foundation-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -.03em; color: var(--white); }
-    .foundation-card figcaption p { margin-top: 16px; max-width: 440px; line-height: 1.6; }
+    .foundation-card figcaption { display: block; margin: 0; width: 100%; max-width: 440px; justify-self: center; }
+    .foundation-card h3 { font-size: clamp(26px, 2.4vw, 38px); font-weight: 500; line-height: 1.15; letter-spacing: -.035em; color: var(--white); }
+    .foundation-card figcaption p { margin-top: 24px; max-width: 440px; font-size: 18px; line-height: 1.75; }
     .pair figcaption, .architecture figcaption { display: block; }
     .pair .caption-title, .architecture .caption-title { display: block; font-size: 24px; font-weight: 500; letter-spacing: -.03em; line-height: 1.2; }
     .pair figcaption span + span, .architecture figcaption span + span { display: block; margin-top: 16px; line-height: 1.6; }
@@ -180,9 +184,12 @@
       .toolkit .media-button { padding: 15px 5px; }
       .external-links { gap: 22px; }
       .foundation-grid, .pair { grid-template-columns: 1fr; gap: var(--content-space); }
-      .foundation-grid, .pair { --gallery-offset: 0px; }
+      .pair { --gallery-offset: 0px; }
       .foundation-card .media-button, .pair .media-button, .architecture .media-button { padding: 15px; }
-      .foundation-card figcaption p { font-size: 15px; }
+      .foundation-card { grid-template-columns: 1fr; gap: 32px; }
+      .foundation-card:nth-child(even) .media-button, .foundation-card:nth-child(even) figcaption { grid-column: auto; grid-row: auto; }
+      .foundation-card figcaption { max-width: none; justify-self: start; }
+      .foundation-card figcaption p { margin-top: 16px; font-size: 16px; line-height: 1.7; }
       .component-notes { grid-template-columns: 1fr; gap: 40px; margin-top: var(--content-space); padding-top: 32px; }
       .architecture { margin-top: var(--group-space); }
       .architecture-pair { margin-top: var(--content-space); }
@@ -214,7 +221,7 @@
       .chapter { padding-top: 45px; }
       .chapter-intro { break-after: avoid; }
       figure, .metric { break-inside: avoid; }
-      .foundation-grid, .pair { --gallery-offset: 0px; }
+      .pair { --gallery-offset: 0px; }
       .lucid-logo { filter: invert(1); }
       html.lucid-reveal-pending .hero-media img { opacity: 1; }
     }
@@ -288,7 +295,6 @@
       <div class="chapter-intro wrap"><div class="chapter-label"><span class="number">03</span><p class="eyebrow">Foundations</p></div><div class="chapter-copy"><h2 id="foundations-title">A premium brand.<br /><span class="secondary">A precise product language.</span></h2><p>I translated Lucid’s visual language into reusable styles, tokens, and usage guidance. Each foundation connected the look of the interface to how teams applied it across displays and contexts.</p></div></div>
       <div class="foundation-grid">
         <figure class="foundation-card"><button class="media-button" type="button" data-detail="Color themes" aria-label="Enlarge color theme documentation"><img class="black-background" src="../assets/lucid-case/foundation-color.png" alt="Lucid color themes showing theme names, hex values, and usage for menus, drawers, cards, and modals" width="1654" height="1216" loading="lazy" /></button><figcaption><h3>01 / Color</h3><p>Reusable themes with values and usage rules for menus, drawers, cards, and modals.</p></figcaption></figure>
-        <figure class="foundation-card"><button class="media-button" type="button" data-detail="Typography" aria-label="Enlarge typography foundation"><img class="black-background" src="../assets/lucid-case/foundation-font.png" alt="Typography system documenting style, weight, size, leading, kerning, and usage" width="1222" height="1160" loading="lazy" /></button><figcaption><h3>02 / Typography</h3><p>A shared hierarchy, with type styles, spacing, and guidance for consistent information structure.</p></figcaption></figure>
         <figure class="foundation-card"><button class="media-button" type="button" data-detail="Iconography" aria-label="Enlarge the Lucid icon library"><img class="black-background" src="../assets/lucid-case/foundation-icon.png" alt="Lucid icon library for vehicle functions, navigation, media, weather, and system states" width="1472" height="1160" loading="lazy" /></button><figcaption><h3>03 / Iconography</h3><p>Standardized symbols for vehicle controls, navigation, media, and system states.</p></figcaption></figure>
         <figure class="foundation-card"><button class="media-button" type="button" data-detail="Display grids" aria-label="Enlarge display grid specifications"><img class="black-background" src="../assets/lucid-case/foundation-grid.png" alt="Column and row grids mapped to Lucid vehicle display formats" width="1604" height="1060" loading="lazy" /></button><figcaption><h3>04 / Grid</h3><p>Layout rules mapped to the instrument cluster, center display, pilot panel, and rear console.</p></figcaption></figure>
       </div>
