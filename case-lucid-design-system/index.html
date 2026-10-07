@@ -44,8 +44,9 @@
     .hero-baseline { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-top: 36px; }
     .hero-baseline p { max-width: 440px; font-size: 18px; line-height: 1.5; letter-spacing: -.025em; }
     .hero-baseline .disciplines { max-width: 280px; color: var(--muted); font-size: 14px; text-align: right; line-height: 1.6; }
-    .hero-media { margin-top: 38px; overflow: hidden; }
-    .hero-media img { width: 100%; aspect-ratio: 2.85; object-fit: cover; object-position: 50% 54%; }
+    .hero-media { margin-top: 38px; overflow: hidden; background: #000; }
+    .hero-media img { width: 100%; aspect-ratio: 2.85; object-fit: cover; object-position: 50% 54%; opacity: 1; transition: opacity 2000ms ease 1000ms; }
+    html.lucid-reveal-pending .hero-media img { opacity: 0; }
     .project-index { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 23px 0; border-block: 1px solid var(--line); }
     .project-index .eyebrow { color: var(--muted); }
     .project-index nav { display: flex; gap: 32px; font-size: 14px; }
@@ -127,6 +128,7 @@
     .reflection p { max-width: 640px; margin-top: 27px; font-size: 18px; }
     .closing-image { position: relative; }
     .closing-image img { aspect-ratio: 2.55; object-fit: cover; }
+    .closing-image::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, #000 0%, rgba(0,0,0,.92) 14%, rgba(0,0,0,.44) 42%, rgba(0,0,0,0) 72%); }
     .footer { display: flex; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); padding: 34px var(--gutter); font-size: 14px; color: var(--muted); }
     .footer nav { display: flex; gap: 28px; }
     dialog { width: min(1500px, calc(100vw - 40px)); max-width: none; max-height: calc(100dvh - 40px); padding: 0; border: 1px solid #444; background: #080808; color: #fff; }
@@ -209,6 +211,7 @@
       .reflection h3 { font-size: 36px; }
       .reflection p { font-size: 17px; }
       .closing-image img { aspect-ratio: 1.6; }
+      .closing-image::before { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,.78) 18%, rgba(0,0,0,.28) 48%, rgba(0,0,0,0) 72%); }
       .footer { flex-wrap: wrap; padding-block: 25px; gap: 24px; }
       .footer nav { gap: 23px; }
       figcaption { font-size: 13px; gap: 14px; }
@@ -219,7 +222,7 @@
       .detail-actions { gap: 24px; }
       .detail-viewport { padding: 10px; }
     }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } html.lucid-reveal-pending .hero-media img { opacity: 1; } }
     @media print {
       :root { color-scheme: light; --white: #111; --muted: #555; --line: #ccc; }
       body { background: #fff; color: #111; }
@@ -229,8 +232,15 @@
       .chapter-intro { break-after: avoid; }
       figure, .metric { break-inside: avoid; }
       .lucid-logo { filter: invert(1); }
+      html.lucid-reveal-pending .hero-media img { opacity: 1; }
+      .closing-image::before { display: none; }
     }
   </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('lucid-reveal-pending');
+    }
+  </script>
   <script src="../assets/project-password-mask.js?v=20260719-lucid-lock-version" data-project-lock="case-study" data-lock-version="20260719-lucid"></script>
 </head>
 <body>
@@ -307,6 +317,36 @@
     <div class="detail-viewport" id="detail-viewport"><img id="detail-image" alt="" /></div>
   </dialog>
   <script>
+    (function () {
+      var root = document.documentElement;
+      var hero = document.querySelector('.hero-media');
+      var image = hero.querySelector('img');
+      if (!root.classList.contains('lucid-reveal-pending')) return;
+      var inView = !('IntersectionObserver' in window);
+      var observer;
+      var lockObserver = new MutationObserver(reveal);
+      lockObserver.observe(root, { attributes: true, attributeFilter: ['class'] });
+
+      function reveal() {
+        if (!inView || !image.complete || root.classList.contains('project-password-pending')) return;
+        lockObserver.disconnect();
+        if (observer) observer.disconnect();
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { root.classList.remove('lucid-reveal-pending'); });
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        observer = new IntersectionObserver(function (entries) {
+          inView = entries[0].isIntersecting;
+          reveal();
+        }, { threshold: .12 });
+        observer.observe(hero);
+      }
+      image.addEventListener('load', reveal, { once: true });
+      image.addEventListener('error', reveal, { once: true });
+      reveal();
+    })();
     (function () {
       var dialog = document.getElementById('image-detail');
       var image = document.getElementById('detail-image');
