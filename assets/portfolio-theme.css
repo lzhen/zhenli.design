@@ -79,7 +79,7 @@ html[data-theme="light"] .icon-link img { filter: none; }
 
 /* White marks use lighter strokes to balance their weight on a dark canvas. */
 html[data-theme="dark"] body:is(.home-page, .resume-page) :is(.site-header .brand img, .resume-logo) {
-  content: url("/assets/zhen-li-logo-dark.svg?v=20261007-25pct");
+  content: url("/assets/zhen-li-logo-dark.svg?v=20261008-joined");
   filter: none !important;
 }
 

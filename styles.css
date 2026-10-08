@@ -6332,7 +6332,7 @@ body.lucid-deck-theme.editorial-site .case-copy > h3 {
 
 /* 20260613 thinner white logo for dark Lucid page */
 body.lucid-deck-theme.editorial-site .site-header .mark {
-  content: url("assets/zhen-li-logo-white-thin.svg");
+  content: url("assets/zhen-li-logo-white-thin.svg?v=20261008-joined");
   filter: none !important;
 }
 
