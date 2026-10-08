@@ -79,10 +79,21 @@ html[data-theme="light"] .icon-link img { filter: none; }
 
 /* White marks use lighter strokes to balance their weight on a dark canvas. */
 html[data-theme="dark"] body:is(.home-page, .resume-page) :is(.site-header .brand img, .resume-logo) {
-  content: url("/assets/zhen-li-logo-dark.svg?v=20261008-joined");
+  content: url("/assets/zhen-li-logo-dark.svg?v=20261008-optical10");
   filter: none !important;
 }
 
+
+/* Dark canvases make white strokes look heavier; compensate without reflow. */
+@media screen {
+  html[data-theme="dark"] .home-page .home-title {
+    -webkit-text-stroke: 0.006em var(--paper);
+    paint-order: fill stroke;
+  }
+  html[data-theme="dark"] .home-page .home-title em {
+    -webkit-text-stroke: 0;
+  }
+}
 
 /* Override the legacy footer rule for monochrome social icons. */
 html[data-theme="dark"] body:is(.home-page, .resume-page) .social-icons .icon-link img {
