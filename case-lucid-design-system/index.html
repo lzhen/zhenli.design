@@ -26,8 +26,8 @@
     h1, h2, h3, p, figure, dl, dd { margin: 0; }
     .skip { position: fixed; top: 12px; left: 18px; z-index: 100; padding: 12px 20px; background: #fff; color: #000; transform: translateY(-160%); }
     .skip:focus { transform: translateY(0); }
-    .site-header { position: sticky; top: 0; z-index: 20; min-height: 78px; border-bottom: 1px solid #202020; background: #000; }
-    .site-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; width: 100%; max-width: 1600px; min-height: inherit; margin-inline: auto; padding-inline: var(--gutter); }
+    .site-header { position: sticky; top: 0; z-index: 20; min-height: 78px; background: #000; }
+    .site-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; width: calc(100% - 2 * var(--gutter)); max-width: calc(1600px - 2 * var(--gutter)); min-height: inherit; margin-inline: auto; border-bottom: 1px solid #202020; }
     .brand { display: flex; align-items: center; gap: 14px; font-size: 19px; font-weight: 600; letter-spacing: -.04em; }
     .brand img { width: 27px; height: 33px; object-fit: contain; filter: invert(1); }
     .site-header nav { display: flex; gap: 30px; font-size: 14px; }
