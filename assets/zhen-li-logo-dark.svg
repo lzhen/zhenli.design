@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" role="img" aria-labelledby="title">
   <title id="title">Zhen Li logo</title>
-  <path d="M8 8H80V80H8V8ZM14.75 14.75V73.25H73.25V14.75H14.75Z" fill="#f5f5f5" fill-rule="evenodd"/>
-  <rect x="13.75" y="31.625" width="46.25" height="6.75" fill="#f5f5f5"/>
-  <path d="M15.1375 74.1375L74.1375 15.1375L78.8625 19.8625L19.8625 78.8625Z" fill="#f5f5f5"/>
+  <path d="M8 8H80V80H8V8ZM15.5 15.5V72.5H72.5V15.5H15.5Z" fill="#f5f5f5" fill-rule="evenodd"/>
+  <rect x="15.5" y="31.25" width="44.5" height="7.5" fill="#f5f5f5"/>
+  <path d="M14.875 73.875L73.875 14.875L79.125 20.125L20.125 79.125Z" fill="#f5f5f5"/>
 </svg>
