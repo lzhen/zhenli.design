@@ -8638,3 +8638,15 @@ body.work-page .case-copy .public-context p {
   white-space: nowrap !important;
   text-align: center;
 }
+
+/* Keep the expanded portfolio navigation visible on narrow screens. */
+@media (max-width: 600px) {
+  .editorial-site .site-header nav {
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 8px 18px;
+  }
+  .editorial-site .site-header nav a {
+    padding-block: 8px;
+  }
+}

@@ -1,8 +1,8 @@
 (function () {
   'use strict';
   var root = document.documentElement;
-  // Theme preferences apply only to Home and Resume.
-  if (!/^\/(?:index\.html|resume\/?|resume\/index\.html)?$/.test(window.location.pathname)) return;
+  // Theme preferences apply to Home, Resume, and Articles.
+  if (!/^\/(?:index\.html|resume\/?|resume\/index\.html|articles\/?|articles\/index\.html)?$/.test(window.location.pathname)) return;
   var storageKey = 'zhenli-theme';
   var theme = 'light';
 
