@@ -1,33 +1,7 @@
 /* Selected writing, using the portfolio's existing type and grid. */
 .articles-page .articles-main {
   border: 0;
-  padding: 0 var(--page-gutter) 80px;
-}
-
-.articles-intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: end;
-  gap: 48px;
-  padding: clamp(56px, 8vw, 104px) 0 64px;
-}
-
-.articles-intro h1 {
-  margin: 0;
-  font-size: clamp(64px, 8.5vw, 108px);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.065em;
-}
-
-.articles-intro p {
-  max-width: 400px;
-  margin: 0 0 3px;
-  color: var(--muted);
-  font-family: var(--font-display);
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: 1.45;
-  letter-spacing: -0.02em;
+  padding: 40px var(--page-gutter) 80px;
 }
 
 .articles-heading {
@@ -42,7 +16,7 @@
   font-size: 12px;
 }
 
-.articles-heading h2 {
+.articles-heading h1 {
   margin: 0;
   font-size: inherit;
   font-weight: 400;
@@ -163,17 +137,8 @@ html[data-theme="dark"] .articles-page .social-icons .icon-link img {
 @media (max-width: 720px) {
   .articles-page .articles-main {
     width: 100%;
+    padding-top: 32px;
     padding-bottom: 56px;
-  }
-
-  .articles-intro {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 48px 0 44px;
-  }
-
-  .articles-intro p {
-    max-width: 340px;
   }
 
   .article-link {
